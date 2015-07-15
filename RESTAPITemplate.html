@@ -1,0 +1,331 @@
+<!DOCTYPE html
+          PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- Template REST API documentation. Following: https://docs.atlassian.com/confluence/REST/latest/ -->
+
+<html>
+  <head>
+    <title>REST API</title>
+    <style type="text/css">
+      body {
+      font-family: sans-serif;
+      font-size: 0.85em;
+      margin: 2em 8em;
+      }
+      #table-of-contents li {
+      margin-top: 5px;
+      }
+      .methods {
+      background-color: #eef;
+      padding: 1em;
+      }
+      h1 {
+      font-size: 2.5em;
+      }
+      h2 {
+      border-bottom: 1px solid black;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      font-size: 2em;
+      }
+      h3 {
+      color: orange;
+      font-size: 1.75em;
+      margin-top: 1.25em;
+      margin-bottom: 0em;
+      }
+      h4 {
+      margin: 0em;
+      padding: 0em;
+      border-bottom: 2px solid white;
+      }
+      h6 {
+      font-size: 1.1em;
+      color: #99a;
+      margin: 0.5em 0em 0.25em 0em;
+      }
+      dd {
+      margin-left: 1em;
+      }
+      tt {
+      font-size: 1.2em;
+      }
+      table {
+      margin-bottom: 0.5em;
+      }
+      th {
+      text-align: left;
+      font-weight: normal;
+      color: black;
+      border-bottom: 1px solid black;
+      padding: 3px 6px;
+      }
+      td {
+      padding: 3px 6px;
+      vertical-align: top;
+      background-color: f6f6ff;
+      font-size: 0.85em;
+      }
+      td p {
+      margin: 0px;
+      }
+      ul {
+      padding-left: 1.75em;
+      }
+      p + ul, p + ol, p + dl {
+      margin-top: 0em;
+      }
+      .optional {
+      font-weight: normal;
+      opacity: 0.75;
+      }
+      .code-tag {
+      color: #000091;
+      background-color: inherit;
+      }
+      .code-comment {
+      color: #808080;
+      background-color: inherit;
+      }
+      .code-xml .code-keyword {
+      color: inherit;
+      font-weight: bold;
+      }
+      .code-quote {
+      color: #009100;
+      background-color: inherit;
+      }
+    </style>
+
+    <script type="text/javascript">
+      /*
+      Developed by Robert Nyman, http://www.robertnyman.com
+      Code/licensing: http://code.google.com/p/getelementsbyclassname/
+      */
+      var getElementsByClassName = function (className, tag, elm){
+      if (document.getElementsByClassName) {
+      getElementsByClassName = function (className, tag, elm) {
+      elm = elm || document;
+      var elements = elm.getElementsByClassName(className),
+      nodeName = (tag)? new RegExp("\\b" + tag + "\\b", "i") : null,
+      returnElements = [],
+      current;
+      for(var i=0, il=elements.length; i<il; i+=1){
+                                             current = elements[i];
+                                             if(!nodeName || nodeName.test(current.nodeName)) {
+                                             returnElements.push(current);
+                                             }
+                                             }
+                                             return returnElements;
+                                             };
+                                             }
+                                             else if (document.evaluate) {
+                                             getElementsByClassName = function (className, tag, elm) {
+                                             tag = tag || "*";
+                                             elm = elm || document;
+                                             var classes = className.split(" "),
+                                             classesToCheck = "",
+                                             xhtmlNamespace = "http://www.w3.org/1999/xhtml",
+                                             namespaceResolver = (document.documentElement.namespaceURI === xhtmlNamespace)? xhtmlNamespace : null,
+                                             returnElements = [],
+                                             elements,
+                                             node;
+                                             for(var j=0, jl=classes.length; j<jl; j+=1){
+                                                                                   classesToCheck += "[contains(concat(' ', @class, ' '), ' " + classes[j] + " ')]";
+                                                                                   }
+                                                                                   try	{
+                                                                                   elements = document.evaluate(".//" + tag + classesToCheck, elm, namespaceResolver, 0, null);
+                                                                                   }
+                                                                                   catch (e) {
+                                                                                   elements = document.evaluate(".//" + tag + classesToCheck, elm, null, 0, null);
+                                                                                   }
+                                                                                   while ((node = elements.iterateNext())) {
+                                                                                   returnElements.push(node);
+                                                                                   }
+                                                                                   return returnElements;
+                                                                                   };
+                                                                                   }
+                                                                                   else {
+                                                                                   getElementsByClassName = function (className, tag, elm) {
+                                                                                   tag = tag || "*";
+                                                                                   elm = elm || document;
+                                                                                   var classes = className.split(" "),
+                                                                                   classesToCheck = [],
+                                                                                   elements = (tag === "*" && elm.all)? elm.all : elm.getElementsByTagName(tag),
+                                                                                   current,
+                                                                                   returnElements = [],
+                                                                                   match;
+                                                                                   for(var k=0, kl=classes.length; k<kl; k+=1){
+                                                                                                                         classesToCheck.push(new RegExp("(^|\\s)" + classes[k] + "(\\s|$)"));
+                                                                                                                         }
+                                                                                                                         for(var l=0, ll=elements.length; l<ll; l+=1){
+                                                                                                                                                                current = elements[l];
+                                                                                                                                                                match = false;
+                                                                                                                                                                for(var m=0, ml=classesToCheck.length; m<ml; m+=1){
+                                                                                                                                                                                                             match = classesToCheck[m].test(current.className);
+                                                                                                                                                                                                             if (!match) {
+                                                                                                                                                                                                             break;
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             if (match) {
+                                                                                                                                                                                                             returnElements.push(current);
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             return returnElements;
+                                                                                                                                                                                                             };
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             return getElementsByClassName(className, tag, elm);
+                                                                                                                                                                                                             };
+                                                                                                                                                                                                             
+                                                                                                                                                                                                             function toggle(id) {
+                                                                                                                                                                                                             var el = document.getElementById(id);
+                                                                                                                                                                                                             el.style.display = (el.style.display != 'none' ? 'none' : '' );
+                                                                                                                                                                                                             document.getElementById("link-" + id).innerHTML = (el.style.display == 'none' ? 'expand' : 'collapse' );
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             
+                                                                                                                                                                                                             function hideAll() {
+                                                                                                                                                                                                             var examples = getElementsByClassName("toggle", "div");
+                                                                                                                                                                                                             for (var i = 0; i < examples.length; i++) {
+                                                                                                                                                                                                                                 toggle(examples[i].id);
+                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                 function format(codeElem) {
+      			                                                                                                                                                                                                         try {
+                                                                                                                                                                                                                                 var obj = JSON.parse(codeElem.innerHTML);
+                                                                                                                                                                                                                                 codeElem.innerHTML = JSON.stringify(obj, null, 4);
+                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                 catch (e)
+                                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                                 // err
+                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                 function formatAll() {
+                                                                                                                                                                                                                                 var jsonCodes = document.getElementsByTagName("code");
+                                                                                                                                                                                                                                 for (var i = 0; i < jsonCodes.length; i++) {
+                                                                                                                                                                                                                                                     format(jsonCodes[i]);
+                                                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                                                     </script>
+  </head>
+
+     <body onload="hideAll(); formatAll();">
+
+    <h1>REST API</h1>
+
+    <h2>Resource Index</h2>
+
+    <p>These are the resources.</p>
+
+    <ul>
+      <li>
+        <a href="#r1">/a/n/route1</a> [<a href="#r1.get">GET</a>], [<a href="#r1.post">POST</a>]
+      </li>
+      <li>
+        <a href="#r2">/a/n/route2</a> [<a href="#r2.get">GET</a>], [<a href="#r2.put">DELETE</a>]
+      </li>
+    </ul>
+
+    <h2 id="resources">Resources</h2>
+
+    <div class="resource">
+      <h3 id="r1">/resource1/{id}</h3>
+
+      <p>Resource-wide parameters for resource 1.</p>
+
+      <table>
+        <tr><th>parameter</th><th>value</th><th>description</th></tr>
+        <tr>
+          <td><p><strong>id</strong></p></td>
+          <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+          <td><p>the id of the content</p></td>
+        </tr>
+      </table>
+
+      <h6>Methods</h6>
+      <div class="methods">
+
+        <div class="method">
+        <h4 id="r1.get">GET</h4>
+          <p>Resource number 1 GET.</p>
+
+          <div class="exampleRequests">
+            <p>Example request URI(s):</p>
+            <ul>
+              <li><code>http://example.com/rest/api/content?type=blogpost&spaceKey=TST&title=Bacon&postingDay=2014-02-13&expand=space,body.view,version,container</code></li>
+            </ul>
+          </div> <!-- exampleRequests -->
+
+          <p>Request query parameters:</p>
+          
+          <table>
+            <tr><th>parameter</th><th>value</th><th>description</th></tr>
+            <tr>
+              <td><p><strong>id</strong></p></td>
+              <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+              <td><p>the id of the content</p></td>
+            </tr>
+          </table>
+
+          <p>Available response representations:</p>
+
+          <ul>
+            <li>
+              <div>200 application/json
+                [<a onclick="toggle('r1.get.ex1'); return false;" href="#"><em><span id="link-r1.get.ex1">expand</span></em></a>]
+              </div>
+              <div class="toggle" id="r1.get.ex1">
+                <p><h6>Example</h6><pre><code>{"@type":"http://a.com/Type", "@id": "http://a.com/ii" }</code></pre></p>
+              </div>
+            </li>
+            <li>400 If calling user does not have permission to view the content</li>
+          </ul>
+
+        </div> <!-- method -->
+
+        <div class="method">
+        <h4 id="r1.post">POST</h4>
+
+          <p>Resource number 1 POST.</p>
+
+          <p>Acceptable request representations:</p>
+
+          <ul>
+            <li>application/json</li>
+          </ul>
+
+          <p>Available response representations:</p>
+
+          <ul>
+            <li>200 application/json (content)</li>
+          </ul>
+
+        </div> <!-- method -->
+      </div> <!-- methods -->
+    </div> <!-- resource -->
+
+    <div class="resource">
+      <h3 id="r2">/resource2</h3>
+
+      <p>Resource number 2.</p>
+
+      <h6>Methods</h6>
+      <div class="methods">
+        <div class="method">
+          <h4 id="r2.get">GET</h4>
+
+          Resource number 2 GET.
+
+        </div> <!-- method -->
+
+        <div class="method">
+          <h4 id="r2.put">PUT</h4>
+
+          Resource number 2 PUT.
+        </div> <!-- method -->
+      </div> <!-- methods -->
+    </div> <!-- resource -->
+
+  </body>
+</html>
