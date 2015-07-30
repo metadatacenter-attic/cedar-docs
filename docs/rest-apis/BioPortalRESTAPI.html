@@ -1,0 +1,1195 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>CEDAR BioPortal Server REST API</title>
+  <style type="text/css">
+    body {
+      font-family: sans-serif;
+      font-size: 0.85em;
+      margin: 2em 8em;
+    }
+
+    #table-of-contents li {
+      margin-top: 5px;
+    }
+
+    .methods {
+      background-color: #eef;
+      padding: 1em;
+    }
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    h2 {
+      border-bottom: 1px solid black;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      font-size: 2em;
+    }
+
+    h3 {
+      color: orange;
+      font-size: 1.75em;
+      margin-top: 1.25em;
+      margin-bottom: 0em;
+    }
+
+    h4 {
+      margin: 0em;
+      padding: 0em;
+      border-bottom: 2px solid white;
+    }
+
+    h5 {
+      font-size: 1.1em;
+      color: #99a;
+      margin: 0.5em 0em 0.25em 0em;
+    }
+
+    h6 {
+      font-size: 1.1em;
+      color: orange;
+      margin: 0.5em 0em 0.25em 0em;
+    }
+
+    dd {
+      margin-left: 1em;
+    }
+
+    tt {
+      font-size: 1.2em;
+    }
+
+    table {
+      margin-bottom: 0.5em;
+    }
+
+    th {
+      text-align: left;
+      font-weight: normal;
+      color: black;
+      border-bottom: 1px solid black;
+      padding: 3px 6px;
+    }
+
+    td {
+      padding: 3px 6px;
+      vertical-align: top;
+      background-color: #f6f6ff;
+      font-size: 0.85em;
+    }
+
+    td p {
+      margin: 0px;
+    }
+
+    ul {
+      padding-left: 1.75em;
+    }
+
+    p + ul, p + ol, p + dl {
+      margin-top: 0em;
+    }
+
+    p.method-summary {
+      font-weight: bold;
+    }
+
+    .optional {
+      font-weight: normal;
+      opacity: 0.75;
+    }
+
+    .code-tag {
+      color: #000091;
+      background-color: inherit;
+    }
+
+    .code-comment {
+      color: #808080;
+      background-color: inherit;
+    }
+
+    .code-xml .code-keyword {
+      color: inherit;
+      font-weight: bold;
+    }
+
+    .code-quote {
+      color: #009100;
+      background-color: inherit;
+    }
+  </style>
+
+  <script type="text/javascript">
+    /*
+     Developed by Robert Nyman, http://www.robertnyman.com
+     Code/licensing: http://code.google.com/p/getelementsbyclassname/
+     */
+    var getElementsByClassName = function(className, tag, elm) {
+      if (document.getElementsByClassName) {
+        getElementsByClassName = function(className, tag, elm) {
+          elm = elm || document;
+          var elements = elm.getElementsByClassName(className),
+              nodeName = (tag) ? new RegExp("\\b" + tag + "\\b", "i") : null,
+              returnElements = [],
+              current;
+          for (var i = 0, il = elements.length; i < il; i += 1) {
+            current = elements[i];
+            if (!nodeName || nodeName.test(current.nodeName)) {
+              returnElements.push(current);
+            }
+          }
+          return returnElements;
+        };
+      }
+      else if (document.evaluate) {
+        getElementsByClassName = function(className, tag, elm) {
+          tag = tag || "*";
+          elm = elm || document;
+          var classes = className.split(" "),
+              classesToCheck = "",
+              xhtmlNamespace = "http://www.w3.org/1999/xhtml",
+              namespaceResolver = (document.documentElement.namespaceURI === xhtmlNamespace) ? xhtmlNamespace : null,
+              returnElements = [],
+              elements,
+              node;
+          for (var j = 0, jl = classes.length; j < jl; j += 1) {
+            classesToCheck += "[contains(concat(' ', @class, ' '), ' " + classes[j] + " ')]";
+          }
+          try {
+            elements = document.evaluate(".//" + tag + classesToCheck, elm, namespaceResolver, 0, null);
+          }
+          catch (e) {
+            elements = document.evaluate(".//" + tag + classesToCheck, elm, null, 0, null);
+          }
+          while ((node = elements.iterateNext())) {
+            returnElements.push(node);
+          }
+          return returnElements;
+        };
+      }
+      else {
+        getElementsByClassName = function(className, tag, elm) {
+          tag = tag || "*";
+          elm = elm || document;
+          var classes = className.split(" "),
+              classesToCheck = [],
+              elements = (tag === "*" && elm.all) ? elm.all : elm.getElementsByTagName(tag),
+              current,
+              returnElements = [],
+              match;
+          for (var k = 0, kl = classes.length; k < kl; k += 1) {
+            classesToCheck.push(new RegExp("(^|\\s)" + classes[k] + "(\\s|$)"));
+          }
+          for (var l = 0, ll = elements.length; l < ll; l += 1) {
+            current = elements[l];
+            match = false;
+            for (var m = 0, ml = classesToCheck.length; m < ml; m += 1) {
+              match = classesToCheck[m].test(current.className);
+              if (!match) {
+                break;
+              }
+            }
+            if (match) {
+              returnElements.push(current);
+            }
+          }
+          return returnElements;
+        };
+      }
+      return getElementsByClassName(className, tag, elm);
+    };
+
+    function toggle(id) {
+      var el = document.getElementById(id);
+      el.style.display = (el.style.display != 'none' ? 'none' : '' );
+      document.getElementById("link-" + id).innerHTML = (el.style.display == 'none' ? 'expand' : 'collapse' );
+    }
+
+    function hideAll() {
+      var examples = getElementsByClassName("toggle", "div");
+      for (var i = 0; i < examples.length; i++) {
+        toggle(examples[i].id);
+      }
+    }
+
+    function format(codeElem) {
+      try {
+        var obj = JSON.parse(codeElem.innerHTML);
+        codeElem.innerHTML = JSON.stringify(obj, null, 4);
+      }
+      catch (e) {
+        // err
+      }
+    }
+
+    function formatAll() {
+      var jsonCodes = document.getElementsByTagName("code");
+      for (var i = 0; i < jsonCodes.length; i++) {
+        format(jsonCodes[i]);
+      }
+    }
+  </script>
+</head>
+
+<body onload="hideAll(); formatAll();">
+
+<h1>BioPortal REST APIs for Ontology, Value Set, and Class Resources</h1>
+
+<p>BioPortal contains three types of resources relevant to CEDAR: ontologies, value sets, and classes.
+
+<p>
+
+<p>Ontologies contain potentially large sets of classes arranged in a hierarchy.</p>
+
+<p>Value sets contains a typically small (10-40) sets of classes in a flat list.</p>
+
+<p>Classes are contained in both ontologies and value sets.</p>
+
+<p>This document will cover the calls necessary for searching and browsing of ontologies, value sets, and classes.
+  Call to create value sets and classes will be covered later (and are not yet available in BioPortal).</p>
+
+<h2>Resource Index</h2>
+
+<p>These are the resources.</p>
+
+<ul>
+  <li>
+    <a href="#ontologies">/ontologies</a> [<a href="#ontologies.get">GET</a>]
+  </li>
+  <li>
+    <a href="#value_sets">/value_sets</a> [<a href="#value_sets.get">GET</a>]
+  </li>
+  <li>
+    <a href="#classes">/classes</a> [<a href="#classes.get">GET</a>]
+  </li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<p>System-wide query parameters:</p>
+<table>
+  <tr>
+    <th>parameter</th>
+    <th>value</th>
+    <th>description</th>
+  </tr>
+  <tr>
+    <td><p><strong>apikey</strong></p></td>
+    <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+    <td><p>an API key; for MJD: 3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9</p></td>
+  </tr>
+</table>
+
+<div class="resource">
+  <h3 id="ontologies">/ontologies</h3>
+  <br/>
+  <h5>Methods</h5>
+
+  <div class="methods">
+
+    <div class="method">
+
+      <h4 id="ontologies.get">GET</h4>
+
+      <h6>/ontologies</h6>
+
+      <p class="method-summary">Get all BioPortal ontologies.</p>
+
+      <div class="exampleRequests">
+        <p>Example request URI(s):</p>
+        <ul>
+          <li><a href="http://data.bioontology.org/ontologies?apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9">http://data.bioontology.org/ontologies/</a>
+          </li>
+        </ul>
+      </div>
+      <!-- exampleRequests -->
+
+      <p>Available response representations:</p>
+      <ul>
+        <li>
+          <div>200 application/json
+            [<a onclick="toggle('ontologies.get.ex1'); return false;" href="#"><em><span id="link-ontologies.get.ex1">expand</span></em></a>]
+          </div>
+          <div class="toggle" id="ontologies.get.ex1">
+            <p><h5>Example</h5>
+
+            <p>An example of a response containing a description of all BioPortal ontologies.</p>
+                <pre><code>
+                  [{
+                  "administeredBy": [],
+                  "acronym": "NCIT",
+                  "name": "National Cancer Institute Thesaurus",
+                  "summaryOnly": false,
+                  "@id": "http://data.bioontology.org/ontologies/NCIT",
+                  "@type": "http://data.bioontology.org/metadata/Ontology",
+                  "links": {},
+                  "@context": {}
+                  },
+                  {},
+                  {}
+                  ]
+                </code></pre>
+            </p>
+            <p>For SOW3 the relevant fields are <tt>acronym</tt>, <tt>name</tt>, and <tt>@id</tt>.</p>
+
+            <p>This call does not return any ontology metrics (such as the number of classes in the ontology), which we
+              indicated may be worth presenting.
+              We can skip this for the moment and only return the information returned above.</p>
+
+            <p>Note that the list of ontologies in BioPortal changes infrequently (every few days at most) so caching
+              the list of ontologies is an option.</p>
+          </div>
+        </li>
+        <li>401 If calling user does not have permission to view the ontology</li>
+      </ul>
+
+      <h6>/ontologies/{acronym}/submissions</h6>
+
+      <p class="method-summary">Get the details of a specific ontology.</p>
+
+      <p>Request parameters:</p>
+
+      <table>
+        <tr>
+          <th>parameter</th>
+          <th>value</th>
+          <th>description</th>
+        </tr>
+        <tr>
+          <td><p><strong>acronym</strong></p></td>
+          <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+          <td><p>the acronym of the ontology</p></td>
+        </tr>
+      </table>
+
+      <div class="exampleRequests">
+        <p>Example request URI(s):</p>
+        <ul>
+          <li><a
+              href="http://data.bioontology.org/ontologies/NCIT/latest_submission?apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9">http://data.bioontology.org/ontologies/NCIT/latest_submission</a>
+          </li>
+        </ul>
+      </div>
+      <!-- exampleRequests -->
+
+      <p>Available response representations:</p>
+
+      <ul>
+        <li>
+          <div>200 application/json
+            [<a onclick="toggle('ontologies.get.ex2'); return false;" href="#"><em><span id="link-ontologies.get.ex2">expand</span></em></a>]
+          </div>
+          <div class="toggle" id="ontologies.get.ex2">
+            <p><h5>Example</h5>
+
+            <p>An example of a response containing a description of an ontology.</p>
+                    <pre><code>
+                      {
+                      "contact": [],
+                      "ontology": {},
+                      "hasOntologyLanguage": "OWL",
+                      "released": "2015-05-06T18:07:23-07:00",
+                      "creationDate": "2015-05-06T18:07:24-07:00",
+                      "homepage": "http://ncicb.nci.nih.gov/core/EVS",
+                      "publication": null,
+                      "documentation": "http://nciterms.nci.nih.gov",
+                      "version": "15.04d",
+                      "description": "A vocabulary for clinical care, translational and basic research, and public
+                      information and administrative activities.",
+                      "status": "production",
+                      "submissionId": 42,
+                      "@id": "http://data.bioontology.org/ontologies/NCIT/submissions/42",
+                      "@type": "http://data.bioontology.org/metadata/OntologySubmission",
+                      "links": {},
+                      "@context": {}
+                      }
+                    </code></pre>
+            </p>
+            <p>For SOW3 the relevant fields are <tt>description</tt>, <tt>version</tt>, <tt>hasOntologyLanguage</tt>,
+              and <tt>documentation</tt>.</p>
+
+            <p>This call does not return any ontology metrics (such as the number of classes in the ontology), which we
+              indicated may be worth presenting.
+              We can skip this for the moment and only return the information returned above.</p>
+
+          </div>
+        </li>
+        <li>401 If calling user does not have permission to view the ontology</li>
+      </ul>
+
+
+    </div>
+    <!-- method -->
+
+  </div>
+  <!-- methods -->
+
+  <p>Note that there is currently no way to query BioPortal ontologies by name. Since the set of ontologies is fixed,
+    applications typically cache the
+    JSON response from the call to get all ontologies and perform search within that.</p>
+
+  <div class="resource">
+    <h3 id="value_sets">/value_sets</h3>
+    <br/>
+    <h5>Methods</h5>
+
+    <div class="methods">
+
+      <div class="method">
+        <h4 id="value_sets.get">GET</h4>
+
+        <h6>/ontologies/NLMVS/classes/roots</h6>
+
+        <p class="method-summary">Get all CEDAR value sets.</p>
+
+        <div class="exampleRequests">
+          <p>Example request URI(s):</p>
+          <ul>
+            <li><a
+                href="http://data.bioontology.org/ontologies/NLMVS/classes/roots?apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9">http://data.bioontology.org/ontologies/NLMVS/classes/roots</a>
+            </li>
+          </ul>
+        </div>
+        <!-- exampleRequests -->
+
+        <p>Available response representations:</p>
+        <ul>
+          <li>
+            <div>200 application/json
+              [<a onclick="toggle('value_sets.get.ex1'); return false;" href="#"><em><span id="link-value_sets.get.ex1">expand</span></em></a>]
+            </div>
+            <div class="toggle" id="value_sets.get.ex1">
+              <p><h5>Example</h5>
+
+              <p>An example of a response containing a description of all value sets.</p>
+                <pre><code>
+                  [
+                  {
+                  "prefLabel": "Alcohol and Drug Dependence",
+                  "synonym": [],
+                  "definition": [],
+                  "cui": [],
+                  "semanticType": [],
+                  "obsolete": false,
+                  "@id": "http://purl.bioontology.org/ontology/NLMVS/2.16.840.1.113883.3.464.1003.106.12.1001",
+                  "@type": "http://www.w3.org/2002/07/owl#Class",
+                  "links": {},
+                  "@context": {}
+                  },
+                  {
+                  "prefLabel": "STEMI Exclusions",
+                  "synonym": [],
+                  "definition": [],
+                  "cui": [],
+                  "semanticType": [],
+                  "obsolete": false,
+                  "@id": "http://purl.bioontology.org/ontology/NLMVS/2.16.840.1.113762.1.4.1045.36",
+                  "@type": "http://www.w3.org/2002/07/owl#Class",
+                  "links": {},
+                  "@context": {}
+                  },
+                  {},
+                  {}
+                  ]
+                </code></pre>
+              </p>
+              <p>For SOW3 the relevant fields are <tt>prefLabel</tt>, which corresponds to the name of the value set,
+                and <tt>@id</tt>.</p>
+            </div>
+          </li>
+          <li>401 If calling user does not have permission to retrieve the value sets</li>
+        </ul>
+
+        <h6>/ontologies/NLMVS/classes/{id}?include=prefLabel,definition,properties</h6>
+
+        <p class="method-summary">Get the details of a specific value set.</p>
+
+        <p>Request parameters:</p>
+
+        <table>
+          <tr>
+            <th>parameter</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td><p><strong>id</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+            <td><p>the id of the value set</p></td>
+          </tr>
+        </table>
+
+        <div class="exampleRequests">
+          <p>Example request URI(s):</p>
+          <ul>
+            <li>Get the details of the value set "Bradycardia": <a
+                href="http://data.bioontology.org/ontologies/NLMVS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FNLMVS%2F2.16.840.1.113883.3.526.3.412?include=prefLabel,definition,properties&apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9">http://data.bioontology.org/ontologies/NLMVS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FNLMVS%2F2.16.840.1.113883.3.526.3.412?include=prefLabel,definition,properties"</a>
+            </li>
+          </ul>
+        </div>
+        <!-- exampleRequests -->
+
+        <p>Available response representations:</p>
+
+        <ul>
+          <li>
+            <div>200 application/json
+              [<a onclick="toggle('value_sets.get.ex2'); return false;" href="#"><em><span id="link-value_sets.get.ex2">expand</span></em></a>]
+            </div>
+            <div class="toggle" id="value_sets.get.ex2">
+              <p><h5>Example</h5>
+
+              <p>An example of a response containing details for a value set.</p>
+                    <pre><code>
+                      {
+                      "prefLabel": "Bradycardia",
+                      "definition": [],
+                      "properties": {
+                      "http://purl.bioontology.org/ontology/NLMVS/Version": [
+                      "2.16.840.1.113883.3.526.2.411"
+                      ],
+                      "http://purl.bioontology.org/ontology/NLMVS/OID": [
+                      "2.16.840.1.113883.3.526.3.412"
+                      ],
+                      "http://purl.bioontology.org/ontology/NLMVS/Definition": [
+                      "Bradycardia"
+                      ],
+                      "http://purl.bioontology.org/ontology/NLMVS/VersionComment": [
+                      "MU2 Update 2015-05-01"
+                      ],
+                      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+                      "Bradycardia"
+                      ],
+                      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+                      "http://www.w3.org/2004/02/skos/core#Concept",
+                      "http://www.w3.org/2002/07/owl#NamedIndividual"
+                      ]
+                      },
+                      "@id": "http://purl.bioontology.org/ontology/NLMVS/2.16.840.1.113883.3.464.1003.106.12.1001",
+                      "@type": "http://www.w3.org/2002/07/owl#Class",
+                      "links": {},
+                      "@context": {}
+                      }
+                    </code></pre>
+              </p>
+              <p>For SOW3 the relevant fields are <tt>prefLabel</tt>, which corresponds to the name of the value set,
+                and all the fields inside "properties" that start with "http://purl.bioontology.org/ontology/NLMVS/".
+                The relevant information for the value set "Bradycardia" is:
+              <ul>
+                <li>Value set name: Bradycardia</li>
+                <li>Version: 2.16.840.1.113883.3.526.2.411</li>
+                <li>OID: 2.16.840.1.113883.3.526.3.412</li>
+                <li>Definition: Bradycardia</li>
+                <li>VersionComment: MU2 Update 2015-05-01</li>
+              </ul>
+              </p>
+
+            </div>
+          </li>
+          <li>401 If calling user does not have permission to view the ontology</li>
+        </ul>
+
+        <h6 style="color:red">TODO: Method to query value sets by name</h6>
+
+      </div>
+      <!-- method -->
+    </div>
+    <!-- methods -->
+  </div>
+  <!-- resource -->
+
+  <div class="resource">
+    <h3 id="classes">/classes</h3>
+    <br/>
+    <h5>Methods</h5>
+
+    <div class="methods">
+
+      <div class="method">
+        <h4 id="classes.get">GET</h4>
+        <h6>search?q={query}</h6>
+
+        <p class="method-summary">Query all classes in BioPortal.</p>
+
+        <p>Query parameters:</p>
+        <table>
+          <tr>
+            <th>parameter</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td><p><strong>query</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+            <td><p>a query string matching a class name</p></td>
+          </tr>
+        </table>
+
+        <div class="exampleRequests">
+          <p>Example request URI(s):</p>
+          <ul>
+            <li><a href="http://data.bioontology.org/search/?q=studies&apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9">http://data.bioontology.org/search?q=studies</a>
+            </li>
+          </ul>
+        </div>
+        <!-- exampleRequests -->
+
+        <p>Available response representations:</p>
+
+        <ul>
+          <li>
+            <div>200 application/json
+              [<a onclick="toggle('classes.get.ex1'); return false;" href="#"><em><span
+                  id="link-classes.get.ex1">expand</span></em></a>]
+            </div>
+            <div class="toggle" id="classes.get.ex1">
+              <p><h5>Example</h5>
+
+              <p>An example of a response containing a set of classes.</p>
+                      <pre><code>
+                        {
+                        "page": 1,
+                        "pageCount": 17,
+                        "prevPage": null,
+                        "nextPage": 2,
+                        "links": {
+                        "nextPage":
+                        "http://data.bioontology.org/search/?q=studies&apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9&page=2",
+                        "prevPage": null
+                        },
+                        "collection": [
+                        {
+                        "prefLabel": "study",
+                        "synonym": ["studies"],
+                        "definition": ["a planned process that consists of parts"],
+                        "obsolete": false,
+                        "matchType": "synonym",
+                        "@id": "http://purl.org/ddi/owl#study",
+                        "@type": "http://www.w3.org/2002/07/owl#Class",
+                        "links": {
+                        "self":
+                        "http://data.bioontology.org/ontologies/HUPSON/classes/http%3A%2F%2Fpurl.org%2Fddi%2Fowl%23study",
+                        "ontology": "http://data.bioontology.org/ontologies/HUPSON"
+                        },
+                        "@context": {}
+                        }
+                        ]
+                        }
+                      </code></pre>
+              </p>
+              <p>The search results are paginated. The <tt>pageCount</tt> field indicates the number of pages,
+                the <tt>page</tt> field indicates the number of the current page, and the <tt>nextPage</tt> field
+                indicates
+                the number of the next page. The <tt>links</tt> field can be used to navigate between pages using the
+                contained
+                <tt>nextPage</tt> and <tt>prevPage</tt> fields.</p>
+
+              <p>Descriptions of classes matching the search are returned in an array called <tt>collection</tt>.
+                The relevant fields are <tt>prefLabel</tt> which is the text that should be displayed for the class
+                name.
+                The <tt>definition</tt> field may also be relevant. The <tt>@id</tt> field uniquely identifies the
+                class.</p>
+
+              <p>The <tt>links</tt> object contains two relevant fields. The <tt>self</tt> field contains the full
+                BioPortal
+                URL to get details class. This URL can be used to get detailed information on the class.</p>
+
+              <p>The <tt>ontology</tt> field contains the URL of the entology containing the class.
+                The last fragment of the name corresponds to the acronym of the ontology. This acronym can be used
+                as the display name of the source ontology. It can also be used get full details on the ontology itself
+                using
+                the ontology REST routes.</p>
+            </div>
+            <!-- toggle -->
+          </li>
+          <li>401 If calling user does not have permission to query the classes</li>
+        </ul>
+
+        <h6>/ontologies/{acronym}/classes/{id}</h6>
+
+        <p class="method-summary">Get the details of a specific class.</p>
+
+        <p>Request parameters:</p>
+        <table>
+          <tr>
+            <th>parameter</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td><p><strong>acronym</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+            <td><p>the acronym uniquely identifying an ontology</p></td>
+          </tr>
+          <tr>
+            <td><p><strong>id</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+            <td><p>the id of the class</p></td>
+          </tr>
+        </table>
+
+        <div class="exampleRequests">
+          <p>Example request URI(s):</p>
+          <ul>
+            <li><a
+                href="http://data.bioontology.org/ontologies/HUPSON/classes/http%3A%2F%2Fpurl.org%2Fddi%2Fowl%23study?apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9">http://data.bioontology.org/ontologies/HUPSON/classes/http%3A%2F%2Fpurl.org%2Fddi%2Fowl%23study</a>
+            </li>
+          </ul>
+        </div>
+        <!-- exampleRequests -->
+
+        <p>Available response representations:</p>
+        <ul>
+          <li>
+            <div>200 application/json
+              [<a onclick="toggle('classes.get.ex2'); return false;" href="#"><em><span
+                  id="link-classes.get.ex2">expand</span></em></a>]
+            </div>
+            <div class="toggle" id="classes.get.ex2">
+              <p><h5>Example</h5>
+
+              <p>An example of a response containing a description of a class.</p>
+                      <pre><code>
+                        {
+                        "prefLabel": "study",
+                        "synonym": [
+                        "studies"
+                        ],
+                        "definition": [
+                        "a planned process that consists of parts"
+                        ],
+                        "cui": [ ],
+                        "semanticType": [ ],
+                        "obsolete": false,
+                        "@id": "http://purl.org/ddi/owl#study",
+                        "@type": "http://www.w3.org/2002/07/owl#Class",
+                        "links": {},
+                        "@context": {}
+                        }
+                      </code></pre>
+              </p>
+              <p>The <tt>prefLabel</tt> field can be used as the display name of the class. The <tt>definition</tt>
+                field contains a textual description of the class.
+                The <tt>@id</tt> field uniquely identifies the class.</p>
+            </div>
+            <!-- toggle -->
+          </li>
+          <li>401 If calling user does not have permission to view the class</li>
+        </ul>
+
+        <h6>/ontologies/{acronym}/classes/{id}/tree</h6>
+
+        <p class="method-summary">Get the minimally expanded tree hierarchy for a specific class.</p>
+
+        <p>Request parameters:</p>
+        <table>
+          <tr>
+            <th>parameter</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td><p><strong>acronym</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+            <td><p>the acronym uniquely identifying an ontology</p></td>
+          </tr>
+          <tr>
+            <td><p><strong>id</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+            <td><p>the id of the class</p></td>
+          </tr>
+        </table>
+
+        <div class="exampleRequests">
+          <p>Example request URI(s):</p>
+          <ul>
+            <li><a
+                href="http://data.bioontology.org/ontologies/SYN/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23Nonclinical_Study_Type/tree?apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9">http://data.bioontology.org/ontologies/SYN/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23Nonclinical_Study_Type/tree</a>
+            </li>
+          </ul>
+        </div>
+        <!-- exampleRequests -->
+
+        <p>Available response representations:</p>
+        <ul>
+          <li>
+            <div>200 application/json
+              [<a onclick="toggle('classes.get.ex3'); return false;" href="#"><em><span
+                  id="link-classes.get.ex3">expand</span></em></a>]
+            </div>
+            <div class="toggle" id="classes.get.ex3">
+              <p><h5>Example</h5>
+
+              <p>An example of a response containing a description of a tree hierarchy for a class.</p>
+                      <pre><code>
+                        [
+                        {
+                        "prefLabel": "Manufacturer",
+                        "hasChildren": true,
+                        "children": [],
+                        "obsolete": false,
+                        "@id": "http://purl.bioontology.org/ontology/SYN#Manufacturer",
+                        "@type": "http://www.w3.org/2002/07/owl#Class",
+                        "links": {},
+                        "@context": {}
+                        },
+                        {
+                        "prefLabel": "Activity",
+                        "hasChildren": true,
+                        "children": [
+                        {
+                        "prefLabel": "Action",
+                        "hasChildren": true,
+                        "children": [ ],
+                        "obsolete": false,
+                        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Action",
+                        "@type": "http://www.w3.org/2002/07/owl#Class",
+                        "links": {},
+                        "@context": {}
+                        }
+                        ]
+                        }
+                        ]
+                      </code></pre>
+              </p>
+              <p>This call will return a minimally-expanded tree hierarchy for a specific class. The returned array
+                contains list
+                of parent classes in the ontology tree.</p>
+
+              <p>The <tt>prefLabel</tt>field in each class object can be used to display the class name. The <tt>hasChildren</tt>
+                field indicates if a
+                class has children. The <tt>children</tt> field contains the child classes for that class if they are
+                expanded.
+                This field can be used to recurisvely construct an expanded tree.
+
+              <p>
+            </div>
+            <!-- toggle -->
+          </li>
+          <li>401 If calling user does not have permission to view the class hierarchy</li>
+        </ul>
+
+        <h6>/ontologies/{acronym}/classes/{id}/children?pagesize={pagesize}</h6>
+
+        <p class="method-summary">Get the direct children of a specific class.</p>
+
+        <p>Request parameters:</p>
+        <table>
+          <tr>
+            <th>parameter</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td><p><strong>acronym</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+            <td><p>the acronym uniquely identifying an ontology</p></td>
+          </tr>
+          <tr>
+            <td><p><strong>id</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+            <td><p>the id of the class</p></td>
+          </tr>
+        </table>
+
+        <p>Query parameters:</p>
+        <table>
+          <tr>
+            <th>parameter</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td><p><strong>pagesize</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a></em></p></td>
+            <td><p>the number of classes per page</p></td>
+          </tr>
+        </table>
+
+        <div class="exampleRequests">
+          <p>Example request URI(s):</p>
+          <ul>
+            <li><a
+                href="http://data.bioontology.org/ontologies/SYN/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23Action/children?pagesize=100&apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9">http://data.bioontology.org/ontologies/SYN/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23Action/children?&pagesize=100</a>
+            </li>
+          </ul>
+        </div>
+        <!-- exampleRequests -->
+
+        <p>Available response representations:</p>
+        <ul>
+          <li>
+            <div>200 application/json
+              [<a onclick="toggle('classes.get.ex4'); return false;" href="#"><em><span
+                  id="link-classes.get.ex4">expand</span></em></a>]
+            </div>
+            <div class="toggle" id="classes.get.ex4">
+              <p><h5>Example</h5>
+
+              <p>An example of a response containing a description of a tree hierarchy for a class.</p>
+                          <pre><code>
+                            {
+                            "page": 1,
+                            "pageCount": 7,
+                            "prevPage": null,
+                            "nextPage": 2,
+                            "links": {
+                            "nextPage":
+                            "http://data.bioontology.org/ontologies/SYN/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23Action/children?page=2",
+                            "prevPage": null
+                            },
+                            "collection": [
+                            {
+                            "prefLabel": "Procedure",
+                            "synonym": [ ],
+                            "definition": [ ],
+                            "cui": [ ],
+                            "semanticType": [ ],
+                            "obsolete": false,
+                            "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Procedure_Generic",
+                            "@type": "http://www.w3.org/2002/07/owl#Class",
+                            "links": {},
+                            "@context": {}
+                            }
+                            ]
+                            }
+                          </code></pre>
+              </p>
+              <p>As with class search results, the list of children for a class is paginated. The <tt>pageCount</tt>
+                field indicates the number of pages, the <tt>page</tt> field indicates the number of the current page,
+                and the <tt>nextPage</tt> field indicates the number of the next page. The <tt>links</tt> field can be
+                used to navigate between pages using the contained <tt>nextPage</tt> and <tt>prevPage</tt> fields.</p>
+
+              <p>For a first iteration, using the <tt>pagesize</tt> query parameter to set the number of children to,
+                say, 100 and ignoring additional children may be ok.</p>
+
+              <p>Descriptions of classes that are children on the requested class are returned in an array called <tt>collection</tt>.
+                The relevant fields are <tt>prefLabel</tt> which is the text that should be displayed for the class
+                name. The <tt>definition</tt> field may also be relevant. The <tt>@id</tt> field uniquely identifies the
+                class.</p>
+
+            </div>
+            <!-- toggle -->
+          </li>
+          <li>401 If calling user does not have permission to view the class hierarchy</li>
+        </ul>
+
+        <h6>/ontologies/{acronym}/classes/roots</h6>
+
+        <p class="method-summary">Get all root classes of a specific ontology.</p>
+
+        <p>Request parameters:</p>
+        <table>
+          <tr>
+            <th>parameter</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td><p><strong>acronym</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+            <td><p>the acronym of the ontology</p></td>
+          </tr>
+        </table>
+
+        <div class="exampleRequests">
+          <p>Example request URI(s):</p>
+          <ul>
+            <li>Get the root classes for the MEDDRA ontology: <a
+                href="http://data.bioontology.org/ontologies/MEDDRA/classes/roots?apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9">http://data.bioontology.org/ontologies/MEDDRA/classes/roots</a>
+            </li>
+          </ul>
+        </div>
+        <!-- exampleRequests -->
+
+        <p>Available response representations:</p>
+        <ul>
+          <li>
+            <div>200 application/json
+              [<a onclick="toggle('classes.get.ex5'); return false;" href="#"><em><span
+                  id="link-classes.get.ex5">expand</span></em></a>]
+            </div>
+            <div class="toggle" id="classes.get.ex5">
+              <p><h5>Example</h5>
+
+              <p>An example of a response containing the root classes in an ontology.</p>
+                          <pre><code>
+                            [
+                            {
+                            "prefLabel": "Nervous system disorders",
+                            "synonym": [],
+                            "definition": [],
+                            "cui": [
+                            "C0027765"
+                            ],
+                            "semanticType": [
+                            "http://purl.bioontology.org/ontology/STY/T047"
+                            ],
+                            "obsolete": false,
+                            "@id": "http://purl.bioontology.org/ontology/MEDDRA/10029205",
+                            "@type": "http://www.w3.org/2002/07/owl#Class",
+                            "links": {},
+                            "@context": {}
+                            },
+                            {
+                            "prefLabel": "Injury, poisoning and procedural complications",
+                            "synonym": [],
+                            "definition": [],
+                            "cui": [
+                            "C0947733"
+                            ],
+                            "semanticType": [
+                            "http://purl.bioontology.org/ontology/STY/T037"
+                            ],
+                            "obsolete": false,
+                            "@id": "http://purl.bioontology.org/ontology/MEDDRA/10022117",
+                            "@type": "http://www.w3.org/2002/07/owl#Class",
+                            "links": {},
+                            "@context": {}
+                            },
+                            {},
+                            {}
+                            ]
+                          </code></pre>
+              </p>
+
+              <p>For SOW3 the relevant fields are <tt>prefLabel</tt>, which contains the name of the class and
+                <tt>@id</tt>.</p>
+
+            </div>
+            <!-- toggle -->
+          </li>
+          <li>401 If calling user does not have permission to retrieve the classes</li>
+        </ul>
+
+        <h6>/ontologies/NLMVS/classes/{id}/children?pagesize={pagesize}</h6>
+
+        <p class="method-summary">Get all classes in a value set.</p>
+
+        <p>Request parameters:</p>
+        <table>
+          <tr>
+            <th>parameter</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td><p><strong>id</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+            <td><p>the id of the value set</p></td>
+          </tr>
+        </table>
+
+        <p>Query parameters:</p>
+        <table>
+          <tr>
+            <th>parameter</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td><p><strong>pagesize</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a></em></p></td>
+            <td><p>the number of classes per page</p></td>
+          </tr>
+        </table>
+
+        <div class="exampleRequests">
+          <p>Example request URI(s):</p>
+          <ul>
+            <li>Get the classes in the value set "Bradycardia": <a
+                href="http://data.bioontology.org/ontologies/NLMVS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FNLMVS%2F2.16.840.1.113883.3.526.3.412/children?pagesize=100&apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9">http://data.bioontology.org/ontologies/NLMVS/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FNLMVS%2F2.16.840.1.113883.3.526.3.412/children?pagesize=100</a>
+            </li>
+          </ul>
+        </div>
+        <!-- exampleRequests -->
+
+        <p>Available response representations:</p>
+        <ul>
+          <li>
+            <div>200 application/json
+              [<a onclick="toggle('classes.get.ex6'); return false;" href="#"><em><span
+                  id="link-classes.get.ex6">expand</span></em></a>]
+            </div>
+            <div class="toggle" id="classes.get.ex6">
+              <p><h5>Example</h5>
+
+              <p>An example of a response containing the classes in a value set.</p>
+                          <pre><code>
+                            {
+                            "page": 1,
+                            "pageCount": 1,
+                            "prevPage": null,
+                            "nextPage": null,
+                            "links": {
+                            "nextPage": null,
+                            "prevPage": null
+                            },
+                            "collection": [
+                            {
+                            "prefLabel": "Sick sinus syndrome",
+                            "synonym": [],
+                            "definition": [],
+                            "cui": [],
+                            "semanticType": [],
+                            "obsolete": false,
+                            "@id": "http://purl.bioontology.org/ontology/ICD10CM/I49.5",
+                            "@type": "http://www.w3.org/2002/07/owl#Class",
+                            "links": {},
+                            "@context": {}
+                            },
+                            {
+                            "prefLabel": "Other specified cardiac arrhythmias",
+                            "synonym": [],
+                            "definition": [],
+                            "cui": [],
+                            "semanticType": [],
+                            "obsolete": false,
+                            "@id": "http://purl.bioontology.org/ontology/ICD10CM/I49.8",
+                            "@type": "http://www.w3.org/2002/07/owl#Class",
+                            "links": {},
+                            "@context": {}
+                            },
+                            {},
+                            {}
+                            ]
+                            }
+                          </code></pre>
+              </p>
+              <p>As with class search results, the list of classes in a value set is paginated. The <tt>pageCount</tt>
+                field indicates the number of pages, the <tt>page</tt> field indicates the number of the current page,
+                and the <tt>nextPage</tt> field indicates the number of the next page. The <tt>links</tt> field can be
+                used to navigate between pages using the contained <tt>nextPage</tt> and <tt>prevPage</tt> fields.</p>
+
+              <p>For a first iteration, using the <tt>pagesize</tt> query parameter to set the number of classes to,
+                say, 100 and ignoring additional classes may be ok.</p>
+
+              <p>Descriptions of classes that belong to the specified value set are returned in an array called <tt>collection</tt>.
+                The relevant fields are <tt>prefLabel</tt> which is the text that should be displayed for the class
+                name. The <tt>definition</tt> field may also be relevant. The <tt>@id</tt> field uniquely identifies the
+                class.</p>
+
+            </div>
+            <!-- toggle -->
+          </li>
+          <li>401 If calling user does not have permission to retrieve the classes</li>
+        </ul>
+
+      </div>
+      <!-- method -->
+
+    </div>
+    <!-- methods -->
+  </div>
+  <!-- resource -->
+</div>
+<!-- resources -->
+
+</body>
+</html>
