@@ -1,0 +1,951 @@
+<!DOCTYPE html
+          PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>CEDAR Templates Server REST API</title>
+    <style type="text/css">
+      body {
+      font-family: sans-serif;
+      font-size: 0.85em;
+      margin: 2em 8em;
+      }
+      #table-of-contents li {
+      margin-top: 5px;
+      }
+      .methods {
+      background-color: #eef;
+      padding: 1em;
+      }
+      h1 {
+      font-size: 2.5em;
+      }
+      h2 {
+      border-bottom: 1px solid black;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      font-size: 2em;
+      }
+      h3 {
+      color: orange;
+      font-size: 1.75em;
+      margin-top: 1.25em;
+      margin-bottom: 0em;
+      }
+      h4 {
+      margin: 0em;
+      padding: 0em;
+      border-bottom: 2px solid white;
+      }
+      h6 {
+      font-size: 1.1em;
+      color: #99a;
+      margin: 0.5em 0em 0.25em 0em;
+      }
+      dd {
+      margin-left: 1em;
+      }
+      tt {
+      font-size: 1.2em;
+      }
+      table {
+      margin-bottom: 0.5em;
+      }
+      th {
+      text-align: left;
+      font-weight: normal;
+      color: black;
+      border-bottom: 1px solid black;
+      padding: 3px 6px;
+      }
+      td {
+      padding: 3px 6px;
+      vertical-align: top;
+      background-color: f6f6ff;
+      font-size: 0.85em;
+      }
+      td p {
+      margin: 0px;
+      }
+      ul {
+      padding-left: 1.75em;
+      }
+      p + ul, p + ol, p + dl {
+      margin-top: 0em;
+      }
+      .optional {
+      font-weight: normal;
+      opacity: 0.75;
+      }
+      .code-tag {
+      color: #000091;
+      background-color: inherit;
+      }
+      .code-comment {
+      color: #808080;
+      background-color: inherit;
+      }
+      .code-xml .code-keyword {
+      color: inherit;
+      font-weight: bold;
+      }
+      .code-quote {
+      color: #009100;
+      background-color: inherit;
+      }
+    </style>
+
+    <script type="text/javascript">
+      /*
+      Developed by Robert Nyman, http://www.robertnyman.com
+      Code/licensing: http://code.google.com/p/getelementsbyclassname/
+      */
+      var getElementsByClassName = function (className, tag, elm){
+      if (document.getElementsByClassName) {
+      getElementsByClassName = function (className, tag, elm) {
+      elm = elm || document;
+      var elements = elm.getElementsByClassName(className),
+      nodeName = (tag)? new RegExp("\\b" + tag + "\\b", "i") : null,
+      returnElements = [],
+      current;
+      for(var i=0, il=elements.length; i<il; i+=1){
+                                             current = elements[i];
+                                             if(!nodeName || nodeName.test(current.nodeName)) {
+                                             returnElements.push(current);
+                                             }
+                                             }
+                                             return returnElements;
+                                             };
+                                             }
+                                             else if (document.evaluate) {
+                                             getElementsByClassName = function (className, tag, elm) {
+                                             tag = tag || "*";
+                                             elm = elm || document;
+                                             var classes = className.split(" "),
+                                             classesToCheck = "",
+                                             xhtmlNamespace = "http://www.w3.org/1999/xhtml",
+                                             namespaceResolver = (document.documentElement.namespaceURI === xhtmlNamespace)? xhtmlNamespace : null,
+                                             returnElements = [],
+                                             elements,
+                                             node;
+                                             for(var j=0, jl=classes.length; j<jl; j+=1){
+                                                                                   classesToCheck += "[contains(concat(' ', @class, ' '), ' " + classes[j] + " ')]";
+                                                                                   }
+                                                                                   try	{
+                                                                                   elements = document.evaluate(".//" + tag + classesToCheck, elm, namespaceResolver, 0, null);
+                                                                                   }
+                                                                                   catch (e) {
+                                                                                   elements = document.evaluate(".//" + tag + classesToCheck, elm, null, 0, null);
+                                                                                   }
+                                                                                   while ((node = elements.iterateNext())) {
+                                                                                   returnElements.push(node);
+                                                                                   }
+                                                                                   return returnElements;
+                                                                                   };
+                                                                                   }
+                                                                                   else {
+                                                                                   getElementsByClassName = function (className, tag, elm) {
+                                                                                   tag = tag || "*";
+                                                                                   elm = elm || document;
+                                                                                   var classes = className.split(" "),
+                                                                                   classesToCheck = [],
+                                                                                   elements = (tag === "*" && elm.all)? elm.all : elm.getElementsByTagName(tag),
+                                                                                   current,
+                                                                                   returnElements = [],
+                                                                                   match;
+                                                                                   for(var k=0, kl=classes.length; k<kl; k+=1){
+                                                                                                                         classesToCheck.push(new RegExp("(^|\\s)" + classes[k] + "(\\s|$)"));
+                                                                                                                         }
+                                                                                                                         for(var l=0, ll=elements.length; l<ll; l+=1){
+                                                                                                                                                                current = elements[l];
+                                                                                                                                                                match = false;
+                                                                                                                                                                for(var m=0, ml=classesToCheck.length; m<ml; m+=1){
+                                                                                                                                                                                                             match = classesToCheck[m].test(current.className);
+                                                                                                                                                                                                             if (!match) {
+                                                                                                                                                                                                             break;
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             if (match) {
+                                                                                                                                                                                                             returnElements.push(current);
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             return returnElements;
+                                                                                                                                                                                                             };
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             return getElementsByClassName(className, tag, elm);
+                                                                                                                                                                                                             };
+                                                                                                                                                                                                             
+                                                                                                                                                                                                             function toggle(id) {
+                                                                                                                                                                                                             var el = document.getElementById(id);
+                                                                                                                                                                                                             el.style.display = (el.style.display != 'none' ? 'none' : '' );
+                                                                                                                                                                                                             document.getElementById("link-" + id).innerHTML = (el.style.display == 'none' ? 'expand' : 'collapse' );
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             
+                                                                                                                                                                                                             function hideAll() {
+                                                                                                                                                                                                             var examples = getElementsByClassName("toggle", "div");
+                                                                                                                                                                                                             for (var i = 0; i < examples.length; i++) {
+                                                                                                                                                                                                                                 toggle(examples[i].id);
+                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                 function format(codeElem) {
+      			                                                                                                                                                                                                         try {
+                                                                                                                                                                                                                                 var obj = JSON.parse(codeElem.innerHTML);
+                                                                                                                                                                                                                                 codeElem.innerHTML = JSON.stringify(obj, null, 4);
+                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                 catch (e)
+                                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                                 // err
+                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                 function formatAll() {
+                                                                                                                                                                                                                                 var jsonCodes = document.getElementsByTagName("code");
+                                                                                                                                                                                                                                 for (var i = 0; i < jsonCodes.length; i++) {
+                                                                                                                                                                                                                                                     format(jsonCodes[i]);
+                                                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                                                     </script>
+  </head>
+
+  <body onload="hideAll(); formatAll();">
+
+    <h1>CEDAR Templates Server REST API</h1>
+
+    <p>The server supports three types of resources: templates, template elements, and template instances. Templates and template elements are
+      represented using JSON Schema and are annotated using JSON-LD. Template instances are represented using JSON and are also annoted
+      with JSON-LD. No other formats are supported.<p>
+
+    <p>Descriptions of these representations are detailed in the "CEDAR Repository Model" document.</p>
+    
+    <h2>Resource Index</h2>
+
+    <p>These are the resources.</p>
+
+    <ul>
+      <li>
+        <a href="#templates">/templates</a> [<a href="#templates.post">POST</a>, <a href="#templates.get">GET</a>, <a href="#templates.put">PUT</a>, <a href="#templates.delete">DELETE</a>]
+      </li>
+      <li>
+        <a href="#template_elements">/template_elements</a> [<a href="#template_elements.post">POST</a>, <a href="#template_elements.get">GET</a>, <a href="#template_elements.put">PUT</a>, <a href="#template_elements.delete">DELETE</a>]
+      </li>
+      <li>
+        <a href="#template_instances">/template_instances</a> [<a href="#template_instances.post">POST</a>, <a href="#template_instances.get">GET</a>, <a href="#template_instances.put">PUT</a>, <a href="#template_instances.delete">DELETE</a>]
+      </li>
+    </ul>
+
+    <h2 id="resources">Resources</h2>
+
+    <div class="resource">
+      <h3 id="templates">/templates/{id}</h3>
+
+      <p>Templates are represented using JSON Schema. This representation is detailed in the "The CEDAR Repository Model" document.</p>
+
+      <p>Resource-wide parameters for template resources:</p>
+
+      <table>
+        <tr><th>parameter</th><th>value</th><th>description</th></tr>
+        <tr>
+          <td><p><strong>id</strong></p></td>
+          <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+          <td><p>the id of a template</p></td>
+        </tr>
+      </table>
+
+      <h6>Methods</h6>
+      <div class="methods">
+
+        <div class="method">
+          <h4 id="templates.get">GET</h4>
+          <p>Get a template.</p>
+
+          <div class="exampleRequests">
+            <p>Example request URI(s):</p>
+            <ul>
+              <li><code>http://metadatacenter.org/templates/</code></li>
+              <li><code>http://metadatacenter.org/templates/basic_study_design</code></li>
+            </ul>
+          </div> <!-- exampleRequests -->
+
+          <p>Request query parameters:</p>
+          
+          <table>
+            <tr><th>parameter</th><th>value</th><th>description</th></tr>
+            <tr>
+              <td><p><strong>id</strong></p></td>
+              <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+              <td><p>the id of the template</p></td>
+            </tr>
+          </table>
+
+          <p>Available response representations:</p>
+
+          <ul>
+            <li>
+              <div>200 application/json
+                [<a onclick="toggle('templates.get.ex1'); return false;" href="#"><em><span id="link-templates.get.ex1">expand</span></em></a>]
+              </div>
+              <div class="toggle" id="templates.get.ex1">
+                <p><h6>Example</h6>
+                <p>An example of a template describing a basic study design.</p>
+                <pre><code>
+                    {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "@id": "http://metadatacenter.org/templates/basic_study_design",
+                    "title": "Basic study design",
+                    "description": "Basic example of a template to describe a study",
+                    "properties": {
+                    "@context": {
+                    "properties": {
+                    "brief_title": {
+                    "enum": ["https://schema.org/title"]
+                    },
+                    "principal_investigator": {
+                    "enum": [
+                    "http://metadatacenter.org/properties/principal_investigator"
+                    ]
+                    }
+                    },
+                    "required": ["brief_title", "principal_investigator"],
+                    "additionalProperties": false
+                    },
+                    "@id": {
+                    "type": "string",
+                    "format": "uri"
+                    },
+                    "@type": {
+                    "enum": ["http://metadatacenter.org/schemas/BasicStudyDesign"]
+                    },
+                    "brief_title": {
+                    "$ref": "http://metadatacenter.org/schemas/brief_title"
+                    },
+                    "principal_investigator": {
+                    "$ref": "http://metadatacenter.org/schemas/principal_investigator"
+                    }
+                    },
+                    "required": ["@context", "@id", "@type","brief_title",
+                    "principal_investigator"
+                    ],
+                    "additionalProperties": false
+                    }
+                </code></pre></p>
+              </div>
+            </li>
+            <li>401 If calling user does not have permission to view the template</li>
+          </ul>
+
+        </div> <!-- method -->
+
+        <div class="method">
+          <h4 id="templates.post">POST</h4>
+
+          <p>Create a template.</p>
+
+          <p>Acceptable request representations:</p>
+
+          <ul>
+            <li>
+              <div>200 application/json
+                [<a onclick="toggle('templates.post.ex1'); return false;" href="#"><em><span id="link-templates.post.ex1">expand</span></em></a>]
+              </div>
+              <div class="toggle" id="templates.post.ex1">
+                <p><h6>Example</h6>
+                <p>An example of a template describing a basic study design.</p>
+                <pre><code>
+                    {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "@id": "http://metadatacenter.org/templates/basic_study_design",
+                    "title": "Basic study design",
+                    "description": "Basic example of a template to describe a study",
+                    "properties": {
+                    "@context": {
+                    "properties": {
+                    "brief_title": {
+                    "enum": ["https://schema.org/title"]
+                    },
+                    "principal_investigator": {
+                    "enum": [
+                    "http://metadatacenter.org/properties/principal_investigator"
+                    ]
+                    }
+                    },
+                    "required": ["brief_title", "principal_investigator"],
+                    "additionalProperties": false
+                    },
+                    "@id": {
+                    "type": "string",
+                    "format": "uri"
+                    },
+                    "@type": {
+                    "enum": ["http://metadatacenter.org/schemas/BasicStudyDesign"]
+                    },
+                    "brief_title": {
+                    "$ref": "http://metadatacenter.org/schemas/brief_title"
+                    },
+                    "principal_investigator": {
+                    "$ref": "http://metadatacenter.org/schemas/principal_investigator"
+                    }
+                    },
+                    "required": ["@context", "@id", "@type","brief_title",
+                    "principal_investigator"
+                    ],
+                    "additionalProperties": false
+                    }
+                </code></pre></p>
+              </div>
+            </li>
+          </ul>
+
+          <p>Responses:</p>
+
+          <ul>
+            <li>201 If successfully created.</li>
+            <li>401 If calling user is not authorized to create a template</li>
+          </ul>
+
+        </div> <!-- method -->
+
+        <div class="method">
+          <h4 id="templates.put">PUT</h4>
+
+          <p>Update a template. Overwrites previous template with same id.</p>
+
+          <table>
+            <tr><th>parameter</th><th>value</th><th>description</th></tr>
+            <tr>
+              <td><p><strong>id</strong></p></td>
+              <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+              <td><p>the id of the template</p></td>
+            </tr>
+          </table>
+
+          <p>Acceptable request representations:</p>
+
+          <ul>
+            <li>
+              <div>200 application/json
+                [<a onclick="toggle('templates.put.ex1'); return false;" href="#"><em><span id="link-templates.put.ex1">expand</span></em></a>]
+              </div>
+              <div class="toggle" id="templates.put.ex1">
+                <p><h6>Example</h6>
+                <p>An example of a template describing a basic study design.</p>
+                <pre><code>
+                    {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "@id": "http://metadatacenter.org/templates/basic_study_design",
+                    "title": "Basic study design",
+                    "description": "Basic example of a template to describe a study",
+                    "properties": {
+                    "@context": {
+                    "properties": {
+                    "brief_title": {
+                    "enum": ["https://schema.org/title"]
+                    },
+                    "principal_investigator": {
+                    "enum": [
+                    "http://metadatacenter.org/properties/principal_investigator"
+                    ]
+                    }
+                    },
+                    "required": ["brief_title", "principal_investigator"],
+                    "additionalProperties": false
+                    },
+                    "@id": {
+                    "type": "string",
+                    "format": "uri"
+                    },
+                    "@type": {
+                    "enum": ["http://metadatacenter.org/schemas/BasicStudyDesign"]
+                    },
+                    "brief_title": {
+                    "$ref": "http://metadatacenter.org/schemas/brief_title"
+                    },
+                    "principal_investigator": {
+                    "$ref": "http://metadatacenter.org/schemas/principal_investigator"
+                    }
+                    },
+                    "required": ["@context", "@id", "@type","brief_title",
+                    "principal_investigator"
+                    ],
+                    "additionalProperties": false
+                    }
+                </code></pre></p>
+              </div>
+            </li>
+          </ul>
+
+          <p>Responses:</p>
+
+          <ul>
+            <ul>
+              <li>204 If templates is updated successfully </li>
+              <li>401 If calling user is not authorized to update the template</li>
+            </ul>
+
+          </div> <!-- method -->
+
+          <div class="method">
+            <h4 id="templates.delete">DELETE</h4>
+
+            <p>Delete a template.</p>
+
+            <table>
+              <tr><th>parameter</th><th>value</th><th>description</th></tr>
+              <tr>
+                <td><p><strong>id</strong></p></td>
+                <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+                <td><p>the id of the template</p></td>
+              </tr>
+            </table>
+
+            <p>Responses:</p>
+
+            <ul>
+              <ul>
+                <li>200 If the template is deleted successfully </li>
+                <li>401 If calling user is not authorized to delete the template</li>
+              </ul>
+
+            </div> <!-- method -->
+
+          </div> <!-- methods -->
+        </div> <!-- resource -->
+
+        <div class="resource">
+          <h3 id="templates">/template_elements/{id}</h3>
+
+          <p>Template elements are represented using JSON Schema. This representation is detailed in the "CEDAR Repository Model" document.</p>
+
+          <p>Resource-wide parameters for template element resources:</p>
+
+          <table>
+            <tr><th>parameter</th><th>value</th><th>description</th></tr>
+            <tr>
+              <td><p><strong>id</strong></p></td>
+              <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+              <td><p>the id of a template element</p></td>
+            </tr>
+          </table>
+
+          <h6>Methods</h6>
+          <div class="methods">
+
+            <div class="method">
+              <h4 id="template_elements.get">GET</h4>
+              <p>Get a template element.</p>
+
+              <div class="exampleRequests">
+                <p>Example request URI(s):</p>
+                <ul>
+                  <li><code>http://metadatacenter.org/template_elements/</code></li>
+                  <li><code>http://metadatacenter.org/template_elements/principal_investigator</code></li>
+                </ul>
+              </div> <!-- exampleRequests -->
+
+              <p>Request query parameters:</p>
+              
+              <table>
+                <tr><th>parameter</th><th>value</th><th>description</th></tr>
+                <tr>
+                  <td><p><strong>id</strong></p></td>
+                  <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+                  <td><p>the id of the template elements</p></td>
+                </tr>
+              </table>
+
+              <p>Available response representations:</p>
+
+              <ul>
+                <li>
+                  <div>200 application/json
+                    [<a onclick="toggle('template_elements.get.ex1'); return false;" href="#"><em><span id="link-template_elements.get.ex1">expand</span></em></a>]
+                  </div>
+                  <div class="toggle" id="template_elements.get.ex1">
+                    <p><h6>Example</h6>
+                    <p>An example of a template element describing a brief title.</p>
+                    <pre><code>
+                        {
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "@id": "http://metadatacenter.org/template_element/brief_title",
+                        "title": "Brief title",
+                        "description": "The title of the study",
+                        "properties": {
+                        "@context": {
+                        "properties": {
+                        "value": {
+                        "enum": ["https://schema.org/value"]
+                        }
+                        },
+                        "required": ["value"],
+                        "additionalProperties": false
+                        },
+                        "@type": {
+                        "enum": [
+                        "http://semanticscience.org/resource/SIO_000185"
+                        ]
+                        },
+                        "value": {
+                        "type": "string"
+                        }
+                        },
+                        "required": ["@context", "@type", "value"],
+                        "additionalProperties": false
+                        }
+                    </code></pre></p>
+                  </div>
+                </li>
+                <li>401 If calling user does not have permission to view the template element</li>
+              </ul>
+
+            </div> <!-- method -->
+
+            <div class="method">
+              <h4 id="template_element.post">POST</h4>
+
+              <p>Create a template element.</p>
+
+              <p>Acceptable request representations:</p>
+
+              <ul>
+                <li>
+                  <div>200 application/json
+                    [<a onclick="toggle('template_elements.post.ex1'); return false;" href="#"><em><span id="link-template_elements.post.ex1">expand</span></em></a>]
+                  </div>
+                  <div class="toggle" id="template_elements.post.ex1">
+                    <p><h6>Example</h6>
+                    <p>An example of a template element describing a principal investigator.</p>
+                    <pre><code>
+                        {
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "@id": "http://metadatacenter.org/template_elements/principal_investigator",
+                        "title": "Principal Investigator",
+                        "description": "The lead researcher for the study",
+                        "properties": {
+                        "@context": {
+                        "properties": {
+                        "full_name": {
+                        "enum": ["https://schema.org/name"]
+                        },
+                        "institution": {
+                        "enum": ["http://metadatacenter.org/properties/institution"]
+                        }
+                        },
+                        "required": ["full_name", "institution"],
+                        "additionalProperties": false
+                        },
+                        "@type": {
+                        "enum": ["http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19924"]
+                        },
+                        "full_name": {
+                        "$ref": "http://metadatacenter.org/schemas/full_name"
+                        },
+                        "institution": {
+                        "$ref": "http://metadatacenter.org/schemas/institution"
+                        }
+                        },
+                        "required": ["@context", "@type", "full_name", "institution"],
+                        "additionalProperties": false
+                        }
+                    </code></pre></p>
+                  </div>
+                </li>
+              </ul>
+
+              <p>Responses:</p>
+
+              <ul>
+                <li>201 If successfully created.</li>
+                <li>401 If calling user is not authorized to create a template element</li>
+              </ul>
+
+            </div> <!-- method -->
+
+            <div class="method">
+              <h4 id="template_elements.put">PUT</h4>
+
+              <p>Update a template element. Overwrites previous template element with same id.</p>
+
+              <table>
+                <tr><th>parameter</th><th>value</th><th>description</th></tr>
+                <tr>
+                  <td><p><strong>id</strong></p></td>
+                  <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+                  <td><p>the id of the template element</p></td>
+                </tr>
+              </table>
+
+              <p>Acceptable request representations:</p>
+
+              <ul>
+                <li>
+                  <div>200 application/json
+                    [<a onclick="toggle('template_elements.put.ex1'); return false;" href="#"><em><span id="link-template_elements.put.ex1">expand</span></em></a>]
+                  </div>
+                  <div class="toggle" id="template_elements.put.ex1">
+                    <h6>Example</h6>
+                    <p>An example of a template element describing a name.</p>
+                    <pre><code>
+                        {
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "@id": "http://metadatacenter.org/template_elements/full_name",
+                        "title": "Full name",
+                        "description": "Whole name, including first, middle, and last name",
+                        "properties": {
+                        "@context": {
+                        "properties": {
+                        "value": {
+                        "enum": ["https://schema.org/value"]
+                        }
+                        },
+                        "required": ["value"],
+                        "additionalProperties": false
+                        },
+                        "@type": {
+                        "enum": ["http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25191"]
+                        },
+                        "value": {
+                        "type": "string"
+                        }
+                        },
+                        "required": ["@context", "@type", "value"],
+                        "additionalProperties": false
+                        }
+                  </code></pre></p>
+                </div>
+              </li>
+            </ul>
+
+            <p>Responses:</p>
+
+            <ul>
+              <ul>
+                <li>204 If template element is updated successfully </li>
+                <li>401 If calling user is not authorized to update the template element</li>
+              </ul>
+
+            </div> <!-- method -->
+
+            <div class="method">
+              <h4 id="template_elements.delete">DELETE</h4>
+
+              <p>Delete a template element.</p>
+
+              <table>
+                <tr><th>parameter</th><th>value</th><th>description</th></tr>
+                <tr>
+                  <td><p><strong>id</strong></p></td>
+                  <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+                  <td><p>the id of the template element</p></td>
+                </tr>
+              </table>
+
+              <p>Responses:</p>
+
+              <ul>
+                <ul>
+                  <li>200 If the template element is deleted successfully </li>
+                  <li>401 If calling user is not authorized to delete the template element</li>
+                </ul>
+
+              </div> <!-- method -->
+
+            </div> <!-- methods -->
+          </div> <!-- resource -->
+
+          <div class="resource">
+            <h3 id="templates">/template_instances/{id}</h3>
+
+            <p>Templates instances are represented using JSON Schema. This representation is detailed in the "CEDAR Repository Model" document.</p>
+
+            <p>Resource-wide parameters for template instance resources:</p>
+
+            <table>
+              <tr><th>parameter</th><th>value</th><th>description</th></tr>
+              <tr>
+                <td><p><strong>id</strong></p></td>
+                <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+                <td><p>the id of a template instance</p></td>
+              </tr>
+            </table>
+
+            <h6>Methods</h6>
+            <div class="methods">
+
+              <div class="method">
+                <h4 id="template_instances.get">GET</h4>
+                <p>Get a template.</p>
+
+                <div class="exampleRequests">
+                  <p>Example request URI(s):</p>
+                  <ul>
+                    <li><code>http://metadatacenter.org/templates_instances/</code></li>
+                    <li><code>http://metadatacenter.org/templates_instances/123</code></li>
+                  </ul>
+                </div> <!-- exampleRequests -->
+
+                <p>Request query parameters:</p>
+                
+                <table>
+                  <tr><th>parameter</th><th>value</th><th>description</th></tr>
+                  <tr>
+                    <td><p><strong>id</strong></p></td>
+                    <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+                    <td><p>the id of the template instance</p></td>
+                  </tr>
+                </table>
+
+                <p>Available response representations:</p>
+
+                <ul>
+                  <li>
+                    <div>200 application/json
+                      [<a onclick="toggle('template_instances.get.ex1'); return false;" href="#"><em><span id="link-template_instances.get.ex1">expand</span></em></a>]
+                    </div>
+                    <div class="toggle" id="template_instances.get.ex1">
+                      <h6>Example</h6>
+                      <p>An example of a template instance describing a name.</p>
+                      <pre><code>
+                          {                                                  
+                          "@context": {},
+                          "@type": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25191",
+                          "@id": "http://metadatacenter.org/template_instances/full_name_343",
+                          "templateID" : "http://metadatacenter.org/templates/full_name",
+                          "value": "Billy Bob"
+                          }
+                      </code></pre>
+                    </div>
+                  </li>
+                  <li>401 If calling user does not have permission to view the template instance</li>
+                </ul>
+
+              </div> <!-- method -->
+
+              <div class="method">
+                <h4 id="template_instances.post">POST</h4>
+
+                <p>Create a template instances.</p>
+
+                <p>Acceptable request representations:</p>
+
+                <ul>
+                  <li>
+                    <div>200 application/json
+                      [<a onclick="toggle('template_instances.post.ex1'); return false;" href="#"><em><span id="link-template_instances.post.ex1">expand</span></em></a>]
+                    </div>
+                    <div class="toggle" id="template_instances.post.ex1">
+                      <h6>Example</h6>
+                      <p>An example of a template instance describing a principal investigator</p>
+                      <pre><code>
+                          {
+                          "@context": {
+                          "properties": {
+                          "full_name": {
+                          "enum": ["https://schema.org/name"]
+                          }
+                          }
+                          },
+                          "templateID": "http://metadatacenter.org/templates/",
+                          "@type": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19924",
+                          "@id": "http://metadatacenter.org/template_instances/principal_investigator_323",
+                          "institution": "http://metadatacenter.org/properties/institution",
+                          "full_name": { 
+                          "@context": {},
+                          "@type": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C232",
+                          "value": "Billy Bob"
+                          },
+                          "institution": {
+                          "@context": {},
+                          "@type": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2212",
+                          "value": "Stanford"
+                          }
+                          }
+                    </code></pre>
+                  </div>
+                </li>
+              </ul>
+
+              <p>Responses:</p>
+
+              <ul>
+                <li>201 If successfully created.</li>
+                <li>401 If calling user is not authorized to create a template instance</li>
+              </ul>
+
+            </div> <!-- method -->
+
+            <div class="method">
+              <h4 id="template_instances.put">PUT</h4>
+
+              <p>Update a template instance. Overwrites previous template instance with same id.</p>
+
+              <table>
+                <tr><th>parameter</th><th>value</th><th>description</th></tr>
+                <tr>
+                  <td><p><strong>id</strong></p></td>
+                  <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+                  <td><p>the id of the template instance</p></td>
+                </tr>
+              </table>
+
+              <p>Acceptable request representations:</p>
+
+              <ul>
+                <li>
+                  <div>200 application/json
+                    [<a onclick="toggle('template_instances.put.ex1'); return false;" href="#"><em><span id="link-template_instances.put.ex1">expand</span></em></a>]
+                  </div>
+                  <div class="toggle" id="template_instances.put.ex1">
+                    <h6>Example</h6>
+                    <p>An example of a template instance describing a name.</p>
+                    <pre><code>
+                        {                                                  
+                        "@context": {},
+                        "@type": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25191",
+                        "@id": "http://metadatacenter.org/template_instances/full_name_343",
+                        "templateID" : "http://metadatacenter.org/templates/full_name",
+                        "value": "Billy Bob"
+                        }
+                    </code></pre>
+                  </div>
+                </li>
+              </ul>
+
+              <p>Responses:</p>
+
+              <ul>
+                <ul>
+                  <li>204 If template instance is updated successfully </li>
+                  <li>401 If calling user is not authorized to update the template instance</li>
+                </ul>
+
+              </div> <!-- method -->
+
+              <div class="method">
+                <h4 id="template_instances.delete">DELETE</h4>
+
+                <p>Delete a template instance.</p>
+
+                <table>
+                  <tr><th>parameter</th><th>value</th><th>description</th></tr>
+                  <tr>
+                    <td><p><strong>id</strong></p></td>
+                    <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+                    <td><p>the id of the template instance</p></td>
+                  </tr>
+                </table>
+
+                <p>Responses:</p>
+
+                <ul>
+                  <ul>
+                    <li>200 If the template instance is deleted successfully </li>
+                    <li>401 If calling user is not authorized to delete the template instance</li>
+                  </ul>
+
+                </div> <!-- method -->
+
+              </div> <!-- methods -->
+            </div> <!-- resource -->
+
+          </body>
+        </html>
