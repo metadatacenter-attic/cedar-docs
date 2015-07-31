@@ -506,6 +506,93 @@
           <li>401 If calling user does not have permission to retrieve the value sets</li>
         </ul>
 
+        <h6>/search?q={query}&ontologies=NLMVS&roots_only=true</h6>
+
+        <p class="method-summary">Query value sets by name.</p>
+
+        <p><i>NOTE: Current implementation of this method searches on value sets and on their classes. As a consequence, some of the results obtained could be wrong. The BioPortal team is working to restrict the query to value set names. The URI above will not be affected.</i></p>
+
+
+        <p>Request parameters:</p>
+
+        <table>
+          <tr>
+            <th>parameter</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td><p><strong>query</strong></p></td>
+            <td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em></p></td>
+            <td><p>a query string matching a value set name</p></td>
+          </tr>
+        </table>
+
+        <div class="exampleRequests">
+          <p>Example request URI(s):</p>
+          <ul>
+            <li>Get value sets about "hypertension": <a
+                href="http://data.bioontology.org/search?q=hypertension&ontologies=NLMVS&roots_only=true&apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9">http://data.bioontology.org/search?q=hypertension&ontologies=NLMVS&roots_only=true</a>
+            </li>
+          </ul>
+        </div>
+        <!-- exampleRequests -->
+
+        <p>Available response representations:</p>
+
+        <ul>
+          <li>
+            <div>200 application/json
+              [<a onclick="toggle('value_sets.get.ex2'); return false;" href="#"><em><span id="link-value_sets.get.ex2">expand</span></em></a>]
+            </div>
+            <div class="toggle" id="value_sets.get.ex2">
+              <p><h5>Example</h5>
+
+              <p>An example of a response containing value sets.</p>
+                    <pre><code>
+                      {
+                      "page": 1,
+                      "pageCount": 4,
+                      "prevPage": null,
+                      "nextPage": 2,
+                      "links": {
+                      "nextPage":
+                      "http://data.bioontology.org/search?q=hypertension&ontologies=NLMVS&roots_only=true&apikey=3bdf57dc-4d53-4ca1-b6c1-a1f1fe651ea9&page=2",
+                      "prevPage": null
+                      },
+                      "collection": [
+                      {
+                      "prefLabel": "Essential Hypertension",
+                      "obsolete": false,
+                      "matchType": "prefLabel",
+                      "@id": "http://purl.bioontology.org/ontology/NLMVS/2.16.840.1.113883.3.464.1003.104.12.1011",
+                      "@type": "http://www.w3.org/2002/07/owl#Class",
+                      "links": {},
+                      "@context": {}
+                      },
+                      {},
+                      {}
+                      ]
+                      }
+                    </code></pre>
+              </p>
+              <p>The search results are paginated. The <tt>pageCount</tt> field indicates the number of pages,
+                the <tt>page</tt> field indicates the number of the current page, and the <tt>nextPage</tt> field
+                indicates
+                the number of the next page. The <tt>links</tt> field can be used to navigate between pages using the
+                contained
+                <tt>nextPage</tt> and <tt>prevPage</tt> fields.</p>
+
+              <p>Descriptions of value sets matching the search are returned in an array called <tt>collection</tt>.
+                The relevant fields are <tt>prefLabel</tt>, which is the text that should be displayed for the value set
+                name and the <tt>@id</tt> field, which uniquely identifies the
+                value set and that can be used to get more information about it using the method described below.</p>
+
+            </div>
+          </li>
+          <li>401 If calling user does not have permission to view the ontology</li>
+        </ul>
+
         <h6>/ontologies/NLMVS/classes/{id}?include=prefLabel,definition,properties</h6>
 
         <p class="method-summary">Get the details of a specific value set.</p>
@@ -540,9 +627,9 @@
         <ul>
           <li>
             <div>200 application/json
-              [<a onclick="toggle('value_sets.get.ex2'); return false;" href="#"><em><span id="link-value_sets.get.ex2">expand</span></em></a>]
+              [<a onclick="toggle('value_sets.get.ex3'); return false;" href="#"><em><span id="link-value_sets.get.ex3">expand</span></em></a>]
             </div>
-            <div class="toggle" id="value_sets.get.ex2">
+            <div class="toggle" id="value_sets.get.ex3">
               <p><h5>Example</h5>
 
               <p>An example of a response containing details for a value set.</p>
@@ -595,8 +682,6 @@
           <li>401 If calling user does not have permission to view the ontology</li>
         </ul>
 
-        <h6 style="color:red">TODO: Method to query value sets by name</h6>
-
       </div>
       <!-- method -->
     </div>
@@ -613,7 +698,7 @@
 
       <div class="method">
         <h4 id="classes.get">GET</h4>
-        <h6>search?q={query}</h6>
+        <h6>/search?q={query}</h6>
 
         <p class="method-summary">Query all classes in BioPortal.</p>
 
