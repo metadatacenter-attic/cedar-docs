@@ -1,0 +1,350 @@
+# Base: https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix :  <https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix mdr:	<http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#> .
+
+<https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl>
+      rdf:type owl:Ontology ;
+      owl:imports <http://xmdr.org/ont/iso11179-3e3cd2rc7.owl> .
+
+mdr:AdministeredItem
+      rdfs:subClassOf mdr:DesignatableItem , mdr:IdentifiedItem ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty mdr:designation
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty mdr:definition
+              ] .
+
+:Reference_Concept
+      rdf:type owl:Class ;
+      rdfs:comment "Concept from a vocabulary or ontology (as opposed to a data description concept)."^^xsd:string ;
+      rdfs:subClassOf mdr:Concept , mdr:AdministeredItem .
+
+mdr:Concept
+      rdfs:subClassOf mdr:DesignatableItem , mdr:IdentifiedItem ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty mdr:definition
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty mdr:designation
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:unionOf (mdr:Characteristic mdr:ConceptualDomain mdr:ObjectClass mdr:ValueMeaning mdr:DataElementConcept :Reference_Concept)
+              ] .
+
+mdr:Definition
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty mdr:scope
+              ] .
+
+mdr:ObjectClass
+      rdfs:subClassOf mdr:AdministeredItem .
+
+mdr:Characteristic
+      rdfs:subClassOf mdr:AdministeredItem .
+
+mdr:ConceptualDomain
+      rdfs:subClassOf mdr:AdministeredItem .
+
+mdr:DataElementConcept
+      rdfs:subClassOf mdr:AdministeredItem .
+
+mdr:ValueDomain
+      rdfs:subClassOf mdr:AdministeredItem .
+
+mdr:DataElement
+      rdfs:subClassOf mdr:AdministeredItem .
+
+mdr:Context
+      rdfs:subClassOf mdr:AdministeredItem .
+
+mdr:Relation
+      rdfs:subClassOf mdr:AdministeredItem .
+
+mdr:RelationRole
+      rdfs:subClassOf mdr:Concept .
+
+mdr:Dimensionality
+      rdfs:subClassOf mdr:AdministeredItem .
+
+mdr:UnitOfMeasure
+      rdfs:subClassOf mdr:AdministeredItem .
+
+:caDSR
+      rdf:type mdr:Context , mdr:Namespace ;
+      mdr:containedIdentifier
+              :concept1_id , :concept2_id , :concept3_id , :caDSR_id , :caDSR_item_id , :concepts_id ;
+      mdr:creationDate
+              "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:definition
+              :caDSR_def ;
+      mdr:designation
+              :caDSR_designation ;
+      mdr:identification
+              :caDSR_id ;
+      mdr:lastChangeDate
+              "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:version
+              "1.0"^^xsd:string .
+
+:caDSR_def
+      rdf:type mdr:Definition ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:text
+              "caDSR Context and Namespace"^^xsd:string .
+
+:caDSR_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem
+              :caDSR ;
+      mdr:identifier
+              "caDSR"^^xsd:string ;
+      mdr:identifierScope
+              :caDSR .
+
+:caDSR_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:sign
+              "caDSR"^^xsd:string .
+
+:concepts
+      rdf:type mdr:Relation ;
+      mdr:creationDate
+              "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:definition
+              :concepts_def ;
+      mdr:designation
+              :concepts_designation ;
+      mdr:identification
+              :concepts_id ;
+      mdr:lastChangeDate
+              "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:role
+              :caDSR_item , :concept1 , :concept2 , :concept3 ;
+      mdr:version
+              "1.0"^^xsd:string .
+
+:concepts_def
+      rdf:type mdr:Definition ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:text
+              "association from caDSR item to EVS concepts"^^xsd:string .
+
+:caDSR_item
+      rdf:type mdr:RelationRole ;
+      mdr:RelationRole.relation
+              :concepts ;
+      mdr:definition
+              :caDSR_item_def ;
+      mdr:designation
+              :caDSR_item_designation ;
+      mdr:identification
+              :caDSR_item_id ;
+      mdr:maxCardinality
+              "1"^^xsd:int ;
+      mdr:minCardinality
+              "1"^^xsd:int ;
+      mdr:ordinal
+              "0"^^xsd:int .
+
+:caDSR_item_def
+      rdf:type mdr:Definition ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:text
+              "caDSR item being defined"^^xsd:string .
+
+:concept1
+      rdf:type mdr:RelationRole ;
+      mdr:RelationRole.relation
+              :concepts ;
+      mdr:definition
+              :concept1_def ;
+      mdr:designation
+              :concept1_designation ;
+      mdr:identification
+              :concept1_id ;
+      mdr:maxCardinality
+              "1"^^xsd:int ;
+      mdr:minCardinality
+              "1"^^xsd:int ;
+      mdr:ordinal
+              "1"^^xsd:int .
+
+:concept1_def
+      rdf:type mdr:Definition ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:text
+              "primary concept"^^xsd:string .
+
+:concept2
+      rdf:type mdr:RelationRole ;
+      mdr:RelationRole.relation
+              :concepts ;
+      mdr:definition
+              :concept2_def ;
+      mdr:designation
+              :concept2_designation ;
+      mdr:identification
+              :concept2_id ;
+      mdr:maxCardinality
+              "1"^^xsd:int ;
+      mdr:minCardinality
+              "0"^^xsd:int ;
+      mdr:ordinal
+              "2"^^xsd:int .
+
+:concept2_def
+      rdf:type mdr:Definition ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:text
+              "secondary concept"^^xsd:string .
+
+:concept3
+      rdf:type mdr:RelationRole ;
+      mdr:RelationRole.relation
+              :concepts ;
+      mdr:definition
+              :concept3_def ;
+      mdr:designation
+              :concept3_designation ;
+      mdr:identification
+              :concept3_id ;
+      mdr:maxCardinality
+              "1"^^xsd:int ;
+      mdr:minCardinality
+              "0"^^xsd:int ;
+      mdr:ordinal
+              "3"^^xsd:int .
+
+:concept3_def
+      rdf:type mdr:Definition ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:text
+              "tertiary concept"^^xsd:string .
+
+:concepts_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem
+              :concepts ;
+      mdr:identifier
+              "concepts"^^xsd:string ;
+      mdr:identifierScope
+              :caDSR .
+
+:caDSR_item_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem
+              :caDSR_item ;
+      mdr:identifier
+              "caDSR_item"^^xsd:string ;
+      mdr:identifierScope
+              :caDSR .
+
+:concept1_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem
+              :concept1 ;
+      mdr:identifier
+              "concept1"^^xsd:string ;
+      mdr:identifierScope
+              :caDSR .
+
+:concept2_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem
+              :concept2 ;
+      mdr:identifier
+              "concept2"^^xsd:string ;
+      mdr:identifierScope
+              :caDSR .
+
+:concept3_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem
+              :concept3 ;
+      mdr:identifier
+              "concept3"^^xsd:string ;
+      mdr:identifierScope
+              :caDSR .
+
+:concepts_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:sign
+              "concepts"^^xsd:string .
+
+:caDSR_item_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:sign
+              "caDSR item"^^xsd:string .
+
+:concept1_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:sign
+              "primary concept"^^xsd:string .
+
+:concept2_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:sign
+              "secondary concept"^^xsd:string .
+
+:concept3_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability
+              mdr:preferred ;
+      mdr:scope
+              :caDSR ;
+      mdr:sign
+              "tertiary concept"^^xsd:string .

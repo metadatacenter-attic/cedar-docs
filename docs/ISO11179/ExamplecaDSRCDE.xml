@@ -1,0 +1,297 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DataElementsList>
+   <DataElement num="1">
+      <RAI>2.16.840.1.113883.3.26.2</RAI>
+      <PUBLICID>3226370</PUBLICID>
+      <LONGNAME>Children's Oncology Group Clinical Study Protocol Identifier</LONGNAME>
+      <PREFERREDNAME>2555476v1.0:3226362v1.0</PREFERREDNAME>
+      <PREFERREDDEFINITION>CCG/COG clinical protocol patient was enrolled on.</PREFERREDDEFINITION>
+      <VERSION>1</VERSION>
+      <WORKFLOWSTATUS>RELEASED</WORKFLOWSTATUS>
+      <CONTEXTNAME>caBIG</CONTEXTNAME>
+      <CONTEXTVERSION>1</CONTEXTVERSION>
+      <ORIGIN NULL="TRUE"/>
+      <REGISTRATIONSTATUS NULL="TRUE"/>
+      <DATAELEMENTCONCEPT>
+         <PublicId>2555476</PublicId>
+         <PreferredName>2223331v1.0:2555361v1.0</PreferredName>
+         <PreferredDefinition>An action plan for a clinical trial.  The plan states what the study will do, how, and why.  It explains how many people will be in it, who is eligible to participate, what study agents or other interventions they will be given, what tests they will receive and how often, and what information will be gathered._Research conducted with human subjects or on material of human origin in which an investigator directly interacts with human subjects; includes development of new technologies, mechanism of human diseases, therapy, clinical trials, epidemiology, behavior and health services research.:One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.</PreferredDefinition>
+         <LongName>Protocol Clinical Study Identifier</LongName>
+         <Version>1</Version>
+         <WorkflowStatus>RELEASED</WorkflowStatus>
+         <ContextName>caBIG</ContextName>
+         <ContextVersion>1</ContextVersion>
+         <ConceptualDomain>
+            <PublicId>2222502</PublicId>
+            <ContextName>caCORE</ContextName>
+            <ContextVersion>1</ContextVersion>
+            <PreferredName>UML DEFAULT CD</PreferredName>
+            <Version>1</Version>
+            <LongName>UML DEFAULT CD</LongName>
+         </ConceptualDomain>
+         <ObjectClass>
+            <PublicId>2223331</PublicId>
+            <ContextName>caBIG</ContextName>
+            <ContextVersion>1</ContextVersion>
+            <PreferredName>C25320</PreferredName>
+            <Version>1</Version>
+            <LongName>Protocol</LongName>
+            <ConceptDetails>
+               <ConceptDetails_ITEM>
+                  <PREFERRED_NAME>C25320</PREFERRED_NAME>
+                  <LONG_NAME>Clinical Study Protocol</LONG_NAME>
+                  <CON_ID>2202702</CON_ID>
+                  <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+                  <ORIGIN>NCI Thesaurus</ORIGIN>
+                  <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+                  <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+                  <DISPLAY_ORDER>0</DISPLAY_ORDER>
+               </ConceptDetails_ITEM>
+            </ConceptDetails>
+         </ObjectClass>
+         <Property>
+            <PublicId>2555361</PublicId>
+            <ContextName>caBIG</ContextName>
+            <ContextVersion>1</ContextVersion>
+            <PreferredName>C15206:C25364</PreferredName>
+            <Version>1</Version>
+            <LongName>Clinical Study Identifier</LongName>
+            <ConceptDetails>
+               <ConceptDetails_ITEM>
+                  <PREFERRED_NAME>C15206</PREFERRED_NAME>
+                  <LONG_NAME>Clinical Study</LONG_NAME>
+                  <CON_ID>2202828</CON_ID>
+                  <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+                  <ORIGIN>NCI Thesaurus</ORIGIN>
+                  <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+                  <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+                  <DISPLAY_ORDER>1</DISPLAY_ORDER>
+               </ConceptDetails_ITEM>
+               <ConceptDetails_ITEM>
+                  <PREFERRED_NAME>C25364</PREFERRED_NAME>
+                  <LONG_NAME>Identifier</LONG_NAME>
+                  <CON_ID>2202473</CON_ID>
+                  <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+                  <ORIGIN>NCI Thesaurus</ORIGIN>
+                  <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+                  <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+                  <DISPLAY_ORDER>0</DISPLAY_ORDER>
+               </ConceptDetails_ITEM>
+            </ConceptDetails>
+         </Property>
+         <ObjectClassQualifier NULL="TRUE"/>
+         <PropertyQualifier NULL="TRUE"/>
+         <Origin NULL="TRUE"/>
+      </DATAELEMENTCONCEPT>
+      <VALUEDOMAIN>
+         <PublicId>3226362</PublicId>
+         <PreferredName>3226362v1.0</PreferredName>
+         <PreferredDefinition>The Children's Oncology Group (COG) is an NCI-supported clinical cooperative group (Arcadia, CA) formed by the merger of the four national pediatric cancer research organizations: the Children's Cancer Group, the Intergroup Rhabdomyosarcoma Study Group, the National Wilms Tumor Study Group, and the Pediatric Oncology Group. The primary objective of the organization is to conduct clinical trials of new therapies for childhood and adolescent cancer. COG develops and coordinates clinical trials conducted at the 238 member institutions that include cancer centers of all major universities and teaching hospitals throughout the U.S. and Canada, as well as sites in Europe and Australia. COG members include over 5000 cancer researchers._A protocol is a rule which guides how an activity should be performed; a set of formal rules used to specify the format of an exchange of data._One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.</PreferredDefinition>
+         <LongName>Children's Oncology Group Protocol Identifier</LongName>
+         <Version>1</Version>
+         <WorkflowStatus>RELEASED</WorkflowStatus>
+         <ContextName>caBIG</ContextName>
+         <ContextVersion>1</ContextVersion>
+         <ConceptualDomain>
+            <PublicId>2008521</PublicId>
+            <ContextName>caBIG</ContextName>
+            <ContextVersion>1</ContextVersion>
+            <PreferredName>PROTOCOL</PreferredName>
+            <Version>1</Version>
+            <LongName>protocol</LongName>
+         </ConceptualDomain>
+         <Datatype>CHARACTER</Datatype>
+         <ValueDomainType>Enumerated</ValueDomainType>
+         <UnitOfMeasure NULL="TRUE"/>
+         <DisplayFormat NULL="TRUE"/>
+         <MaximumLength NULL="TRUE"/>
+         <MinimumLength NULL="TRUE"/>
+         <DecimalPlace NULL="TRUE"/>
+         <CharacterSetName NULL="TRUE"/>
+         <MaximumValue NULL="TRUE"/>
+         <MinimumValue NULL="TRUE"/>
+         <Origin NULL="TRUE"/>
+         <Representation>
+            <PublicId>3226369</PublicId>
+            <ContextName>caBIG</ContextName>
+            <ContextVersion>1</ContextVersion>
+            <PreferredName>C39353:C42651:C25364</PreferredName>
+            <Version>1</Version>
+            <LongName>Children's Oncology Group Protocol Identifier</LongName>
+            <ConceptDetails>
+               <ConceptDetails_ITEM>
+                  <PREFERRED_NAME>C39353</PREFERRED_NAME>
+                  <LONG_NAME>Children's Oncology Group</LONG_NAME>
+                  <CON_ID>2205054</CON_ID>
+                  <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+                  <ORIGIN>NCI Thesaurus</ORIGIN>
+                  <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+                  <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+                  <DISPLAY_ORDER>2</DISPLAY_ORDER>
+               </ConceptDetails_ITEM>
+               <ConceptDetails_ITEM>
+                  <PREFERRED_NAME>C42651</PREFERRED_NAME>
+                  <LONG_NAME>Protocol</LONG_NAME>
+                  <CON_ID>2211236</CON_ID>
+                  <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+                  <ORIGIN>NCI Thesaurus</ORIGIN>
+                  <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+                  <PRIMARY_FLAG_IND>No</PRIMARY_FLAG_IND>
+                  <DISPLAY_ORDER>1</DISPLAY_ORDER>
+               </ConceptDetails_ITEM>
+               <ConceptDetails_ITEM>
+                  <PREFERRED_NAME>C25364</PREFERRED_NAME>
+                  <LONG_NAME>Identifier</LONG_NAME>
+                  <CON_ID>2202473</CON_ID>
+                  <DEFINITION_SOURCE>NCI</DEFINITION_SOURCE>
+                  <ORIGIN>NCI Thesaurus</ORIGIN>
+                  <EVS_SOURCE>NCI_CONCEPT_CODE</EVS_SOURCE>
+                  <PRIMARY_FLAG_IND>Yes</PRIMARY_FLAG_IND>
+                  <DISPLAY_ORDER>0</DISPLAY_ORDER>
+               </ConceptDetails_ITEM>
+            </ConceptDetails>
+         </Representation>
+         <PermissibleValues>
+            <PermissibleValues_ITEM>
+               <VALIDVALUE>AALL0331</VALIDVALUE>
+               <VALUEMEANING>AALL0331</VALUEMEANING>
+               <MEANINGDESCRIPTION>AALL0331</MEANINGDESCRIPTION>
+               <MEANINGCONCEPTS NULL="TRUE"/>
+               <PVBEGINDATE>12/8/2014 0:0:0</PVBEGINDATE>
+               <PVENDDATE NULL="TRUE"/>
+               <VMPUBLICID>4626600</VMPUBLICID>
+               <VMVERSION>1</VMVERSION>
+            </PermissibleValues_ITEM>
+            <PermissibleValues_ITEM>
+               <VALIDVALUE>P9906</VALIDVALUE>
+               <VALUEMEANING>P9906</VALUEMEANING>
+               <MEANINGDESCRIPTION>P9906</MEANINGDESCRIPTION>
+               <MEANINGCONCEPTS NULL="TRUE"/>
+               <PVBEGINDATE>12/8/2014 0:0:0</PVBEGINDATE>
+               <PVENDDATE NULL="TRUE"/>
+               <VMPUBLICID>4626601</VMPUBLICID>
+               <VMVERSION>1</VMVERSION>
+            </PermissibleValues_ITEM>
+            <PermissibleValues_ITEM>
+               <VALIDVALUE>AALL0232</VALIDVALUE>
+               <VALUEMEANING>AALL0232</VALUEMEANING>
+               <MEANINGDESCRIPTION>AALL0232</MEANINGDESCRIPTION>
+               <MEANINGCONCEPTS NULL="TRUE"/>
+               <PVBEGINDATE>12/8/2014 0:0:0</PVBEGINDATE>
+               <PVENDDATE NULL="TRUE"/>
+               <VMPUBLICID>4626602</VMPUBLICID>
+               <VMVERSION>1</VMVERSION>
+            </PermissibleValues_ITEM>
+            <PermissibleValues_ITEM>
+               <VALIDVALUE>ALL0434</VALIDVALUE>
+               <VALUEMEANING>ALL0434</VALUEMEANING>
+               <MEANINGDESCRIPTION>ALL0434</MEANINGDESCRIPTION>
+               <MEANINGCONCEPTS NULL="TRUE"/>
+               <PVBEGINDATE>12/11/2014 0:0:0</PVBEGINDATE>
+               <PVENDDATE NULL="TRUE"/>
+               <VMPUBLICID>4632114</VMPUBLICID>
+               <VMVERSION>1</VMVERSION>
+            </PermissibleValues_ITEM>
+            <PermissibleValues_ITEM>
+               <VALIDVALUE>AAML0531</VALIDVALUE>
+               <VALUEMEANING>AAML0531</VALUEMEANING>
+               <MEANINGDESCRIPTION>AAML0531</MEANINGDESCRIPTION>
+               <MEANINGCONCEPTS NULL="TRUE"/>
+               <PVBEGINDATE>4/8/2011 0:0:0</PVBEGINDATE>
+               <PVENDDATE NULL="TRUE"/>
+               <VMPUBLICID>3226363</VMPUBLICID>
+               <VMVERSION>1</VMVERSION>
+            </PermissibleValues_ITEM>
+            <PermissibleValues_ITEM>
+               <VALIDVALUE>AAML03P1</VALIDVALUE>
+               <VALUEMEANING>AAML03P1</VALUEMEANING>
+               <MEANINGDESCRIPTION>AAML03P1</MEANINGDESCRIPTION>
+               <MEANINGCONCEPTS NULL="TRUE"/>
+               <PVBEGINDATE>4/8/2011 0:0:0</PVBEGINDATE>
+               <PVENDDATE NULL="TRUE"/>
+               <VMPUBLICID>3226364</VMPUBLICID>
+               <VMVERSION>1</VMVERSION>
+            </PermissibleValues_ITEM>
+            <PermissibleValues_ITEM>
+               <VALIDVALUE>CCG2961</VALIDVALUE>
+               <VALUEMEANING>CCG2961</VALUEMEANING>
+               <MEANINGDESCRIPTION>CCG2961</MEANINGDESCRIPTION>
+               <MEANINGCONCEPTS NULL="TRUE"/>
+               <PVBEGINDATE>4/8/2011 0:0:0</PVBEGINDATE>
+               <PVENDDATE NULL="TRUE"/>
+               <VMPUBLICID>3226365</VMPUBLICID>
+               <VMVERSION>1</VMVERSION>
+            </PermissibleValues_ITEM>
+            <PermissibleValues_ITEM>
+               <VALIDVALUE>CCG2941</VALIDVALUE>
+               <VALUEMEANING>CCG2941</VALUEMEANING>
+               <MEANINGDESCRIPTION>CCG2941</MEANINGDESCRIPTION>
+               <MEANINGCONCEPTS NULL="TRUE"/>
+               <PVBEGINDATE>4/8/2011 0:0:0</PVBEGINDATE>
+               <PVENDDATE NULL="TRUE"/>
+               <VMPUBLICID>3226366</VMPUBLICID>
+               <VMVERSION>1</VMVERSION>
+            </PermissibleValues_ITEM>
+            <PermissibleValues_ITEM>
+               <VALIDVALUE>CCG2891</VALIDVALUE>
+               <VALUEMEANING>CCG2891</VALUEMEANING>
+               <MEANINGDESCRIPTION>CCG2891</MEANINGDESCRIPTION>
+               <MEANINGCONCEPTS NULL="TRUE"/>
+               <PVBEGINDATE>4/8/2011 0:0:0</PVBEGINDATE>
+               <PVENDDATE NULL="TRUE"/>
+               <VMPUBLICID>3226367</VMPUBLICID>
+               <VMVERSION>1</VMVERSION>
+            </PermissibleValues_ITEM>
+         </PermissibleValues>
+         <ValueDomainConcepts/>
+      </VALUEDOMAIN>
+      <REFERENCEDOCUMENTSLIST>
+         <REFERENCEDOCUMENTSLIST_ITEM>
+            <Name>Study</Name>
+            <OrganizationName NULL="TRUE"/>
+            <DocumentType>Preferred Question Text</DocumentType>
+            <DocumentText>Study</DocumentText>
+            <URL NULL="TRUE"/>
+            <Language>ENGLISH</Language>
+            <DisplayOrder NULL="TRUE"/>
+         </REFERENCEDOCUMENTSLIST_ITEM>
+      </REFERENCEDOCUMENTSLIST>
+      <CLASSIFICATIONSLIST>
+         <CLASSIFICATIONSLIST_ITEM>
+            <ClassificationScheme>
+               <PublicId>3070837</PublicId>
+               <ContextName>caBIG</ContextName>
+               <ContextVersion>1</ContextVersion>
+               <PreferredName>TARGET/CGCI</PreferredName>
+               <Version>1</Version>
+            </ClassificationScheme>
+            <ClassificationSchemeItemName>TARGET</ClassificationSchemeItemName>
+            <ClassificationSchemeItemType>GROUP_TYPE</ClassificationSchemeItemType>
+            <CsiPublicId>3179562</CsiPublicId>
+            <CsiVersion>1</CsiVersion>
+         </CLASSIFICATIONSLIST_ITEM>
+         <CLASSIFICATIONSLIST_ITEM>
+            <ClassificationScheme>
+               <PublicId>3070837</PublicId>
+               <ContextName>caBIG</ContextName>
+               <ContextVersion>1</ContextVersion>
+               <PreferredName>TARGET/CGCI</PreferredName>
+               <Version>1</Version>
+            </ClassificationScheme>
+            <ClassificationSchemeItemName>TARGET AML</ClassificationSchemeItemName>
+            <ClassificationSchemeItemType>GROUP_TYPE</ClassificationSchemeItemType>
+            <CsiPublicId>3219642</CsiPublicId>
+            <CsiVersion>1</CsiVersion>
+         </CLASSIFICATIONSLIST_ITEM>
+      </CLASSIFICATIONSLIST>
+      <ALTERNATENAMELIST/>
+      <DATAELEMENTDERIVATION>
+         <DerivationType NULL="TRUE"/>
+         <DerivationTypeDescription NULL="TRUE"/>
+         <Methods NULL="TRUE"/>
+         <Rule NULL="TRUE"/>
+         <ConcatenationCharacter NULL="TRUE"/>
+         <ComponentDataElementsList NULL="TRUE"/>
+      </DATAELEMENTDERIVATION>
+   </DataElement>
+</DataElementsList>

@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:j.0="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#"
+  xml:base="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Reference_Concept">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Concept from a vocabulary or ontology (as opposed to a data description concept).</rdfs:comment>
+    <rdfs:subClassOf>
+      <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept">
+        <rdfs:subClassOf>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Characteristic">
+                <rdfs:subClassOf>
+                  <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#AdministeredItem">
+                    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DesignatableItem"/>
+                    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#IdentifiedItem"/>
+                    <rdfs:subClassOf>
+                      <owl:Restriction>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</owl:minCardinality>
+                        <owl:onProperty rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#designation"/>
+                      </owl:Restriction>
+                    </rdfs:subClassOf>
+                    <rdfs:subClassOf>
+                      <owl:Restriction>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</owl:minCardinality>
+                        <owl:onProperty rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#definition"/>
+                      </owl:Restriction>
+                    </rdfs:subClassOf>
+                  </rdf:Description>
+                </rdfs:subClassOf>
+              </rdf:Description>
+              <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain">
+                <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#AdministeredItem"/>
+              </rdf:Description>
+              <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ObjectClass">
+                <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#AdministeredItem"/>
+              </rdf:Description>
+              <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueMeaning"/>
+              <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept">
+                <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#AdministeredItem"/>
+              </rdf:Description>
+              <owl:Class rdf:about="#Reference_Concept"/>
+            </owl:unionOf>
+          </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DesignatableItem"/>
+        <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#IdentifiedItem"/>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#definition"/>
+            <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</owl:minCardinality>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</owl:minCardinality>
+            <owl:onProperty rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#designation"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </rdf:Description>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#AdministeredItem"/>
+  </owl:Class>
+  <j.0:Designation rdf:ID="caDSR_item_designation">
+    <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+    <j.0:scope>
+      <j.0:Namespace rdf:ID="caDSR">
+        <j.0:containedIdentifier>
+          <j.0:ScopedIdentifier rdf:ID="caDSR_id">
+            <j.0:identifiedItem rdf:resource="#caDSR"/>
+            <j.0:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >caDSR</j.0:identifier>
+          </j.0:ScopedIdentifier>
+        </j.0:containedIdentifier>
+        <j.0:containedIdentifier>
+          <j.0:ScopedIdentifier rdf:ID="concept2_id">
+            <j.0:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >concept2</j.0:identifier>
+            <j.0:identifiedItem>
+              <j.0:RelationRole rdf:ID="concept2">
+                <j.0:designation>
+                  <j.0:Designation rdf:ID="concept2_designation">
+                    <j.0:scope rdf:resource="#caDSR"/>
+                    <j.0:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >secondary concept</j.0:sign>
+                    <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                  </j.0:Designation>
+                </j.0:designation>
+                <j.0:ordinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >2</j.0:ordinal>
+                <j.0:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >1</j.0:maxCardinality>
+                <j.0:RelationRole.relation>
+                  <j.0:Relation rdf:ID="concepts">
+                    <j.0:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >1.0</j.0:version>
+                    <j.0:lastChangeDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                    >2009-02-24T00:00:00</j.0:lastChangeDate>
+                    <j.0:role rdf:resource="#concept2"/>
+                    <j.0:designation>
+                      <j.0:Designation rdf:ID="concepts_designation">
+                        <j.0:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >concepts</j.0:sign>
+                        <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                        <j.0:scope rdf:resource="#caDSR"/>
+                      </j.0:Designation>
+                    </j.0:designation>
+                    <j.0:creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                    >2009-02-24T00:00:00</j.0:creationDate>
+                    <j.0:identification>
+                      <j.0:ScopedIdentifier rdf:ID="concepts_id">
+                        <j.0:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >concepts</j.0:identifier>
+                        <j.0:identifiedItem rdf:resource="#concepts"/>
+                      </j.0:ScopedIdentifier>
+                    </j.0:identification>
+                    <j.0:role>
+                      <j.0:RelationRole rdf:ID="concept3">
+                        <j.0:designation>
+                          <j.0:Designation rdf:ID="concept3_designation">
+                            <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                            <j.0:scope rdf:resource="#caDSR"/>
+                            <j.0:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >tertiary concept</j.0:sign>
+                          </j.0:Designation>
+                        </j.0:designation>
+                        <j.0:ordinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >3</j.0:ordinal>
+                        <j.0:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >0</j.0:minCardinality>
+                        <j.0:definition>
+                          <j.0:Definition rdf:ID="concept3_def">
+                            <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                            <j.0:scope rdf:resource="#caDSR"/>
+                            <j.0:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >tertiary concept</j.0:text>
+                          </j.0:Definition>
+                        </j.0:definition>
+                        <j.0:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</j.0:maxCardinality>
+                        <j.0:identification>
+                          <j.0:ScopedIdentifier rdf:ID="concept3_id">
+                            <j.0:identifiedItem rdf:resource="#concept3"/>
+                            <j.0:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >concept3</j.0:identifier>
+                          </j.0:ScopedIdentifier>
+                        </j.0:identification>
+                        <j.0:RelationRole.relation rdf:resource="#concepts"/>
+                      </j.0:RelationRole>
+                    </j.0:role>
+                    <j.0:definition>
+                      <j.0:Definition rdf:ID="concepts_def">
+                        <j.0:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >association from caDSR item to EVS concepts</j.0:text>
+                        <j.0:scope rdf:resource="#caDSR"/>
+                        <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                      </j.0:Definition>
+                    </j.0:definition>
+                    <j.0:role>
+                      <j.0:RelationRole rdf:ID="concept1">
+                        <j.0:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</j.0:maxCardinality>
+                        <j.0:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</j.0:minCardinality>
+                        <j.0:designation>
+                          <j.0:Designation rdf:ID="concept1_designation">
+                            <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                            <j.0:scope rdf:resource="#caDSR"/>
+                            <j.0:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >primary concept</j.0:sign>
+                          </j.0:Designation>
+                        </j.0:designation>
+                        <j.0:definition>
+                          <j.0:Definition rdf:ID="concept1_def">
+                            <j.0:scope rdf:resource="#caDSR"/>
+                            <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                            <j.0:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >primary concept</j.0:text>
+                          </j.0:Definition>
+                        </j.0:definition>
+                        <j.0:identification>
+                          <j.0:ScopedIdentifier rdf:ID="concept1_id">
+                            <j.0:identifiedItem rdf:resource="#concept1"/>
+                            <j.0:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >concept1</j.0:identifier>
+                          </j.0:ScopedIdentifier>
+                        </j.0:identification>
+                        <j.0:RelationRole.relation rdf:resource="#concepts"/>
+                        <j.0:ordinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</j.0:ordinal>
+                      </j.0:RelationRole>
+                    </j.0:role>
+                    <j.0:role>
+                      <j.0:RelationRole rdf:ID="caDSR_item">
+                        <j.0:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</j.0:minCardinality>
+                        <j.0:designation rdf:resource="#caDSR_item_designation"/>
+                        <j.0:definition>
+                          <j.0:Definition rdf:ID="caDSR_item_def">
+                            <j.0:scope rdf:resource="#caDSR"/>
+                            <j.0:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >caDSR item being defined</j.0:text>
+                            <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                          </j.0:Definition>
+                        </j.0:definition>
+                        <j.0:RelationRole.relation rdf:resource="#concepts"/>
+                        <j.0:ordinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >0</j.0:ordinal>
+                        <j.0:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</j.0:maxCardinality>
+                        <j.0:identification>
+                          <j.0:ScopedIdentifier rdf:ID="caDSR_item_id">
+                            <j.0:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >caDSR_item</j.0:identifier>
+                            <j.0:identifiedItem rdf:resource="#caDSR_item"/>
+                          </j.0:ScopedIdentifier>
+                        </j.0:identification>
+                      </j.0:RelationRole>
+                    </j.0:role>
+                  </j.0:Relation>
+                </j.0:RelationRole.relation>
+                <j.0:definition>
+                  <j.0:Definition rdf:ID="concept2_def">
+                    <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                    <j.0:scope rdf:resource="#caDSR"/>
+                    <j.0:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >secondary concept</j.0:text>
+                  </j.0:Definition>
+                </j.0:definition>
+                <j.0:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >0</j.0:minCardinality>
+                <j.0:identification rdf:resource="#concept2_id"/>
+              </j.0:RelationRole>
+            </j.0:identifiedItem>
+          </j.0:ScopedIdentifier>
+        </j.0:containedIdentifier>
+        <j.0:containedIdentifier rdf:resource="#caDSR_item_id"/>
+        <rdf:type>
+          <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Context">
+            <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#AdministeredItem"/>
+          </rdf:Description>
+        </rdf:type>
+        <j.0:definition>
+          <j.0:Definition rdf:ID="caDSR_def">
+            <j.0:scope rdf:resource="#caDSR"/>
+            <j.0:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >caDSR Context and Namespace</j.0:text>
+            <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+          </j.0:Definition>
+        </j.0:definition>
+        <j.0:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1.0</j.0:version>
+        <j.0:lastChangeDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >2009-02-24T00:00:00</j.0:lastChangeDate>
+        <j.0:creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >2009-02-24T00:00:00</j.0:creationDate>
+        <j.0:containedIdentifier rdf:resource="#concept3_id"/>
+        <j.0:identification rdf:resource="#caDSR_id"/>
+        <j.0:containedIdentifier rdf:resource="#concepts_id"/>
+        <j.0:containedIdentifier rdf:resource="#concept1_id"/>
+        <j.0:designation>
+          <j.0:Designation rdf:ID="caDSR_designation">
+            <j.0:scope rdf:resource="#caDSR"/>
+            <j.0:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >caDSR</j.0:sign>
+            <j.0:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+          </j.0:Designation>
+        </j.0:designation>
+      </j.0:Namespace>
+    </j.0:scope>
+    <j.0:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >caDSR item</j.0:sign>
+  </j.0:Designation>
+  <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Dimensionality">
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#AdministeredItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElement">
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#AdministeredItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Definition">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#scope"/>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#RelationRole">
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#UnitOfMeasure">
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#AdministeredItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Relation">
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#AdministeredItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain">
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#AdministeredItem"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

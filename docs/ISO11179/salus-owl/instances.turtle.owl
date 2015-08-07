@@ -1,0 +1,318 @@
+# Base: https://wiki.nci.nih.gov/download/attachments/10854184/instances.owl#
+@prefix :  <https://wiki.nci.nih.gov/download/attachments/10854184/instances.owl#> .
+@prefix caDSR:   <https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#> .
+@prefix mdr:     <http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix protege:  <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+<https://wiki.nci.nih.gov/download/attachments/10854184/instances.owl>
+      rdf:type owl:Ontology ;
+      owl:imports <https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl> .
+
+caDSR:caDSR
+      mdr:containedIdentifier
+              :DEC2014474_id , :cancer_id , :caBIG_id , :P2516523_id , :NCI_id , :SPOREs_id , :type_id , :OC2186369_id , :CTEP_id , :UMLS_id , :diagnosis_id .
+
+caDSR:concepts
+      mdr:memberLink :OC2186369_concepts , :P2516523_concepts .
+
+:NCI
+      rdf:type mdr:Context , mdr:Namespace ;
+      mdr:containedIdentifier
+              :C25284 , :C15220 , :C9305 ;
+      mdr:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:designation :NCI_designation ;
+      mdr:identification :NCI_id ;
+      mdr:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime .
+
+:NCI_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability mdr:preferred ;
+      mdr:scope caDSR:caDSR ;
+      mdr:sign "NCI Thesaurus"^^xsd:string .
+
+:NCI_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :NCI ;
+      mdr:identifier "NCI"^^xsd:string ;
+      mdr:identifierScope caDSR:caDSR .
+
+:UMLS
+      rdf:type mdr:Namespace , mdr:IdentifiedItem ;
+      mdr:containedIdentifier
+              :CUI_id ;
+      mdr:identification :UMLS_id .
+
+:UMLS_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :UMLS ;
+      mdr:identifier "UMLS"^^xsd:string ;
+      mdr:identifierScope caDSR:caDSR .
+
+:CUI
+      rdf:type mdr:Namespace , mdr:IdentifiedItem ;
+      mdr:containedIdentifier
+              :type_CUI , :diagnosis_CUI , :cancer_CUI ;
+      mdr:identification :CUI_id .
+
+:CUI_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :CUI ;
+      mdr:identifier "CUI"^^xsd:string ;
+      mdr:identifierScope :UMLS ;
+      mdr:shorthandExpansion
+              "UMLS:CUI"^^xsd:string .
+
+:cancer
+      rdf:type caDSR:Reference_Concept ;
+      mdr:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:definition :cancer_def ;
+      mdr:designation :cancer_designation , :cancer_synonym1 ;
+      mdr:identification :cancer_id , :cancer_CUI , :C9305 ;
+      mdr:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime .
+
+:cancer_def
+      rdf:type mdr:Definition ;
+      mdr:acceptability mdr:preferred ;
+      mdr:scope :NCI ;
+      mdr:text "A tumor composed..."^^xsd:string .
+
+:cancer_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability mdr:preferred ;
+      mdr:scope :NCI ;
+      mdr:sign "Malignant Neoplasm"^^xsd:string .
+
+:cancer_synonym1
+      rdf:type mdr:Designation ;
+      mdr:acceptability mdr:admitted ;
+      mdr:scope :NCI ;
+      mdr:sign "Cancer"^^xsd:string .
+
+:cancer_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :cancer ;
+      mdr:identifier "2202593"^^xsd:string ;
+      mdr:identifierScope caDSR:caDSR .
+
+:cancer_CUI
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :cancer ;
+      mdr:identifier "C0006826"^^xsd:string ;
+      mdr:identifierScope :CUI .
+
+:C9305
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :cancer ;
+      mdr:identifier "C9305"^^xsd:string ;
+      mdr:identifierScope :NCI ;
+      mdr:shorthandExpansion
+              "NCI:C9305"^^xsd:string .
+
+:diagnosis
+      rdf:type caDSR:Reference_Concept ;
+      mdr:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:definition :diagnosis_def ;
+      mdr:designation :diagnosis_designation ;
+      mdr:identification :diagnosis_CUI , :C15220 , :diagnosis_id ;
+      mdr:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime .
+
+:diagnosis_def
+      rdf:type mdr:Definition ;
+      mdr:acceptability mdr:preferred ;
+      mdr:scope :NCI ;
+      mdr:text "The investigation,..."^^xsd:string .
+
+:diagnosis_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability mdr:preferred ;
+      mdr:scope :NCI ;
+      mdr:sign "Diagnosis"^^xsd:string .
+
+:diagnosis_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :diagnosis ;
+      mdr:identifier "2202734"^^xsd:string ;
+      mdr:identifierScope caDSR:caDSR .
+
+:diagnosis_CUI
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :diagnosis ;
+      mdr:identifier "C0011900"^^xsd:string ;
+      mdr:identifierScope :CUI .
+
+:C15220
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :diagnosis ;
+      mdr:identifier "C15220"^^xsd:string ;
+      mdr:identifierScope :NCI .
+
+:type
+      rdf:type caDSR:Reference_Concept ;
+      mdr:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:definition :type_def ;
+      mdr:designation :type_designation ;
+      mdr:identification :type_CUI , :C25284 , :type_id ;
+      mdr:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime .
+
+:type_def
+      rdf:type mdr:Definition ;
+      mdr:acceptability mdr:preferred ;
+      mdr:scope :NCI ;
+      mdr:text "Something distinguishable..."^^xsd:string .
+
+:type_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability mdr:preferred ;
+      mdr:scope :NCI ;
+      mdr:sign "Type"^^xsd:string .
+
+:type_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :type ;
+      mdr:identifier "2202431"^^xsd:string ;
+      mdr:identifierScope caDSR:caDSR .
+
+:type_CUI
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :type ;
+      mdr:identifier "C0332307"^^xsd:string ;
+      mdr:identifierScope :CUI .
+
+:C25284
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :type ;
+      mdr:identifier "C25284"^^xsd:string ;
+      mdr:identifierScope :NCI .
+
+:caBIG
+      rdf:type mdr:Context , mdr:Namespace ;
+      mdr:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:identification :caBIG_id ;
+      mdr:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime .
+
+:caBIG_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :caBIG ;
+      mdr:identifier "caBIG"^^xsd:string ;
+      mdr:identifierScope caDSR:caDSR .
+
+:SPOREs
+      rdf:type mdr:Context ;
+      mdr:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:identification :SPOREs_id ;
+      mdr:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime .
+
+:SPOREs_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :SPOREs ;
+      mdr:identifier "SPOREs"^^xsd:string ;
+      mdr:identifierScope caDSR:caDSR .
+
+:OC2186369
+      rdf:type mdr:ObjectClass ;
+      mdr:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:designation :OC2186369_designation ;
+      mdr:identification :OC2186369_id ;
+      mdr:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:version "1.0"^^xsd:string .
+
+:OC2186369_designation
+      rdf:type mdr:Designation ;
+      mdr:scope caDSR:caDSR ;
+      mdr:sign "Malignant Neoplasm"^^xsd:string .
+
+:OC2186369_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :OC2186369 ;
+      mdr:identifier "2186369"^^xsd:string ;
+      mdr:identifierScope caDSR:caDSR .
+
+:OC2186369_concepts
+      rdf:type mdr:Link ;
+      <http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Link.relation>
+              caDSR:concepts ;
+      mdr:end :OC2186369_concepts_item , :OC2186369_concept1 .
+
+:OC2186369_concepts_item
+      rdf:type mdr:LinkEnd ;
+      mdr:endConcept :OC2186369 ;
+      mdr:endRole caDSR:caDSR_item ;
+      mdr:link :OC2186369_concepts .
+
+:OC2186369_concept1
+      rdf:type mdr:LinkEnd ;
+      mdr:endConcept :cancer ;
+      mdr:endRole caDSR:concept1 ;
+      mdr:link :OC2186369_concepts .
+
+:P2516523
+      rdf:type mdr:Characteristic ;
+      mdr:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:designation :P2516523_designation ;
+      mdr:identification :P2516523_id ;
+      mdr:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:version "1.0"^^xsd:string .
+
+:P2516523_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability mdr:preferred ;
+      mdr:scope :caBIG ;
+      mdr:sign "Diagnosis Type"^^xsd:string .
+
+:P2516523_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :P2516523 ;
+      mdr:identifier "2516523"^^xsd:string ;
+      mdr:identifierScope caDSR:caDSR .
+
+:P2516523_concepts
+      rdf:type mdr:Link ;
+      <http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Link.relation>
+              caDSR:concepts ;
+      mdr:end :P2516523_concepts_item , :P2516523_concept1 , :P2516523_concept2 .
+
+:P2516523_concepts_item
+      rdf:type mdr:LinkEnd ;
+      mdr:endConcept :P2516523 ;
+      mdr:endRole caDSR:caDSR_item ;
+      mdr:link :P2516523_concepts .
+
+:P2516523_concept1
+      rdf:type mdr:LinkEnd ;
+      mdr:endConcept :type ;
+      mdr:endRole caDSR:concept1 ;
+      mdr:link :P2516523_concepts .
+
+:P2516523_concept2
+      rdf:type mdr:LinkEnd ;
+      mdr:endConcept :diagnosis ;
+      mdr:endRole caDSR:concept2 ;
+      mdr:link :P2516523_concepts .
+
+:DEC2014474
+      rdf:type mdr:DataElementConcept ;
+      mdr:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+      mdr:definition :DEC2014474_def ;
+      mdr:designation :DEC2014474_designation ;
+      mdr:identification :DEC2014474_id ;
+      mdr:version "1.0"^^xsd:string .
+
+:DEC2014474_def
+      rdf:type mdr:Definition ;
+      mdr:scope :SPOREs ;
+      mdr:text "Identification of a type of cancer by the signs, symptoms, and anatomic location."^^xsd:string .
+
+:DEC2014474_designation
+      rdf:type mdr:Designation ;
+      mdr:acceptability mdr:preferred ;
+      mdr:sign "Cancer Diagnosis Type"^^xsd:string .
+
+:DEC2014474_id
+      rdf:type mdr:ScopedIdentifier ;
+      mdr:identifiedItem :DEC2014474 ;
+      mdr:identifier "2014474"^^xsd:string ;
+      mdr:identifierScope caDSR:caDSR .

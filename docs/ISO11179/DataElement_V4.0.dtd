@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT ALTERNATENAMELIST ( ALTERNATENAMELIST_ITEM* ) >
+<!ATTLIST ALTERNATENAMELIST NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT ALTERNATENAMELIST_ITEM ( ContextName, ContextVersion, AlternateName, AlternateNameType, Language ) >
+<!ATTLIST ALTERNATENAMELIST_ITEM NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT AlternateName ( #PCDATA ) >
+<!ATTLIST AlternateName NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT AlternateNameType ( #PCDATA ) >
+<!ATTLIST AlternateNameType NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT CharacterSetName (#PCDATA)>
+<!ATTLIST CharacterSetName NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT ClassificationScheme (PublicId,ContextName,ContextVersion,PreferredName,Version)>
+<!ATTLIST ClassificationScheme NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT ClassificationSchemeItemName (#PCDATA)>
+<!ELEMENT ClassificationSchemeItemType (#PCDATA)>
+<!ELEMENT CLASSIFICATIONSLIST (CLASSIFICATIONSLIST_ITEM* )>
+<!ELEMENT CLASSIFICATIONSLIST_ITEM (ClassificationScheme,ClassificationSchemeItemName,ClassificationSchemeItemType,CsiPublicId,CsiVersion)>
+<!ELEMENT ComponentDataElementsList (ComponentDataElementsList_ITEM)*>
+<!ATTLIST ComponentDataElementsList xmlns CDATA #FIXED '' NULL NMTOKEN #IMPLIED>
+<!ELEMENT ComponentDataElementsList_ITEM (PublicId,LongName,PreferredName,PreferredDefinition,Version,WorkflowStatus,ContextName,DisplayOrder)>
+<!ATTLIST ComponentDataElementsList_ITEM NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT CON_ID (#PCDATA)>
+<!ELEMENT ConcatenationCharacter (#PCDATA)>
+<!ATTLIST ConcatenationCharacter NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT ConceptDetails (ConceptDetails_ITEM*)>
+<!ELEMENT ConceptDetails_ITEM (PREFERRED_NAME,LONG_NAME,CON_ID,DEFINITION_SOURCE,ORIGIN,EVS_SOURCE,PRIMARY_FLAG_IND,DISPLAY_ORDER)>
+<!ELEMENT ConceptualDomain (PublicId,ContextName,ContextVersion,PreferredName,Version,LongName)>
+<!ELEMENT CONTEXTNAME (#PCDATA)>
+<!ELEMENT ContextName (#PCDATA)>
+<!ATTLIST ContextName NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT CONTEXTVERSION (#PCDATA)>
+<!ELEMENT ContextVersion (#PCDATA)>
+<!ATTLIST ContextVersion NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT CsiPublicId (#PCDATA)>
+<!ELEMENT CsiVersion (#PCDATA)>
+<!ELEMENT DataElement (PUBLICID,LONGNAME,PREFERREDNAME,PREFERREDDEFINITION,VERSION,WORKFLOWSTATUS,CONTEXTNAME,CONTEXTVERSION,ORIGIN,REGISTRATIONSTATUS,DATAELEMENTCONCEPT,VALUEDOMAIN,REFERENCEDOCUMENTSLIST,CLASSIFICATIONSLIST,ALTERNATENAMELIST,DATAELEMENTDERIVATION)>
+<!ATTLIST DataElement num NMTOKEN #REQUIRED >
+<!ELEMENT DATAELEMENTCONCEPT (PublicId,PreferredName,PreferredDefinition,LongName,Version,WorkflowStatus,ContextName,ContextVersion,ConceptualDomain,ObjectClass,Property,ObjectClassQualifier,PropertyQualifier,Origin)>
+<!ELEMENT DATAELEMENTDERIVATION (DerivationType,DerivationTypeDescription,Methods,Rule,ConcatenationCharacter,ComponentDataElementsList)>
+<!ELEMENT DataElementsList (DataElement*)>
+<!ELEMENT Datatype (#PCDATA)>
+<!ELEMENT DecimalPlace (#PCDATA)>
+<!ATTLIST DecimalPlace NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT DEFINITION_SOURCE (#PCDATA)>
+<!ATTLIST DEFINITION_SOURCE NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT DerivationType (#PCDATA)>
+<!ATTLIST DerivationType NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT DerivationTypeDescription (#PCDATA)>
+<!ATTLIST DerivationTypeDescription NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT DISPLAY_ORDER (#PCDATA)>
+<!ELEMENT DisplayFormat (#PCDATA)>
+<!ATTLIST DisplayFormat NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT DisplayOrder (#PCDATA)>
+<!ATTLIST DisplayOrder NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT DocumentText (#PCDATA)>
+<!ATTLIST DocumentText NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT DocumentType (#PCDATA)>
+<!ELEMENT EVS_SOURCE (#PCDATA)>
+<!ELEMENT Language (#PCDATA)>
+<!ATTLIST Language NULL ( TRUE ) #IMPLIED >
+<!ELEMENT LONG_NAME (#PCDATA)>
+<!ELEMENT LONGNAME (#PCDATA)>
+<!ELEMENT LongName (#PCDATA)>
+<!ATTLIST LongName NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT MaximumLength (#PCDATA)>
+<!ATTLIST MaximumLength NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT MaximumValue (#PCDATA)>
+<!ATTLIST MaximumValue NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT MEANINGCONCEPTS (#PCDATA)>
+<!ATTLIST MEANINGCONCEPTS NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT MEANINGDESCRIPTION (#PCDATA)>
+<!ELEMENT Methods (#PCDATA)>
+<!ATTLIST Methods NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT MinimumLength (#PCDATA)>
+<!ATTLIST MinimumLength NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT MinimumValue (#PCDATA)>
+<!ATTLIST MinimumValue NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT ObjectClass (PublicId,ContextName,ContextVersion,PreferredName,Version,LongName,ConceptDetails)>
+<!ELEMENT ObjectClassQualifier (#PCDATA)>
+<!ATTLIST ObjectClassQualifier NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT OrganizationName (#PCDATA)>
+<!ATTLIST OrganizationName NULL NMTOKEN #REQUIRED >
+<!ELEMENT Origin (#PCDATA)>
+<!ATTLIST Origin NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT ORIGIN (#PCDATA)>
+<!ATTLIST ORIGIN NULL ( TRUE ) #IMPLIED >
+<!ELEMENT PermissibleValues (PermissibleValues_ITEM*) >
+<!ELEMENT PermissibleValues_ITEM (VALIDVALUE,VALUEMEANING,MEANINGDESCRIPTION,MEANINGCONCEPTS,PVBEGINDATE,PVENDDATE,VMPUBLICID,VMVERSION)>
+<!ELEMENT PREFERRED_NAME (#PCDATA)>
+<!ELEMENT PREFERREDDEFINITION (#PCDATA)>
+<!ELEMENT PreferredDefinition (#PCDATA)>
+<!ELEMENT PREFERREDNAME (#PCDATA)>
+<!ELEMENT PreferredName (#PCDATA)>
+<!ATTLIST PreferredName NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT PRIMARY_FLAG_IND (#PCDATA)>
+<!ELEMENT Property (PublicId,ContextName,ContextVersion,PreferredName,Version,LongName,ConceptDetails)>
+<!ELEMENT PropertyQualifier (#PCDATA)>
+<!ATTLIST PropertyQualifier NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT PUBLICID (#PCDATA)>
+<!ELEMENT PublicId (#PCDATA)>
+<!ATTLIST PublicId NULL ( TRUE ) #IMPLIED >
+<!ELEMENT PVBEGINDATE (#PCDATA)>
+<!ATTLIST PVBEGINDATE NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT PVENDDATE (#PCDATA)>
+<!ATTLIST PVENDDATE NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT REFERENCEDOCUMENTSLIST (REFERENCEDOCUMENTSLIST_ITEM*)>
+<!ELEMENT REFERENCEDOCUMENTSLIST_ITEM (Name,OrganizationName,DocumentType,DocumentText,URL,Language,DisplayOrder)>
+<!ELEMENT REGISTRATIONSTATUS (#PCDATA)>
+<!ATTLIST REGISTRATIONSTATUS NULL NMTOKEN #FIXED "TRUE" >
+<!ELEMENT Representation (PublicId,ContextName,ContextVersion,PreferredName,Version,LongName,ConceptDetails)>
+<!ELEMENT Rule (#PCDATA)>
+<!ATTLIST Rule NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT UnitOfMeasure (#PCDATA)>
+<!ATTLIST UnitOfMeasure NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT URL (#PCDATA)>
+<!ATTLIST URL NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT VALIDVALUE (#PCDATA)>
+<!ELEMENT VALUEDOMAIN (PublicId,PreferredName,PreferredDefinition,LongName,Version,WorkflowStatus,ContextName,ContextVersion,ConceptualDomain,Datatype,ValueDomainType,UnitOfMeasure,DisplayFormat,MaximumLength,MinimumLength,DecimalPlace,CharacterSetName,MaximumValue,MinimumValue,Origin,Representation,PermissibleValues,ValueDomainConcepts)>
+<!ELEMENT ValueDomainConcepts (ValueDomainConcepts_ITEM)*>
+<!ATTLIST ValueDomainConcepts NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT ValueDomainConcepts_ITEM (PREFERRED_NAME,LONG_NAME,CON_ID,DEFINITION_SOURCE,ORIGIN,EVS_SOURCE,PRIMARY_FLAG_IND,DISPLAY_ORDER)>
+<!ATTLIST ValueDomainConcepts_ITEM NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT ValueDomainType (#PCDATA)>
+<!ELEMENT VALUEMEANING (#PCDATA)>
+<!ELEMENT VERSION (#PCDATA)>
+<!ELEMENT Version (#PCDATA)>
+<!ATTLIST Version NULL NMTOKEN #FIXED "TRUE">
+<!ELEMENT VMPUBLICID (#PCDATA)>
+<!ELEMENT VMVERSION (#PCDATA)>
+<!ELEMENT WORKFLOWSTATUS (#PCDATA)>
+<!ELEMENT WorkflowStatus (#PCDATA)>

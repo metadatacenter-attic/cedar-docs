@@ -1,0 +1,450 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:mdr="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="https://wiki.nci.nih.gov/download/attachments/10854184/instances.owl#"
+    xmlns:caDSR="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#"
+  xml:base="https://wiki.nci.nih.gov/download/attachments/10854184/instances.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl"/>
+  </owl:Ontology>
+  <mdr:ScopedIdentifier rdf:ID="cancer_id">
+    <mdr:identifiedItem>
+      <caDSR:Reference_Concept rdf:ID="cancer">
+        <mdr:definition>
+          <mdr:Definition rdf:ID="cancer_def">
+            <mdr:scope>
+              <mdr:Namespace rdf:ID="NCI">
+                <rdf:type rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Context"/>
+                <mdr:identification>
+                  <mdr:ScopedIdentifier rdf:ID="NCI_id">
+                    <mdr:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >NCI</mdr:identifier>
+                    <mdr:identifierScope>
+                      <rdf:Description rdf:about="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR">
+                        <mdr:containedIdentifier>
+                          <mdr:ScopedIdentifier rdf:ID="UMLS_id">
+                            <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+                            <mdr:identifiedItem>
+                              <mdr:Namespace rdf:ID="UMLS">
+                                <mdr:identification rdf:resource="#UMLS_id"/>
+                                <mdr:containedIdentifier>
+                                  <mdr:ScopedIdentifier rdf:ID="CUI_id">
+                                    <mdr:shorthandExpansion rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >UMLS:CUI</mdr:shorthandExpansion>
+                                    <mdr:identifierScope rdf:resource="#UMLS"/>
+                                    <mdr:identifier rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >CUI</mdr:identifier>
+                                    <mdr:identifiedItem>
+                                      <mdr:Namespace rdf:ID="CUI">
+                                        <rdf:type rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#IdentifiedItem"/>
+                                        <mdr:identification rdf:resource="#CUI_id"/>
+                                        <mdr:containedIdentifier>
+                                          <mdr:ScopedIdentifier rdf:ID="cancer_CUI">
+                                            <mdr:identifiedItem rdf:resource="#cancer"/>
+                                            <mdr:identifier rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >C0006826</mdr:identifier>
+                                            <mdr:identifierScope rdf:resource="#CUI"/>
+                                          </mdr:ScopedIdentifier>
+                                        </mdr:containedIdentifier>
+                                        <mdr:containedIdentifier>
+                                          <mdr:ScopedIdentifier rdf:ID="diagnosis_CUI">
+                                            <mdr:identifierScope rdf:resource="#CUI"/>
+                                            <mdr:identifiedItem>
+                                              <caDSR:Reference_Concept rdf:ID="diagnosis">
+                                                <mdr:identification>
+                                                  <mdr:ScopedIdentifier rdf:ID="C15220">
+                                                    <mdr:identifiedItem rdf:resource="#diagnosis"/>
+                                                    <mdr:identifier
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >C15220</mdr:identifier>
+                                                    <mdr:identifierScope rdf:resource="#NCI"/>
+                                                  </mdr:ScopedIdentifier>
+                                                </mdr:identification>
+                                                <mdr:identification rdf:resource="#diagnosis_CUI"/>
+                                                <mdr:identification>
+                                                  <mdr:ScopedIdentifier rdf:ID="diagnosis_id">
+                                                    <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+                                                    <mdr:identifiedItem rdf:resource="#diagnosis"/>
+                                                    <mdr:identifier
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >2202734</mdr:identifier>
+                                                  </mdr:ScopedIdentifier>
+                                                </mdr:identification>
+                                                <mdr:lastChangeDate
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#dateTime"
+                                                >2009-02-24T00:00:00</mdr:lastChangeDate>
+                                                <mdr:designation>
+                                                  <mdr:Designation rdf:ID="diagnosis_designation">
+                                                    <mdr:sign
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >Diagnosis</mdr:sign>
+                                                    <mdr:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                                                    <mdr:scope rdf:resource="#NCI"/>
+                                                  </mdr:Designation>
+                                                </mdr:designation>
+                                                <mdr:definition>
+                                                  <mdr:Definition rdf:ID="diagnosis_def">
+                                                    <mdr:scope rdf:resource="#NCI"/>
+                                                    <mdr:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                                                    <mdr:text
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >The investigation,...</mdr:text>
+                                                  </mdr:Definition>
+                                                </mdr:definition>
+                                                <mdr:creationDate
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#dateTime"
+                                                >2009-02-24T00:00:00</mdr:creationDate>
+                                              </caDSR:Reference_Concept>
+                                            </mdr:identifiedItem>
+                                            <mdr:identifier rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >C0011900</mdr:identifier>
+                                          </mdr:ScopedIdentifier>
+                                        </mdr:containedIdentifier>
+                                        <mdr:containedIdentifier>
+                                          <mdr:ScopedIdentifier rdf:ID="type_CUI">
+                                            <mdr:identifier rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >C0332307</mdr:identifier>
+                                            <mdr:identifierScope rdf:resource="#CUI"/>
+                                            <mdr:identifiedItem>
+                                              <caDSR:Reference_Concept rdf:ID="type">
+                                                <mdr:identification>
+                                                  <mdr:ScopedIdentifier rdf:ID="C25284">
+                                                    <mdr:identifiedItem rdf:resource="#type"/>
+                                                    <mdr:identifier
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >C25284</mdr:identifier>
+                                                    <mdr:identifierScope rdf:resource="#NCI"/>
+                                                  </mdr:ScopedIdentifier>
+                                                </mdr:identification>
+                                                <mdr:identification rdf:resource="#type_CUI"/>
+                                                <mdr:identification>
+                                                  <mdr:ScopedIdentifier rdf:ID="type_id">
+                                                    <mdr:identifiedItem rdf:resource="#type"/>
+                                                    <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+                                                    <mdr:identifier
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >2202431</mdr:identifier>
+                                                  </mdr:ScopedIdentifier>
+                                                </mdr:identification>
+                                                <mdr:lastChangeDate
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#dateTime"
+                                                >2009-02-24T00:00:00</mdr:lastChangeDate>
+                                                <mdr:designation>
+                                                  <mdr:Designation rdf:ID="type_designation">
+                                                    <mdr:sign
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >Type</mdr:sign>
+                                                    <mdr:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                                                    <mdr:scope rdf:resource="#NCI"/>
+                                                  </mdr:Designation>
+                                                </mdr:designation>
+                                                <mdr:creationDate
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#dateTime"
+                                                >2009-02-24T00:00:00</mdr:creationDate>
+                                                <mdr:definition>
+                                                  <mdr:Definition rdf:ID="type_def">
+                                                    <mdr:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                                                    <mdr:text
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >Something distinguishable...</mdr:text>
+                                                    <mdr:scope rdf:resource="#NCI"/>
+                                                  </mdr:Definition>
+                                                </mdr:definition>
+                                              </caDSR:Reference_Concept>
+                                            </mdr:identifiedItem>
+                                          </mdr:ScopedIdentifier>
+                                        </mdr:containedIdentifier>
+                                      </mdr:Namespace>
+                                    </mdr:identifiedItem>
+                                  </mdr:ScopedIdentifier>
+                                </mdr:containedIdentifier>
+                                <rdf:type rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#IdentifiedItem"/>
+                              </mdr:Namespace>
+                            </mdr:identifiedItem>
+                            <mdr:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >UMLS</mdr:identifier>
+                          </mdr:ScopedIdentifier>
+                        </mdr:containedIdentifier>
+                        <mdr:containedIdentifier rdf:resource="#NCI_id"/>
+                        <mdr:containedIdentifier>
+                          <mdr:ScopedIdentifier rdf:ID="OC2186369_id">
+                            <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+                            <mdr:identifiedItem>
+                              <mdr:ObjectClass rdf:ID="OC2186369">
+                                <mdr:designation>
+                                  <mdr:Designation rdf:ID="OC2186369_designation">
+                                    <mdr:scope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+                                    <mdr:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                    >Malignant Neoplasm</mdr:sign>
+                                  </mdr:Designation>
+                                </mdr:designation>
+                                <mdr:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >1.0</mdr:version>
+                                <mdr:creationDate rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#dateTime"
+                                >2009-02-24T00:00:00</mdr:creationDate>
+                                <mdr:identification rdf:resource="#OC2186369_id"/>
+                                <mdr:lastChangeDate rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#dateTime"
+                                >2009-02-24T00:00:00</mdr:lastChangeDate>
+                              </mdr:ObjectClass>
+                            </mdr:identifiedItem>
+                            <mdr:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >2186369</mdr:identifier>
+                          </mdr:ScopedIdentifier>
+                        </mdr:containedIdentifier>
+                        <mdr:containedIdentifier rdf:resource="#cancer_id"/>
+                        <mdr:containedIdentifier>
+                          <mdr:ScopedIdentifier rdf:ID="caBIG_id">
+                            <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+                            <mdr:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >caBIG</mdr:identifier>
+                            <mdr:identifiedItem>
+                              <mdr:Context rdf:ID="caBIG">
+                                <rdf:type rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+                                <mdr:lastChangeDate rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#dateTime"
+                                >2009-02-24T00:00:00</mdr:lastChangeDate>
+                                <mdr:identification rdf:resource="#caBIG_id"/>
+                                <mdr:creationDate rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#dateTime"
+                                >2009-02-24T00:00:00</mdr:creationDate>
+                              </mdr:Context>
+                            </mdr:identifiedItem>
+                          </mdr:ScopedIdentifier>
+                        </mdr:containedIdentifier>
+                        <mdr:containedIdentifier rdf:resource="#type_id"/>
+                        <mdr:containedIdentifier>
+                          <mdr:ScopedIdentifier rdf:ID="DEC2014474_id">
+                            <mdr:identifiedItem>
+                              <mdr:DataElementConcept rdf:ID="DEC2014474">
+                                <mdr:creationDate rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#dateTime"
+                                >2009-02-24T00:00:00</mdr:creationDate>
+                                <mdr:identification rdf:resource="#DEC2014474_id"/>
+                                <mdr:definition>
+                                  <mdr:Definition rdf:ID="DEC2014474_def">
+                                    <mdr:scope>
+                                      <mdr:Context rdf:ID="SPOREs">
+                                        <mdr:identification>
+                                          <mdr:ScopedIdentifier rdf:ID="SPOREs_id">
+                                            <mdr:identifiedItem rdf:resource="#SPOREs"/>
+                                            <mdr:identifier rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >SPOREs</mdr:identifier>
+                                            <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+                                          </mdr:ScopedIdentifier>
+                                        </mdr:identification>
+                                        <mdr:lastChangeDate rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#dateTime"
+                                        >2009-02-24T00:00:00</mdr:lastChangeDate>
+                                        <mdr:creationDate rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#dateTime"
+                                        >2009-02-24T00:00:00</mdr:creationDate>
+                                      </mdr:Context>
+                                    </mdr:scope>
+                                    <mdr:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                    >Identification of a type of cancer by the signs, symptoms, and anatomic location.</mdr:text>
+                                  </mdr:Definition>
+                                </mdr:definition>
+                                <mdr:designation>
+                                  <mdr:Designation rdf:ID="DEC2014474_designation">
+                                    <mdr:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                                    <mdr:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                    >Cancer Diagnosis Type</mdr:sign>
+                                  </mdr:Designation>
+                                </mdr:designation>
+                                <mdr:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >1.0</mdr:version>
+                              </mdr:DataElementConcept>
+                            </mdr:identifiedItem>
+                            <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+                            <mdr:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >2014474</mdr:identifier>
+                          </mdr:ScopedIdentifier>
+                        </mdr:containedIdentifier>
+                        <mdr:containedIdentifier rdf:resource="#SPOREs_id"/>
+                        <mdr:containedIdentifier>
+                          <mdr:ScopedIdentifier rdf:ID="P2516523_id">
+                            <mdr:identifiedItem>
+                              <mdr:Characteristic rdf:ID="P2516523">
+                                <mdr:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >1.0</mdr:version>
+                                <mdr:identification rdf:resource="#P2516523_id"/>
+                                <mdr:creationDate rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#dateTime"
+                                >2009-02-24T00:00:00</mdr:creationDate>
+                                <mdr:lastChangeDate rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#dateTime"
+                                >2009-02-24T00:00:00</mdr:lastChangeDate>
+                                <mdr:designation>
+                                  <mdr:Designation rdf:ID="P2516523_designation">
+                                    <mdr:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                                    <mdr:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                    >Diagnosis Type</mdr:sign>
+                                    <mdr:scope rdf:resource="#caBIG"/>
+                                  </mdr:Designation>
+                                </mdr:designation>
+                              </mdr:Characteristic>
+                            </mdr:identifiedItem>
+                            <mdr:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >2516523</mdr:identifier>
+                            <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+                          </mdr:ScopedIdentifier>
+                        </mdr:containedIdentifier>
+                        <mdr:containedIdentifier rdf:resource="#diagnosis_id"/>
+                      </rdf:Description>
+                    </mdr:identifierScope>
+                    <mdr:identifiedItem rdf:resource="#NCI"/>
+                  </mdr:ScopedIdentifier>
+                </mdr:identification>
+                <mdr:lastChangeDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                >2009-02-24T00:00:00</mdr:lastChangeDate>
+                <mdr:creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                >2009-02-24T00:00:00</mdr:creationDate>
+                <mdr:designation>
+                  <mdr:Designation rdf:ID="NCI_designation">
+                    <mdr:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+                    <mdr:scope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+                    <mdr:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >NCI Thesaurus</mdr:sign>
+                  </mdr:Designation>
+                </mdr:designation>
+                <mdr:containedIdentifier>
+                  <mdr:ScopedIdentifier rdf:ID="C9305">
+                    <mdr:identifiedItem rdf:resource="#cancer"/>
+                    <mdr:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >C9305</mdr:identifier>
+                    <mdr:shorthandExpansion rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >NCI:C9305</mdr:shorthandExpansion>
+                    <mdr:identifierScope rdf:resource="#NCI"/>
+                  </mdr:ScopedIdentifier>
+                </mdr:containedIdentifier>
+                <mdr:containedIdentifier rdf:resource="#C15220"/>
+                <mdr:containedIdentifier rdf:resource="#C25284"/>
+              </mdr:Namespace>
+            </mdr:scope>
+            <mdr:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+            <mdr:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >A tumor composed...</mdr:text>
+          </mdr:Definition>
+        </mdr:definition>
+        <mdr:identification rdf:resource="#C9305"/>
+        <mdr:identification rdf:resource="#cancer_CUI"/>
+        <mdr:identification rdf:resource="#cancer_id"/>
+        <mdr:lastChangeDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >2009-02-24T00:00:00</mdr:lastChangeDate>
+        <mdr:designation>
+          <mdr:Designation rdf:ID="cancer_designation">
+            <mdr:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Malignant Neoplasm</mdr:sign>
+            <mdr:scope rdf:resource="#NCI"/>
+            <mdr:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#preferred"/>
+          </mdr:Designation>
+        </mdr:designation>
+        <mdr:designation>
+          <mdr:Designation rdf:ID="cancer_synonym1">
+            <mdr:acceptability rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#admitted"/>
+            <mdr:scope rdf:resource="#NCI"/>
+            <mdr:sign rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Cancer</mdr:sign>
+          </mdr:Designation>
+        </mdr:designation>
+        <mdr:creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >2009-02-24T00:00:00</mdr:creationDate>
+      </caDSR:Reference_Concept>
+    </mdr:identifiedItem>
+    <mdr:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2202593</mdr:identifier>
+    <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+  </mdr:ScopedIdentifier>
+  <mdr:LinkEnd rdf:ID="P2516523_concept2">
+    <mdr:link>
+      <mdr:Link rdf:ID="P2516523_concepts">
+        <mdr:Link.relation>
+          <rdf:Description rdf:about="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#concepts">
+            <mdr:memberLink>
+              <mdr:Link rdf:ID="OC2186369_concepts">
+                <mdr:end>
+                  <mdr:LinkEnd rdf:ID="OC2186369_concepts_item">
+                    <mdr:endConcept rdf:resource="#OC2186369"/>
+                    <mdr:endRole rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR_item"/>
+                    <mdr:link rdf:resource="#OC2186369_concepts"/>
+                  </mdr:LinkEnd>
+                </mdr:end>
+                <mdr:end>
+                  <mdr:LinkEnd rdf:ID="OC2186369_concept1">
+                    <mdr:endRole rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#concept1"/>
+                    <mdr:endConcept rdf:resource="#cancer"/>
+                    <mdr:link rdf:resource="#OC2186369_concepts"/>
+                  </mdr:LinkEnd>
+                </mdr:end>
+                <mdr:Link.relation rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#concepts"/>
+              </mdr:Link>
+            </mdr:memberLink>
+            <mdr:memberLink rdf:resource="#P2516523_concepts"/>
+          </rdf:Description>
+        </mdr:Link.relation>
+        <mdr:end>
+          <mdr:LinkEnd rdf:ID="P2516523_concepts_item">
+            <mdr:link rdf:resource="#P2516523_concepts"/>
+            <mdr:endRole rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR_item"/>
+            <mdr:endConcept rdf:resource="#P2516523"/>
+          </mdr:LinkEnd>
+        </mdr:end>
+        <mdr:end>
+          <mdr:LinkEnd rdf:ID="P2516523_concept1">
+            <mdr:endRole rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#concept1"/>
+            <mdr:link rdf:resource="#P2516523_concepts"/>
+            <mdr:endConcept rdf:resource="#type"/>
+          </mdr:LinkEnd>
+        </mdr:end>
+        <mdr:end rdf:resource="#P2516523_concept2"/>
+      </mdr:Link>
+    </mdr:link>
+    <mdr:endConcept rdf:resource="#diagnosis"/>
+    <mdr:endRole rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#concept2"/>
+  </mdr:LinkEnd>
+  <rdf:Description rdf:about="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR_id">
+    <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#concept3_id">
+    <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR_item_id">
+    <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#concept1_id">
+    <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#concepts_id">
+    <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#concept2_id">
+    <mdr:identifierScope rdf:resource="https://wiki.nci.nih.gov/download/attachments/10854184/caDSR.owl#caDSR"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

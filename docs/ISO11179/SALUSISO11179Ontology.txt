@@ -1,0 +1,303 @@
+Summary of SALUS MDR Ontology
+
+https://github.com/srdc/semanticMDR/blob/master/core/src/main/resources/model/salus.mdr.owl
+
+---------------------- Administration Record ---------------
+
+AdministrationRecord:
+  administeredItemIdentifier (ItemIdentifier)
+  registrationStatus (string)
+  administrativeStatus (AdministrationRecord)
+  creationDate (dateTime)
+  lastChangeDate (dateTime)
+  effectiveDate (dateTime)
+  untilDate (dateTime)
+  changeDescription (string)
+  administrativeNote (string)
+  explanatoryComment (string)
+  unresolvedIssue (string)
+  origin (string)
+
+ItemIdentifier:
+  itemRegistrationAuthorityIdentifier (RegistrationAuthorityIdentifier)
+  dataIdentifier (string)
+  version (string)
+
+RegistrationAuthorityIdentifier:
+  internationalCodeDesignator (string)
+  organizationPartIdentifier (string)
+  opiSource (string)
+
+----------------------- Administered Item -----------------
+
+AdministeredItem:
+  administeredBy (StewardshipRelationship)
+  administeredItemAdministrationRecord (AdministrationRecord)
+  classifiedBy (ClassificationSchemeItem)
+  submittedBy (SubmissionRelationship)
+  registeredBy (RegistrationAuthority)
+  having (AdministeredItemContext)
+  describedBy (ReferenceDocument)
+  describing (ReferenceDocument)
+
+StewardshipRelationship:
+  administer (Stewardship)
+  stewardshipOrganization (Organization)
+  administeredItems (AdministeredItem)
+
+Stewardship:
+  administers (StewardshipRelationship)
+  stewardshipContact (Stewardship)
+
+Organization:
+  submitting (SubmissionRelationship)
+  administering (StewardshipRelationship)
+  organizationName (string)
+  organizationMailAddress (string)
+  providing (ReferenceDocument)
+
+SubmissionRelationship:
+  submitter (Submission)
+  submissionOrganization (Organization)
+  submittedItems (AdministeredItem)
+
+Submission:
+  submits (SubmissionRelationship)
+  submissionContact (Contact)
+
+Contact:
+  contactName (string)
+  contactInformation (string)
+  contactTitle (string)
+
+RegistrationAuthority:
+  registrationAuthorityIdentifier (RegistrationAuthorityIdentifier)
+  documentationLanguageIdentifier (LanguageIdentification)
+  registering (AdministeredItem)
+  representedBy (Registrar)
+
+LanguageIdentification:
+  countryIdentifier (string)
+  languageIdentifier (string)
+
+Registrar:
+  registrarContact (Contact)
+  registrarIdentifier (string)
+  represents (RegistrationAuthority)
+
+-------------- Classification Scheme -----------------
+
+ClassificationScheme: (subclassOf AdministeredItem)
+  classificationSchemeAdministrationRecord (AdministrationRecord)
+  classificationSchemeTypeName (string)
+  containing (ClassificationSchemeItem)
+
+ClassificationSchemeItem:
+  classificationSchemeItemTypeName (string)
+  classificationSchemeItemValue (string)
+  containedIn (ClassificationScheme)
+  classifying (AdministeredItem)
+  csiAssociatedIn (ClassificationSchemeItemAssociation)
+
+ClassificationSchemeItemAssociation:
+  csiAssociationRelationship (ClassificationSchemeItemRelationship)
+  csiAssociates (ClassificationSchemeItem)
+
+ClassificationSchemeItemRelationship
+  classificationSchemeItemRelationshipTypeDescription (string)
+  csiRelationshipAssociation (ClassificationSchemeItemAssociation)
+
+------------------ Context --------------------
+
+Context: (subclassOf AdministeredItem)
+  contextAdministrationRecord (AdministrationRecord)
+  contextDescription (string)
+  contextDescriptionLanguageIdentifier (LanguageIdentification)
+  contextAdministeredItemContext (AdministeredItemContext)
+
+AdministeredItemContext:
+  grouping (AdministeredItem)
+  administeredItemContextTerminologicalEntry (TerminologicalEntry)
+  administeredItemContextContext (Context)
+
+TerminologicalEntry:
+  containingTerminologicalEntryLanguage (LanguageSection)
+  terminologicalEntryAdministeredItemContext (AdministeredItemContext)
+
+LanguageSection:
+  partitioning (TerminologicalEntry)
+  containingNameEntry (Designation)
+  containingDefinitionEntry (Definition)
+  languageSectionLanguageIdentifier (LanguageIdentification)
+
+Designation:
+  namingEntryOf (LanguageSection)
+  specificallyReferencing (Definition)
+  name (string)
+  preferredDesignation (boolean)
+
+Definition:
+  definingEntryOf (LanguageSection)
+  specificallyUsing (Designation)
+  definitionText (string)
+  preferredDefinition (boolean)
+  definitionSourceReference (ReferenceDocument)
+
+ReferenceDocument:
+  referenceDocumentIdentifier (string)
+  referenceDocumentTypeDescription (string)
+  referenceDocumentLanguageIdentifier (LanguageIdentification)
+  referenceDocumentTitle (string)
+  describing (AdministeredItem)
+  providedBy (Organization)
+
+------------------ Conceptual Domains -------------
+
+ConceptualDomain: (subclassOf AdministeredItem)
+  conceptualDomainAdministrationRecord (AdministrationRecord)
+  dimensionality (string)
+  representedByConceptualDomainRepresentation (ValueDomain)
+  specifyingDataElementConceptConceptualDomainRelationship (DataElementConcept)
+  relatedToConceptualDomainRelationship (ConceptualDomainRelationshipAssociation)
+
+ConceptualDomainRelationshipAssociation:
+  describedByConceptualDomainRelationship (ConceptualDomainRelationship)
+
+ConceptualDomainRelationship:
+  describingConceptualDomainRelationship (ConceptualDomainRelationshipAssociation)
+  conceptualDomainRelationshipTypeDescription (string)
+
+NonEnumeratedConceptualDomain: (subClassOf ConceptualDomain)
+  nonEnumeratedConceptualDomainDescription (string)
+  representedByNonEnumeratedConceptualDomainRepresentation (NonEnumeratedValueDomain)
+
+EnumeratedConceptualDomain: (subClassOf ConceptualDomain)
+  containingValueMeaningSet (ValueMeaning)
+
+---------------- Property -------------------
+
+Property: (subclassOf AdministeredItem)
+  propertyAdministrationRecord (AdministrationRecord)
+
+--------------- Object Class -------------
+
+ObjectClass: (subclassOf AdministeredItem)
+  objectClassAdministrationRecord (AdministrationRecord)
+
+----------- Data Element Concept --------
+
+DataElementConcept: (subclassOf AdministeredItem)
+  dataElementConceptAdministrationRecord (AdministrationRecord)
+  dataElementConceptObjectClass (ObjectClass)
+ dataElementConceptProperty (Property)
+  objectClassQualifier (string)
+  propertyQualifier (string)
+  expressedByDataElementConceptExpression (DataElement)
+  havingDataElementConceptConceptualDomainRelationship (ConceptualDomain)
+  relatedToDataElementConceptRelationship (DataElementConceptRelationshipAssociation)
+
+Concept: (subclassOf ObjectClass)
+  usedInConceptRelationship (ConceptRelationship)
+
+ConceptRelationship:
+  usingConceptRelationship (Concept)
+  conceptRelationshipTypeDescription (string)
+
+DataElementConceptRelationshipAssociation:
+  relatingDataElementConceptRelationship (DataElementConcept)
+  describedByDataElementConceptRelationship (DataElementConceptRelationship)
+
+DataElementConceptRelationship:
+  describingDataElementConceptRelationship (DataElementConceptRelationshipAssociation)
+  dataElementConceptRelationshipTypeDescription (string)
+
+---------------- Representation Class -----------
+
+RepresentationClass: (subclassOf AdministeredItem)
+  representationClassAdministrationRecord (AdministrationRecord)
+  typingValueDomainRepresentationClass (ValueDomain)
+  typingDataElementRepresentationClass (DataElement)
+
+----------- Data Element ---------------
+
+DataElement: (subclassOf AdministeredItem)
+  dataElementAdministrationRecord (AdministrationRecord)
+  representationClassQualifier (string)
+  dataElementPrecision (integer)
+  representedByDataElementRepresentation (ValueDomain)
+  expressingDataElementConceptExpression (DataElementConcept)
+  inputToDerivationInput (DataElementDerivation)
+  derivedFromDerivationOutput (DataElementDerivation)
+  exemplifiedByExemplification (DataElementExample)
+  typedByDataElementRepresentationClass (RepresentationClass)
+
+DataElementDerivation:
+  applyingDerivationRuleApplication (DerivationRule)
+  inputingDerivationInput (DataElement)
+  derivingDerivationOutput (DataElement)
+
+DerivationRule: (subclassOf AdministeredItem)
+  derivationRuleAdministrationRecord (PermissibleValue)
+  derivationRuleSpecification (string)
+  appliedToDerivationRuleApplication (DataElementDerivation)
+
+DataElementExample:
+  exemplifyingExemplification (DataElement)
+  dataElementExampleItem (string)
+
+------------------ Value Domains ---------------------
+
+ValueDomain: (subClassOf AdministeredItem)
+  valueDomainAdministrationRecord (AdministrationRecord)
+  valueDomainDatatype (Datatype)
+  valueDomainUnitOfMeasure (UnitOfMeasure)
+  valueDomainMaximumCharacterQuantity (integer)
+  valueDomainFormat (string)
+  representingConceptualDomainRepresentation (ConceptualDomain)
+  representingDataElementRepresentation (DataElement)
+  typedByValueDomainRepresentationClass (RepresentationClass)
+  relatedToValueDomainRelationship (ValueDomainRelationshipAssociation)
+
+Datatype:
+  datatypeName (string)
+  datatypeDescription (string)
+  datatypeSchemeReference (string)
+  datatypeAnnotation (string)
+
+UnitOfMeasure:
+  unitOfMeasureName (string)
+  unitOfMeasurePrecision (integer)
+
+ValueDomainRelationshipAssociation:
+  relatingValueDomainRelationship (ValueDomain)
+  describedByValueDomainRelationship (ValueDomainRelationship)
+
+ValueDomainRelationship:
+  describingValueDomainRelationship (ValueDomainRelationshipAssociation)
+  valueDomainRelationshipTypeDescription (string)
+
+NonEnumeratedValueDomain: (subclassOf ValueDomain)
+  nonEnumeratedDomainDescription (string)
+   representingNonEnumeratedConceptualDomainRepresentation (NonEnumeratedConceptualDomain)
+
+EnumeratedValueDomain: (subclassOf ValueDomain)
+  containingPermissibleValueSet (PermissibleValue)
+
+PermissibleValue:
+  permissibleValueBeginDate (dateTime)
+  permissibleValueEndDate (dateTime)
+  containedInPermissibleValueSet (EnumeratedValueDomain)
+  hasPermittedValue (Value)
+  hasPermissibleValueMeaning (ValueMeaning)
+
+Value:
+  valueItem (string)
+  usedInPermittedValue (PermissibleValue)
+
+ValueMeaning:
+  valueMeaningIdentifier (string)
+  valueMeaningDescription (string)
+  valueMeaningBeginDate (dateTime)
+  valueMeaningEndDate (dateTime)
+  usedInPermissibleValueMeaning (PermissibleValue)
+  containedInValueMeaningSet(EnumeratedConceptualDomain)
