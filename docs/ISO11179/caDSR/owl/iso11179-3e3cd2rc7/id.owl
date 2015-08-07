@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://xmdr.org/ont/iso11179-3e3cd2rc7/id.owl#"
+  xml:base="http://xmdr.org/ont/iso11179-3e3cd2rc7/id.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ScopedIdentifier">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#IdentifiedItem"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Slot"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#identifierScope"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#identifier"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Slot">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#IdentifiedItem"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ScopedIdentifier"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#slotValues"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#slotName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#IdentifiedItem">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#identification"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Slot"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ScopedIdentifier"/>
+  </owl:Class>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#fullExpansion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ScopedIdentifier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#slotValues">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Slot"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#shorthandPrefix">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#shorthandExpansion">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ScopedIdentifier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#slotType">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Slot"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#identifiedItem">
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#identification"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ScopedIdentifier"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#IdentifiedItem"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#identifierScope">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ScopedIdentifier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#containedIdentifier"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#identifier">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ScopedIdentifier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#slotName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Slot"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#slot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#IdentifiedItem"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Slot"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#containedIdentifier">
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ScopedIdentifier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#identifierScope"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#identification">
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#identifiedItem"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#IdentifiedItem"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ScopedIdentifier"/>
+  </owl:InverseFunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

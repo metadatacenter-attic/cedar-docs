@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:basic="http://xmdr.org/ont/iso11179-3e3cd2rc7/basic.owl#"
+    xmlns="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#"
+    xmlns:ontology="http://xmdr.org/ont/iso11179-3e3cd2rc7/ontology.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:admin="http://xmdr.org/ont/iso11179-3e3cd2rc7/admin.owl#"
+    xmlns:rels="http://xmdr.org/ont/iso11179-3e3cd2rc7/rels.owl#"
+    xmlns:designation="http://xmdr.org/ont/iso11179-3e3cd2rc7/designation.owl#"
+    xmlns:class="http://xmdr.org/ont/iso11179-3e3cd2rc7/class.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:data="http://xmdr.org/ont/iso11179-3e3cd2rc7/data.owl#"
+    xmlns:naming="http://xmdr.org/ont/iso11179-3e3cd2rc7/naming.owl#"
+    xmlns:id="http://xmdr.org/ont/iso11179-3e3cd2rc7/id.owl#"
+  xml:base="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7/ontology.owl"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso111779-3e3cd2 candidate of 2008-09-17</owl:versionInfo>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Draft ontology for (forthcoming) 2nd CD of Edition 3 of ISO/IEC 11179 Part 3: Metadata Registries (MDR) - Registry Metamodel and basic attributes</rdfs:comment>
+    <owl:imports rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7/basic.owl"/>
+    <owl:imports rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7/naming.owl"/>
+    <owl:imports rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7/id.owl"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso11179-3e3cd2rc7</rdfs:label>
+    <owl:imports rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7/rels.owl"/>
+    <owl:imports rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7/designation.owl"/>
+    <owl:imports rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7/admin.owl"/>
+    <owl:imports rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7/class.owl"/>
+    <owl:imports rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7/data.owl"/>
+  </owl:Ontology>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

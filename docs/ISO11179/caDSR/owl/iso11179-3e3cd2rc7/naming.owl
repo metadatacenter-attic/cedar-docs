@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://xmdr.org/ont/iso11179-3e3cd2rc7/naming.owl#"
+  xml:base="http://xmdr.org/ont/iso11179-3e3cd2rc7/naming.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#NamingConvention"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#NamingConvention">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#authorityRule"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#lexicalRule"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#scopeRule"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#semanticRule"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#syntacticRule"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#utilization">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#NamingConvention"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#acceptableConvention"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#conformantDesignation">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#convention"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#NamingConvention"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Designation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#namespace">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#includedDesignation"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Designation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#acceptableConvention">
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#NamingConvention"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#utilization"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#includedDesignation">
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Designation"/>
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#namespace"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#convention">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Designation"/>
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#conformantDesignation"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#NamingConvention"/>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#semanticRule">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#NamingConvention"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#authorityRule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#NamingConvention"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#syntacticRule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#NamingConvention"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#oneItemPerName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#namingAuthority">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Organization"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#mandatoryNamingConvention">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#oneNamePerItem">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Namespace"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#scopeRule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#NamingConvention"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#lexicalRule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#NamingConvention"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

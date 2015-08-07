@@ -1,0 +1,722 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://xmdr.org/ont/iso11179-3e3cd2rc7/data.owl#"
+  xml:base="http://xmdr.org/ont/iso11179-3e3cd2rc7/data.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7/rels.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Characteristic">
+    <rdfs:subClassOf>
+      <rdf:Description rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept">
+        <owl:disjointWith>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+        </owl:disjointWith>
+      </rdf:Description>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ObjectClass"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain">
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Characteristic"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DescribedConceptualDomain"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#EnumeratedConceptualDomain"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#usage"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#EnumeratedValueDomain">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#PermissibleValue"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domainMember"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domainMember"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DescribedConceptualDomain">
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#description"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DerivationRule">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Datatype"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Dimensionality"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#notation"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#UnitOfMeasure"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Representation"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#specification"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#PermissibleValue">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#beginDate"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#value"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#containingDomain"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#containingDomain"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Representation"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueMeaning"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#meaning"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElement"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Datatype">
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DerivationRule"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#UnitOfMeasure"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Dimensionality"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#description"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#datatypeName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ObjectClass">
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Characteristic"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueMeaning">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#beginDate"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#containingDomain"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#containingDomain"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DescribedValueDomain">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#description"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Dimensionality">
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DerivationRule"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Datatype"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Representation"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#UnitOfMeasure"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#UnitOfMeasure">
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DerivationRule"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Datatype"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Representation"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Dimensionality"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation">
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Datatype"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Dimensionality"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#rule"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Representation"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#input"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#UnitOfMeasure"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DerivationRule"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#output"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#EnumeratedConceptualDomain">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domainMember"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domainMember"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueMeaning"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Representation">
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DerivationRule"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Dimensionality"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#UnitOfMeasure"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#meaning"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept">
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domain"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domain"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ObjectClass"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Characteristic"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueMeaning"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#datatype"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Representation"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#meaning"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#usage"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElement"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DescribedValueDomain"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#EnumeratedValueDomain"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#PermissibleValue"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElement"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElement">
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+    <owl:disjointWith rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#PermissibleValue"/>
+    <rdfs:subClassOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Representation"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#meaning"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domain"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domain"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#input">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#inputter"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#inputter">
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#input"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#superdomain">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#subdomain"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#subdomain">
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#superdomain"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#example">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElement"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#datatypeName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Datatype"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#rule">
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#application"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#format">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#containingDomain">
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domainMember"/>
+    </owl:inverseOf>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#EnumeratedValueDomain"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#EnumeratedConceptualDomain"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueMeaning"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#PermissibleValue"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#datatype">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Datatype"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#schemeReference">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Datatype"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#description">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DescribedConceptualDomain"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DescribedValueDomain"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Datatype"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#unitOfMeasure">
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#UnitOfMeasure"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#derivation">
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#output"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#maxCharQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#dimensionality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#UnitOfMeasure"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Dimensionality"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#specification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DerivationRule"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#value">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#PermissibleValue"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#objectClass">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ObjectClass"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#beginDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueMeaning"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#PermissibleValue"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#characteristic">
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Characteristic"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#coordinate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Dimensionality"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#endDate">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#PermissibleValue"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueMeaning"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#precision">
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#annotation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Datatype"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#meaning">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Representation"/>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#representation"/>
+    </owl:inverseOf>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domain">
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#usage"/>
+    </owl:inverseOf>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domainMember">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#EnumeratedValueDomain"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#EnumeratedConceptualDomain"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueMeaning"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#PermissibleValue"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#containingDomain"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#usage">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ConceptualDomain"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#ValueDomain"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#domain"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementConcept"/>
+          <owl:Class rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#output">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#derivation"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#application">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#rule"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#DataElementDerivation"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#representation">
+    <owl:inverseOf rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#meaning"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Concept"/>
+    <rdfs:range rdf:resource="http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#Representation"/>
+  </owl:InverseFunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->
