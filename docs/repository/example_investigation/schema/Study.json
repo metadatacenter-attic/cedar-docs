@@ -1,0 +1,210 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "@id": "http://metadatacenter.org/templates/Study",
+    "title": "Study",
+    "description": "JSON-LD/Schema Study Template Element",
+    "properties": {
+        "@context": {
+            "model": "http://metadatacenter.org/model/",
+            "xsd": "http://www.w3.org/2001/XMLSchema",
+            "schema": "https://schema.org/",
+            "title": "schema:title"
+        },
+        "@id": {
+            "type": "string",
+            "format": "uri"
+        },
+        "@type": {
+            "enum": ["model:Study"]
+        },
+	"title": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'title' field",
+	    "description": "Auto-generated JSON Schema description for 'title' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/repository/template/ValueElementContext" },
+		"info": {
+		    "title": "Study Title",
+		    "description": "Enter a title for the study",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"identifier": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd-xxx",
+	    "title": "Auto-generated JSON Schema title for 'identifier' field",
+	    "description": "Auto-generated JSON Schema description for 'identifier' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
+		"info": {
+		    "title": "Study Identifier",
+		    "description": "Enter a unique identifier for the study",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"submissionDate": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd-ssss",
+	    "title": "Auto-generated JSON Schema title for 'submissionDate' field",
+	    "description": "Auto-generated JSON Schema description for 'submissionDate' field",
+	    "properties": {
+		"@type":  { "enum": [ "http://bioportal/ontology/StudySubmissionDate" ] },
+		"@context":  { "$ref": "#context_definition" },
+		"info": {
+		    "title": "Study Submission Date",
+		    "description": "Enter a submission date for the study",
+		    "input_type": "date-field"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"publicReleaseDate": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd-ssss",
+	    "title": "Auto-generated JSON Schema title for 'publicReleaseDate' field",
+	    "description": "Auto-generated JSON Schema description for 'publicReleaseDate' field",
+	    "properties": {
+		"@type":  { "enum": [ "http://bioportal/ontology/StudyReleaseDate" ] },
+		"@context":  { "$ref": "#context_definition" },
+		"info": {
+		    "title": "Study Public Release Date",
+		    "description": "Enter a public release date for the study",
+		    "input_type": "date-field"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"description": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd-xxx",
+	    "title": "Auto-generated JSON Schema title for 'description' field",
+	    "description": "Auto-generated JSON Schema description for 'description' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/template/ValueElementContext" },
+		"info": {
+		    "title": "Study Description",
+		    "description": "Enter a description of the study",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"studyFileName": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'studyFileName' field",
+	    "description": "Auto-generated JSON Schema description for 'studyFileName' field",
+	    "properties": {
+		"@type":  { "enum": [ "http://bioportal/ontology/FileName" ] },
+		"@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
+		"info": {
+		    "title": "Study File Name",
+		    "description": "Enter a study file name",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"studyDesignType":{
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'studyDesignType' field",
+	    "description": "Auto-generated JSON Schema description for 'studyDesignType' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext",
+			       "ocre": "http://purl.org/net/OCRe/study_design.owl#", },
+		"info": {
+		    "title": "Study Design",
+		    "description": "Select a study design",
+		    "input_type": "textfield",
+		    "value_constraint": {
+			"branches": [
+			    {"@type": "http://purl.obolibrary.org/obo/OBI_0500000", "includes_root": false}
+			]				
+		    }
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	    
+	},
+	"hasPublication": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"$ref": "http://metadatacenter.org/templates/Publication"
+	    }
+	}
+	"hasContact": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"$ref": "http://metadatacenter.org/templates/Contact"
+	    }
+	},
+	"hasStudyProtocol": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"$ref": "http://metadatacenter.org/templates/StudyProtocol"
+	    }
+	}
+	"hasExperiment": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"$ref": "http://metadatacenter.org/templates/Experiment"
+	    }
+	}
+	"hasStudyAssay": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"$ref": "http://metadatacenter.org/templates/StudyAssay"
+	    }
+	}
+	"hasStudyFactor": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"$ref": "http://metadatacenter.org/templates/StudyFactor"
+	    }
+	}
+	"hasStudyGroupPopulation": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"$ref": "http://metadatacenter.org/templates/StudyGroupPopulation"
+	    }
+	}
+	"hasStudySubject": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"$ref": "http://metadatacenter.org/templates/StudySubject"
+	    }
+	}
+    },
+    "required": ["@context", "@id", "@type", "title","identifier",   "description", "submissionDate", "publicReleaseDate",
+                 "studyFileName", "studyDesignType", "hasPublication", "hasContact", "hasProtocol", "hasExperiment"
+                 "hasStudyFactor"],
+    "additionalProperties": false
+}

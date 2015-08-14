@@ -1,0 +1,177 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "@id": "http://metadatacenter.org/templtes/Contact",
+    "title": "Contact",
+    "description": "JSON-LD/Schema Study Template Element",
+    "properties": {
+        "@context": {
+            "model": "http://metadatacenter.org/model/",
+            "xsd": "http://www.w3.org/2001/XMLSchema",
+            "schema": "https://schema.org/",
+            "title": "schema:title"
+        },
+        "@id": {
+            "type": "string",
+            "format": "uri"
+        },
+        "@type": {
+            "enum": ["model:Contact"]
+        },
+	"lastName": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_elements/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'lastname' field",
+	    "description": "Auto-generated JSON Schema description for 'lastName' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
+		"info": {
+		    "title": "Last Name",
+		    "description": "Enter a last name for the contact",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"firstName": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'firstName' field",
+	    "description": "Auto-generated JSON Schema description for 'firstName' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
+		"info": {
+		    "title": "First Name",
+		    "description": "Enter a first name for the contact",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"middleInitial": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'middleInitial' field",
+	    "description": "Auto-generated JSON Schema description for 'middleInitial' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
+		"info": {
+		    "title": "Middle Initial",
+		    "description": "Enter a middle initial for the contact",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"email": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'email' field",
+	    "description": "Auto-generated JSON Schema description for 'email' field",
+	    "properties": {
+		"@type":  { "enum": [ "http://bioportal/ontology/Email" ] },
+		"@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
+		"info": {
+		    "title": "Email",
+		    "description": "Enter an email for the contact",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"phone": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'phone' field",
+	    "description": "Auto-generated JSON Schema description for 'phone' field",
+	    "properties": {
+		"@type":  { "enum": [ "http://bioportal/ontology/Email" ] },
+		"@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
+		"info": {
+		    "title": "Phone",
+		    "description": "Enter an phone for the contact",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"fax": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'fax' field",
+	    "description": "Auto-generated JSON Schema description for 'fax' field",
+	    "properties": {
+		"@type":  { "enum": [  "http://bioportal/ontology/Fax" ] },
+		"@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
+		"info": {
+		    "title": "Fax",
+		    "description": "Enter a fax for the contact",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"address": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'address' field",
+	    "description": "Auto-generated JSON Schema description for 'address' field",
+	    "properties": {
+		"@type":  { "enum": [ "http://bioportal/ontology/Address" ] },
+		"@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
+		"info": {
+		    "title": "Address",
+		    "description": "Enter an address for the contact",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"role":{ 
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'role' field",
+	    "description": "Auto-generated JSON Schema description for 'role' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
+		"info": {
+		    "title": "Role of Contact",
+		    "description": "Select a role for contact",
+		    "input_type": "textfield",
+		    "value_constraint": {
+			"branches": [
+			    {"@type": "http://purl.obolibrary.org/obo/OBI_0000202",  "includes_root": false}
+			]				
+		    }
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	    
+	},
+	"hasAffiliation": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"$ref": "http://metadatacenter.org/templates/Organization"
+	    }
+	}
+    },
+    "required": ["@context", "@id", "@type", "lastName","firstName",   "email", "phone", "fax",
+                 "address", "role", "hasAffiliation"],
+    "additionalProperties": false
+}

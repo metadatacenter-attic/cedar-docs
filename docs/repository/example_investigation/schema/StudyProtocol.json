@@ -1,0 +1,120 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "@id": "http://metadatacenter.org/templates/StudyProtocol",
+    "title": "Study Protocol",
+    "description": "JSON-LD/Schema Study Protocol Template Element",
+    "properties": {
+        "@context": {
+            "model": "http://metadatacenter.org/model/",
+            "xsd": "http://www.w3.org/2001/XMLSchema",
+            "schema": "https://schema.org/",
+            "title": "schema:title"
+        },
+        "@id": {
+            "type": "string",
+            "format": "uri"
+        },
+        "@type": {
+            "enum": ["model:StudyProtocol"]
+        },
+	"description": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_elements/dfdf-fdfd-xxx",
+	    "title": "Auto-generated JSON Schema title for 'description' field",
+	    "description": "Auto-generated JSON Schema description for 'description' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/repository/templates/ValueElementContext" },
+		"info": {
+		    "title": "Study Protocol Description",
+		    "description": "Enter a description of the study protocol",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"name": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_elements/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'name' field",
+	    "description": "Auto-generated JSON Schema description for 'name' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/repository/templates/ValueElementContext" },
+		"info": {
+		    "title": "Name",
+		    "description": "Enter a name for the study protocol",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"type":{ 
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_elements/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for study protocol'type' field",
+	    "description": "Auto-generated JSON Schema description for study protocol'type' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/repository/templates/ValueElementContext" },
+		"info": {
+		    "title": "Type of Protocol",
+		    "description": "Select a type for the protocol",
+		    "input_type": "textfield",
+		    "value_constraint": {
+			"branches": [
+			    {"@type": "http://purl.obolibrary.org/obo/OBI_0000272",  "includes_root": false}
+			]				
+		    }
+		},
+		"value": { "type": "string" }
+	    },
+	},
+	"version": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'version' field",
+	    "description": "Auto-generated JSON Schema description for 'version' field",
+	    "properties": {
+		"@context":  { "$ref": "http://metadatacenter.org/repository/templates/ValueElementContext" },
+		"info": {
+		    "title": "Version",
+		    "description": "Enter a version for the study protocol",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"uri": {
+	    "$schema": "http://json-schema.org/draft-04/schema#", 
+	    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
+	    "title": "Auto-generated JSON Schema title for 'uri' field",
+	    "description": "Auto-generated JSON Schema description for 'uri' field",
+	    "properties": {
+		"@type":  { "enum": [ "" ] },
+		"@context":  { "$ref": "http://metadatacenter.org/repository/templates/ValueElementContext" },
+		"info": {
+		    "title": "URI",
+		    "description": "Enter an URI for the study protocol",
+		    "input_type": "textfield"
+		},
+		"value": { "type": "string", "format": "uri" }
+	    },
+	    "required": [ "value" ],
+	    "additionalProperties": "false"
+	},
+	"hasParameterValue": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"$ref": "http://metadatacenter.org/repository/template_elements/ParameterValue"
+	    }
+	}
+    },
+    "required": ["@context", "@id", "@type", "description",   "name", "type", "version",
+                 "uri",  "hasParameterValue"],
+    "additionalProperties": false
+}

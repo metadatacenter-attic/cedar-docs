@@ -1,0 +1,10 @@
+{ 
+ "$schema": "http://json-schema.org/draft-04/schema#", 
+ "title": "Value Element Context Description", 
+ "description": "JSON Schema description of Value Element Context. Used when describing @context fields for value elements",
+ "properties": {
+     "value": { "enum": [ "https://schema.org/value" ] },
+     "info": { "enum": [ "https://schema.org/additionalProperty" ] },
+     "required": "value",
+     "additionalProperties": "false"
+ }
