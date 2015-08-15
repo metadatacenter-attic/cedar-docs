@@ -1,113 +1,0 @@
-{ 
- "$schema": "http://json-schema.org/draft-04/schema#", 
- "@id": "http://metadatacenter.org/repository/template_elements/Publication",
- "title": "Publication", 
- "description": "JSON-LD/Schema Publication Template Element", 
- "properties": { 
-                "@context": {
-                    "model": "http://metadatacenter.org/model/",
-                    "xsd": "http://www.w3.org/2001/XMLSchema",
-                    "schema": "https://schema.org/",
-                    "title": "schema:title"
-                },
-                "@id": { "type": "string", "format": "uri" }, 
-                "@type": { "enum": ["model:Investigation"] },
-                "title": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd",
-                    "title": "Auto-generated JSON Schema title for 'title' field",
-                    "description": "Auto-generated JSON Schema description for 'title' field",
-                    "properties": {
-                        "@type":  { "enum": [ "" ] },
-                        "@context":  { "$ref": "http://metadatacenter.org/repository/template/ValueElementContext" },
-                        "info": {
-                            "title": "Publication Title",
-                            "description": "Enter a title for the publication",
-                            "input_type": "textfield"
-                        },
-                        "value": { "type": "string" }
-                    },
-                    "required": [ "value" ],
-                    "additionalProperties": "false"
-                },
-                "description": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd-xxx",
-                    "title": "Auto-generated JSON Schema title for 'pubMedID' field",
-                    "description": "Auto-generated JSON Schema description for 'pubMedID' field",
-                    "properties": {
-                        "@type":  { "enum": [ "" ] },
-                        "@context":  { "$ref": "http://metadatacenter.org/repository/template/ValueElementContext" },
-                        "info": {
-                            "title": "PubMedID",
-                            "description": "Enter a PubMedID for the publication",
-                            "input_type": "textfield"
-                        },
-                        "value": { "type": "string" }
-                    },
-                    "required": [ "value" ],
-                    "additionalProperties": "false"
-                },
-                "doi": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd-xxx",
-                    "title": "Auto-generated JSON Schema title for 'doi' field",
-                    "description": "Auto-generated JSON Schema description for 'doi' field",
-                    "properties": {
-                        "@type":  { "enum": [ "" ] },
-                        "@context":  { "$ref": "http://metadatacenter.org/repository/template/ValueElementContext" },
-                        "info": {
-                            "title": "DOI",
-                            "description": "Enter a DOI for the publication",
-                            "input_type": "textfield",
-                        },
-                        "value": { "type": "string" }
-                    },
-                    "required": [ "value" ],
-                    "additionalProperties": "false"
-                },
-                "authorList": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                        "type": "object",
-                        "$schema": "http://json-schema.org/draft-04/schema#", 
-                        "@id": "http://metadatacenter.org/value_element/dfdf-fdfd-xxx",
-                        "title": "Auto-generated JSON Schema title for 'authorList' field",
-                        "description": "Auto-generated JSON Schema description for 'authorList' field",
-                        "properties": {
-                            "@type":  { "enum": [ "" ] },
-                            "@context":  { "$ref": "http://metadatacenter.org/repository/template/ValueElementContext" },
-                            "info": {
-                                "title": "Author List",
-                                "description": "Enter a list of authors",
-                                "input_type": "multiple-instance-textfield"
-                            },
-                            "value": { "type": "string" }
-                        },
-                        "required": [ "value" ],
-                        "additionalProperties": "false"
-                    }
-                },
-                "status": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd-xxx",
-                    "title": "Auto-generated JSON Schema title for 'status' field",
-                    "description": "Auto-generated JSON Schema description for 'status' field",
-                    "properties": {
-                        "@type":  { "enum": [ "http://example.org/status1", "http://example.org/status2" ] },
-                        "@context":  { "$ref": "http://metadatacenter.org/repository/template/ValueElementContext" },
-                        "info": {
-                            "title": "Status",
-                            "description": "Enter a status",
-                            "input_type": "pick_from_list_field"
-                        },
-                        "value": { "type": "string" }
-                    },
-                    "required": [ "value" ],
-                    "additionalProperties": "false"
-                }
-               },
- "required": [ "@context", "@id", "@type", "title", "pubMedID", "doi", "authorList", "status" ], 
- "additionalProperties": true
-}

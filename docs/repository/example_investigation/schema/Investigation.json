@@ -1,128 +1,0 @@
-{ 
- "$schema": "http://json-schema.org/draft-04/schema#", 
- "@id": "http://metadatacenter.org/templates/Investigation",
- "title": "Investigation Template", 
- "description": "JSON-LD/Schema Investigation Template", 
- "properties": { 
-                "@context": {
-                    "model": "http://metadatacenter.org/model/",
-                    "xsd": "http://www.w3.org/2001/XMLSchema",
-                    "schema": "https://schema.org/",
-                    "title": "schema:title",
-                    "description": "schema:description",
-                },
-                "@id": { "type": "string", "format": "uri" }, 
-                "@type": { "enum": ["model:Investigation"] },
-                "title": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd-xxxx",
-                    "title": "Auto-generated JSON Schema title for 'title' field",
-                    "description": "Auto-generated JSON Schema description for 'title' field",
-                    "properties": {
-                        "@context":  { "$ref": "http://metadatacenter.org/template/ValueElementContext" },
-                        "info": {
-                            "title": "Investigation Title",
-                            "description": "Enter a title for the investigation",
-                            "input_type": "textfield"
-                        },
-                        "value": { "type": "string" }
-                    },
-                    "required": [ "value" ],
-                    "additionalProperties": "false"
-                },
-                "description": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "@id": "http://metadatacenter.org/value_element/dfdf-fdfd-yyyy",
-                    "title": "Auto-generated JSON Schema title for 'description' field",
-                    "description": "Auto-generated JSON Schema description for 'description' field",
-                    "properties": {
-                        "@context":  { "$ref": "http://metadatacenter.org/template/ValueElementContext" },
-                        "info": {
-                            "title": "Investigation Description",
-                            "description": "Enter a description of the investigation",
-                            "input_type": "textfield"
-                        },
-                        "value": { "type": "string" }
-                    },
-                    "required": [ "value" ],
-                    "additionalProperties": "false"
-                },
-                "identifier": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "@id": "http://metadatacenter.org/value_elements/dfdf-fdfd-zzzz",
-                    "title": "Auto-generated JSON Schema title for 'identifier' field",
-                    "description": "Auto-generated JSON Schema description for 'identifier' field",
-                    "properties": {
-                        "@context":  { "$ref": "http://metadatacenter.org/template/ValueElementContext" },
-                        "info": {
-                            "title": "Investigation Identifier",
-                            "description": "Enter a unique identifier for the investigation",
-                            "input_type": "textfield"
-                        },
-                        "value": { "type": "string" }
-                    },
-                    "required": [ "value" ],
-                    "additionalProperties": "false"
-                },
-                "submissionDate": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "@id": "http://metadatacenter.org/value_elements/dfdf-fdfd-ssss",
-                    "title": "Auto-generated JSON Schema title for 'submissionDate' field",
-                    "description": "Auto-generated JSON Schema description for 'submissionDate' field",
-                    "properties": {
-                        "@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
-                        "info": {
-                            "title": "Investigation Submission Date",
-                            "description": "Enter a submission date for the investigation",
-                            "input_type": "date-field"
-                        },
-                        "value": { "type": "string", "format": "date-time" }
-                    },
-                    "required": [ "value" ],
-                    "additionalProperties": "false"
-                },
-                "publicReleaseDate": {
-               .    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "@id": "http://metadatacenter.org/value_elements/dfdf-fdfd-tttt",
-                    "title": "Auto-generated JSON Schema title for 'publicReleaseDate' field",
-                    "description": "Auto-generated JSON Schema description for 'publicReleaseDate' field",
-                    "properties": {
-                        "@context":  { "$ref": "http://metadatacenter.org/templates/ValueElementContext" },
-                        "info": {
-                            "title": "Investigation Public Release Date",
-                            "description": "Enter a public release date for the investigation",
-                            "input_type": "date-field"
-                        },
-                        "value": { "type": "string", "format": "date-time" }
-                    },
-                    "required": [ "value" ],
-                    "additionalProperties": "false"
-                },
-                "hasStudy": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "$ref": "http://metadatacenter.org/templates/Study"
-                    }
-                },
-                "hasContact": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "$ref": "http://metadatacenter.org/templates/Contact"
-                    }
-                },
-                "hasPublication": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "$ref": "http://metadatacenter.org/templates/Publication"
-                    }
-                }
-               },
- "required": [
-     "@context", "@id", "@type", "title", "description", "identifier",  "submissionDate", "publicReleaseDate",
-     "hasStudy", "hasContact", "hasPublication"
- ], 
- "additionalProperties": "true"
-}
