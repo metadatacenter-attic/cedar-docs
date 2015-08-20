@@ -248,7 +248,7 @@
 	        "description": "Auto-generated JSON Schema description for 'publicReleaseDate' field",
 	        "properties": {
 		    "@type":  { "type": "string", "enum": [ "http://bioportal/ontology/StudyReleaseDate" ] },
-		    "@context":  { "$ref": "#valueElementContext" },
+		    "@context":  { "$ref": "#/valueElementContext" },
 		    "info": {
 		        "title": "Study Public Release Date",
 		        "description": "Enter a public release date for the study",
@@ -832,5 +832,8 @@
     },
     "experiment": {},
     "studyAssay": {},
-    "studyFactor": {}
+    "studyFactor": {},
+    "studySubject": {},
+    "studyGroupPopulation": {},
+    "parameterValue": {}
 }
