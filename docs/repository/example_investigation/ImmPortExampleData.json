@@ -1,0 +1,1290 @@
+{
+    "investigation": {
+        "schemaID": "https://repo.metadatacenter.org/UUID",
+        "@id": "https://repo.metadatacenter.org/UUID",
+        "@type": "https://repo.metadatacenter.org/model/Investigation",
+        "@context": {
+            "model": "https://repo.metadatacenter.org/model/",
+            "xsd": "http://www.w3.org/2001/XMLSchema",
+            "schema": "https://schema.org/",
+            "title": "schema:title",
+            "description": "schema:description"
+        },
+        "title": { "value": "Atopic Dermatitis & Vaccinia Network (ADVN) Clinical Studies Consortium" },
+        "description": { "value": "The Atopic Dermatitis and Vaccinia Network (ADVN) is a consortium of academic medical centers that will conduct clinical research studies in an attempt to make smallpox vaccines safer for millions of people with atopic dermatitis.
+
+http://projectreporter.nih.gov/project_info_description.cfm?aid=7337882&icde=23823696&ddparam=&ddvalue=&ddsub=&cr=1&csb=default&cs=ASC" },
+        "identifier": { "value": "N01 AI040029" },
+        "submissionDate": { "value": "NO_MAPPING" },
+        "publicReleaseDate": { "value": "NO_MAPPING" },
+        "hasStudy": [
+        {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Study",
+                "title": { "value": "Role of Antimicrobial Peptides in Host Defense Against Vaccinia Virus  " },
+                "description": { "value": "Atopic dermatitis (AD) is a chronic inflammatory skin disorder characterized by recurrent viral skin infections. Recent studies have demonstrated that the skin of people with AD my have decreased antimicrobial peptide (AMP) expression. The purpose of this study is to compare small pox virus replication and the number of AMPs and other antiviral molecules in people with AD, as compared to those seen in people with psoriasis or asthma, or healthy individuals." },
+                "identifier": { "value": "SDY10" },
+                "submissionDate": { "value": "NO_MAPPING" },
+                "publicReleaseDate": { "value": "2012-11-16" },
+                "studyDesignType": { "value": "Observational" },
+                "hasPublication": [
+                {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Publication",
+                        "title": { "value": "Vaccinia virus-specific molecular signature in atopic dermatitis skin." },
+                        "description": { "value": "NO_MAPPING" },
+                        "doi": { "value": "NO_MAPPING" },
+                        "pubMedID": { "value": "20109744" },
+                        "authorList": [ { "value": "Grigoryev DN(1), Howell MD, Watkins TN, Chen YC, Cheadle C, Boguniewicz M, Barnes KC, Leung DY." }],
+                        "status": { "@type": "http://example.org/status2", "value": "http://example.org/status2" }
+                },
+                {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Publication",
+                        "title": { "value": "The signal transducer and activator of transcription 6 gene (STAT6) increases the propensity of patients with atopic dermatitis toward disseminated viral skin infections." },
+                        "description": { "value": "NO_MAPPING" },
+                        "doi": { "value": "NO_MAPPING" },
+                        "pubMedID": { "value": "21762972" },
+                        "authorList": [ { "value": "Howell MD(1), Gao P, Kim BE, Lesley LJ, Streib JE, Taylor PA, Zaccaro DJ, Boguniewicz M, Beck LA, Hanifin JM, Schneider LC, Hata TR, Gallo RL, Kaplan MH, Barnes KC, Leung DY." }],
+                        "status": { "@type": "http://example.org/status2", "value": "http://example.org/status2" }
+                }
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Leung" },
+                        "firstName": { "value": "Donald" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "leungd@NJHealth.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Boguniewicz" },
+                        "firstName": { "value": "Mark" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "boguniewiczm@NJHealth.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Sub-Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Howell" },
+                        "firstName": { "value": "Michael" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "howellm@NJHealth.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Sub-Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Gallo" },
+                        "firstName": { "value": "Richard" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "rgallo@ucsd.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Sub-Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Savage" },
+                        "firstName": { "value": "Paul B." },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "paul_savage@byu.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Sub-Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Barnes" },
+                        "firstName": { "value": "Kathleen" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "kbarnes@jhmi.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Sub-Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Grigoryev" },
+                        "firstName": { "value": "Dmitry" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "dgrigor1@jhmi.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Sub-Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Milgrom" },
+                        "firstName": { "value": "Henry" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "milgromh@NJHealth.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Sub-Investigator" },
+                        "hasAffiliation": [ ]
+                    }
+                    ],
+                "hasStudyProtocol": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "AMP_Amendment_VIII_version9 0_19June07.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN-Subject2StudyList.xls" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN_Summary.txt" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Other" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    }
+                    ],
+                "hasStudyFactor": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "name": { "value": "weight" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
+                    }
+                ],
+                "hasExperiment": [ ],
+                "hasStudyAssay": [ ],
+                "hasStudyGroupPopulation": [ ],
+                "hasStudySubject": [ ]
+            },
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Study",
+                "title": { "value": "Analysis of the Response of Subjects with Atopic Dermatitis to Oral Vitamin D3 by Measurement of Antimicrobial Peptide Expression in Skin and Saliva" },
+                "description": { "value": "The goal of the Atopic Dermatitis Vaccinia Network (ADVN) is to research methods for preventing atopic dermatitis (AD) patients from contracting eczema vaccinatum (EV), a potentially fatal complication of smallpox vaccinations.  A critical host defense defect uncovered in patients with AD is their apparent relative lack of expression of antimicrobial peptides (AMPs), specifically cathelicidins, under inflammatory conditions.  AMPs are important effectors and triggers in the innate immune system, and the lack of expression in AD patients could be a key component in their susceptibility to EV.  This study will examine whether or not administration of oral Vitamin D3 given over 21 days will change the AMP expression in the skin or saliva of AD subjects and healthy controls." },
+                "identifier": { "value": "SDY13" },
+                "submissionDate": { "value": "NO_MAPPING" },
+                "publicReleaseDate": { "value": "2012-11-16" },
+                "studyDesignType": { "value": "Interventional" },
+                "hasPublication": [
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Leung" },
+                        "firstName": { "value": "Donald" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "leungd@njhealth.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Hanifin" },
+                        "firstName": { "value": "Jon" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "hanifinj@ohsu.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Gallo" },
+                        "firstName": { "value": "Richard" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "RGallo@ucsd.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Hata" },
+                        "firstName": { "value": "Tissa" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "thata@ucsd.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Sub-Investigator" },
+                        "hasAffiliation": [ ]
+                    }
+                    ],
+                "hasStudyProtocol": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "CATH03_Protocol_v2.0_27Mar2009.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN-Subject2StudyList.xls" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    }
+                    ],
+                "hasStudyFactor": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "name": { "value": "weight" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
+                    }
+                ],
+                "hasExperiment": [ ],
+                "hasStudyAssay": [ ],
+                "hasStudyGroupPopulation": [ ],
+                "hasStudySubject": [ ]
+            },
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Study",
+                "title": { "value": "Antimicrobial Response to Oral Vitamin D3 in Patients with Psoriasis" },
+                "description": { "value": "Atopic Dermatitis (AD) is a skin disorder in which people often have swelling and skin infection. People with this disease cannot receive the smallpox vaccine because it could cause them to have a fatal reaction known as eczema vaccinatum (EV). AD subjects have a lack of antimicrobial peptides (AMPs) under inflammatory conditions. This is a substudy to the ADVN Vitamin D3 study (ADVN CATH 03)." },
+                "identifier": { "value": "SDY14" },
+                "submissionDate": { "value": "NO_MAPPING" },
+                "publicReleaseDate": { "value": "2012-11-16" },
+                "studyDesignType": { "value": "Interventional" },
+                "hasPublication": [
+                {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Publication",
+                        "title": { "value": "A randomized controlled double-blind investigation of the effects of vitamin D dietary supplementation in subjects with atopic dermatitis." },
+                        "description": { "value": "NO_MAPPING" },
+                        "doi": { "value": "NO_MAPPING" },
+                        "pubMedID": { "value": "23638978" },
+                        "authorList": [ { "value": "Hata TR(1), Audish D, Kotol P, Coda A, Kabigting F, Miller J, Alexandrescu D, Boguniewicz M, Taylor P, Aertker L, Kesler K, Hanifin JM, Leung DY, Gallo RL." }],
+                        "status": { "@type": "http://example.org/status2", "value": "http://example.org/status2" }
+                }
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Gallo" },
+                        "firstName": { "value": "Richard" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "RGallo@ucsd.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Hata" },
+                        "firstName": { "value": "Tissa" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "thata@ucsd.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Sub-Investigator" },
+                        "hasAffiliation": [ ]
+                    }
+                    ],
+                "hasStudyProtocol": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "CATH_03-01_Substudy_Protocol_v3.0_07July2009_Clean.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN-Subject2StudyList.xls" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN_Summary.txt" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Other" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    }
+                    ],
+                "hasStudyFactor": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "name": { "value": "weight" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
+                    }
+                ],
+                "hasExperiment": [ ],
+                "hasStudyAssay": [ ],
+                "hasStudyGroupPopulation": [ ],
+                "hasStudySubject": [ ]
+            },
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Study",
+                "title": { "value": "Immune Response to Varicella Vaccination in Subjects with Atopic Dermatitis Compared to Nonatopic Controls" },
+                "description": { "value": "Young children have the highest prevalence of atopic dermatitis (AD) and are at significant risk complications from vaccinia. As a surrogate, we believe investigating the immune response to varicella vaccination will yield important information about alterations in the immune response to live virus vaccines  subjects with AD. Evaluation of 30 analyzable children with AD and 30 analyzable nonatopic controls is planned. Subjects immunized with varicella vaccine will have blood drawn for laboratory evaluations 3 weeks after immunization. The immune response to varicella will be assessed by measuring the proportion of varicella-zoster virus (VZV)-specific T cells, perforin production, and VZV-specific antibody titers. Because of the and systemic T helper cell 2 (Th2) polarization of subjects with AD, an altered response to varicella vaccination expected. Specifically, it is expected that AD subjects will exhibit decreased cell-mediated responses, but exhibit normal to increased humoral responses as evidenced by production of VZV-specific antibodies." },
+                "identifier": { "value": "SDY2" },
+                "submissionDate": { "value": "NO_MAPPING" },
+                "publicReleaseDate": { "value": "2012-11-16" },
+                "studyDesignType": { "value": "Observational" },
+                "hasPublication": [
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Schneider" },
+                        "firstName": { "value": "Lynda" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "Lynda.schneider@childrens.harvard.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Leung" },
+                        "firstName": { "value": "Donald" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "Leungd@nic.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Sub-Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Myron" },
+                        "firstName": { "value": "Levin" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "Myron.Levin@uchsc.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Sub-Investigator" },
+                        "hasAffiliation": [ ]
+                    }
+                    ],
+                "hasStudyProtocol": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "Varicella_Protocol_AMENDMENT_IV_Version_4.9_25FEB2008.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN-Subject2StudyList.xls" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    }
+                    ],
+                "hasStudyFactor": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "name": { "value": "weight" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
+                    }
+                ],
+                "hasExperiment": [ ],
+                "hasStudyAssay": [ ],
+                "hasStudyGroupPopulation": [ ],
+                "hasStudySubject": [ ]
+            },
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Study",
+                "title": { "value": "Responses to Immunization with Keyhole Limpet Hemocyanin (KLH) Administered by Scarification and the Intradermal (ID) Route" },
+                "description": { "value": "Atopic dermatitis (AD) is a skin disorder in which people often have swelling and skin infections. People with this disease cannot receive the smallpox vaccine because it could cause them to have a fatal reaction known as eczema vaccinatum (EV). Keyhole limpet hemocyanin (KLH) is a protein that can be used to deliver vaccines to the body. The purpose of this study is to determine a baseline immune reaction to KLH in people without AD. Once this has been established, other studies can be designed to determine whether KLH can be used to give vaccines to people with AD." },
+                "identifier": { "value": "SDY3" },
+                "submissionDate": { "value": "NO_MAPPING" },
+                "publicReleaseDate": { "value": "2012-11-16" },
+                "studyDesignType": { "value": "Interventional" },
+                "hasPublication": [
+                {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Publication",
+                        "title": { "value": "Response to cutaneous immunization with low-molecular-weight subunit keyhole limpet hemocyanin." },
+                        "description": { "value": "NO_MAPPING" },
+                        "doi": { "value": "NO_MAPPING" },
+                        "pubMedID": { "value": "22042247" },
+                        "authorList": [ { "value": "Milgrom H(1), Kesler K, Byron M, Harbeck R, Holliday R, Leung DY." }],
+                        "status": { "@type": "http://example.org/status2", "value": "http://example.org/status2" }
+                }
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Milgrom" },
+                        "firstName": { "value": "Henry" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "milgromh@njh.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Leung" },
+                        "firstName": { "value": "Donald" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "leungd@njh.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    }
+                    ],
+                "hasStudyProtocol": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "KLH_Pilot_Protocol_v4.0_15OCT2007.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN-Subject2StudyList.xls" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    }
+                    ],
+                "hasStudyFactor": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "name": { "value": "weight" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
+                    }
+                ],
+                "hasExperiment": [ ],
+                "hasStudyAssay": [ ],
+                "hasStudyGroupPopulation": [ ],
+                "hasStudySubject": [ ]
+            },
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Study",
+                "title": { "value": "Risk Factors in Atopic Dermatitis for the Development of Eczema Herpeticum" },
+                "description": { "value": "Atopic Dermatitis (AD), also known as eczema, is a skin disease that causes the skin to be hot, dry and scaly, and have severe itching. There are different kinds of eczema. Eczema herpeticum (EH) is a type of eczema that spreads due to an underlying herpes virus infection. The purpose of this research study is to identify the risk factors that may cause EH." },
+                "identifier": { "value": "SDY4" },
+                "submissionDate": { "value": "NO_MAPPING" },
+                "publicReleaseDate": { "value": "2012-11-16" },
+                "studyDesignType": { "value": "Observational" },
+                "hasPublication": [
+                {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Publication",
+                        "title": { "value": "Atopic dermo-respiratory syndrome is a correlate of eczema herpeticum." },
+                        "description": { "value": "NO_MAPPING" },
+                        "doi": { "value": "NO_MAPPING" },
+                        "pubMedID": { "value": "21255038" },
+                        "authorList": [ { "value": "Hinz T(1), Zaccaro D, Byron M, Brendes K, Krieg T, Novak N, Bieber T." }],
+                        "status": { "@type": "http://example.org/status2", "value": "http://example.org/status2" }
+                }
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Bieber" },
+                        "firstName": { "value": "Thomas" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "Thomas.Bieber@ukb.uni-bonn.de" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Novak" },
+                        "firstName": { "value": "Natalija" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "Natalija.Novak@ukb.uni-bonn.de" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    }
+                    ],
+                "hasStudyProtocol": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADEH Protocol 2008July03 v5.0 Amendment IV.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADEH Protocol 2005Jul29 v3.0 Amendment II.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN-Subject2StudyList.xls" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN_Summary.txt" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Other" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    }
+                    ],
+                "hasStudyFactor": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "name": { "value": "weight" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
+                    }
+                ],
+                "hasExperiment": [ ],
+                "hasStudyAssay": [ ],
+                "hasStudyGroupPopulation": [ ],
+                "hasStudySubject": [ ]
+            },
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Study",
+                "title": { "value": "Analysis and Correlation of Cathelicidin Expression in Skin and Saliva of Subjects with Atopic Dermatitis and Psoriasis" },
+                "description": { "value": "Cathelicidins are small proteins in the human body that protect against infection. The purpose of this study is to determine if the amount of cathelicidins and other small proteins found in saliva can predict the amount of these in the skin of people who have acute atopic dermatitis (AD) or psoriasis." },
+                "identifier": { "value": "SDY5" },
+                "submissionDate": { "value": "NO_MAPPING" },
+                "publicReleaseDate": { "value": "2012-11-16" },
+                "studyDesignType": { "value": "Observational" },
+                "hasPublication": [
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Gallo" },
+                        "firstName": { "value": "Richard" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "rgallo@ucsd.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Hata" },
+                        "firstName": { "value": "Tissa" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "thata@ucsd.eud" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    }
+                    ],
+                "hasStudyProtocol": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN_Cath_02_2008June13_v5.0_Amendment_IV.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN-Subject2StudyList.xls" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN_Summary.txt" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Other" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    }
+                    ],
+                "hasStudyFactor": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "name": { "value": "weight" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
+                    }
+                ],
+                "hasExperiment": [ ],
+                "hasStudyAssay": [ ],
+                "hasStudyGroupPopulation": [ ],
+                "hasStudySubject": [ ]
+            },
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Study",
+                "title": { "value": "ADVN Biomarker Registry Study" },
+                "description": { "value": "The proposed Registry is a database with a minimum of 1,000 subjects to improve scientific understanding of the increased risk of complications after exposure to the smallpox vaccine for people with atopic dermatitis." },
+                "identifier": { "value": "SDY6" },
+                "submissionDate": { "value": "NO_MAPPING" },
+                "publicReleaseDate": { "value": "2012-11-16" },
+                "studyDesignType": { "value": "Observational" },
+                "hasPublication": [
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Barnes" },
+                        "firstName": { "value": "Kathleen" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "kbarnes@jhmi.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Gallo" },
+                        "firstName": { "value": "Richard" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "rgallo@ucsd.edu " },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Leung" },
+                        "firstName": { "value": "Donald" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "leungd@njc.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Hanifin" },
+                        "firstName": { "value": "Jon" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "hanifinj@ohsu.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Schneider" },
+                        "firstName": { "value": "Lynda" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "lynda.schneider@childrens.harvard.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Beck" },
+                        "firstName": { "value": "Lisa" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "Lisa_Beck@URMC.ROCHESTER.EDU" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Paller" },
+                        "firstName": { "value": "Amy" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "apaller@nmff.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Paller" },
+                        "firstName": { "value": "Amy" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "apaller@nmff.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    }
+                    ],
+                "hasStudyProtocol": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "Registry_Amendment_IV_v5.0_23Sep2008_Clean_PTL4448.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.com" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN-Subject2StudyList.xls" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN_Summary.txt" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Other" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    }
+                    ],
+                "hasStudyFactor": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "name": { "value": "weight" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
+                    }
+                ],
+                "hasExperiment": [ ],
+                "hasStudyAssay": [ ],
+                "hasStudyGroupPopulation": [ ],
+                "hasStudySubject": [ ]
+            },
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Study",
+                "title": { "value": "ADVN Biomarker Registry Study: CMI/Ab-Vaccinia Substudy" },
+                "description": { "value": "To measure total and specific antibody titers and T cell responses in a sample of subjects who experienced eczema vaccinatum (EV) and a group of subjects who did not suffer from EV (normal controls or healthy AD subjects)." },
+                "identifier": { "value": "SDY7" },
+                "submissionDate": { "value": "NO_MAPPING" },
+                "publicReleaseDate": { "value": "2012-11-16" },
+                "studyDesignType": { "value": "Observational" },
+                "hasPublication": [
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Leung" },
+                        "firstName": { "value": "Donald" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "leungd@njhealth.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Hanifin" },
+                        "firstName": { "value": "Jon" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "hanifinj@ohsu.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Schneider" },
+                        "firstName": { "value": "Lynda" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "lynda.schneider@childrens.harvard.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Gallo" },
+                        "firstName": { "value": "Richard" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "RGallo@ucsd.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Beck" },
+                        "firstName": { "value": "Lisa" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "Lisa_Beck@URMC.ROCHESTER.EDU" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    }
+                    ],
+                "hasStudyProtocol": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "Registry_Amendment_IV_v5.0_23Sep2008_Clean_PTL4448.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN-Subject2StudyList.xls" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN_Summary.txt" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Other" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    }
+                    ],
+                "hasStudyFactor": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "name": { "value": "weight" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
+                    }
+                ],
+                "hasExperiment": [ ],
+                "hasStudyAssay": [ ],
+                "hasStudyGroupPopulation": [ ],
+                "hasStudySubject": [ ]
+            },
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Study",
+                "title": { "value": "ADVN Biomarker Registry Study: CMI-HSV Substudy" },
+                "description": { "value": "To evaluate AD subjects cell mediated immunity CMI responses to Herpes simplex virus." },
+                "identifier": { "value": "SDY8" },
+                "submissionDate": { "value": "NO_MAPPING" },
+                "publicReleaseDate": { "value": "2012-11-16" },
+                "studyDesignType": { "value": "Observational" },
+                "hasPublication": [
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Leung" },
+                        "firstName": { "value": "Donald" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "leungd@njhealth.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Hanifin" },
+                        "firstName": { "value": "Jon" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "hanifinj@ohsu.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Schneider" },
+                        "firstName": { "value": "Lynda" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "lynda.schneider@childrens.harvard.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Gallo" },
+                        "firstName": { "value": "Richard" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "RGallo@ucsd.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Beck" },
+                        "firstName": { "value": "Lisa" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "Lisa_Beck@URMC.ROCHESTER.EDU" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    }
+                    ],
+                "hasStudyProtocol": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "Registry_Amendment_IV_v5.0_23Sep2008_Clean_PTL4448.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN-Subject2StudyList.xls" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN_Summary.txt" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Other" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    }
+                    ],
+                "hasStudyFactor": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "name": { "value": "weight" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
+                    }
+                ],
+                "hasExperiment": [ ],
+                "hasStudyAssay": [ ],
+                "hasStudyGroupPopulation": [ ],
+                "hasStudySubject": [ ]
+            },
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Study",
+                "title": { "value": "ADVN Biomarker Registry: Neutrophil Substudy" },
+                "description": { "value": "To evaluate the chemotactic function of peripheral blood leukocytes such as neutrophils in subjects with ADEH+, ADEH-, and NA controls." },
+                "identifier": { "value": "SDY9" },
+                "submissionDate": { "value": "NO_MAPPING" },
+                "publicReleaseDate": { "value": "2012-11-16" },
+                "studyDesignType": { "value": "Observational" },
+                "hasPublication": [
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Leung" },
+                        "firstName": { "value": "Donald" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "leungd@njhealth.org" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Gallo" },
+                        "firstName": { "value": "Richard" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "RGallo@ucsd.edu" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " None" },
+                        "hasAffiliation": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "Beck" },
+                        "firstName": { "value": "Lisa" },
+                        "middleInitial": { "value": "NO_MAPPING" },
+                        "email": { "value": "Lisa_Beck@URMC.ROCHESTER.EDU" },
+                        "phone": { "value": "NO_MAPPING" },
+                        "fax": { "value": "NO_MAPPING" },
+                        "address": { "value": "" },
+                        "role": { "value": " Principal Investigator" },
+                        "hasAffiliation": [ ]
+                    }
+                    ],
+                "hasStudyProtocol": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "Registry_Amendment_IV_v5.0_23Sep2008_Clean_PTL4448.pdf" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN-Subject2StudyList.xls" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Data_Transformation" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    },
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "name": { "value": "ADVN_Summary.txt" },
+                        "description": { "value": "None" },
+                        "type": { "value": " Other" },
+                        "version": { "value": "NO_MAPPING" },
+                        "uri": { "value": "http://immport.org" },
+                        "hasParameterValue": [ ]
+                    }
+                    ],
+                "hasStudyFactor": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "name": { "value": "weight" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
+                    }
+                ],
+                "hasExperiment": [ ],
+                "hasStudyAssay": [ ],
+                "hasStudyGroupPopulation": [ ],
+                "hasStudySubject": [ ]
+            }
+            ],
+        "hasContact": [
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Contact",
+                "lastName": { "value": "O'Bannion" },
+                "firstName": { "value": "John" },
+                "middleInitial": { "value": "J" },
+                "email": { "value": "jbob@example,com" },
+                "phone": { "value": "555-1212" },
+                "fax": { "value": "555-1313" },
+                "address": { "value": "1 Spyuten Duyvil Way, New York, NY" },
+                "role": { "value": "http://purl.obolibrary.org/obo/OBI_000434" },
+                "hasAffiliation": [ ]
+            }
+        ],
+        "hasPublication": [
+            {
+                "@id": "https://repo.metadatacenter.org/UUID",
+                "@type": "https://repo.metadatacenter.org/model/Publication",
+                "title": { "value": "Study ES434" },
+                "description": { "value": "A study of measles" },
+                "doi": { "value": "doi:10.10.1038/nphys1170" },
+                "pubMedID": { "value": "324324242" },
+                "authorList": [ { "value": "JJ Bob" }, { "value": "Billy Bob" } ],
+                "status": { "@type": "http://example.org/status2", "value": "http://example.org/status2" }
+            }
+        ]
+    }
+}
