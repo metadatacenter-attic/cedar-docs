@@ -266,6 +266,7 @@
                 },
                 "type": "array"
             },
+<<<<<<< HEAD
             "hasProcess": {
                 "items": {
                     "$ref": "#/process",
@@ -273,6 +274,8 @@
                 },
                 "type": "array"            
             },
+=======
+>>>>>>> 8ac7512dd6986f6c7f9152939cc755961c2dc9b2
             "hasStudyAssay": {
                 "items": {
                     "$ref": "#/studyAssay",
@@ -457,6 +460,10 @@
             "hasContact",
             "hasStudyProtocol",
             "hasStudyFactor",
+<<<<<<< HEAD
+=======
+            "hasExperiment",
+>>>>>>> 8ac7512dd6986f6c7f9152939cc755961c2dc9b2
             "hasStudyAssay",
             "hasStudyGroupPopulation",
             "hasStudySubject"
@@ -1375,6 +1382,7 @@
         ],
         "additionalProperties": false
     },
+<<<<<<< HEAD
     "process": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "@id": "https://repo.metadatacenter.org/UUID",
@@ -1488,6 +1496,8 @@
         ],
         "additionalProperties": false
     },
+=======
+>>>>>>> 8ac7512dd6986f6c7f9152939cc755961c2dc9b2
     "sample": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "@id": "https://repo.metadatacenter.org/UUID",
@@ -1539,7 +1549,11 @@
             },
             "hasCollectionStudyTime": {
                 "items": {
+<<<<<<< HEAD
                     "$ref": "#/studyTime",
+=======
+                    "$ref": "#/collectionStudyTime",
+>>>>>>> 8ac7512dd6986f6c7f9152939cc755961c2dc9b2
                     "type": "object"
                 },
                 "type": "array"
@@ -1870,9 +1884,16 @@
             },
             "@type": {
                 "type": "string", 
+<<<<<<< HEAD
 				"enum": [
                     "https://repo.metadatacenter.org/model/StudyFactor"
                 ]
+=======
+		"enum": [
+                    "https://repo.metadatacenter.org/model/StudyFactor"
+                ],
+                "type": "string"
+>>>>>>> 8ac7512dd6986f6c7f9152939cc755961c2dc9b2
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
