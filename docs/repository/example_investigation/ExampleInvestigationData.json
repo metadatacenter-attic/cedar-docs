@@ -73,36 +73,71 @@
                         "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
                     }
                 ],
-                "hasStudyAssay": [ ],
-                "hasStudyGroupPopulation": [ ],
-                "hasStudySubject": [ ]
-            }
-        ],
-        "hasContact": [
-            {
-                "@id": "https://repo.metadatacenter.org/UUID",
-                "@type": "https://repo.metadatacenter.org/model/Contact",
-                "lastName": { "value": "O'Bannion" },
-                "firstName": { "value": "John" },
-                "middleInitial": { "value": "J" },
-                "email": { "value": "jbob@example,com" },
-                "phone": { "value": "555-1212" },
-                "fax": { "value": "555-1313" },
-                "address": { "value": "1 Spyuten Duyvil Way, New York, NY" },
-                "role": { "value": "http://purl.obolibrary.org/obo/OBI_000434" },
-                "hasAffiliation": [ ]
-            }
-        ],
-        "hasPublication": [
-            {
-                "@id": "https://repo.metadatacenter.org/UUID",
-                "@type": "https://repo.metadatacenter.org/model/Publication",
-                "title": { "value": "Study ES434" },
-                "description": { "value": "A study of measles" },
-                "doi": { "value": "doi:10.10.1038/nphys1170" },
-                "pubMedID": { "value": "324324242" },
-                "authorList": [ { "value": "JJ Bob" }, { "value": "Billy Bob" } ],
-                "status": { "@type": "http://example.org/status2", "value": "http://example.org/status2" }
+                "hasStudyGroupPopulation": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@context": {},
+                        "@type": "https://repo.metadatacenter.org/model/StudyGroupPopulation",
+                        "name": { "value": "population name" },
+                        "selectionRule": { "value": "selection rule" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" },
+                        "hasStudySubject": [
+                            {
+                                "@id": "https://repo.metadatacenter.org/UUID",
+                                "@context": {},
+                                "@type": "https://repo.metadatacenter.org/model/StudySubject",
+                                "name": { "value": "study subject name" },
+                                "type": "http://purl.obolibrary.org/obo/OBI_0100026XXXX",
+                                "hasCharacteristicValue": [
+                                    {
+                                        "@id": "https://repo.metadatacenter.org/UUID",
+                                        "@context": {},
+                                        "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
+                                        "characteristic": { "value": "http://bioportal.bioontology.org/ontologies/PATOXXXX" },
+                                        "value": { "value": "a characteristic value" }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hasStudyAssay": [
+                    {
+                        "@context": {},
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/StudyAssay",
+                        "measurementType": { "value": "http://bioportal.bioontology.org/ontologies/OBIXXXXX" },
+                        "platform": { "value": "http://bioportal.bioontology.org/ontologies/OBIXXXXX" },
+                        "technology": { "value": "http://bioportal.bioontology.org/ontologies/OBIXXXXX" }
+                    }
+                ],
+                "hasContact": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "lastName": { "value": "O'Bannion" },
+                        "firstName": { "value": "John" },
+                        "middleInitial": { "value": "J" },
+                        "email": { "value": "jbob@example,com" },
+                        "phone": { "value": "555-1212" },
+                        "fax": { "value": "555-1313" },
+                        "address": { "value": "1 Spyuten Duyvil Way, New York, NY" },
+                        "role": { "value": "http://purl.obolibrary.org/obo/OBI_000434" },
+                        "hasAffiliation": [ ]
+                    }
+                ],
+                "hasPublication": [
+                    {
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "@type": "https://repo.metadatacenter.org/model/Publication",
+                        "title": { "value": "Study ES434" },
+                        "description": { "value": "A study of measles" },
+                        "doi": { "value": "doi:10.10.1038/nphys1170" },
+                        "pubMedID": { "value": "324324242" },
+                        "authorList": [ { "value": "JJ Bob" }, { "value": "Billy Bob" } ],
+                        "status": { "@type": "http://example.org/status2", "value": "http://example.org/status2" }
+                    }
+                ]
             }
         ]
     }

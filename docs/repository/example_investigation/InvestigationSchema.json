@@ -266,7 +266,6 @@
                 },
                 "type": "array"
             },
-<<<<<<< HEAD
             "hasProcess": {
                 "items": {
                     "$ref": "#/process",
@@ -274,8 +273,6 @@
                 },
                 "type": "array"            
             },
-=======
->>>>>>> 8ac7512dd6986f6c7f9152939cc755961c2dc9b2
             "hasStudyAssay": {
                 "items": {
                     "$ref": "#/studyAssay",
@@ -460,10 +457,6 @@
             "hasContact",
             "hasStudyProtocol",
             "hasStudyFactor",
-<<<<<<< HEAD
-=======
-            "hasExperiment",
->>>>>>> 8ac7512dd6986f6c7f9152939cc755961c2dc9b2
             "hasStudyAssay",
             "hasStudyGroupPopulation",
             "hasStudySubject"
@@ -1194,7 +1187,7 @@
             "@type": {
             	"type": "string", 
                 "enum": [
-                    "model:StudyGroupPopulation"
+                    "https://repo.metadatacenter.org/model/StudyGroupPopulation"
                 ]
             },
             "hasStudySubject": {
@@ -1308,7 +1301,7 @@
             "@type": {
             	"type": "string", 
                 "enum": [
-                    "model:StudySubject"
+                    "https://repo.metadatacenter.org/model/StudySubject"
                 ]
             },
             "hasCharacteristicValue": {
@@ -1382,7 +1375,6 @@
         ],
         "additionalProperties": false
     },
-<<<<<<< HEAD
     "process": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "@id": "https://repo.metadatacenter.org/UUID",
@@ -1496,8 +1488,6 @@
         ],
         "additionalProperties": false
     },
-=======
->>>>>>> 8ac7512dd6986f6c7f9152939cc755961c2dc9b2
     "sample": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "@id": "https://repo.metadatacenter.org/UUID",
@@ -1514,7 +1504,7 @@
             "@type": {
                 "type": "string", 
 		"enum": [
-                    "model:Sample"
+                    "https://repo.metadatacenter.org/model/Sample"
                 ]
             },
             "description": {
@@ -1549,11 +1539,7 @@
             },
             "hasCollectionStudyTime": {
                 "items": {
-<<<<<<< HEAD
                     "$ref": "#/studyTime",
-=======
-                    "$ref": "#/collectionStudyTime",
->>>>>>> 8ac7512dd6986f6c7f9152939cc755961c2dc9b2
                     "type": "object"
                 },
                 "type": "array"
@@ -1672,7 +1658,7 @@
             "@type": {
                 "type": "string", 
                 "enum": [
-                    "model:Reagent"
+                    "https://repo.metadatacenter.org/model/Reagent"
                 ]
             },
             "hasCharacteristicValue": {
@@ -1762,7 +1748,7 @@
             "@type": {
                 "type": "string", 
 		"enum": [
-                    "model:StudyAssay"
+                    "https://repo.metadatacenter.org/model/StudyAssay"
                 ]
             },
             "measurementType": {
@@ -1884,16 +1870,9 @@
             },
             "@type": {
                 "type": "string", 
-<<<<<<< HEAD
 				"enum": [
                     "https://repo.metadatacenter.org/model/StudyFactor"
                 ]
-=======
-		"enum": [
-                    "https://repo.metadatacenter.org/model/StudyFactor"
-                ],
-                "type": "string"
->>>>>>> 8ac7512dd6986f6c7f9152939cc755961c2dc9b2
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -1971,7 +1950,7 @@
             "@type": {
                 "type": "string", 
 		"enum": [
-                    "model:ProtocolParameter"
+                    "https://repo.metadatacenter.org/model/ProtocolParameter"
                 ]
             },
             "name": {
@@ -2053,7 +2032,7 @@
             "@type": {
                 "type": "string", 
 		"enum": [
-                    "model:CharacteristicValue"
+                    "https://repo.metadatacenter.org/model/CharacteristicValue"
                 ]
             },
             "characteristic": {
@@ -2136,7 +2115,7 @@
             "@type": {
                 "type": "string", 
 		"enum": [
-                    "model:FactorValue"
+                    "https://repo.metadatacenter.org/model/FactorValue"
                 ]
             },
             "factor": {
@@ -2213,7 +2192,7 @@
             "@type": {
             	"type": "string",
                 "enum": [
-                    "model:ParameterValue"
+                    "https://repo.metadatacenter.org/model/ParameterValue"
                 ]
             },
             "parameter": {
@@ -2290,7 +2269,7 @@
             "@type": {
                 "type": "string", 
 		"enum": [
-                    "model:ResultValue"
+                    "https://repo.metadatacenter.org/model/ResultValue"
                 ]
             },
             "name": {
@@ -2367,7 +2346,7 @@
             "@type": {
                 "type": "string", 
 		"enum": [
-                    "model:DataFile"
+                    "https://repo.metadatacenter.org/model/DataFile"
                 ]
             },
             "description": {
@@ -2442,7 +2421,7 @@
             "@type": {
                 "type": "string", 
 		"enum": [
-                    "model:StudyTime"
+                    "https://repo.metadatacenter.org/model/StudyTime"
                 ]
             },
             "durationValue": {
