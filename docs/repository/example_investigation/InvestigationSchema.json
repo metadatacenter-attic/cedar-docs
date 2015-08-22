@@ -5,18 +5,10 @@
         "title": "Value Element Context Description",
         "description": "JSON Schema description of Value Element Context. Used when describing @context fields for value elements",
         "properties": {
-            "info": {
-                "description": "Enter a title for the investigation",
-                "input_type": "textfield",
-                "title": "Investigation Title"
-            },
             "value": {
                 "type": "string"
             }
-        },
-        "required": [
-            "value"
-        ]
+        }
     },
     "$schema": "http://json-schema.org/draft-04/schema#",
     "properties": {
@@ -459,7 +451,8 @@
             "hasStudyFactor",
             "hasStudyAssay",
             "hasStudyGroupPopulation",
-            "hasStudySubject"
+            "hasStudySubject", 
+            "hasProcess"
         ],
         "additionalProperties": false
     },
@@ -1444,7 +1437,7 @@
                 },
             "hasInput": {
                 "items": {
-                    "oneOf" : [
+                    "anyOf" : [
                         { "type": "object",
                           "$ref": "#/studySubject"},
                         { "type": "object",
@@ -1459,7 +1452,7 @@
             },
             "hasOutput": {
                 "items": {
-                    "oneOf" : [
+                    "anyOf" : [
                         { "type": "object",
                           "$ref": "#/sample"},
                         { "type": "object",
@@ -2075,7 +2068,7 @@
                     "@context": {
                         "$ref": "#/valueElementContext"
                     },
-                    "@type": {},
+                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter a value for the characteristic",
                         "input_type": "textfield",
@@ -2152,7 +2145,7 @@
                     "@context": {
                         "$ref": "#/valueElementContext"
                     },
-                    "@type": {},
+                    "@type": { "type": "string"},
                     "info": {
                         "description": "Enter a value for the factor",
                         "input_type": "textfield",
@@ -2229,7 +2222,7 @@
                     "@context": {
                         "$ref": "#/valueElementContext"
                     },
-                    "@type": {},
+                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter a value for the parameter",
                         "input_type": "textfield",
@@ -2306,7 +2299,7 @@
                     "@context": {
                         "$ref": "#/valueElementContext"
                     },
-                    "@type": {},
+                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter a value for the result",
                         "input_type": "textfield",
@@ -2359,7 +2352,7 @@
                     "@context": {
                         "$ref": "#/valueElementContext"
                     },
-                    "@type": {},
+                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter a description for the file",
                         "input_type": "textfield",
@@ -2434,7 +2427,7 @@
                     "@context": {
                         "$ref": "#/valueElementContext"
                     },
-                    "@type": {},
+                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter a duration before or after the study event",
                         "input_type": "textfield",
@@ -2458,7 +2451,7 @@
                     "@context": {
                         "$ref": "#/valueElementContext"
                     },
-                    "@type": {},
+                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter whether the time is before or after the study event",
                         "input_type": "textfield",
