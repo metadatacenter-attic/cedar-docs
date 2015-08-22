@@ -1,15 +1,4 @@
 {
-    "valueElementContext": {
-        "$schema": "http://json-schema.org/draft-04/schema#",
-        "additionalProperties": false,
-        "title": "Value Element Context Description",
-        "description": "JSON Schema description of Value Element Context. Used when describing @context fields for value elements",
-        "properties": {
-            "value": {
-                "type": "string"
-            }
-        }
-    },
     "$schema": "http://json-schema.org/draft-04/schema#",
     "properties": {
         "investigation": {
@@ -199,6 +188,19 @@
         "investigation"
     ],
     "additionalProperties": false,
+
+    "valueElementContext": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "additionalProperties": false,
+        "title": "Value Element Context Description",
+        "description": "JSON Schema description of Value Element Context. Used when describing @context fields for value elements",
+        "properties": {
+            "value": {
+                "type": "string"
+            }
+        }
+    },
+
     "study": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "@id": "https://repo.metadatacenter.org/UUID",
