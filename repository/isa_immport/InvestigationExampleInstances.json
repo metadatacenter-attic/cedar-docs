@@ -1,15 +1,11 @@
 {
     "investigation": {
-        "schemaID": "https://repo.metadatacenter.org/UUID",
-        "@id": "https://repo.metadatacenter.org/UUID",
-        "@type": "https://repo.metadatacenter.org/model/Investigation",
+        "template_id": "https://repo.metadatacenter.org/UUID",
         "@context": {
-            "model": "https://repo.metadatacenter.org/model/",
-            "xsd": "http://www.w3.org/2001/XMLSchema",
-            "schema": "https://schema.org/",
-            "title": "schema:title",
-            "description": "schema:description"
+            "value": "https://schema.org/value"
         },
+        "@type": "https://repo.metadatacenter.org/model/Investigation",
+        "@id": "https://repo.metadatacenter.org/UUID",
         "title": { "value": "Investigation X" },
         "description": { "value": "Investigation X: An Animal Care Investigation" },
         "identifier": { "value": "X323" },
@@ -17,8 +13,8 @@
         "publicReleaseDate": { "value": "2014-01-01" },
         "hasStudy": [
             {
-                "@id": "https://repo.metadatacenter.org/UUID",
                 "@type": "https://repo.metadatacenter.org/model/Study",
+                "@id": "https://repo.metadatacenter.org/UUID",
                 "title": { "value": "Study X1" },
                 "description": { "value": "Study X1: An Animal Care Study" },
                 "identifier": { "value": "X323-SDY1" },
@@ -27,8 +23,8 @@
                 "studyDesignType": { "value": "http://purl.obolibrary.org/obo/OBI_0500014" },
                 "hasPublication": [
                     {
-                        "@id": "https://repo.metadatacenter.org/UUID",
                         "@type": "https://repo.metadatacenter.org/model/Publication",
+                        "@id": "https://repo.metadatacenter.org/UUID",
                         "title": { "value": "Study ES434" },
                         "description": { "value": "A study of measles" },
                         "doi": { "value": "doi:10.10.1038/nphys1170" },
@@ -39,8 +35,8 @@
                 ],
                 "hasContact": [
                     {
-                        "@id": "https://repo.metadatacenter.org/UUID",
                         "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "@id": "https://repo.metadatacenter.org/UUID",
                         "lastName": { "value": "O'Bannion" },
                         "firstName": { "value": "John" },
                         "middleInitial": { "value": "J" },
@@ -51,9 +47,8 @@
                         "role": { "value": "http://purl.obolibrary.org/obo/OBI_000434" },
                         "hasAffiliation": [ 
                             {
-                                "@context": {},
-                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "@type": "https://repo.metadatacenter.org/model/Organization",
+                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "name": { "value": "Stanford University" },
                                 "department": { "value": "BMIR" }
                             }
@@ -62,36 +57,33 @@
                 ],
                 "hasStudyProtocol": [
                     {
-                        "@id": "https://repo.metadatacenter.org/UUID",
                         "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                        "@id": "https://repo.metadatacenter.org/UUID",
                         "name": { "value": "Protocol X" },
                         "description": { "value": "Protocol X: A Protocol in Animal Care" },
                         "type": { "value": ": http://purl.obolibrary.org/obo/OBI_0000715" },
                         "version": { "value": "1.3.2" },
                         "uri": { "value": "http://example.org/protocols/animal/323.html" },
-                        "hasParameterValue": [ 
+                        "hasProtocolParameter": [ 
                             {
-                                "@context": {},
+                                "@type": "https://repo.metadatacenter.org/model/ProtocolParameter",
                                 "@id": "https://repo.metadatacenter.org/UUID",
-                                "@type": "https://repo.metadatacenter.org/model/ParameterValue",
-                                "parameter": { "value": "p1" },
-                                "value": { "value": "v1" },
+                                "name": { "value": "protocol parameter name" },
+                                "type": { "value": "protocol parameter type" }
                             }
                         ]
                     }
                 ],
                 "hasStudySubject": [
                     {
-                        "@id": "https://repo.metadatacenter.org/UUID",
-                        "@context": {},
                         "@type": "https://repo.metadatacenter.org/model/StudySubject",
+                        "@id": "https://repo.metadatacenter.org/UUID",
                         "name": { "value": "study subject name" },
-                        "type": "http://purl.obolibrary.org/obo/OBI_0000925",
+                        "type": { "value": "http://purl.obolibrary.org/obo/OBI_0000925" },
                         "hasCharacteristicValue": [
                             {
-                                "@id": "https://repo.metadatacenter.org/UUID",
-                                "@context": {},
                                 "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
+                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "characteristic": { "value": "http://purl.obolibrary.org/obo/OBI_0500014" },
                                 "value": { "value": "a characteristic value" }
                             }
@@ -100,33 +92,29 @@
                 ],
                 "hasStudyFactor": [
                     {
-                        "@id": "https://repo.metadatacenter.org/UUID",
-                        "@context": {},
                         "@type": "https://repo.metadatacenter.org/model/StudyFactor",
+                        "@id": "https://repo.metadatacenter.org/UUID",
                         "name": { "value": "weight" },
                         "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
                     }
                 ],
                 "hasStudyGroupPopulation": [
                     {
-                        "@id": "https://repo.metadatacenter.org/UUID",
-                        "@context": {},
                         "@type": "https://repo.metadatacenter.org/model/StudyGroupPopulation",
+                        "@id": "https://repo.metadatacenter.org/UUID",
                         "name": { "value": "population name" },
                         "selectionRule": { "value": "selection rule" },
                         "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" },
                         "hasStudySubject": [
                             {
-                                "@id": "https://repo.metadatacenter.org/UUID",
-                                "@context": {},
                                 "@type": "https://repo.metadatacenter.org/model/StudySubject",
+                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "name": { "value": "study subject name" },
                                 "type": "http://purl.obolibrary.org/obo/OBI_1110026",
                                 "hasCharacteristicValue": [
                                     {
-                                        "@id": "https://repo.metadatacenter.org/UUID",
-                                        "@context": {},
                                         "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
+                                        "@id": "https://repo.metadatacenter.org/UUID",
                                         "characteristic": { "value": "http://purl.obolibrary.org/obo/PATO_0001529" },
                                         "value": { "value": "a characteristic value" }
                                     }
@@ -137,56 +125,51 @@
                 ],
                 "hasProcess": [
                     {
-                        "@id": "https://repo.metadatacenter.org/UUID",
                         "@type": "https://repo.metadatacenter.org/model/Process",
+                        "@id": "https://repo.metadatacenter.org/UUID",
                         "type": { "value": "uuuu" },
-                        "executeStudyProtocol": {  
-                            "@id": "https://repo.metadatacenter.org/UUID",
+                        "executeStudyProtocol": {
                             "@type": "https://repo.metadatacenter.org/model/StudyProtocol",
+                            "@id": "https://repo.metadatacenter.org/UUID",
                             "name": { "value": "Protocol X" },
                             "description": { "value": "Protocol X: A Protocol in Animal Care" },
                             "type": { "value": ": http://purl.obolibrary.org/obo/OBI_0000715" },
                             "version": { "value": "1.3.2" },
                             "uri": { "value": "http://example.org/protocols/animal/323.html" },
-                            "hasParameterValue": [ 
+                            "hasProtocolParameter": [ 
                                 {
-                                    "@context": {},
+                                    "@type": "https://repo.metadatacenter.org/model/ProtocolParameter",
                                     "@id": "https://repo.metadatacenter.org/UUID",
-                                    "@type": "https://repo.metadatacenter.org/model/ParameterValue",
-                                    "parameter": { "value": "p1" },
-                                    "value": { "value": "v1" },
+                                    "name": { "value": "protocol parameter name" },
+                                    "type": { "value": "protocol paramater type" }
                                 }
                             ]
                         },
                         "hasStudyAssay": {
-                            "@context": {},
-                            "@id": "https://repo.metadatacenter.org/UUID",
                             "@type": "https://repo.metadatacenter.org/model/StudyAssay",
+                            "@id": "https://repo.metadatacenter.org/UUID",
                             "measurementType": { "value": "http://purl.obolibrary.org/obo/IAO_0000003" },
                             "platform": { "value": "http://purl.obolibrary.org/obo/IAO_0000023" },
                             "technology": { "value": "http://purl.obolibrary.org/obo/IAO_0000321" }
                         },
                         "hasParameterValue": [ 
                             {
-                                "@context": {},
-                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "@type": "https://repo.metadatacenter.org/model/ParameterValue",
+                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "parameter": { "value": "p1" },
-                                "value": { "value": "v1" },
+                                "value": { "value": "v1" }
                             }
                         ],
                         "hasReagent": [
                             {
-                                "@context": {},
-                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "@type": "https://repo.metadatacenter.org/model/Reagent",
+                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "name": { "value": "a reagent name" },
                                 "type": { "value": ": http://purl.obolibrary.org/obo/OBI_0000715" },
                                 "hasCharacteristicValue": [
                                     {
-                                        "@id": "https://repo.metadatacenter.org/UUID",
-                                        "@context": {},
                                         "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
+                                        "@id": "https://repo.metadatacenter.org/UUID",
                                         "characteristic": { "value": "http://purl.obolibrary.org/obo/PATO_0001783" },
                                         "value": { "value": "a characteristic value" }
                                     }
@@ -195,44 +178,37 @@
                         ],
                         "hasInput": [
                             {
-                                "@context": {},
-                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "@type": "https://repo.metadatacenter.org/model/DataFile",
-                                "name": { "value": "a data file" },
+                                "@id": "https://repo.metadatacenter.org/UUID",
+                                "name": { "value": "a data file" }
                             }
                         ],
                         "hasOutput": [
                             {
-                                "@context": {},
-                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "@type": "https://repo.metadatacenter.org/model/ResultValue",
+                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "name": { "value": "a result value name" },
-                                "value": { "value": "a result value name" },
+                                "value": { "value": "a result value name" }
                             },
                             {
-                                "@context": {},
-                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "@type": "https://repo.metadatacenter.org/model/Sample",
+                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "name": { "value": "a sample name" },
                                 "type": { "value": "a sample type" },
                                 "description": { "value": "a sample description" },
                                 "source": { "value": "a sample source" },
                                 "hasCharacteristicValue": [
-
                                     {
-                                        "@id": "https://repo.metadatacenter.org/UUID",
-                                        "@context": {},
                                         "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
+                                        "@id": "https://repo.metadatacenter.org/UUID",
                                         "characteristic": { "value": "http://purl.obolibrary.org/obo/PATO_000178" },
                                         "value": { "value": "a characteristic value" }
                                     }
-
                                 ],
                                 "hasCollectionStudyTime": [
                                     {
-                                        "@context": {},
-                                        "@id": "https://repo.metadatacenter.org/UUID",
                                         "@type": "https://repo.metadatacenter.org/model/StudyTime",
+                                        "@id": "https://repo.metadatacenter.org/UUID",
                                         "durationValue": { "value": 23 },
                                         "unit": { "value": "days" },
                                         "isBeforeEvent": { "value": true },
@@ -241,9 +217,8 @@
                                 ],
                                 "hasFactorValue": [
                                     {
-                                        "@context": {},
-                                        "@id": "https://repo.metadatacenter.org/UUID",
                                         "@type": "https://repo.metadatacenter.org/model/FactorValue",
+                                        "@id": "https://repo.metadatacenter.org/UUID",
                                         "factor": { "value": "a factor" },
                                         "value": { "value": "a factor value" }
                                     }
@@ -254,9 +229,8 @@
                 ],
                 "hasStudyAssay": [
                     {
-                        "@context": {},
-                        "@id": "https://repo.metadatacenter.org/UUID",
                         "@type": "https://repo.metadatacenter.org/model/StudyAssay",
+                        "@id": "https://repo.metadatacenter.org/UUID",
                         "measurementType": { "value": "http://purl.obolibrary.org/obo/OBI_0500014" },
                         "platform": { "value": "http://purl.obolibrary.org/obo/OBI_0500314" },
                         "technology": { "value": "http://purl.obolibrary.org/obo/OBI_0500344" }
@@ -264,8 +238,8 @@
                 ],
                 "hasContact": [
                     {
-                        "@id": "https://repo.metadatacenter.org/UUID",
                         "@type": "https://repo.metadatacenter.org/model/Contact",
+                        "@id": "https://repo.metadatacenter.org/UUID",
                         "lastName": { "value": "O'Bannion" },
                         "firstName": { "value": "John" },
                         "middleInitial": { "value": "J" },
@@ -276,9 +250,8 @@
                         "role": { "value": "http://purl.obolibrary.org/obo/OBI_000434" },
                         "hasAffiliation": [ 
                             {
-                                "@context": {},
-                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "@type": "https://repo.metadatacenter.org/model/Organization",
+                                "@id": "https://repo.metadatacenter.org/UUID",
                                 "name": { "value": "Stanford University" },
                                 "department": { "value": "BMIR" }
                             }
@@ -287,8 +260,8 @@
                 ],
                 "hasPublication": [
                     {
-                        "@id": "https://repo.metadatacenter.org/UUID",
                         "@type": "https://repo.metadatacenter.org/model/Publication",
+                        "@id": "https://repo.metadatacenter.org/UUID",
                         "title": { "value": "Study ES434" },
                         "description": { "value": "A study of measles" },
                         "doi": { "value": "doi:10.10.1038/nphys1170" },
@@ -301,8 +274,8 @@
         ],
         "hasContact": [
             {
-                "@id": "https://repo.metadatacenter.org/UUID",
                 "@type": "https://repo.metadatacenter.org/model/Contact",
+                "@id": "https://repo.metadatacenter.org/UUID",
                 "lastName": { "value": "O'Bannion" },
                 "firstName": { "value": "John" },
                 "middleInitial": { "value": "J" },
@@ -313,9 +286,8 @@
                 "role": { "value": "http://purl.obolibrary.org/obo/OBI_000434" },
                 "hasAffiliation": [ 
                     {
-                        "@context": {},
-                        "@id": "https://repo.metadatacenter.org/UUID",
                         "@type": "https://repo.metadatacenter.org/model/Organization",
+                        "@id": "https://repo.metadatacenter.org/UUID",
                         "name": { "value": "Stanford University" },
                         "department": { "value": "BMIR" }
                     }
@@ -324,8 +296,8 @@
         ],
         "hasPublication": [
             {
-                "@id": "https://repo.metadatacenter.org/UUID",
                 "@type": "https://repo.metadatacenter.org/model/Publication",
+                "@id": "https://repo.metadatacenter.org/UUID",
                 "title": { "value": "Study ES434" },
                 "description": { "value": "A study of measles" },
                 "doi": { "value": "doi:10.10.1038/nphys1170" },
@@ -336,3 +308,4 @@
         ]
     }
 }
+

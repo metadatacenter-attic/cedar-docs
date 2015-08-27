@@ -9,21 +9,16 @@
             "description": "JSON-LD/Schema Investigation Template",
             "properties": {
                 "@context": {
-                    "description": "schema:description",
-                    "model": "http://repo.metadatacenter.org/model/",
-                    "schema": "https://schema.org/",
-                    "title": "schema:title",
-                    "xsd": "http://www.w3.org/2001/XMLSchema"
-                },
-                "@id": {
-                    "format": "uri",
-                    "type": "string"
+                    "$ref": "#/elementContext"
                 },
                 "@type": {
                     "enum": [
                         "https://repo.metadatacenter.org/model/Investigation"
                     ],
-                    "type": "string"
+                    "type": "string", "format": "uri"
+                },
+                "@id": {
+                    "type": "string", "format": "uri"                    
                 },
                 "description": {
                     "$schema": "http://json-schema.org/draft-04/schema#",
@@ -32,8 +27,8 @@
                     "title": "Auto-generated JSON Schema title for 'description' field",
                     "description": "Auto-generated JSON Schema description for 'description' field",
                     "properties": {
-                        "@context": {
-                            "$ref": "#/valueElementContext"
+                        "@type": {
+                            "type": "string", "format": "uri"
                         },
                         "info": {
                             "description": "Enter a description of the investigation",
@@ -76,8 +71,8 @@
                     "description": "Auto-generated JSON Schema description for 'identifier' field",
                     "title": "Auto-generated JSON Schema title for 'identifier' field",
                     "properties": {
-                        "@context": {
-                            "$ref": "#/valueElementContext"
+                        "@type": {
+                            "type": "string", "format": "uri"
                         },
                         "info": {
                             "description": "Enter a unique identifier for the investigation",
@@ -99,8 +94,8 @@
                     "description": "Auto-generated JSON Schema description for 'publicReleaseDate' field",
                     "title": "Auto-generated JSON Schema title for 'publicReleaseDate' field",
                     "properties": {
-                        "@context": {
-                            "$ref": "#/valueElementContext"
+                        "@type": {
+                            "type": "string", "format": "uri"
                         },
                         "info": {
                             "description": "Enter a public release date for the investigation",
@@ -115,12 +110,6 @@
                         "value"
                     ]
                 },
-                "schemaID": {
-                    "enum": [
-                        "https://repo.metadatacenter.org/UUID"
-                    ],
-                    "type": "string"
-                },
                 "submissionDate": {
                     "$schema": "http://json-schema.org/draft-04/schema#",
                     "@id": "https://repo.metadatacenter.org/UUID",
@@ -128,8 +117,8 @@
                     "title": "Auto-generated JSON Schema title for 'submissionDate' field",
                     "description": "Auto-generated JSON Schema description for 'submissionDate' field",
                     "properties": {
-                        "@context": {
-                            "$ref": "#/valueElementContext"
+                        "@type": {
+                            "type": "string", "format": "uri"
                         },
                         "info": {
                             "description": "Enter a submission date for the investigation",
@@ -151,8 +140,8 @@
                     "title": "Auto-generated JSON Schema title for 'title' field",
                     "description": "Auto-generated JSON Schema description for 'title' field",
                     "properties": {
-                        "@context": {
-                            "$ref": "#/valueElementContext"
+                        "@type": {
+                            "type": "string", "format": "uri"
                         },
                         "info": {
                             "description": "Enter a title for the investigation",
@@ -169,7 +158,6 @@
                 }
             },
             "required": [
-                "schemaID",
                 "@context",
                 "@id",
                 "@type",
@@ -188,19 +176,6 @@
         "investigation"
     ],
     "additionalProperties": false,
-
-    "valueElementContext": {
-        "$schema": "http://json-schema.org/draft-04/schema#",
-        "additionalProperties": false,
-        "title": "Value Element Context Description",
-        "description": "JSON Schema description of Value Element Context. Used when describing @context fields for value elements",
-        "properties": {
-            "value": {
-                "type": "string"
-            }
-        }
-    },
-
     "study": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "@id": "https://repo.metadatacenter.org/UUID",
@@ -208,20 +183,16 @@
         "description": "JSON-LD/Schema Study Template Element",
         "properties": {
             "@context": {
-                "model": "https://repo.metadatacenter.org/model/",
-                "schema": "https://schema.org/",
-                "title": "schema:title",
-                "xsd": "http://www.w3.org/2001/XMLSchema"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
+                "$ref": "#/elementContext"
             },
             "@type": {
                 "enum": [
                     "https://repo.metadatacenter.org/model/Study"
                 ],
-                "type": "string"
+                "type": "string", "format": "uri"
+            },
+            "@id": {
+                "type": "string", "format": "uri"
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -231,7 +202,7 @@
                 "description": "Auto-generated JSON Schema description for 'description' field",
                 "properties": {
                     "@context": {
-                        "$ref": "#/valueElementContext"
+                        "$ref": "#/elementContext"
                     },
                     "info": {
                         "description": "Enter a description of the study",
@@ -265,7 +236,7 @@
                     "$ref": "#/process",
                     "type": "object"
                 },
-                "type": "array"            
+                "type": "array"
             },
             "hasStudyAssay": {
                 "items": {
@@ -309,8 +280,8 @@
                 "title": "Auto-generated JSON Schema title for 'identifier' field",
                 "description": "Auto-generated JSON Schema description for 'identifier' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a unique identifier for the study",
@@ -332,14 +303,11 @@
                 "title": "Auto-generated JSON Schema title for 'publicReleaseDate' field",
                 "description": "Auto-generated JSON Schema description for 'publicReleaseDate' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
                         "enum": [
                             "http://bioportal/ontology/StudyReleaseDate"
                         ],
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a public release date for the study",
@@ -361,8 +329,8 @@
                 "title": "Auto-generated JSON Schema title for 'studyDesignType' field",
                 "description": "Auto-generated JSON Schema description for 'studyDesignType' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a study design",
@@ -371,10 +339,11 @@
                         "value_constraint": {
                             "branches": [
                                 {
-                                    "@type": "http://purl.obolibrary.org/obo/OBI_0500000",
+                                    "uri": "http://purl.obolibrary.org/obo/OBI_0500000",
                                     "includes_root": false
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -392,14 +361,11 @@
                 "title": "Auto-generated JSON Schema title for 'submissionDate' field",
                 "description": "Auto-generated JSON Schema description for 'submissionDate' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
                         "enum": [
                             "http://bioportal/ontology/StudySubmissionDate"
                         ],
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a submission date for the study",
@@ -421,8 +387,8 @@
                 "title": "Auto-generated JSON Schema title for 'title' field",
                 "description": "Auto-generated JSON Schema description for 'title' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a title for the study",
@@ -439,8 +405,8 @@
             }
         },
         "required": [
-            "@id",
             "@type",
+            "@id",
             "title",
             "identifier",
             "description",
@@ -453,7 +419,7 @@
             "hasStudyFactor",
             "hasStudyAssay",
             "hasStudyGroupPopulation",
-            "hasStudySubject", 
+            "hasStudySubject",
             "hasProcess"
         ],
         "additionalProperties": false
@@ -465,20 +431,16 @@
         "description": "JSON-LD/Schema Publication Template Element",
         "properties": {
             "@context": {
-                "model": "https://repo.metadatacenter.org/model/",
-                "schema": "https://schema.org/",
-                "title": "schema:title",
-                "xsd": "http://www.w3.org/2001/XMLSchema"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
+                "$ref": "#/elementContext"
             },
             "@type": {
                 "enum": [
                     "https://repo.metadatacenter.org/model/Publication"
                 ],
-                "type": "string"
+                "type": "string", "format": "uri"
+            },
+            "@id": {
+                "type": "string", "format": "uri"
             },
             "authorList": {
                 "items": {
@@ -489,14 +451,8 @@
                     "title": "Auto-generated JSON Schema title for 'authorList' field",
                     "description": "Auto-generated JSON Schema description for 'authorList' field",
                     "properties": {
-                        "@context": {
-                            "$ref": "#/valueElementContext"
-                        },
                         "@type": {
-                            "enum": [
-                                ""
-                            ],
-                            "type": "string"
+                            "type": "string", "format": "uri"
                         },
                         "info": {
                             "description": "Enter a list of authors",
@@ -509,7 +465,8 @@
                     },
                     "required": [
                         "value"
-                    ]                },
+                    ]
+                },
                 "minItems": 1,
                 "type": "array"
             },
@@ -520,11 +477,8 @@
                 "title": "Auto-generated JSON Schema title for 'desription' field",
                 "description": "Auto-generated JSON Schema description for 'description' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a description for the publication",
@@ -546,14 +500,8 @@
                 "title": "Auto-generated JSON Schema title for 'doi' field",
                 "description": "Auto-generated JSON Schema description for 'doi' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
-                        "enum": [
-                            ""
-                        ],
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a DOI for the publication",
@@ -575,11 +523,8 @@
                 "title": "Auto-generated JSON Schema title for 'pubMedID' field",
                 "description": "Auto-generated JSON Schema description for 'pubMedID' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a PubMedID for the publication",
@@ -601,15 +546,12 @@
                 "title": "Auto-generated JSON Schema title for 'status' field",
                 "description": "Auto-generated JSON Schema description for 'status' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
                         "enum": [
                             "http://example.org/status1",
                             "http://example.org/status2"
                         ],
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a status",
@@ -631,14 +573,8 @@
                 "title": "Auto-generated JSON Schema title for 'title' field",
                 "description": "Auto-generated JSON Schema description for 'title' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
-                        "enum": [
-                            ""
-                        ],
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a title for the publication",
@@ -655,8 +591,8 @@
             }
         },
         "required": [
-            "@id",
             "@type",
+            "@id",
             "title",
             "pubMedID",
             "doi",
@@ -672,20 +608,16 @@
         "description": "JSON-LD/Schema Study Protocol Template Element",
         "properties": {
             "@context": {
-                "model": "https://repo.metadatacenter.org/model/",
-                "schema": "https://schema.org/",
-                "title": "schema:title",
-                "xsd": "http://www.w3.org/2001/XMLSchema"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
+                "$ref": "#/elementContext"
             },
             "@type": {
                 "enum": [
                     "https://repo.metadatacenter.org/model/StudyProtocol"
                 ],
-                "type": "string"
+                "type": "string", "format": "uri"
+            },
+            "@id": {
+                "type": "string", "format": "uri"
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -694,8 +626,8 @@
                 "title": "Auto-generated JSON Schema title for 'description' field",
                 "description": "Auto-generated JSON Schema description for 'description' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a description of the study protocol",
@@ -710,9 +642,9 @@
                     "value"
                 ]
             },
-            "hasParameterValue": {
+            "hasProtocolParameter": {
                 "items": {
-                    "$ref": "#/parameterValue",
+                    "$ref": "#/protocolParameter",
                     "type": "object"
                 },
                 "type": "array"
@@ -724,8 +656,8 @@
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a name for the study protocol",
@@ -746,8 +678,8 @@
                 "title": "Auto-generated JSON Schema title for study protocol'type' field",
                 "description": "Auto-generated JSON Schema description for study protocol'type' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a type for the protocol",
@@ -756,10 +688,11 @@
                         "value_constraint": {
                             "branches": [
                                 {
-                                    "@type": "http://purl.obolibrary.org/obo/OBI_0000272",
+                                    "uri": "http://purl.obolibrary.org/obo/OBI_0000272",
                                     "includes_root": false
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -774,11 +707,8 @@
                 "title": "Auto-generated JSON Schema title for 'uri' field",
                 "description": "Auto-generated JSON Schema description for 'uri' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter an URI for the study protocol",
@@ -801,8 +731,8 @@
                 "title": "Auto-generated JSON Schema title for 'version' field",
                 "description": "Auto-generated JSON Schema description for 'version' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a version for the study protocol",
@@ -819,16 +749,16 @@
             }
         },
         "required": [
-            "@id",
             "@type",
+            "@id",
             "name",
             "description",
             "type",
             "version",
             "uri",
-            "hasParameterValue"
+            "hasProtocolParameter"
         ],
-	"additionalProperties": false
+        "additionalProperties": false
     },
     "contact": {
         "$schema": "http://json-schema.org/draft-04/schema#",
@@ -837,20 +767,16 @@
         "description": "JSON-LD/Schema Study Template Element",
         "properties": {
             "@context": {
-                "model": "https://repo.metadatacenter.org/model/",
-                "schema": "https://schema.org/",
-                "title": "schema:title",
-                "xsd": "http://www.w3.org/2001/XMLSchema"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
+                "$ref": "#/elementContext"
             },
             "@type": {
                 "enum": [
                     "https://repo.metadatacenter.org/model/Contact"
                 ],
-                "type": "string"
+                "type": "string", "format": "uri"
+            },
+            "@id": {
+                "type": "string", "format": "uri"
             },
             "address": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -859,14 +785,8 @@
                 "title": "Auto-generated JSON Schema title for 'address' field",
                 "description": "Auto-generated JSON Schema description for 'address' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
-                        "enum": [
-                            "http://bioportal/ontology/Address"
-                        ],
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter an address for the contact",
@@ -888,14 +808,8 @@
                 "title": "Auto-generated JSON Schema title for 'email' field",
                 "description": "Auto-generated JSON Schema description for 'email' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
-                        "enum": [
-                            "http://bioportal/ontology/Email"
-                        ],
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter an email for the contact",
@@ -917,14 +831,8 @@
                 "title": "Auto-generated JSON Schema title for 'fax' field",
                 "description": "Auto-generated JSON Schema description for 'fax' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
-                        "enum": [
-                            "http://bioportal/ontology/Fax"
-                        ],
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a fax for the contact",
@@ -946,8 +854,8 @@
                 "title": "Auto-generated JSON Schema title for 'firstName' field",
                 "description": "Auto-generated JSON Schema description for 'firstName' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a first name for the contact",
@@ -976,8 +884,8 @@
                 "title": "Auto-generated JSON Schema title for 'lastname' field",
                 "description": "Auto-generated JSON Schema description for 'lastName' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a last name for the contact",
@@ -999,8 +907,8 @@
                 "title": "Auto-generated JSON Schema title for 'middleInitial' field",
                 "description": "Auto-generated JSON Schema description for 'middleInitial' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a middle initial for the contact",
@@ -1022,14 +930,8 @@
                 "title": "Auto-generated JSON Schema title for 'phone' field",
                 "description": "Auto-generated JSON Schema description for 'phone' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "@type": {
-                        "enum": [
-                            "http://bioportal/ontology/Email"
-                        ],
-                        "type": "string"
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter an phone for the contact",
@@ -1051,8 +953,8 @@
                 "title": "Auto-generated JSON Schema title for 'role' field",
                 "description": "Auto-generated JSON Schema description for 'role' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a role for contact",
@@ -1061,10 +963,11 @@
                         "value_constraint": {
                             "branches": [
                                 {
-                                    "@type": "http://purl.obolibrary.org/obo/OBI_0000202",
+                                    "uri": "http://purl.obolibrary.org/obo/OBI_0000202",
                                     "includes_root": false
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -1077,8 +980,8 @@
             }
         },
         "required": [
-            "@id",
             "@type",
+            "@id",
             "lastName",
             "firstName",
             "middleInitial",
@@ -1098,17 +1001,16 @@
         "description": "JSON-LD/Schema Organization Template Element",
         "properties": {
             "@context": {
-                "$ref": "#/valueElementContext"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
+                "$ref": "#/elementContext"
             },
             "@type": {
-            	"type": "string", 
                 "enum": [
                     "https://repo.metadatacenter.org/model/Organization"
-                ]
+                ],
+                "type": "string", "format": "uri"
+            },
+            "@id": {
+                "type": "string", "format": "uri"
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -1116,8 +1018,8 @@
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a name for the organization",
@@ -1131,7 +1033,7 @@
                 "required": [
                     "value"
                 ],
-                "additionalProperties": false  
+                "additionalProperties": false
             },
             "department": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -1139,8 +1041,8 @@
                 "title": "Auto-generated JSON Schema title for 'department' field",
                 "description": "Auto-generated JSON Schema description for 'department' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a department name",
@@ -1158,9 +1060,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "name",
             "department"
         ],
@@ -1173,17 +1074,16 @@
         "description": "JSON-LD/Schema StudyGroupPopulation Template Element",
         "properties": {
             "@context": {
-                "$ref": "#/valueElementContext"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
+                "$ref": "#/elementContext"
             },
             "@type": {
-            	"type": "string", 
                 "enum": [
                     "https://repo.metadatacenter.org/model/StudyGroupPopulation"
-                ]
+                ],
+                "type": "string", "format": "uri"
+            },
+            "@id": {
+                "type": "string", "format": "uri"
             },
             "hasStudySubject": {
                 "items": {
@@ -1199,8 +1099,8 @@
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a name of the study group population",
@@ -1222,8 +1122,8 @@
                 "title": "Auto-generated JSON Schema title for 'selectionRule' field",
                 "description": "Auto-generated JSON Schema description for 'selectionRule' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a selection rule of the study group population",
@@ -1245,8 +1145,8 @@
                 "title": "Auto-generated JSON Schema title for study group population's 'type' field",
                 "description": "Auto-generated JSON Schema description for study group population's'type' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a type for the study group population",
@@ -1255,9 +1155,10 @@
                         "value_constraint": {
                             "ontologies": [
                                 {
-                                    "@type": "http://bioportal.bioontology.org/ontologies/OBI"
+                                    "uri": "http://bioportal.bioontology.org/ontologies/OBI"
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -1270,9 +1171,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "name",
             "type",
             "selectionRule",
@@ -1287,17 +1187,16 @@
         "description": "JSON-LD/Schema Study Subject Template Element",
         "properties": {
             "@context": {
-                "$ref": "#/valueElementContext"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
+                "$ref": "#/elementContext"
             },
             "@type": {
-            	"type": "string", 
                 "enum": [
                     "https://repo.metadatacenter.org/model/StudySubject"
-                ]
+                ],
+                "type": "string", "format": "uri"
+            },
+            "@id": {
+                "type": "string", "format": "uri"
             },
             "hasCharacteristicValue": {
                 "items": {
@@ -1313,8 +1212,8 @@
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a name of the study subject",
@@ -1336,8 +1235,8 @@
                 "title": "Auto-generated JSON Schema title for study subject's 'type' field",
                 "description": "Auto-generated JSON Schema description for study subject's 'type' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a type for the study subject",
@@ -1346,9 +1245,10 @@
                         "value_constraint": {
                             "branches": [
                                 {
-                                    "@type": "http://purl.obolibrary.org/obo/OBI_0100026"
+                                    "uri": "http://purl.obolibrary.org/obo/OBI_0100026"
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -1361,9 +1261,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "name",
             "type",
             "hasCharacteristicValue"
@@ -1379,18 +1278,17 @@
             "@context": {
                 "model": "https://repo.metadatacenter.org/model/",
                 "schema": "https://schema.org/",
-                "type": "string", 
+                "type": "string",
                 "xsd": "http://www.w3.org/2001/XMLSchema"
             },
             "@id": {
-                "format": "uri",
-                "type": "string"
+                "type": "string", "format": "uri"
             },
             "@type": {
                 "enum": [
                     "https://repo.metadatacenter.org/model/Process"
                 ],
-                "type": "string"
+                "type": "string", "format": "uri"
             },
             "type": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -1399,20 +1297,13 @@
                 "title": "Auto-generated JSON Schema title for reagent's 'type' field",
                 "description": "Auto-generated JSON Schema description for process''type' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a type for the process",
                         "input_type": "textfield",
-                        "title": "Type of Process",
-                        "value_constraint": {
-                            "ontologies": [
-                                {
-                                    
-                                }
-                            ]
-                        }
+                        "title": "Type of Process"
                     },
                     "value": {
                         "type": "string"
@@ -1436,31 +1327,45 @@
             "hasStudyAssay": {
                 "$ref": "#/studyAssay",
                 "type": "object"
-                },
+            },
             "hasInput": {
                 "items": {
-                    "anyOf" : [
-                        { "type": "object",
-                          "$ref": "#/studySubject"},
-                        { "type": "object",
-                          "$ref": "#/sample"},
-                        { "type": "object",
-                          "$ref": "#/resultValue"},
-                        { "type": "object",
-                          "$ref": "#/dataFile"}
+                    "anyOf": [
+                        {
+                            "type": "object",
+                            "$ref": "#/studySubject"
+                        },
+                        {
+                            "type": "object",
+                            "$ref": "#/sample"
+                        },
+                        {
+                            "type": "object",
+                            "$ref": "#/resultValue"
+                        },
+                        {
+                            "type": "object",
+                            "$ref": "#/dataFile"
+                        }
                     ]
                 },
                 "type": "array"
             },
             "hasOutput": {
                 "items": {
-                    "anyOf" : [
-                        { "type": "object",
-                          "$ref": "#/sample"},
-                        { "type": "object",
-                          "$ref": "#/resultValue"},
-                        { "type": "object",
-                          "$ref": "#/dataFile"}
+                    "anyOf": [
+                        {
+                            "type": "object",
+                            "$ref": "#/sample"
+                        },
+                        {
+                            "type": "object",
+                            "$ref": "#/resultValue"
+                        },
+                        {
+                            "type": "object",
+                            "$ref": "#/dataFile"
+                        }
                     ]
                 },
                 "type": "array"
@@ -1474,9 +1379,10 @@
             }
         },
         "required": [
-            "@id",
             "@type",
+            "@id",
             "type",
+            "hasStudyAssay",
             "executeStudyProtocol",
             "hasInput",
             "hasOutput"
@@ -1489,18 +1395,14 @@
         "title": "Sample",
         "description": "JSON-LD/Schema Sample Template Element",
         "properties": {
-            "@context": {
-                "$ref": "#/valueElementContext"
+            "@type": {
+                "enum": [
+                    "https://repo.metadatacenter.org/model/Sample"
+                ],
+                "type": "string", "format": "uri"
             },
             "@id": {
-                "format": "uri",
-                "type": "string"
-            },
-            "@type": {
-                "type": "string", 
-		"enum": [
-                    "https://repo.metadatacenter.org/model/Sample"
-                ]
+                "type": "string", "format": "uri"
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -1509,8 +1411,8 @@
                 "title": "Auto-generated JSON Schema title for 'description' field",
                 "description": "Auto-generated JSON Schema description for 'description' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a description of the sample",
@@ -1553,8 +1455,8 @@
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a name of the reagent",
@@ -1576,8 +1478,8 @@
                 "title": "Auto-generated JSON Schema title for 'source' field",
                 "description": "Auto-generated JSON Schema description for 'source' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select the source of the sample",
@@ -1599,8 +1501,8 @@
                 "title": "Auto-generated JSON Schema title for reagent's 'type' field",
                 "description": "Auto-generated JSON Schema description for reagent's'type' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a type for the reagent",
@@ -1609,9 +1511,10 @@
                         "value_constraint": {
                             "ontologies": [
                                 {
-                                    "@type": "http://bioportal.bioontology.org/ontologies/OBI"
+                                    "@uri": "http://bioportal.bioontology.org/ontologies/OBI"
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -1624,9 +1527,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "name",
             "type",
             "description",
@@ -1643,18 +1545,14 @@
         "title": "Reagent",
         "description": "JSON-LD/Schema Reagent Template Element",
         "properties": {
-            "@context": {
-                "$ref": "#/valueElementContext"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
-            },
             "@type": {
-                "type": "string", 
                 "enum": [
                     "https://repo.metadatacenter.org/model/Reagent"
-                ]
+                ],
+                "type": "string", "format": "string"
+            },
+            "@id": {
+                "type": "string", "format": "uri"                
             },
             "hasCharacteristicValue": {
                 "items": {
@@ -1670,8 +1568,8 @@
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a name of the reagent",
@@ -1693,8 +1591,8 @@
                 "title": "Auto-generated JSON Schema title for reagent's 'type' field",
                 "description": "Auto-generated JSON Schema description for reagent's'type' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a type for the reagent",
@@ -1703,9 +1601,10 @@
                         "value_constraint": {
                             "ontologies": [
                                 {
-                                    "@type": "http://bioportal.bioontology.org/ontologies/OBI"
+                                    "uri": "http://bioportal.bioontology.org/ontologies/OBI"
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -1718,9 +1617,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "name",
             "type",
             "hasCharacteristicValue"
@@ -1733,18 +1631,14 @@
         "title": "Study Assay",
         "description": "JSON-LD/Schema Study Assay Template Element",
         "properties": {
-            "@context": {
-                "$ref": "#/valueElementContext"
+            "@type": {
+                "enum": [
+                    "https://repo.metadatacenter.org/model/StudyAssay"
+                ],
+                "type": "string", "format": "uri"
             },
             "@id": {
-                "format": "uri",
-                "type": "string"
-            },
-            "@type": {
-                "type": "string", 
-		"enum": [
-                    "https://repo.metadatacenter.org/model/StudyAssay"
-                ]
+                "type": "string", "format": "uri"
             },
             "measurementType": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -1753,8 +1647,8 @@
                 "title": "Auto-generated JSON Schema title for study assay's 'type' field",
                 "description": "Auto-generated JSON Schema description for study assay's' type' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a measurement type for the study assay",
@@ -1763,9 +1657,10 @@
                         "value_constraint": {
                             "ontologies": [
                                 {
-                                    "@type": "http://bioportal.bioontology.org/ontologies/OBI"
+                                    "uri": "http://bioportal.bioontology.org/ontologies/OBI"
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -1783,8 +1678,8 @@
                 "title": "Auto-generated JSON Schema title for study assay's 'platform' field",
                 "description": "Auto-generated JSON Schema description for study assay's 'platform' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a platform for the study assay",
@@ -1793,9 +1688,10 @@
                         "value_constraint": {
                             "ontologies": [
                                 {
-                                    "@type": "http://bioportal.bioontology.org/ontologies/OBI"
+                                    "uri": "http://bioportal.bioontology.org/ontologies/OBI"
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -1813,8 +1709,8 @@
                 "title": "Auto-generated JSON Schema title for study assay's 'technology' field",
                 "description": "Auto-generated JSON Schema description for study assay's 'technology' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a technology for the study assay",
@@ -1823,9 +1719,10 @@
                         "value_constraint": {
                             "ontologies": [
                                 {
-                                    "@type": "http://bioportal.bioontology.org/ontologies/OBI"
+                                    "uri": "http://bioportal.bioontology.org/ontologies/OBI"
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -1838,9 +1735,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "measurementType",
             "platform",
             "technology"
@@ -1854,20 +1750,16 @@
         "description": "JSON-LD/Schema Study Factor Template Element",
         "properties": {
             "@context": {
-                "model": "https://repo.metadatacenter.org/model/",
-                "schema": "https://schema.org/",
-                "title": "schema:title",
-                "xsd": "http://www.w3.org/2001/XMLSchema"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
+                "$ref": "#/elementContext"
             },
             "@type": {
-                "type": "string", 
-				"enum": [
+                "enum": [
                     "https://repo.metadatacenter.org/model/StudyFactor"
-                ]
+                ],
+                "type": "string", "format": "uri"
+            },
+            "@id": {
+                "type": "string", "format": "uri"
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -1875,8 +1767,8 @@
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri" 
                     },
                     "info": {
                         "description": "Enter a name of the study factor",
@@ -1892,15 +1784,14 @@
                 ],
                 "additionalProperties": false
             },
-            
             "type": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "title": "Auto-generated JSON Schema title for study factor's 'type' field",
                 "description": "Auto-generated JSON Schema description for study factor's'type' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a type for the study factor",
@@ -1909,9 +1800,10 @@
                         "value_constraint": {
                             "ontologies": [
                                 {
-                                    "@type": "http://bioportal.bioontology.org/ontologies/EFO"
+                                    "uri": "http://bioportal.bioontology.org/ontologies/EFO"
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -1921,9 +1813,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "name",
             "type"
         ],
@@ -1935,18 +1826,14 @@
         "title": "Protocol Parameter",
         "description": "JSON-LD/Schema Protocol Parameter Template Element",
         "properties": {
-            "@context": {
-                "$ref": "#/valueElementContext"
+            "@type": {
+                "enum": [
+                    "https://repo.metadatacenter.org/model/ProtocolParameter"
+                ],
+                "type": "string", "format": "uri"
             },
             "@id": {
-                "format": "uri",
-                "type": "string"
-            },
-            "@type": {
-                "type": "string", 
-		"enum": [
-                    "https://repo.metadatacenter.org/model/ProtocolParameter"
-                ]
+                "type": "string", "format": "uri"
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -1955,8 +1842,8 @@
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri" 
                     },
                     "info": {
                         "description": "Enter a name of the protocol parameter",
@@ -1976,22 +1863,15 @@
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for protocol parameter's 'type' field",
-                "description": "Auto-generated JSON Schema description for protocol parameter's'type' field",
+                "description": "Auto-generated JSON Schema description for protocol parameter's 'type' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri" 
                     },
                     "info": {
                         "description": "Select a type for the protocol parameter",
                         "input_type": "textfield",
-                        "title": "Type of Protocol Parameter",
-                        "value_constraint": {
-                            "ontologies": [
-                                {
-                                    "@type": ""
-                                }
-                            ]
-                        }
+                        "title": "Type of Protocol Parameter"
                     },
                     "value": {
                         "type": "string"
@@ -2003,9 +1883,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "name",
             "type"
         ],
@@ -2017,18 +1896,14 @@
         "title": "Characteristic Value",
         "description": "JSON-LD/Schema Characteristic Value Template Element",
         "properties": {
-            "@context": {
-                "$ref": "#/valueElementContext"
+            "@type": {
+                "enum": [
+                    "https://repo.metadatacenter.org/model/CharacteristicValue"
+                ],
+                "type": "string","format": "uri"
             },
             "@id": {
-                "format": "uri",
-                "type": "string"
-            },
-            "@type": {
-                "type": "string", 
-		"enum": [
-                    "https://repo.metadatacenter.org/model/CharacteristicValue"
-                ]
+                "type": "string", "format": "uri"
             },
             "characteristic": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -2037,8 +1912,8 @@
                 "title": "Auto-generated JSON Schema title for 'characteristic' field",
                 "description": "Auto-generated JSON Schema description for 'characteristic' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri" 
                     },
                     "info": {
                         "description": "Select a characteristic",
@@ -2047,9 +1922,10 @@
                         "value_constraint": {
                             "ontologies": [
                                 {
-                                    "@type": "http://bioportal.bioontology.org/ontologies/PATO"
+                                    "uri": "http://bioportal.bioontology.org/ontologies/PATO"
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -2067,10 +1943,9 @@
                 "title": "Auto-generated JSON Schema title for 'value' field",
                 "description": "Auto-generated JSON Schema description for 'value' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri" 
                     },
-                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter a value for the characteristic",
                         "input_type": "textfield",
@@ -2086,9 +1961,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "characteristic",
             "value"
         ],
@@ -2100,18 +1974,14 @@
         "title": "Factor Value",
         "description": "JSON-LD/Schema Factor Value Template Element",
         "properties": {
-            "@context": {
-                "$ref": "#/valueElementContext"
+            "@type": {
+                "enum": [
+                    "https://repo.metadatacenter.org/model/FactorValue"
+                ],
+                "type": "string", "format": "string"
             },
             "@id": {
-                "format": "uri",
-                "type": "string"
-            },
-            "@type": {
-                "type": "string", 
-		"enum": [
-                    "https://repo.metadatacenter.org/model/FactorValue"
-                ]
+                "type": "string", "format": "uri"
             },
             "factor": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -2120,14 +1990,13 @@
                 "title": "Auto-generated JSON Schema title for 'factor' field",
                 "description": "Auto-generated JSON Schema description for 'factor' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a factor",
                         "input_type": "textfield",
-                        "title": "Factor",
-                        "value_constraint": {}
+                        "title": "Factor"
                     },
                     "value": {
                         "type": "string"
@@ -2144,10 +2013,9 @@
                 "title": "Auto-generated JSON Schema title for 'value' field",
                 "description": "Auto-generated JSON Schema description for 'value' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri" 
                     },
-                    "@type": { "type": "string"},
                     "info": {
                         "description": "Enter a value for the factor",
                         "input_type": "textfield",
@@ -2163,9 +2031,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "factor",
             "value"
         ],
@@ -2177,18 +2044,14 @@
         "title": "Parameter Value",
         "description": "JSON-LD/Schema Parameter Value Template Element",
         "properties": {
-            "@context": {
-                "$ref": "#/valueElementContext"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
-            },
             "@type": {
-            	"type": "string",
                 "enum": [
                     "https://repo.metadatacenter.org/model/ParameterValue"
-                ]
+                ],
+                "type": "string", "format": "uri"
+            },
+            "@id": {
+                "type": "string", "format": "uri"
             },
             "parameter": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -2196,14 +2059,13 @@
                 "title": "Auto-generated JSON Schema title for 'parameter' field",
                 "description": "Auto-generated JSON Schema description for 'parameter' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a parameter of the protocol",
                         "input_type": "textfield",
-                        "title": "Parameter",
-                        "value_constraint": {}
+                        "title": "Parameter"
                     },
                     "value": {
                         "type": "string"
@@ -2221,10 +2083,9 @@
                 "title": "Auto-generated JSON Schema title for 'value' field",
                 "description": "Auto-generated JSON Schema description for 'value' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
-                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter a value for the parameter",
                         "input_type": "textfield",
@@ -2240,9 +2101,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "parameter",
             "value"
         ],
@@ -2254,18 +2114,14 @@
         "title": "Result Value",
         "description": "JSON-LD/Schema Result Value Template Element",
         "properties": {
-            "@context": {
-                "$ref": "#/valueElementContext"
+            "@type": {
+                "enum": [
+                    "https://repo.metadatacenter.org/model/ResultValue"
+                ],
+                "type": "string", "format": "uri"
             },
             "@id": {
-                "format": "uri",
-                "type": "string"
-            },
-            "@type": {
-                "type": "string", 
-		"enum": [
-                    "https://repo.metadatacenter.org/model/ResultValue"
-                ]
+                "type": "string", "format": "uri"
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -2274,14 +2130,13 @@
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
-                    },
                     "info": {
+                        "@type": {
+                            "type": "string", "format": "uri"
+                        },
                         "description": "Select a name of the result",
                         "input_type": "textfield",
-                        "title": "Name",
-                        "value_constraint": {}
+                        "title": "Name"
                     },
                     "value": {
                         "type": "string"
@@ -2298,10 +2153,9 @@
                 "title": "Auto-generated JSON Schema title for 'value' field",
                 "description": "Auto-generated JSON Schema description for 'value' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
-                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter a value for the result",
                         "input_type": "textfield",
@@ -2317,9 +2171,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "name",
             "value"
         ],
@@ -2332,17 +2185,16 @@
         "description": "JSON-LD/Schema Data File Template Element",
         "properties": {
             "@context": {
-                "$ref": "#/valueElementContext"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
+                "$ref": "#/elementContext"
             },
             "@type": {
-                "type": "string", 
-		"enum": [
+                "enum": [
                     "https://repo.metadatacenter.org/model/DataFile"
-                ]
+                ],
+                "type": "string", "format": "uri"
+            },
+            "@id": {
+                "type": "string", "format": "uri"
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -2351,10 +2203,9 @@
                 "title": "Auto-generated JSON Schema title for 'description' field",
                 "description": "Auto-generated JSON Schema description for 'description' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
-                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter a description for the file",
                         "input_type": "textfield",
@@ -2375,8 +2226,8 @@
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Enter a file name",
@@ -2393,9 +2244,8 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "name"
         ],
         "additionalProperties": false
@@ -2407,17 +2257,16 @@
         "description": "JSON-LD/Schema Study Time Template Element",
         "properties": {
             "@context": {
-                "$ref": "#/valueElementContext"
-            },
-            "@id": {
-                "format": "uri",
-                "type": "string"
+                "$ref": "#/elementContext"
             },
             "@type": {
-                "type": "string", 
-		"enum": [
+                "enum": [
                     "https://repo.metadatacenter.org/model/StudyTime"
-                ]
+                ],
+                "type": "string", "format": "uri"
+            },
+            "@id": {
+                "type": "string", "format": "uri"
             },
             "durationValue": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
@@ -2426,10 +2275,9 @@
                 "title": "Auto-generated JSON Schema title for 'durationValue' field",
                 "description": "Auto-generated JSON Schema description for 'durationValue' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
-                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter a duration before or after the study event",
                         "input_type": "textfield",
@@ -2450,10 +2298,9 @@
                 "title": "Auto-generated JSON Schema title for 'isBeforeEvent' field",
                 "description": "Auto-generated JSON Schema description for 'isBeforeEvent' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
-                    "@type": { "type": "string" },
                     "info": {
                         "description": "Enter whether the time is before or after the study event",
                         "input_type": "textfield",
@@ -2474,8 +2321,8 @@
                 "title": "Auto-generated JSON Schema title for study time's 'studyEvent' field",
                 "description": "Auto-generated JSON Schema description for study time's' studyEvent' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a study event for the study time",
@@ -2484,9 +2331,10 @@
                         "value_constraint": {
                             "ontologies": [
                                 {
-                                    "@type": "http://bioportal.bioontology.org/ontologies/OBI"
+                                    "uri": "http://bioportal.bioontology.org/ontologies/OBI"
                                 }
-                            ]
+                            ],
+                            "multiple_choice": false
                         }
                     },
                     "value": {
@@ -2504,18 +2352,13 @@
                 "title": "Auto-generated JSON Schema title for study time's 'unit' field",
                 "description": "Auto-generated JSON Schema description for study time's 'unit' field",
                 "properties": {
-                    "@context": {
-                        "$ref": "#/valueElementContext"
+                    "@type": {
+                        "type": "string", "format": "uri"
                     },
                     "info": {
                         "description": "Select a unit for the study time",
                         "input_type": "textfield",
-                        "title": "Unit of Study Time",
-                        "value_constraint": {
-                            "ontologies": [
-                                {}
-                            ]
-                        }
+                        "title": "Unit of Study Time"
                     },
                     "value": {
                         "type": "string"
@@ -2527,14 +2370,28 @@
             }
         },
         "required": [
-            "@context",
-            "@id",
             "@type",
+            "@id",
             "durationValue",
             "isBeforeEvent",
             "studyEvent",
             "unit"
         ],
         "additionalProperties": false
-    }    
+    },
+    "elementContext": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "additionalProperties": true,
+        "title": "Element Context Description",
+        "description": "JSON Schema description of an element context. Used when describing @context fields for all elements",
+        "properties": {
+            "value": {
+                "enum": [
+                    "https://schema.org/value"
+                ]
+            }
+        },
+        "required": [ "value" ],
+        "additionalProperties": false
+    }
 }
