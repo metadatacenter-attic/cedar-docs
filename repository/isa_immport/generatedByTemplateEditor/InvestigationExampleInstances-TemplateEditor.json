@@ -1,0 +1,313 @@
+{
+  "@context": {},
+  "@type": {},
+  "name": {
+    "value": "Investigation X"
+  },
+  "selection_rule": {
+    "value": "N/A"
+  },
+  "type": {
+    "value": "N/A"
+  },
+  "study": {
+    "title": {
+      "value": "Study XI"
+    },
+    "description": {
+      "value": "Study X1: An Animal Care Study"
+    },
+    "identifier": {
+      "value": "X323-SDY1"
+    },
+    "submission_date": {
+      "value": "01/01/2013 12:00 AM"
+    },
+    "public_release_date": {
+      "value": "01/01/2014 12:00 AM"
+    },
+    "study_factor": {
+      "name": {
+        "value": "weight"
+      },
+      "type": {
+        "value": "http://bioportal.bioontology.org/ontologies/EFO/3232"
+      }
+    },
+    "study_group_population": {
+      "name": {
+        "value": "population name"
+      },
+      "type": {
+        "value": [
+          "OBI class 1"
+        ]
+      },
+      "selection_rule": {
+        "value": "selection rule"
+      },
+      "study_subject": {
+        "name": {
+          "value": "study subject name"
+        },
+        "type": {
+          "value": [
+            "Child of OBI_0100026 - 1"
+          ]
+        },
+        "characteristic_value": {
+          "characteristic": {
+            "value": [
+              "PATO class 1"
+            ]
+          },
+          "value": {
+            "value": "a characteristic value"
+          }
+        }
+      }
+    },
+    "study_assay": {
+      "measurement_type": {
+        "value": [
+          "OBI class 1"
+        ]
+      },
+      "platform": {
+        "value": [
+          "OBI class 1"
+        ]
+      },
+      "technology": {
+        "value": [
+          "OBI class 1"
+        ]
+      }
+    },
+    "process": {
+      "type": {
+        "value": "http://purl.obolibrary.org/obo/OBI_0000715"
+      },
+      "study_assay": {
+        "measurement_type": {
+          "value": [
+            "OBI class 1"
+          ]
+        },
+        "platform": {
+          "value": [
+            "OBI class 1"
+          ]
+        },
+        "technology": {
+          "value": [
+            "OBI class 1"
+          ]
+        }
+      },
+      "study_subject": {
+        "name": {},
+        "type": {},
+        "characteristic_value": {
+          "characteristic": {
+            "value": [
+              "PATO class 1"
+            ]
+          },
+          "value": {
+            "value": "a characteristic value"
+          }
+        }
+      },
+      "reagent": {
+        "name": {
+          "value": "a reagent name"
+        },
+        "type": {
+          "value": [
+            "OBI class 1"
+          ]
+        },
+        "characteristic_value": {
+          "characteristic": {
+            "value": [
+              "PATO class 1"
+            ]
+          },
+          "value": {
+            "value": "a characteristic"
+          }
+        }
+      },
+      "sample": {
+        "name": {
+          "value": "A sample name"
+        },
+        "type": {
+          "value": [
+            "OBI class 1"
+          ]
+        },
+        "description": {
+          "value": "A sample type description"
+        },
+        "source": {
+          "value": "A sample type source"
+        },
+        "characteristic_value": {
+          "characteristic": {
+            "value": [
+              "PATO class 1"
+            ]
+          },
+          "value": {
+            "value": "A characteristic"
+          }
+        },
+        "factor_value": {
+          "factor": {
+            "value": "a factor"
+          },
+          "value": {
+            "value": "a factor value"
+          }
+        },
+        "study_time": {
+          "duration_value": {
+            "value": "23"
+          },
+          "is_before_event": {
+            "value": "true"
+          },
+          "study_event": {
+            "value": [
+              "Value from OBI 1"
+            ]
+          },
+          "unit": {
+            "value": "days"
+          }
+        }
+      },
+      "result_value": {
+        "name": {
+          "value": "a result value name"
+        },
+        "value": {
+          "value": "a result value"
+        }
+      },
+      "data_file": {
+        "description": {
+          "value": "data file description"
+        },
+        "name": {
+          "value": "name of a data file"
+        }
+      },
+      "parameter_value": {
+        "protocol_parameter": {
+          "name": {
+            "value": "protocol parameter name"
+          },
+          "type": {
+            "value": "protocol parameter type"
+          }
+        },
+        "value": {
+          "value": "parameter value"
+        }
+      },
+      "study_protocol": {
+        "description": {
+          "value": "Protocol X: A Protocol in Animal Care"
+        },
+        "name": {
+          "value": "Protocol X"
+        },
+        "type": {},
+        "uri": {
+          "value": "http://example.org/protocols/animal/323.html"
+        },
+        "version": {
+          "value": "1.3.2"
+        }
+      }
+    },
+    "study_protocol": {
+      "description": {
+        "value": "Protocol X: A Protocol in Animal Care"
+      },
+      "name": {
+        "value": "Protocol X"
+      },
+      "type": {},
+      "uri": {
+        "value": "http://example.org/protocols/animal/323.html"
+      },
+      "version": {
+        "value": "1.3.2"
+      }
+    },
+    "contact": {
+      "first_name": {
+        "value": "John"
+      },
+      "middle_initial": {
+        "value": "J"
+      },
+      "last_name": {
+        "value": "O'Bannion"
+      },
+      "address": {
+        "value": "1 Spyuten Duyvil Way, New York, NY"
+      },
+      "email": {
+        "value": "jbob@example.com"
+      },
+      "phone": {
+        "value": "555-000-1212"
+      },
+      "fax": {
+        "value": "555-000-1313"
+      },
+      "select_a_role_for_the_contact": {
+        "value": [
+          "OBI class (from branch OBI_0000202) 1"
+        ]
+      },
+      "organization": {
+        "name": {
+          "value": "Stanford University"
+        },
+        "department": {
+          "value": "BMIR"
+        }
+      }
+    },
+    "publication": {
+      "title": {
+        "value": "Study ES434"
+      },
+      "description": {
+        "value": "A study of measles"
+      },
+      "author_list_[multiple_instance_field]": {
+        "value": "JJ Bob, Billy Bob"
+      },
+      "doi": {
+        "value": "doi:10.10.1038/nphys1170"
+      },
+      "pubmed_id": {
+        "value": "324324242"
+      },
+      "status": {
+        "value": [
+          "Status 1"
+        ]
+      }
+    }
+  },
+  "@id": "https://repo.metadatacenter.org/fd76f0fd-79ec-4521-9943-30aa520d7c8b",
+  "template_id": "https://repo.metadatacenter.org/4b8439ab-1bd0-4972-a81f-2ae30d2a3879"
+}
