@@ -3707,9 +3707,9 @@
                             "https://repo.metadatacenter.org/model/type"
                         ]
                     },
-                    "units": {
+                    "unit": {
                         "enum": [
-                            "https://repo.metadatacenter.org/model/units"
+                            "https://repo.metadatacenter.org/model/unit"
                         ]
                     },
                     "value": {
@@ -3782,12 +3782,12 @@
                     "value"
                 ]
             },
-            "units": {
+            "unit": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
-                "title": "Auto-generated JSON Schema title for result value's 'units' field",
-                "description": "Auto-generated JSON Schema description for result value's 'units' field",
+                "title": "Auto-generated JSON Schema title for result value's 'unit' field",
+                "description": "Auto-generated JSON Schema description for result value's 'unit' field",
                 "properties": {
                     "@type": {
                         "oneOf": [
@@ -3813,9 +3813,9 @@
                         ]
                     },
                     "info": {
-                        "description": "Select units for the result value",
+                        "description": "Select unit for the result value",
                         "input_type": "textfield",
-                        "title": "Units of Result Value"
+                        "title": "Unit of Result Value"
                     },
                     "value": {
                         "type": "string"
@@ -3867,7 +3867,7 @@
             "@type",
             "@id",
             "type",
-            "units",
+            "unit",
             "value"
         ],
         "additionalProperties": false
@@ -4285,9 +4285,9 @@
                             "https://repo.metadatacenter.org/model/type"
                         ]
                     },
-                    "units": {
+                    "unit": {
                         "enum": [
-                            "https://repo.metadatacenter.org/model/units"
+                            "https://repo.metadatacenter.org/model/unit"
                         ]
                     },
                     "value": {
@@ -4364,12 +4364,12 @@
                     "value"
                 ]
             },
-            "units": {
+            "unit": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
-                "title": "Auto-generated JSON Schema title for result value's 'units' field",
-                "description": "Auto-generated JSON Schema description for result value's 'units' field",
+                "title": "Auto-generated JSON Schema title for result value's 'unit' field",
+                "description": "Auto-generated JSON Schema description for result value's 'unit' field",
                 "properties": {
                     "@type": {
                         "oneOf": [
@@ -4395,9 +4395,9 @@
                         ]
                     },
                     "info": {
-                        "description": "Select units for the result value",
+                        "description": "Select unit for the result value",
                         "input_type": "textfield",
-                        "title": "Units of Result Value"
+                        "title": "Unit of Result Value"
                     },
                     "value": {
                         "type": "string"
@@ -4449,7 +4449,7 @@
             "@type",
             "@id",
             "type",
-            "units",
+            "unit",
             "value"
         ],
         "additionalProperties": false
@@ -4634,9 +4634,9 @@
                             "https://repo.metadatacenter.org/model/studyEvent"
                         ]
                     },
-                    "units": {
+                    "unit": {
                         "enum": [
-                            "https://repo.metadatacenter.org/model/units"
+                            "https://repo.metadatacenter.org/model/unit"
                         ]
                     }
                 }
@@ -4822,7 +4822,7 @@
                     "value"
                 ]
             },
-            "units": {
+            "unit": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
@@ -4872,7 +4872,7 @@
             "durationValue",
             "isBeforeEvent",
             "studyEvent",
-            "units"
+            "unit"
         ],
         "additionalProperties": false
     },
