@@ -90,7 +90,7 @@
                                     "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
                                     "@id": "https://repo.metadatacenter.org/UUID",
                                     "type": { "value": "a characteristic type" },
-                                    "units": { "value": "a characteristic unit" },
+                                    "unit": { "value": "a characteristic unit" },
                                     "value": {
                                         "value": "a characteristic value"
                                     }
@@ -161,7 +161,7 @@
                                             "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
                                             "@id": "https://repo.metadatacenter.org/UUID",
                                             "type": { "value": "a characteristic type" },
-                                            "units": { "value": "a characteristic unit" },
+                                            "unit": { "value": "a characteristic unit" },
                                             "value": {
                                                 "value": "a characteristic value"
                                             }
@@ -190,8 +190,8 @@
                                     "type": {
                                         "value": "a result value type"
                                     },
-                                    "units": {
-                                        "value": "a result value units"
+                                    "unit": {
+                                        "value": "a result value unit"
                                     },
                                     "value": {
                                         "value": "a result value"
@@ -215,7 +215,7 @@
                                             "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
                                             "@id": "https://repo.metadatacenter.org/UUID",
                                             "type": { "value": "a characteristic type" },
-                                            "units": { "value": "a characteristic unit" },
+                                            "unit": { "value": "a characteristic unit" },
                                             "value": {
                                                 "value": "a characteristic value"
                                             }
@@ -227,7 +227,7 @@
                                     "@type": "https://repo.metadatacenter.org/model/StudyTime",
                                     "@id": "https://repo.metadatacenter.org/UUID",
                                     "durationValue": { "value": 23 },
-                                    "units": { "value": "days" },
+                                    "unit": { "value": "days" },
                                     "isBeforeEvent": { "value": true },
                                     "studyEvent": { "value": "a study event" }
                                 },
@@ -276,7 +276,7 @@
                                             "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
                                             "@id": "https://repo.metadatacenter.org/UUID",
                                             "type": { "value": "a characteristic type" },
-                                            "units": { "value": "a characteristic unit" },
+                                            "unit": { "value": "a characteristic unit" },
                                             "value": {
                                                 "value": "a characteristic value"
                                             }
