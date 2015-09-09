@@ -1,9 +1,7 @@
 {
     "investigation": {
         "template_id": "https://repo.metadatacenter.org/UUID",
-        "@context": {
-            "value": "https://schema.org/value"
-        },
+        "@context": { "value": "https://schema.org/value" },
         "@type": "https://repo.metadatacenter.org/model/Investigation",
         "@id": "https://repo.metadatacenter.org/UUID",
         "title": { "value": "Investigation X" },
@@ -91,9 +89,7 @@
                                     "@id": "https://repo.metadatacenter.org/UUID",
                                     "type": { "value": "a characteristic type" },
                                     "unit": { "value": "a characteristic unit" },
-                                    "value": {
-                                        "value": "a characteristic value"
-                                    }
+                                    "value": { "value": "a characteristic value" }
                                 }
                             }
                         ]
@@ -107,7 +103,6 @@
                         "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
                     }
                 ],
-
                 "hasProcess": [
                     {
                         "@type": "https://repo.metadatacenter.org/model/Process",
@@ -162,9 +157,7 @@
                                             "@id": "https://repo.metadatacenter.org/UUID",
                                             "type": { "value": "a characteristic type" },
                                             "unit": { "value": "a characteristic unit" },
-                                            "value": {
-                                                "value": "a characteristic value"
-                                            }
+                                            "value": { "value": "a characteristic value" }
                                         }
                                     }
                                 ]
@@ -187,15 +180,9 @@
                                 "hasResultValue": {
                                     "@type": "https://repo.metadatacenter.org/model/ResultValue",
                                     "@id": "https://repo.metadatacenter.org/UUID",
-                                    "type": {
-                                        "value": "a result value type"
-                                    },
-                                    "unit": {
-                                        "value": "a result value unit"
-                                    },
-                                    "value": {
-                                        "value": "a result value"
-                                    }
+                                    "type": { "value": "a result value type" },
+                                    "unit": { "value": "a result value unit" },
+                                    "value": { "value": "a result value" }
                                 }
                             },
                             {
@@ -216,9 +203,7 @@
                                             "@id": "https://repo.metadatacenter.org/UUID",
                                             "type": { "value": "a characteristic type" },
                                             "unit": { "value": "a characteristic unit" },
-                                            "value": {
-                                                "value": "a characteristic value"
-                                            }
+                                            "value": { "value": "a characteristic value" }
                                         }
                                     }
                                 ],
@@ -277,12 +262,9 @@
                                             "@id": "https://repo.metadatacenter.org/UUID",
                                             "type": { "value": "a characteristic type" },
                                             "unit": { "value": "a characteristic unit" },
-                                            "value": {
-                                                "value": "a characteristic value"
-                                            }
+                                            "value": { "value": "a characteristic value" }
                                         }
                                     }
-
                                 ]
                             }
                         ]

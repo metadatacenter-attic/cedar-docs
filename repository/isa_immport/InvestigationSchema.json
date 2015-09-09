@@ -46,7 +46,13 @@
                             "enum": [
                                 "https://repo.metadatacenter.org/model/hasStudy"
                             ]
+                        },
+                        "value": {
+                            "enum": [
+                                "https://schema.org/value"
+                            ]
                         }
+
                     }
                 },
                 "@type": {
@@ -363,7 +369,7 @@
                             "https://repo.metadatacenter.org/model/hasPublication"
                         ]
                     },
-                    "hasContaxt": {
+                    "hasContact": {
                         "enum": [
                             "https://repo.metadatacenter.org/model/hasContact"
                         ]
@@ -396,6 +402,11 @@
                     "hasProcess": {
                         "enum": [
                             "https://repo.metadatacenter.org/model/hasProcess"
+                        ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
                         ]
                     }
                 }
@@ -824,6 +835,11 @@
                         "enum": [
                             "https://repo.medadatacenter.org/model/status"
                         ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
+                        ]
                     }
                 }
             },
@@ -1171,6 +1187,11 @@
                         "enum": [
                             "https://repo.metadatacenter.org/model/hasProtocolParameter"
                         ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
+                        ]
                     }
                 }
             },
@@ -1505,6 +1526,11 @@
                     "hasAffiliation": {
                         "enum": [
                             "https://repo.medadatacenter.org/model/hasAffiliation"
+                        ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
                         ]
                     }
                 }
@@ -1926,6 +1952,11 @@
                         "enum": [
                             "https://repo.metadatacenter.org/model/department"
                         ]
+                    },
+                                        "value": {
+                        "enum": [
+                            "https://schema.org/value"
+                        ]
                     }
                 }
             },
@@ -2086,6 +2117,11 @@
                     "hasStudySubject": {
                         "enum": [
                             "https://repo.medadatacenter.org/model/hasStudySubject"
+                        ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
                         ]
                     }
                 }
@@ -2299,6 +2335,11 @@
                         "enum": [
                             "https://repo.medadatacenter.org/model/hasCharacteristic"
                         ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
+                        ]
                     }
                 }
             },
@@ -2491,6 +2532,11 @@
                         "enum": [
                             "https://repo.metadatacenter.org/model/hasParameterValue"
                         ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
+                        ]
                     }
                 }
             },
@@ -2660,6 +2706,11 @@
                     "hasCollectionStudyTime": {
                         "enum": [
                             "https://repo.metadatacenter.org/model/hasCollectionStudyTime"
+                        ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
                         ]
                     }
                 }
@@ -2872,8 +2923,8 @@
                 "type": "object"
             },
             "hasCollectionStudyTime": {
-                    "$ref": "#/studyTime",
-                    "type": "object"
+                "$ref": "#/studyTime",
+                "type": "object"
             },
             "hasFactorValue": {
                 "items": {
@@ -2917,6 +2968,11 @@
                     "hasCharacteristic": {
                         "enum": [
                             "https://repo.medadatacenter.org/model/hasCharacteristic"
+                        ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
                         ]
                     }
                 }
@@ -3269,6 +3325,11 @@
                         "enum": [
                             "https://repo.metadatacenter.org/model/type"
                         ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
+                        ]
                     }
                 }
             },
@@ -3419,6 +3480,11 @@
                     "type": {
                         "enum": [
                             "https://repo.metadatacenter.org/model/description"
+                        ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
                         ]
                     }
                 }
@@ -3576,6 +3642,11 @@
                         "enum": [
                             "https://repo.metadatacenter.org/model/hasCharacteristicValue"
                         ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
+                        ]
                     }
                 }
             },
@@ -3714,7 +3785,7 @@
                     },
                     "value": {
                         "enum": [
-                            "https://repo.metadatacenter.org/model/value"
+                            "https://schema.org/value"
                         ]
                     }
                 }
@@ -4144,6 +4215,11 @@
                         "enum": [
                             "https://repo.metadatacenter.org/model/hasResultValue"
                         ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
+                        ]
                     }
                 }
             },
@@ -4292,7 +4368,7 @@
                     },
                     "value": {
                         "enum": [
-                            "https://repo.metadatacenter.org/model/value"
+                            "https://schema.org/value"
                         ]
                     }
                 }
@@ -4473,6 +4549,11 @@
                         "enum": [
                             "https://repo.metadatacenter.org/model/description"
                         ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
+                        ]
                     }
                 }
             },
@@ -4637,6 +4718,11 @@
                     "unit": {
                         "enum": [
                             "https://repo.metadatacenter.org/model/unit"
+                        ]
+                    },
+                    "value": {
+                        "enum": [
+                            "https://schema.org/value"
                         ]
                     }
                 }
