@@ -3691,7 +3691,9 @@
         "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
-        "title": "Characteristic Value",
+        "version": "1.0.0",
+        "provenance": {},
+        "title": "Characteristic",
         "description": "JSON-LD/Schema Characteristic Template Element",
         "properties": {
             "@context": {
@@ -3839,6 +3841,8 @@
         "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
+        "version": "1.0.0",
+        "provenance": {},
         "title": "Characteristic Value",
         "description": "JSON-LD/Schema Characteristic Value Template Element",
         "properties": {
@@ -4277,6 +4281,8 @@
         "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
+        "version": "1.0.0",
+        "provenance": {},
         "title": "Result",
         "description": "JSON-LD/Schema Result Template Element",
         "properties": {
@@ -4435,6 +4441,8 @@
         "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
+        "version": "1.0.0",
+        "provenance": {},
         "title": "Result Value",
         "description": "JSON-LD/Schema Result Value Template Element",
         "properties": {
