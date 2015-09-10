@@ -3,6 +3,7 @@
     "properties": {
         "investigation": {
             "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
             "@id": "https://repo.metadatacenter.org/UUID",
             "additionalProperties": true,
             "version": "1.0.0",
@@ -91,6 +92,7 @@
                 },
                 "title": {
                     "$schema": "http://json-schema.org/draft-04/schema#",
+                    "type": "object",
                     "@id": "https://repo.metadatacenter.org/UUID",
                     "additionalProperties": false,
                     "title": "Auto-generated JSON Schema title for 'title' field",
@@ -138,6 +140,7 @@
                 },
                 "description": {
                     "$schema": "http://json-schema.org/draft-04/schema#",
+                    "type": "object",
                     "@id": "https://repo.metadatacenter.org/UUID",
                     "additionalProperties": false,
                     "title": "Auto-generated JSON Schema title for 'description' field",
@@ -183,6 +186,7 @@
                 },
                 "identifier": {
                     "$schema": "http://json-schema.org/draft-04/schema#",
+                    "type": "object",
                     "@id": "https://repo.metadatacenter.org/UUID",
                     "additionalProperties": false,
                     "description": "Auto-generated JSON Schema description for 'identifier' field",
@@ -220,6 +224,7 @@
                 },
                 "publicReleaseDate": {
                     "$schema": "http://json-schema.org/draft-04/schema#",
+                    "type": "object",
                     "@id": "https://repo.metadatacenter.org/UUID",
                     "additionalProperties": false,
                     "description": "Auto-generated JSON Schema description for 'publicReleaseDate' field",
@@ -263,6 +268,7 @@
                 },
                 "submissionDate": {
                     "$schema": "http://json-schema.org/draft-04/schema#",
+                    "type": "object",
                     "@id": "https://repo.metadatacenter.org/UUID",
                     "additionalProperties": false,
                     "title": "Auto-generated JSON Schema title for 'submissionDate' field",
@@ -331,6 +337,7 @@
     "additionalProperties": false,
     "study": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "version": "1.0.0",
         "provenance": {},
@@ -451,6 +458,7 @@
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'description' field",
@@ -552,6 +560,7 @@
             },
             "identifier": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'identifier' field",
@@ -599,6 +608,7 @@
             },
             "publicReleaseDate": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'publicReleaseDate' field",
@@ -642,6 +652,7 @@
             },
             "studyDesignType": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'studyDesignType' field",
@@ -694,6 +705,7 @@
             },
             "submissionDate": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'submissionDate' field",
@@ -737,6 +749,7 @@
             },
             "title": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'title' field",
@@ -803,6 +816,7 @@
     },
     "publication": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "version": "1.0.0",
         "provenance": {},
@@ -927,6 +941,7 @@
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'description' field",
@@ -972,6 +987,7 @@
             },
             "doi": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'doi' field",
@@ -1015,6 +1031,7 @@
             },
             "pubMedID": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'pubMedID' field",
@@ -1058,6 +1075,7 @@
             },
             "status": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'status' field",
@@ -1101,6 +1119,7 @@
             },
             "title": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'title' field",
@@ -1150,6 +1169,7 @@
     },
     "studyProtocol": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "version": "1.0.0",
         "provenance": {},
@@ -1233,6 +1253,7 @@
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'name' field",
@@ -1276,6 +1297,7 @@
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'description' field",
@@ -1321,6 +1343,7 @@
             },
             "type": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "title": "Auto-generated JSON Schema title for study protocol'type' field",
                 "description": "Auto-generated JSON Schema description for study protocol'type' field",
@@ -1363,6 +1386,7 @@
             },
             "uri": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'uri' field",
@@ -1414,6 +1438,7 @@
             },
             "version": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'version' field",
@@ -1470,6 +1495,7 @@
     },
     "contact": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "version": "1.0.0",
         "provenance": {},
@@ -1571,6 +1597,7 @@
             },
             "address": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'address' field",
@@ -1614,6 +1641,7 @@
             },
             "email": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'email' field",
@@ -1657,6 +1685,7 @@
             },
             "fax": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'fax' field",
@@ -1700,6 +1729,7 @@
             },
             "firstName": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'firstName' field",
@@ -1750,6 +1780,7 @@
             },
             "lastName": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'lastname' field",
@@ -1793,6 +1824,7 @@
             },
             "middleInitial": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'middleInitial' field",
@@ -1830,6 +1862,7 @@
             },
             "phone": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'phone' field",
@@ -1873,6 +1906,7 @@
             },
             "role": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'role' field",
@@ -1935,6 +1969,7 @@
     },
     "organization": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "version": "1.0.0",
         "provenance": {},
@@ -1996,6 +2031,7 @@
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
@@ -2039,6 +2075,7 @@
             },
             "department": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "title": "Auto-generated JSON Schema title for 'department' field",
                 "description": "Auto-generated JSON Schema description for 'department' field",
@@ -2091,6 +2128,7 @@
     },
     "studyGroupPopulation": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "version": "1.0.0",
         "provenance": {},
@@ -2164,6 +2202,7 @@
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'name' field",
@@ -2214,6 +2253,7 @@
             },
             "selectionRule": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'selectionRule' field",
@@ -2257,6 +2297,7 @@
             },
             "type": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for study group population's 'type' field",
@@ -2313,6 +2354,7 @@
     },
     "studySubject": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "version": "1.0.0",
         "provenance": {},
@@ -2383,6 +2425,7 @@
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'name' field",
@@ -2426,6 +2469,7 @@
             },
             "type": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for study subject's 'type' field",
@@ -2487,6 +2531,7 @@
     },
     "process": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "title": "Process",
         "description": "JSON-LD/Schema Process Template Element",
@@ -2571,6 +2616,7 @@
             },
             "type": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for reagent's 'type' field",
@@ -2667,6 +2713,7 @@
     },
     "sample": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "title": "Sample",
         "description": "JSON-LD/Schema Sample Template Element",
@@ -2750,6 +2797,7 @@
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'name' field",
@@ -2793,6 +2841,7 @@
             },
             "type": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for reagent's 'type' field",
@@ -2838,6 +2887,7 @@
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'description' field",
@@ -2883,6 +2933,7 @@
             },
             "source": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'source' field",
@@ -2919,9 +2970,12 @@
                 ]
             },
             "hasCharacteristic": {
-                "$ref": "#/characteristic",
-                "type": "object"
-            },
+                "items": {
+                    "$ref": "#/characteristic",
+                    "type": "object"
+                },
+                "type": "array"
+            },           
             "hasCollectionStudyTime": {
                 "$ref": "#/studyTime",
                 "type": "object"
@@ -2949,6 +3003,7 @@
     },
     "reagent": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "title": "Reagent",
         "description": "JSON-LD/Schema Reagent Template Element",
@@ -3012,6 +3067,7 @@
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'name' field",
@@ -3055,6 +3111,7 @@
             },
             "type": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for reagent's 'type' field",
@@ -3116,6 +3173,7 @@
     },
     "studyAssay": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "title": "Study Assay",
         "description": "JSON-LD/Schema Study Assay Template Element",
@@ -3151,6 +3209,7 @@
             },
             "measurementType": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for study assay's 'type' field",
@@ -3202,6 +3261,7 @@
             },
             "platform": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for study assay's 'platform' field",
@@ -3253,6 +3313,7 @@
             },
             "technology": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for study assay's 'technology' field",
@@ -3308,6 +3369,7 @@
     },
     "studyFactor": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "version": "1.0.0",
         "provenance": {},
@@ -3371,6 +3433,7 @@
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "title": "Auto-generated JSON Schema title for 'name' field",
                 "description": "Auto-generated JSON Schema description for 'name' field",
@@ -3414,6 +3477,7 @@
             },
             "type": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "title": "Auto-generated JSON Schema title for study factor's 'type' field",
                 "description": "Auto-generated JSON Schema description for study factor's'type' field",
@@ -3464,6 +3528,7 @@
     },
     "protocolParameter": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "version": "1.0.0",
         "provenance": {},
@@ -3525,6 +3590,7 @@
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'name' field",
@@ -3568,6 +3634,7 @@
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'description' field",
@@ -3622,8 +3689,11 @@
     },
     "characteristic": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
-        "title": "Characteristic Value",
+        "version": "1.0.0",
+        "provenance": {},
+        "title": "Characteristic",
         "description": "JSON-LD/Schema Characteristic Template Element",
         "properties": {
             "@context": {
@@ -3679,6 +3749,7 @@
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'name' field",
@@ -3716,6 +3787,7 @@
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'description' field",
@@ -3767,7 +3839,10 @@
     },
     "characteristicValue": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
+        "version": "1.0.0",
+        "provenance": {},
         "title": "Characteristic Value",
         "description": "JSON-LD/Schema Characteristic Value Template Element",
         "properties": {
@@ -3819,6 +3894,7 @@
             },
             "type": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "title": "Auto-generated JSON Schema title for result value 'type' field",
                 "description": "Auto-generated JSON Schema description for result value 'type' field",
@@ -3855,6 +3931,7 @@
             },
             "unit": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for result value's 'unit' field",
@@ -3898,6 +3975,7 @@
             },
             "value": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'value' field",
@@ -3945,6 +4023,7 @@
     },
     "factorValue": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "title": "Factor Value",
         "description": "JSON-LD/Schema Factor Value Template Element",
@@ -3978,6 +4057,7 @@
             },
             "factor": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'factor' field",
@@ -4021,6 +4101,7 @@
             },
             "value": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'value' field",
@@ -4067,6 +4148,7 @@
     },
     "parameterValue": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "title": "Parameter Value",
         "description": "JSON-LD/Schema Parameter Value Template Element",
@@ -4100,6 +4182,7 @@
             },
             "parameter": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "title": "Auto-generated JSON Schema title for 'parameter' field",
                 "description": "Auto-generated JSON Schema description for 'parameter' field",
@@ -4143,6 +4226,7 @@
             },
             "value": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'value' field",
@@ -4195,7 +4279,10 @@
     },
     "result": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
+        "version": "1.0.0",
+        "provenance": {},
         "title": "Result",
         "description": "JSON-LD/Schema Result Template Element",
         "properties": {
@@ -4256,6 +4343,7 @@
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'name' field",
@@ -4299,6 +4387,7 @@
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'description' field",
@@ -4350,7 +4439,10 @@
     },
     "resultValue": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
+        "version": "1.0.0",
+        "provenance": {},
         "title": "Result Value",
         "description": "JSON-LD/Schema Result Value Template Element",
         "properties": {
@@ -4406,6 +4498,7 @@
             },
             "type": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "title": "Auto-generated JSON Schema title for result value 'type' field",
                 "description": "Auto-generated JSON Schema description for result value 'type' field",
@@ -4442,6 +4535,7 @@
             },
             "unit": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for result value's 'unit' field",
@@ -4485,6 +4579,7 @@
             },
             "value": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'value' field",
@@ -4532,6 +4627,7 @@
     },
     "dataFile": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "version": "1.0.0",
         "provenance": {},
@@ -4595,6 +4691,7 @@
             },
             "name": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'name' field",
@@ -4638,6 +4735,7 @@
             },
             "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'description' field",
@@ -4692,6 +4790,7 @@
     },
     "studyTime": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@id": "https://repo.metadatacenter.org/UUID",
         "version": "1.0.0",
         "provenance": {},
@@ -4765,6 +4864,7 @@
             },
             "durationValue": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'durationValue' field",
@@ -4812,6 +4912,7 @@
             },
             "isBeforeEvent": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for 'isBeforeEvent' field",
@@ -4855,6 +4956,7 @@
             },
             "studyEvent": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for study time's 'studyEvent' field",
@@ -4910,6 +5012,7 @@
             },
             "unit": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
                 "additionalProperties": false,
                 "title": "Auto-generated JSON Schema title for study time's 'unit' field",
@@ -4964,6 +5067,7 @@
     },
     "instanceProvenance": {
         "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
         "@context": {
             "prov": "http://www.w3.org/ns/prov#"
         },

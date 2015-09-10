@@ -82,8 +82,8 @@
                             {
                                 "@type": "https://repo.metadatacenter.org/model/Characteristic",
                                 "@id": "https://repo.metadatacenter.org/UUID",
-                                "name": "a characteristic name",
-                                "description": "a characteristic description",
+                                "name": { "value": "a characteristic name" },
+                                "description": { "value": "a characteristic description" },
                                 "hasCharacteristicValue": {
                                     "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
                                     "@id": "https://repo.metadatacenter.org/UUID",
@@ -150,8 +150,8 @@
                                     {
                                         "@type": "https://repo.metadatacenter.org/model/Characteristic",
                                         "@id": "https://repo.metadatacenter.org/UUID",
-                                        "name": "characteristic name",
-                                        "description": "characteristic description",
+                                        "name": { "value": "a characteristic name" },
+                                        "description": { "value": "a characteristic description" },
                                         "hasCharacteristicValue": {
                                             "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
                                             "@id": "https://repo.metadatacenter.org/UUID",
@@ -196,8 +196,8 @@
                                     {
                                         "@type": "https://repo.metadatacenter.org/model/Characteristic",
                                         "@id": "https://repo.metadatacenter.org/UUID",
-                                        "name": "characteristic name",
-                                        "description": "characteristic description",
+                                        "name": { "value": "a characteristic name" },
+                                        "description": { "value": "a characteristic description" },
                                         "hasCharacteristicValue": {
                                             "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
                                             "@id": "https://repo.metadatacenter.org/UUID",
@@ -250,13 +250,13 @@
                                 "@type": "https://repo.metadatacenter.org/model/StudySubject",
                                 "@id": "https://repo.metadatacenter.org/UUID",
                                 "name": { "value": "study subject name" },
-                                "type": "http://purl.obolibrary.org/obo/OBI_1110026",
+                                "type": { "value": "http://purl.obolibrary.org/obo/OBI_1110026" },
                                 "hasCharacteristic": [
                                     {
                                         "@type": "https://repo.metadatacenter.org/model/Characteristic",
                                         "@id": "https://repo.metadatacenter.org/UUID",
-                                        "name": "characteristic name",
-                                        "description": "characteristic description",
+                                        "name": { "value": "a characteristic name" },
+                                        "description": { "value": "a characteristic description" },
                                         "hasCharacteristicValue": {
                                             "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
                                             "@id": "https://repo.metadatacenter.org/UUID",
