@@ -2538,11 +2538,6 @@
         "properties": {
             "@context": {
                 "properties": {
-                    "hasReagent": {
-                        "enum": [
-                            "https://repo.metadatacenter.org/model/hasReagent"
-                        ]
-                    },
                     "executeStudyProtocol": {
                         "enum": [
                             "https://repo.metadatacenter.org/model/executeStudyProtocol"
@@ -2635,13 +2630,6 @@
                     "value"
                 ]
             },
-            "hasReagent": {
-                "items": {
-                    "$ref": "#/reagent",
-                    "type": "object"
-                },
-                "type": "array"
-            },
             "executeStudyProtocol": {
                 "$ref": "#/studyProtocol",
                 "type": "object"
@@ -2657,6 +2645,10 @@
                         {
                             "type": "object",
                             "$ref": "#/studySubject"
+                        },
+                        {
+                            "type": "object",
+                            "$ref": "#/reagent"
                         },
                         {
                             "type": "object",

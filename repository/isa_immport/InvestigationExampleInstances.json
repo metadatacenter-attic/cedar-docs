@@ -103,6 +103,47 @@
                         "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" }
                     }
                 ],
+                "hasStudyAssay": [
+                    {
+                        "@type": "https://repo.metadatacenter.org/model/StudyAssay",
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "measurementType": { "value": "http://purl.obolibrary.org/obo/IAO_0000003" },
+                        "platform": { "value": "http://purl.obolibrary.org/obo/IAO_0000023" },
+                        "technology": { "value": "http://purl.obolibrary.org/obo/IAO_0000321" }
+                    }
+                ],
+                "hasStudyGroupPopulation": [
+                    {
+                        "@type": "https://repo.metadatacenter.org/model/StudyGroupPopulation",
+                        "@id": "https://repo.metadatacenter.org/UUID",
+                        "name": { "value": "population name" },
+                        "selectionRule": { "value": "selection rule" },
+                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" },
+                        "hasStudySubject": [
+                            {
+                                "@type": "https://repo.metadatacenter.org/model/StudySubject",
+                                "@id": "https://repo.metadatacenter.org/UUID",
+                                "name": { "value": "study subject name" },
+                                "type": { "value": "http://purl.obolibrary.org/obo/OBI_1110026" },
+                                "hasCharacteristic": [
+                                    {
+                                        "@type": "https://repo.metadatacenter.org/model/Characteristic",
+                                        "@id": "https://repo.metadatacenter.org/UUID",
+                                        "name": { "value": "a characteristic name" },
+                                        "description": { "value": "a characteristic description" },
+                                        "hasCharacteristicValue": {
+                                            "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
+                                            "@id": "https://repo.metadatacenter.org/UUID",
+                                            "type": { "value": "a characteristic type" },
+                                            "unit": { "value": "a characteristic unit" },
+                                            "value": { "value": "a characteristic value" }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
                 "hasProcess": [
                     {
                         "@type": "https://repo.metadatacenter.org/model/Process",
@@ -140,7 +181,13 @@
                                 "value": { "value": "v1" }
                             }
                         ],
-                        "hasReagent": [
+                        "hasInput": [
+                            {
+                                "@type": "https://repo.metadatacenter.org/model/DataFile",
+                                "@id": "https://repo.metadatacenter.org/UUID",
+                                "name": { "value": "file://fred.txt" },
+                                "description": { "value": "a data file description" }
+                            },
                             {
                                 "@type": "https://repo.metadatacenter.org/model/Reagent",
                                 "@id": "https://repo.metadatacenter.org/UUID",
@@ -161,14 +208,6 @@
                                         }
                                     }
                                 ]
-                            }
-                        ],
-                        "hasInput": [
-                            {
-                                "@type": "https://repo.metadatacenter.org/model/DataFile",
-                                "@id": "https://repo.metadatacenter.org/UUID",
-                                "name": { "value": "file://fred.txt" },
-                                "description": { "value": "a data file description" }
                             }
                         ],
                         "hasOutput": [
@@ -222,48 +261,6 @@
                                         "@id": "https://repo.metadatacenter.org/UUID",
                                         "factor": { "value": "a factor" },
                                         "value": { "value": "a factor value" }
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-
-                "hasStudyAssay": [
-                    {
-                        "@type": "https://repo.metadatacenter.org/model/StudyAssay",
-                        "@id": "https://repo.metadatacenter.org/UUID",
-                        "measurementType": { "value": "http://purl.obolibrary.org/obo/IAO_0000003" },
-                        "platform": { "value": "http://purl.obolibrary.org/obo/IAO_0000023" },
-                        "technology": { "value": "http://purl.obolibrary.org/obo/IAO_0000321" }
-                    }
-                ],
-                "hasStudyGroupPopulation": [
-                    {
-                        "@type": "https://repo.metadatacenter.org/model/StudyGroupPopulation",
-                        "@id": "https://repo.metadatacenter.org/UUID",
-                        "name": { "value": "population name" },
-                        "selectionRule": { "value": "selection rule" },
-                        "type": { "value": "http://bioportal.bioontology.org/ontologies/EFO/3232" },
-                        "hasStudySubject": [
-                            {
-                                "@type": "https://repo.metadatacenter.org/model/StudySubject",
-                                "@id": "https://repo.metadatacenter.org/UUID",
-                                "name": { "value": "study subject name" },
-                                "type": { "value": "http://purl.obolibrary.org/obo/OBI_1110026" },
-                                "hasCharacteristic": [
-                                    {
-                                        "@type": "https://repo.metadatacenter.org/model/Characteristic",
-                                        "@id": "https://repo.metadatacenter.org/UUID",
-                                        "name": { "value": "a characteristic name" },
-                                        "description": { "value": "a characteristic description" },
-                                        "hasCharacteristicValue": {
-                                            "@type": "https://repo.metadatacenter.org/model/CharacteristicValue",
-                                            "@id": "https://repo.metadatacenter.org/UUID",
-                                            "type": { "value": "a characteristic type" },
-                                            "unit": { "value": "a characteristic unit" },
-                                            "value": { "value": "a characteristic value" }
-                                        }
                                     }
                                 ]
                             }
