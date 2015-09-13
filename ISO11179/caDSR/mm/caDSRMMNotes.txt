@@ -1,0 +1,180 @@
+
+This file describes the format of a caDSR CDE spreadsheet.
+
+It also contains initial Mapping Master expressions showing how instances of this spreadsheet could be mapped
+to an OWL ontology containing definitions of caDSR CDEs.
+
+The caDSRSS2OWL.json file in this directory contains these initial expressions.
+The caDSR.owl file in this directory contains (partial) definitions for the OWL entities used in these Mapping Master expressions.
+A file called ExampleDataElement.xls provides an example caDSR spreadsheet with one CDE.
+
+----------------------Data Element---------------------------------
+
+Data Element Short Name (A)
+Data Element Long Name (B)
+Data Element Preferred Question Text (C)
+Data Element Preferred Question Definition (D)
+Data Element Version (E)
+Data Element Context Name (F)
+Data Element Context Version (G)
+Data Element Public ID (H)
+Data Element Workflow Status (I)
+Data Element Registration Status (J)
+Data Element Begin Date (K)
+Data Element Source (L)
+
+MM expression range is: A2:A+
+
+Individual: @A*(mm:ShiftUp mm:Location)
+  Facts: shortName @A*,
+         longName @B*,
+         preferredQuestionText @C*,
+         preferredQuestionDefinition  @D*,
+         version @E*,
+         contextName @F*,
+         publicID @G*,
+         workflowStatus @H*,
+         registrationStatus @J*,
+         beginDate @K*(xsd:date),
+         source @L*,
+         hasDataElementConcept @M*(mm:Location) // Links DataElement instance to its associated DataElementConcept instance
+  Types: DataElement
+
+------------------Data Element Concept------------------------------
+
+Data Element Concept Public ID (M)
+Data Element Concept Short Name (N)
+Data Element Concept Long Name (O)
+Data Element Concept Version (P)
+Data Element Concept Context Name (Q)
+Data Element Concept Context Version (R)
+
+MM expression range is: A2:A+
+
+Individual: @M*(mm:ShiftUp mm:Location)
+  Facts: publicID @M*,
+         shortName @N*,
+         longName @O*,
+         version @P*,
+         contextName @Q*,
+         contextVersion @R*
+  Types: DataElementConcept
+
+------------------------Object Class-------------------------------
+
+Object Class Public ID (S)
+Object Class Long Name (T)
+Object Class Short Name (U)
+Object Class Context Name (V)
+Object Class Version (W)
+Object Class Concept Name (X)
+Object Class Concept Code (Y)
+Object Class Concept Public ID (Z)
+Object Class Concept Definition Source (AA)
+Object Class Concept EVS Source (AB)
+Object Class Concept Primary Flag (AC)
+
+--------------------------Property-----------------------------------
+
+Property Public ID (AD)
+Property Long Name (AE)
+Property Short Name (AF)
+Property Context Name (AG)
+Property Version (AH)
+Property Concept Name (AI)
+Property Concept Code (AJ)
+Property Concept Public ID (AK)
+Property Concept Definition Source (AL)
+Property Concept EVS Source (AM)
+Property Concept Primary Flag (AN)
+
+------------------------Value Domain------------------------------------
+
+Value Domain Public ID (AO)
+Value Domain Short Name (AP)
+Value Domain Version (AQ)
+Value Domain Context Name (AR)
+Value Domain Context Version (AT)
+Value Domain Type (AU)
+Value Domain Datatype (AV)
+Value Domain Min Length (AW)
+Value Domain Max Length (AX)
+Value Domain Min Value (AY)
+Value Domain Max Value (AZ)
+Value Domain Decimal Places (BA)
+Value Domain Format (BB)
+Value Domain Concept Name (BC)
+Value Domain Concept Code (BD)
+Value Domain Concept Public ID (BE)
+Value Domain Concept Definition Source (BF)
+Value Domain Concept Primary Flag (BG)
+
+---------------------------Representation--------------------------------
+
+Representation Public ID (BI)
+Representation Long Name (BJ)
+Representation Short Name (BK)
+Representation Context Name (BL)
+Representation Version (BM)
+Representation Concept Name (BN)
+Representation Concept Code (BO)
+Representation Concept Public ID (BP)
+Representation Concept Definition Source (BQ)
+Representation Concept EVS Source (BR)
+Representation Concept Primary Flag (BS)
+
+---------------------------Permissible Values-------------------------------
+
+Valid Values (BT)
+Value Meaning Name (BU)
+Value Meaning Description (BV)
+Value Meaning Concepts (BW)
+PV Begin Date (BX)
+PV End Date (BY)
+Value Meaning Public ID (BZ)
+Value Meaning Version (CA)
+
+-----------------------Classification Scheme-----------------
+
+Classification Scheme Short Name (CB)
+Classification Scheme Version (CD)
+Classification Scheme Context Name (CE)
+Classification Scheme Context Version (CF)
+
+--------------------Classification Scheme Item-----------------
+
+Classification Scheme Item Name (CG)
+Classification Scheme Item Type Name (CH)
+Classification Scheme Item Public ID (CI)
+Classification Scheme Item Version (CJ)
+
+---------------------Altername Name-----------------------------
+
+Data Element Alternate Name Context Name (CK)
+Data Element Alternate Name (CL)
+Data Element Alternate Name Type (CM)
+
+----------------------Documents-------------------
+
+Document (CN)
+Document Name (CO)
+Document Type (CP)
+
+--------------Data Element Derivation------------------
+
+Derivation Type (CQ)
+Derivation Method (CR)
+Derivation Rule (CS)
+Concatenation Character (CT)
+DDE Public ID (CU)
+DDE Long Name (CV)
+DDE Version (CW)
+DDE Workflow Status (CX)
+DDE Context (CY)
+DDE Display Order (CZ)
+
+Data Element RAI (DA)
+Object Class RAI (DB)
+Property RAI (DC)
+Valid Domain RAI (DD)
+Representation RAI (DE)

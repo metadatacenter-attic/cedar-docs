@@ -1,0 +1,515 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#"
+     xml:base="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasDataElementConcept -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasDataElementConcept">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElementConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasObjectClass -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasObjectClass">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElementConcept"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasPermissibleValues -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasPermissibleValues">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#PermissibleValues"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasProperty">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElementConcept"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasRepresentation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasRepresentation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasValueDomain -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#hasValueDomain">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#beginDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#beginDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#PermissibleValues"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptCode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptDefinitionSource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptDefinitionSource">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptEVSSource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptEVSSource">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptPrimaryFlag -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptPrimaryFlag">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptPublicID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#conceptPublicID">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#contextName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#contextName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElementConcept"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#contextVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#contextVersion">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElementConcept"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#endDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#endDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#PermissibleValues"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#longName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#longName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElementConcept"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#preferredQuestionDefinition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#preferredQuestionDefinition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#preferredQuestionText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#preferredQuestionText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#publicID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#publicID">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElementConcept"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#PermissibleValues"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#registrationStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#registrationStatus">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#shortName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#shortName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElementConcept"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#source -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#source">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#validValues -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#validValues">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#PermissibleValues"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainDatatype -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainDatatype">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainDecimalPlaces -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainDecimalPlaces">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainFormat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainFormat">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainMaxLength -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainMaxLength">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainMaxValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainMaxValue">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainMinLength -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainMinLength">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainMinValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainMinValue">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueDomainType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueMeaningConcepts -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueMeaningConcepts">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#PermissibleValues"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueMeaningDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueMeaningDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#PermissibleValues"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueMeaningName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#valueMeaningName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#PermissibleValues"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#version -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#version">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElementConcept"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#PermissibleValues"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#workflowStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#workflowStatus">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElementConcept -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#DataElementConcept"/>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ObjectClass"/>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#PermissibleValues -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#PermissibleValues"/>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Property"/>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#Representation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/martin/ontologies/2015/8/untitled-ontology-8#ValueDomain"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
