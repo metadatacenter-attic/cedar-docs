@@ -1,6 +1,5 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "version": "2015.9.16.a",
     "properties": {
         "investigation": {
             "$schema": "http://json-schema.org/draft-04/schema#",
