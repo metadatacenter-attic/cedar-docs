@@ -1,5 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "version": "2015.9.16.a",
     "properties": {
         "investigation": {
             "$schema": "http://json-schema.org/draft-04/schema#",
@@ -1988,7 +1989,7 @@
                             "https://repo.metadatacenter.org/model/department"
                         ]
                     },
-                                        "value": {
+                    "value": {
                         "enum": [
                             "https://schema.org/value"
                         ]
@@ -2967,7 +2968,7 @@
                     "type": "object"
                 },
                 "type": "array"
-            },           
+            },
             "hasCollectionStudyTime": {
                 "$ref": "#/studyTime",
                 "type": "object"
@@ -3375,9 +3376,9 @@
                             "https://repo.metadatacenter.org/model/name"
                         ]
                     },
-                    "type": {
+                    "description": {
                         "enum": [
-                            "https://repo.metadatacenter.org/model/type"
+                            "https://repo.metadatacenter.org/model/description"
                         ]
                     },
                     "value": {
@@ -3467,12 +3468,13 @@
                 ],
                 "additionalProperties": false
             },
-            "type": {
+            "description": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "type": "object",
                 "@id": "https://repo.metadatacenter.org/UUID",
-                "title": "Auto-generated JSON Schema title for study factor's 'type' field",
-                "description": "Auto-generated JSON Schema description for study factor's'type' field",
+                "additionalProperties": false,
+                "title": "Auto-generated JSON Schema title for 'description' field",
+                "description": "Auto-generated JSON Schema description for 'description' field",
                 "properties": {
                     "@type": {
                         "oneOf": [
@@ -3492,29 +3494,24 @@
                         ]
                     },
                     "info": {
-                        "description": "Select a type for the study factor",
+                        "description": "Enter a description for the study factor",
                         "input_type": "textfield",
-                        "title": "Type of Study Factor",
-                        "value_constraint": {
-                            "ontologies": [
-                                {
-                                    "uri": "http://bioportal.bioontology.org/ontologies/EFO"
-                                }
-                            ],
-                            "multiple_choice": false
-                        }
+                        "title": "Study Factor Description"
                     },
                     "value": {
                         "type": "string"
                     }
-                }
+                },
+                "required": [
+                    "value"
+                ]
             }
         },
         "required": [
             "@type",
             "@id",
             "name",
-            "type"
+            "description"
         ],
         "additionalProperties": false
     },
@@ -3534,7 +3531,7 @@
                             "https://repo.metadatacenter.org/model/name"
                         ]
                     },
-                    "type": {
+                    "description": {
                         "enum": [
                             "https://repo.metadatacenter.org/model/description"
                         ]
