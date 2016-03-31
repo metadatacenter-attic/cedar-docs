@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id$ -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:com="SP.common" version="2.0">
+  <xs:import schemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/submit/public-docs/common/SP.common.xsd?view=co" namespace="SP.common"/>
+
+  <!-- BioSample object -->
+  <xs:element name="BioSample" type="typeBioSample"/>
+
+  <xs:complexType name="typeBioSample">
+    <xs:sequence>
+
+      <xs:element name="SampleId" type="typeBioSampleIdentifier" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of all sample Ids: submitter assigned, archive assigned, etc.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Descriptor" type="com:typeDescriptor" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Description of the sample.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Organism" type="com:typeOrganism" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Information about organism, including NCBI taxonomy_id if it is known.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="BioProject" type="com:typeRefId" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Related BioProject(s).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Package" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+              Name of attribute package used to validate the sample, for example: MIGS.ba.air.4.0. 
+              See https://www.ncbi.nlm.nih.gov/biosample/docs/packages/ for the full list of available packages.
+           </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Attributes" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Attributes are the data characteristics of the sample.
+            List of mandatory and optional attributes is defined by the attribute package.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Attribute" type="typeAttribute" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+    </xs:sequence>
+
+    <xs:attribute name="schema_version" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <!-- BioSample attribute-->
+  <xs:complexType name="typeAttribute">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:annotation>
+          <xs:documentation>Value of the attribute.</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="attribute_name" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Name of the attribute.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="typeBioSampleIdentifier">
+    <xs:sequence>
+      <xs:annotation>
+        <xs:documentation> Identifier placed on submitted object by submitter. This is used
+                    to tie the submitted object with assigned accession. </xs:documentation>
+      </xs:annotation>
+      <xs:element maxOccurs="1" minOccurs="0" name="PrimaryId" type="com:typePrimaryId">
+        <xs:annotation>
+          <xs:documentation>Used for updates: BioSample accession of the record being updated.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="SPUID">
+        <xs:annotation>
+          <xs:documentation>An identifier from external database qualified by a namespace.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="com:typeSPUID">
+              <xs:attribute name="label">
+                <xs:annotation>
+                  <xs:documentation>Add this attribute to replace spuid_namespace value by 'Sample name'.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Sample name"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attribute name="display">
+                <xs:annotation>
+                  <xs:documentation>Set to 'no' to not display SPUID on public web pages.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="yes"/>
+                            <xs:enumeration value="no"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

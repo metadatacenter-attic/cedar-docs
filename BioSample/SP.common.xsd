@@ -1,0 +1,526 @@
+:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:com="SP.common"
+    targetNamespace="SP.common" version="2.0">
+
+    <!--  Shared definitions for Submission Portal schema specifications -->
+
+    <xs:simpleType name="typeNumber">
+        <xs:annotation>
+            <xs:documentation> One or more digits. </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:nonNegativeInteger">
+            <xs:pattern value="[0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--  One of INSDC archives. -->
+    <xs:simpleType name="typeArchive">
+        <xs:annotation>
+            <xs:documentation> One of INSDC archives. </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="NCBI"/>
+            <xs:enumeration value="EBI"/>
+            <xs:enumeration value="DDBJ"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--  Local identifier in submission context. -->
+    <xs:complexType name="typeLocalId">
+        <xs:annotation>
+            <xs:documentation> Local identifier in submission context. </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="submission_id" use="optional">
+                    <xs:annotation>
+                        <xs:documentation> Optional submission id. If omitted, the current
+                            submission is assumed. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Unique identifier in submitter context (Submitter Provided Unique ID). -->
+    <xs:complexType name="typeSPUID">
+        <xs:annotation>
+            <xs:documentation> Unique identifier in submitter context (Submitter Provided Unique
+                ID). </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="submitter_id" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>DEPRICATED and will be removed: Optional submitter id - eg JGI. If omitted, the current submitter is assumed. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute type="xs:string" name="spuid_namespace" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>Will be required: Identifier of the submitter namespace: This is a controlled vocabulary on NCBI side.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>                    
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Accession in target archive. -->
+    <xs:complexType name="typePrimaryId">
+        <xs:annotation>
+            <xs:documentation> Unique accession in NCBI Archive. Accession is assigned only after
+                object is successfully loaded into NCBI archive. Optioanl integer id is for internal
+                NCBI use only. </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="db" use="optional">
+                    <xs:annotation>
+                        <xs:documentation> Optional identifier of the archive. Can be ommitted if
+                            defined by context. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="id" type="xs:integer" use="optional">
+                    <xs:annotation>
+                        <xs:documentation> Host archive integer id. May be assigned only by NCBI.
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Identifier placed on the submitted object. -->
+    <xs:complexType name="typeIdentifier">
+        <xs:sequence>
+            <xs:annotation>
+                <xs:documentation> Identifier placed on submitted object by submitter. This is used
+                    to tie the submitted object with assigned accession. </xs:documentation>
+            </xs:annotation>
+            <xs:element name="PrimaryId" minOccurs="0" maxOccurs="1" type="com:typePrimaryId">
+                <xs:annotation>
+                    <xs:documentation> Used for updates: NCBI accession of the record being updated.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SPUID" type="com:typeSPUID" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> An identifier from external database qualified by a
+                        namespace. Similar to seq-id type general. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="LocalId" type="com:typeLocalId" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Local id in submission context. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Reference to a record inside NCBI database or in Submission Portal. -->
+    <xs:complexType name="typeRefId">
+        <xs:annotation>
+            <xs:documentation> Reference to a record inside NCBI database or in Submission Portal.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:element name="LocalId" type="com:typeLocalId" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Local id in submission context. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SPUID" type="com:typeSPUID" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> User-supplied unique id. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="PrimaryId" type="com:typePrimaryId" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> NCBI accession. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Links between objects -->
+    <xs:complexType name="typeLink">
+        <xs:annotation>
+            <xs:documentation>The typeLink represents links between archived objects. If link is
+                submitted together with archive object(s) user or local ids can be used. Those will
+                be resolved once archive objects are accessioned. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="From" type="com:typeRefId"> </xs:element>
+            <xs:element name="To" type="com:typeRefId"> </xs:element>
+            <xs:element name="Attributes" type="xs:anyType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Optional attribution of the link.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Labled external links for object presentation. -->
+    <xs:complexType name="typeExternalLink">
+        <xs:choice>
+            <xs:element name="URL" type="xs:anyURI"/>
+            <xs:element name="ExternalID" type="com:typePrimaryId"/>
+            <xs:element name="EntrezQuery" type="xs:string"/>
+        </xs:choice>
+        <xs:attribute name="label" type="xs:string">
+            <xs:annotation>
+                <xs:documentation> Text which is shown on the obect presentation page for this link.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="category" use="optional" type="xs:string"> </xs:attribute>
+    </xs:complexType>
+
+    <!-- Set of sequence or publication authors -->
+    <xs:complexType name="typeAuthorSet">
+        <xs:sequence maxOccurs="1">
+            <xs:element maxOccurs="unbounded" name="Author">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" minOccurs="0" type="com:typeName"> </xs:element>
+                        <xs:element name="Consortium" type="xs:string" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!-- Publication. Can be either structured or free form citations as well as link to the publication database. -->
+    <xs:complexType name="typePublication">
+        <xs:sequence>
+            <xs:element name="AuthorSet" type="com:typeAuthorSet" minOccurs="0" maxOccurs="1"> </xs:element>
+            <xs:element name="Reference" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Free form citation.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StructuredCitation" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Title" type="xs:string"> </xs:element>
+                        <xs:element name="Journal" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="JournalTitle" type="xs:string">
+                                        <xs:annotation>
+                                            <xs:documentation>Journal title in ISO-JTO
+                                                format</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="Year" minOccurs="0" type="xs:string"/>
+                                    <xs:element name="Volume" minOccurs="0" type="xs:string"/>
+                                    <xs:element name="Issue" minOccurs="0" type="xs:string"/>
+                                    <xs:element name="PagesFrom" minOccurs="0" type="xs:string"/>
+                                    <xs:element name="PagesTo" minOccurs="0" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="DbType">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="ePMC"> </xs:enumeration>
+                        <xs:enumeration value="ePubmed"> </xs:enumeration>
+                        <xs:enumeration value="eDOI"> </xs:enumeration>
+                        <xs:enumeration value="eNotAvailable">
+                            <xs:annotation>
+                                <xs:documentation> Use for Unpublished, in press or other databases.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string">
+            <xs:annotation>
+                <xs:documentation> Unique publication identifier in the specified database that is
+                    specific to the project. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="date" type="xs:dateTime">
+            <xs:annotation>
+                <xs:documentation> Publication date. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="status">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="ePublished"/>
+                    <xs:enumeration value="eInPress"/>
+                    <xs:enumeration value="eUnpublished"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <!-- Common object descriptors. -->
+    <xs:complexType name="typeDescriptor">
+        <xs:sequence>
+            <xs:annotation>
+                <xs:documentation> Common description of an object: title, publication, etc...
+                </xs:documentation>
+            </xs:annotation>
+            <xs:element name="Title" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation> Short, but informative title of the projects, single phrase,
+                        single line. For example: Sequencing the southern Chinese HAN population
+                        from the 1000 Genomes Project. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Description" type="com:typeBlock" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation> Informative paragraph. Some limited XHTML style formatting is
+                        allowed: hyperlinks, tables, lists, empahasis, etc. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ExternalLink" maxOccurs="unbounded" minOccurs="0"
+                type="com:typeExternalLink">
+                <xs:annotation>
+                    <xs:documentation> Link to external resources (as an URL) or to external
+                        databases (DB name, ID). May be an URL to any external web resource or link
+                        to named database. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Generic postal address -->
+    <xs:complexType name="typeAddress">
+        <xs:sequence>
+            <xs:element name="Department" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Department: eg Department of Medicine</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Institution" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Institution: eg Washington University</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Street" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Street address: 123 Main St. Suite 104</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="City" type="xs:string" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>City: New York</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Sub" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Subdivision of Country(state, province, etc.): New York
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Country" type="xs:string" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Country: USA</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="postal_code" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <!-- Name of a person -->
+    <xs:complexType name="typeName">
+        <xs:sequence>
+            <xs:element name="First" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Last" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="Middle" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Full middle name or initials </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Suffix" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Contact info - an address with email -->
+    <xs:complexType name="typeContactInfo">
+        <xs:sequence>
+            <xs:element type="com:typeAddress" name="Address" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="com:typeName" name="Name" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="email" type="xs:string" use="required"/>
+        <xs:attribute name="sec_email" type="xs:string" use="optional"/>
+        <xs:attribute name="phone" type="xs:string"/>
+        <xs:attribute name="fax" type="xs:string"/>
+    </xs:complexType>
+
+    <!-- Organism definition. -->
+    <xs:complexType name="typeOrganism">
+        <xs:sequence maxOccurs="1">
+            <xs:element name="OrganismName" type="xs:string"> </xs:element>
+            <xs:element name="Label" minOccurs="0" maxOccurs="1" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation> A label for sample, or name of an individual animal (e.g., Clint).</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Strain" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Microbial/eukaryotic strain name.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IsolateName" minOccurs="0" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Identification or description of the specific individual from which this sample was obtained.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Breed" minOccurs="0" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Breed name - chiefly used in domesticated animals or plants.</xs:documentation>
+                </xs:annotation>                
+            </xs:element>
+            <xs:element name="Cultivar" minOccurs="0" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Cultivar name - cultivated variety of plant.</xs:documentation>
+                </xs:annotation>                
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="taxonomy_id" type="xs:int" use="optional"> </xs:attribute>
+    </xs:complexType>
+
+    <!--  Formatted text block.  
+          Subset of XHTML 1.0 (Second Edition) as defined in http://www.w3.org/TR/xhtml1/ -->
+
+    <xs:complexType name="typeBlock">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="p" type="com:typeInline"/>
+            <xs:element name="ul" type="com:typeL"/>
+            <xs:element name="ol" type="com:typeL"/>
+            <xs:element name="table" type="com:typeTable"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="typeInline" mixed="true">
+        <xs:annotation>
+            <xs:documentation> "Inline" covers inline or "text-level" elements </xs:documentation>
+        </xs:annotation>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="a" type="com:typeA"/>
+            <xs:element name="i" type="com:typeInline"/>
+            <xs:element name="b" type="com:typeInline"/>
+            <xs:element name="sub" type="com:typeInline"/>
+            <xs:element name="sup" type="com:typeInline"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="typeFlow" mixed="true">
+        <xs:annotation>
+            <xs:documentation> "Flow" mixes block and inline and is used for list items etc.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:choice>
+                <xs:element name="p" type="com:typeInline"/>
+                <xs:element name="ul" type="com:typeL"/>
+                <xs:element name="ol" type="com:typeL"/>
+                <xs:element name="table" type="com:typeTable"/>
+                <xs:element name="a" type="com:typeA"/>
+                <xs:element name="i" type="com:typeInline"/>
+                <xs:element name="b" type="com:typeInline"/>
+                <xs:element name="sub" type="com:typeInline"/>
+                <xs:element name="sup" type="com:typeInline"/>
+            </xs:choice>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="typeA.content" mixed="true">
+        <xs:annotation>
+            <xs:documentation> a elements use "Inline" excluding a </xs:documentation>
+        </xs:annotation>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="i" type="com:typeInline"/>
+            <xs:element name="b" type="com:typeInline"/>
+            <xs:element name="sub" type="com:typeInline"/>
+            <xs:element name="sup" type="com:typeInline"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Lists. -->
+        <xs:complexType name="typeL">
+            <xs:annotation>
+                <xs:documentation> Ordered or Unordered list </xs:documentation>
+            </xs:annotation>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded"  name="li" type="com:typeLI"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType mixed="true" name="typeLI">
+            <xs:annotation>
+                <xs:documentation> list item </xs:documentation>
+            </xs:annotation>
+            <xs:complexContent>
+                <xs:extension base="com:typeFlow"> </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+
+    <!-- The Anchor Element -->
+    <xs:complexType mixed="true" name="typeA">
+        <xs:annotation>
+            <xs:documentation> content is "Inline" except that anchors shouldn't be nested
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="com:typeA.content">
+                <xs:attribute name="href" type="xs:anyURI"/>
+                <xs:attribute name="type" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Tables. -->
+    <xs:complexType name="typeTable">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="caption" type="com:typeCaption"/>
+            <xs:element maxOccurs="unbounded" name="tr" type="com:typeTR"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType mixed="true" name="typeCaption">
+        <xs:complexContent>
+            <xs:extension base="com:typeInline"> </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="typeTR">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="th" type="com:typeTH"/>
+            <xs:element name="td" type="com:typeTD"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:annotation>
+        <xs:documentation> th is for headers, td for data and for cells acting as both
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:complexType mixed="true" name="typeTH">
+        <xs:complexContent>
+            <xs:extension base="com:typeFlow">
+                <xs:attribute name="rowspan" default="1" type="com:typeNumber"/>
+                <xs:attribute name="colspan" default="1" type="com:typeNumber"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType mixed="true" name="typeTD">
+        <xs:complexContent>
+            <xs:extension base="com:typeFlow">
+                <xs:attribute name="rowspan" default="1" type="com:typeNumber"/>
+                <xs:attribute name="colspan" default="1" type="com:typeNumber"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- Main Submission XML -->
+  <xs:element name="Submission"  type="typeSubmission">
+  </xs:element>
+  <xs:complexType name="typeSubmission"><xs:sequence>
+    <xs:element name="Description">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="Comment" minOccurs="0" type="xs:string">
+            <xs:annotation><xs:documentation>
+              Submitter comment about the content of whole submission. 
+            </xs:documentation></xs:annotation>
+          </xs:element>
+          <xs:element name="Submitter" minOccurs="0" type="typeAccount">
+            <xs:annotation><xs:documentation>
+              this node added by us when we get the package and identify source of package (for our tracking) 
+            </xs:documentation></xs:annotation>
+          </xs:element>
+          <xs:element name="Organization" minOccurs="1" maxOccurs="unbounded" type="typeOrganization">
+            <xs:annotation><xs:documentation>Organization(s) involved into the submission. One organization is the owner of submission data.
+            </xs:documentation></xs:annotation>
+          </xs:element>
+          <xs:element name="Hold" minOccurs="0" >
+            <xs:complexType>
+              <xs:attribute name="release_date" type="xs:date" use="required"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Access" minOccurs="1" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+              If the data are to be deposited in a protected database and not made public under any circumstances, 
+              this element should be set to "controlled-access", otherwise to "public" 
+            </xs:documentation></xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="public">
+                  <xs:annotation><xs:documentation>Date are to be deposited to a public database.</xs:documentation></xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="controlled-access">
+                  <xs:annotation><xs:documentation>Date are to be deposited to a protected database.</xs:documentation></xs:annotation>
+                </xs:enumeration>                      
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+    <xs:element name="Context" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation><xs:documentation>This is set of references to already created object. E.g. - to the projects (bioproject, SRA study, dbgap study etc) , samples , previous submission id, etc,</xs:documentation></xs:annotation>
+      <xs:complexType>
+        <xs:simpleContent >
+          <xs:extension base="typeIdTag">
+            <xs:attribute name="local_name" type="xs:string" use="optional">
+              <xs:annotation><xs:documentation>Name in the ccontext of the object in db,</xs:documentation></xs:annotation>
+            </xs:attribute>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+    </xs:element>
+    <xs:element name="Action" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation><xs:documentation>
+        Action is what to do - either process new submission (ProcessFile) or 
+        change status (ChangeStatus) of the existing one. 
+      </xs:documentation></xs:annotation>
+      <xs:complexType>
+        <xs:choice minOccurs="0">
+          <xs:element name="ProcessFile">
+            <xs:annotation><xs:documentation>
+              All action and commands to target archive are contained in this file
+            </xs:documentation></xs:annotation>
+            <xs:complexType>
+              <xs:complexContent>
+                <xs:extension base="typeFile">
+                  <xs:attributeGroup ref="attributesFileGroup"/>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="AddFiles">
+            <xs:annotation><xs:documentation>
+              Adding a group of files to the content of particular target archive in given context 
+            </xs:documentation></xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="File" minOccurs="1" maxOccurs="unbounded"> 
+                  <xs:complexType>
+                    <xs:complexContent>
+                      <xs:extension base="typeFile">
+                        <xs:attribute name="target_db_label" use="optional">
+                          <xs:annotation><xs:documentation>
+                            File label the use of which is specific to target database. For example, for dbGaP genotype files, it can represent anonymized ids of dbGaP samples
+                          </xs:documentation></xs:annotation>
+                        </xs:attribute>
+                      </xs:extension>
+                    </xs:complexContent>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+              <xs:attributeGroup ref="attributesFileGroup"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="AddData">
+            <xs:annotation><xs:documentation>
+              Adding a group of data objects, inlined into the submission 
+            </xs:documentation></xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Data" minOccurs="1" maxOccurs="unbounded">
+                  <xs:complexType>
+                    <xs:complexContent>
+                      <xs:extension base="typeInlineData">
+                        <xs:attribute name="target_db_label" use="optional">
+                          <xs:annotation><xs:documentation>
+                            Data label the use of which is specific to target database. Same as for AddFiles, but this is inlined data. 
+                          </xs:documentation></xs:annotation>
+                        </xs:attribute>
+                      </xs:extension>
+                    </xs:complexContent>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+              <xs:attributeGroup ref="attributesFileGroup"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ChangeStatus">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Target" type="typeIdTag">
+                  <xs:annotation><xs:documentation>
+                    If the action is ChangeStatus, the target is identified by id tag. 
+                  </xs:documentation></xs:annotation>
+                </xs:element>
+                <xs:choice>
+                  <xs:element name="Release"><xs:annotation><xs:documentation>Immediate release</xs:documentation></xs:annotation></xs:element>                    
+                  <xs:element name="SetReleaseDate">
+                    <xs:complexType>
+                      <xs:attribute name="release_date" type="xs:date"/>
+                    </xs:complexType>
+                  </xs:element>                    
+                  <xs:element name="Suppress"   type="xs:string"/>
+                  <xs:element name="AddComment" type="xs:string"/>       
+                </xs:choice>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+        <xs:attribute name="action_id" type="xs:token"></xs:attribute>
+      </xs:complexType>
+    </xs:element>
+  </xs:sequence>
+  <xs:attribute name="submitted"   type="xs:date"   use="optional"/>
+  <xs:attribute name="last_update" type="xs:date"   use="optional"/>
+  <xs:attribute name="status"      type="xs:string" use="optional"/>
+  <xs:attribute name="related_to"  type="xs:string" use="optional">
+    <xs:annotation><xs:documentation>
+      NCBI identifier of the related submission. For corrections of previously submitted (invalid) data and for backward compatibility with existing SRA submission XML.
+    </xs:documentation></xs:annotation>
+  </xs:attribute>
+    <xs:attribute name="submission_id" type="xs:token"></xs:attribute>
+  </xs:complexType> 
+  
+  <!-- Types for submission XML -->
+
+  <!-- submission xml File -->
+  <xs:attributeGroup name="attributesFileGroup">
+    <xs:annotation><xs:documentation>Common attributes for group of metafiles, data files and inline data.</xs:documentation></xs:annotation>
+    <xs:attribute name="target_db" use="optional">
+      <xs:annotation><xs:documentation>
+        Target database for the data, e.g. dbGaP, SRA, GEO, etc... 
+      </xs:documentation></xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="target_db_context" use="optional">
+      <xs:annotation><xs:documentation>
+        Target database context (if known) for the data, e.g. phs123 for dbGaP study, SRX123 for SRA experiment, etc 
+      </xs:documentation></xs:annotation>
+    </xs:attribute>              
+  </xs:attributeGroup>
+  <xs:complexType name="typeFile">
+    <xs:sequence>
+      <xs:element name="Tracking" minOccurs="0">
+        <xs:annotation><xs:documentation> Internal tracking information. </xs:documentation></xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Record" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Target" maxOccurs="unbounded" type="typeIdTag"/>
+                </xs:sequence>
+                <xs:attribute name="last_update"   type="xs:date"  />
+                <xs:attribute name="status"        type="xs:string"/>
+                <xs:attribute name="error_message" type="xs:string"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DataType">
+        <xs:annotation> <xs:documentation> 
+          DataType is what we can process: 
+            submitter-xml,project-core-xml,biosample-xml,genbank-FF,genbank-seqsubmit, sra-experiment.xml,sra-run.xml, etc
+            full list must be specified in submission database. Branded with the version.
+        </xs:documentation></xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="autodetect-xml"><xs:annotation><xs:documentation>
+              XML is autodected by top-level element and XML schema reference
+            </xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="generic-data"><xs:annotation><xs:documentation>
+              This is a data file, the type of which will be determined by destination archive
+            </xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="phenotype-table"><xs:annotation><xs:documentation>
+              Phenotype table
+            </xs:documentation></xs:annotation></xs:enumeration>
+            <xs:enumeration value="sra-study-xml-v1"/>
+            <xs:enumeration value="sra-experiment-xml-v1"/>
+            <xs:enumeration value="sra-sample-xml-v1"/>
+            <xs:enumeration value="sra-run-xml-v1"/>
+            <xs:enumeration value="sra-analysis-xml-v1"/>
+            <xs:enumeration value="sra-study-xml-v2"/>
+            <xs:enumeration value="sra-experiment-xml-v2"/>
+            <xs:enumeration value="sra-sample-xml-v2"/>
+            <xs:enumeration value="sra-run-xml-v2"/>
+            <xs:enumeration value="sra-analysis-xml-v2"/>
+            <xs:enumeration value="project-core-xml-v1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="path"         type="xs:string" use="required"/>
+    <xs:attribute name="md5"          type="xs:string"/>
+    <xs:attribute name="crc32"        type="xs:string"/>
+    <xs:attribute name="content_type" type="xs:string" use="required"/>
+  </xs:complexType>
+  
+  <!-- Generic address (postal) -->
+  <xs:complexType name="typeAddress">
+    <xs:sequence>
+      <xs:element name="Street"      type="xs:string" minOccurs="0" maxOccurs="1"> 
+        <xs:annotation><xs:documentation>Street address: 123 Main St.  Suite 104</xs:documentation></xs:annotation>
+      </xs:element>
+      <xs:element name="City"        type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation><xs:documentation>City: New York</xs:documentation></xs:annotation>
+      </xs:element>
+      <xs:element name="Sub"        type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation><xs:documentation>Subdivision of Country(state, province, etc.):  New York </xs:documentation></xs:annotation>
+      </xs:element>
+      <xs:element name="Country"        type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation><xs:documentation>Country: USA</xs:documentation></xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="postal_code"  type="xs:string" use="optional"/> 
+  </xs:complexType>
+  
+  <!-- Name of a person -->
+  <xs:complexType name="typeName">
+    <xs:sequence>
+      <xs:element name="First"  type="xs:string" minOccurs="0" maxOccurs="1"/>        
+      <xs:element name="Last"   type="xs:string" minOccurs="1" maxOccurs="1"/>        
+      <xs:element name="Middle" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation><xs:documentation>Full middle name or initials </xs:documentation></xs:annotation>
+      </xs:element>           
+    </xs:sequence>   
+  </xs:complexType>
+  
+  <!-- Contact info - an address with email -->
+  <xs:complexType name="typeContactInfo">
+    <xs:sequence>
+      <xs:element type="typeAddress" name="Address" minOccurs="0" maxOccurs="1"/>
+      <xs:element type="typeName"    name="Name" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>   
+    <xs:attribute name="email"  type="xs:string" use="required"/>
+    <xs:attribute name="phone"  type="xs:string"/>
+    <xs:attribute name="fax"    type="xs:string"/>
+  </xs:complexType>
+  
+  <!-- Account - a person with logon -->
+  <xs:complexType  name="typeAccount" >
+    <xs:sequence>
+      <xs:element name="Contact" minOccurs="0" type="typeContactInfo">
+        <xs:annotation><xs:documentation>Contact information if known</xs:documentation></xs:annotation>        
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="account_id"></xs:attribute>
+    <xs:attribute name="user_name" type="xs:string" use="required">
+      <xs:annotation><xs:documentation>Logon name</xs:documentation></xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="authority" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>eRA,pda,NIH,ncbi/ftp-private,.....</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  
+  
+  <!--
+    Organization:
+    we have people acting on behalf of organization (like lab or may be whole center or institute)
+  -->
+  <xs:complexType name="typeOrganization">
+    <xs:annotation><xs:documentation>Organization for the submission</xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="Name" >
+        <xs:annotation><xs:documentation>Full  Name</xs:documentation></xs:annotation>
+        <xs:complexType><xs:simpleContent><xs:extension base="xs:string">
+          <xs:attribute name="abbr"        type="xs:string"  use="optional">
+            <xs:annotation><xs:documentation>Name abbreviation</xs:documentation></xs:annotation>
+          </xs:attribute>
+        </xs:extension></xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Contact" type="typeContactInfo" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation><xs:documentation>Contact(s) with organization when known</xs:documentation></xs:annotation>        
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="type" use="required">
+      <xs:annotation><xs:documentation>Organization type : center, institute(a lab) or consortium.</xs:documentation></xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="consortium"/>
+          <xs:enumeration value="center"/>
+          <xs:enumeration value="institute"/>
+          <xs:enumeration value="lab"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="role" use="optional">
+      <xs:annotation><xs:documentation>
+        Role of the ogranization in submission - owner of the data or just a participant. It is expected that there is one owner of the submission data.
+      </xs:documentation></xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="owner"/>
+          <xs:enumeration value="participant"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="org_id"      type="xs:positiveInteger" use="optional">
+      <xs:annotation><xs:documentation>In case we want to exchange organization list</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="url" type="xs:anyURI" use="optional">
+      <xs:annotation><xs:documentation>Organization URL</xs:documentation></xs:annotation>
+    </xs:attribute>       
+  </xs:complexType>
+  
+  <!--
+    Center:
+    Organization with known official contact. There are (several) managing accounts.
+  -->
+  
+  <!-- 
+    Object identificator : it conststs of 2 parts : database (where to look) and the obj id in this database.
+    Note: for local objects Db is not specified
+  --> 
+  <xs:complexType name="typeIdTag">
+    <xs:simpleContent><xs:extension base="xs:string">
+      <xs:attribute name="db" type="xs:string">
+        <xs:annotation><xs:documentation>Db defines the scope of IdTag, which will become local to submission when Db is missing</xs:documentation></xs:annotation>
+      </xs:attribute>
+    </xs:extension></xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="typeTracking">
+    <xs:annotation><xs:documentation> 
+      Internal tracking information filled up by submission system and needed for internal use by the archives
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="Record" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Target" maxOccurs="unbounded" type="typeIdTag"/>
+          </xs:sequence>
+          <xs:attribute name="last_update"   type="xs:date"  />
+          <xs:attribute name="status"        type="xs:string"/>
+          <xs:attribute name="error_message" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="typeInlineData">
+    <xs:annotation><xs:documentation>This is inline data to be embedded into the submission</xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="Tracking" type="typeTracking" minOccurs="0">
+        <xs:annotation><xs:documentation> 
+          Internal tracking information filled up by submission system and needed for internal use by the archives
+        </xs:documentation></xs:annotation>
+      </xs:element>
+      <xs:choice>
+        <xs:annotation><xs:documentation>Either XML or base64/plain text data)</xs:documentation></xs:annotation>
+        <xs:element name="XmlContent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="##any" processContents="skip" >
+                <xs:annotation><xs:documentation>XML node - we do not care what is inside- it should be just a well-formed XML</xs:documentation></xs:annotation>
+              </xs:any>	
+            </xs:sequence>
+          </xs:complexType>          
+        </xs:element>
+        <xs:element name="DataContent" type="xs:string"></xs:element>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="optional">
+      <xs:annotation><xs:documentation>Optional name of the data object</xs:documentation></xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="data_model" type="xs:string" use="optional">
+      <xs:annotation><xs:documentation>Data model of the data object</xs:documentation></xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="content_type" type="xs:string" use="required">
+      <xs:annotation><xs:documentation>Content type - what is it - XML, text, binary, etc</xs:documentation></xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="content_encoding" use="optional">
+      <xs:annotation><xs:documentation>How data is encoded (or how to decode it) E.g. - plain or base64</xs:documentation></xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="plain">
+            <xs:annotation><xs:documentation>Plain text</xs:documentation></xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="base64">
+            <xs:annotation><xs:documentation>Base64-encoded binary</xs:documentation></xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+</xs:schema>
