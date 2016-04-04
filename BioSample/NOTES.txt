@@ -6,6 +6,9 @@ Schema for submission here:
 
 http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/submit/public-docs/common/submission.xsd. See also ./Submission.xsd
 
+A submission has an Action/AddData/Data area that contains XMLContent for different medatadata definitions.
+The BioSample schema (defined by ./BioSample.xsd) describes the format for BioSample metadata that can be enclosed in this area.
+
 -------------------- ExampleSubmission.xml -----------------------
   <Description>
     ...
