@@ -1,0 +1,32 @@
+SUBJECT_ID	CONSENT	SUBJECT_SOURCE	SOURCE_SUBJECT_ID	AFFECTION_STATUS
+1	1	Example University	1002	1
+2	1	Example University	1012	2
+3	1	Example University	1023	1
+4	1	Example University	1034	1
+5	1	Example University	1044	2
+6	1	Example University	1054	1
+7	1	Example University	1065	1
+8	1	Example University	1075	2
+9	1	Example University	1086	2
+10	1	dbGaP	10	1
+11	1	dbGaP	11	2
+12	1	dbGaP	12	2
+13	1	dbGaP	13	2
+1001	0			
+1002	0			
+1011	0			
+1012	0			
+1022	0			
+1023	0			
+1032	0			
+1034	0			
+1043	0			
+1044	0			
+1053	0			
+1054	0			
+1055	0			
+1056	0			
+1057	0			
+1058	0			
+A155	0	Coriell	NA10112	
+A156	0	Coriell	NA10456	

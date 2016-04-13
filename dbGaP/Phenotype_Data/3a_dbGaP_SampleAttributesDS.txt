@@ -1,0 +1,18 @@
+SAMPLE_ID	BODY_SITE	ANALYTE_TYPE	IS_TUMOR	HISTOLOGICAL_TYPE	PRIMARY_METASTATIC_TUMOR	PRIMARY_TUMOR_LOCATION	TUMOR_STAGE	TUMOR_GRADE	TUMOR_TREATMENT	GENOTYPING_CENTER	SEQUENCING_CENTER
+S1	Skin	DNA	Y	Melanoma	Primary	Skin	II	G3	Chemotherapy and biological therapy	NCI	BROAD
+S2	Lung	RNA	Y	Liposarcoma	Primary	Peritoneal cavity	III	G2	Radiation	BROAD	BROAD
+S3	Buccal	DNA	N	Buccal cells	N/A	N/A	N/A	N/A	N/A	NCI	BROAD
+S4	Skin	RNA	N	Skin	N/A	N/A	N/A	N/A	N/A	BROAD	BROAD
+S5	Skin	RNA	N	Keratinocytes	N/A	N/A	N/A	N/A	N/A	BROAD	BROAD
+S6	Ovary	DNA	Y	Serous cystadenocarcinoma	Primary	Ovary	IV	G3	Not treated	NCI	BROAD
+S7	Ovary	DNA	N	Normal ovarian tissue	N/A	N/A	N/A	N/A	N/A	NCI	BROAD
+S8	Brain	DNA	Y	"Ganglioneuroblastoma, intermixed (Schwannian stroma-rich)"	Unknown	Brain	III	G2	Not treated	NCI	BROAD
+S9	Brain	DNA	Y	Neuroblastoma (Schwannian stroma-poor)	Primary	Brain	IV	G4	Not treated	NCI	BROAD
+S10	Brain	RNA	Y	"Ganglioneuroblastoma, intermixed (Schwannian stroma-rich)"	Primary	Brain	III	G3	Not treated	BROAD	BROAD
+S11	Skin	RNA	Y	Basal cell carcinoma	Primary	Skin	III	G2	Not treated	BROAD	BROAD
+S12	Lymph node	RNA	Y	Marginal Sinus	Metastatic	Esophagus	N/A	GX	Not treated	BROAD	BROAD
+S13	Colon	DNA	Y	Carcinoma	Primary	Colon	III	G3	Not treated	NCI	UW
+S14	Colon	DNA	Y	Adenocarcinoma	Primary	Colon	IV	G4	Unknown	NCI	UW
+S15	Blood	DNA	N	Blood	N/A	N/A	N/A	N/A	N/A	NCI	UW
+S16	Blood	DNA	N	Primary blood cell culture	N/A	N/A	N/A	N/A	N/A	NCI	UW
+S17	Blood	DNA	N	Primary blood cell culture	N/A	N/A	N/A	N/A	N/A	NCI	UW
