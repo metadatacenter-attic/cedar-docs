@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.metadatacenter.org/ontologies/caDSR.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.metadatacenter.org/ontologies/caDSR.owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#AlternateName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Classification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClassificationScheme"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComponentDataElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Concept"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConceptualDomain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataElementConcept"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataElementDerivation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObjectClass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PermissibleValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Property"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReferenceDocument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Representation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ValueDomain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ValueDomainConcept"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#alternateName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#classification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#classificationScheme"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#componentDataElement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#concept"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#conceptualDomain"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dataElementConcept"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dataElementDerivation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#objectClass"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#permissibleValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#property"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#referenceDocument"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#representation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#valueDomain"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#valueDomainConcept"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#alternateName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#alternateNameType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#characterSetName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#classificationSchemeItemName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#classificationSchemeItemType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#conId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#concatenationCharacter"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#contextName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#contextVersion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#csiPublicId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#csiVersion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#datatype"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#decimalPlace"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#definitionSource"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#derivationType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#derivationTypeDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#displayFormat"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#displayOrder"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#documentText"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#documentType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#evsSource"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#language"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#longName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#maximumLength"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#maximumValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#meaningConcepts"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#meaningDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#methods"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#minimumLength"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#minimumValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#objectClassQualifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#organizationName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#origin"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#preferredDefinition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#preferredName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#primaryFlagInd"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#propertyQualifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publicId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#pvBeginDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#pvEndDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#registrationStatus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#rule"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#unitOfMeasure"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#url"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#validValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#valueDomainType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#valueMeaning"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#version"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#vmPublicId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#vmVersion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#workflowStatus"/>
+    </Declaration>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

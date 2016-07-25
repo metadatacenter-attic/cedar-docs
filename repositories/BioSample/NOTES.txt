@@ -1,0 +1,128 @@
+
+
+BioSample is submission wrapped in an overall submission. 
+
+Schema for submission here:
+
+http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/submit/public-docs/common/submission.xsd. See also ./Submission.xsd
+
+A submission has an Action/AddData/Data area that contains XMLContent for different medatadata definitions.
+The BioSample schema (defined by ./BioSample.xsd) describes the format for BioSample metadata that can be enclosed in this area.
+
+-------------------- ExampleSubmission.xml -----------------------
+  <Description>
+    ...
+  </Description>
+  <Action>
+    <AddData target_db="BioSample">
+      <Data content_type="XML">
+        <XmlContent>
+          <BioSample schema_version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.
+
+---------------------
+
+(From: http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/submit/public-docs/biosample/samples/bs.submission.xml?view=co&revision=61586&content-type=text%2Fplain)
+
+SP.common.xsd contains common types used in biosample.xsd
+
+BioSampleAttributes.xml - list all/common attributes (http://www.ncbi.nlm.nih.gov/biosample/docs/attributes/)
+
+The <Package> element lists a list of named packages that specify required and optional attributes for a particular type of
+submission.  See: http://www.ncbi.nlm.nih.gov/biosample/docs/packages/
+
+Example:
+
+-------------- Plant.1.0.xml example --------------------
+
+<BioSamplePackages>
+  <Package>
+    <Name>Plant.1.0</Name>
+    <DisplayName>Plant; version 1.0</DisplayName>
+    <ShortName>Plant</ShortName>
+    <EnvPackage/>
+    <EnvPackageDisplay/>
+    <Description>Use for any plant sample or cell line.</Description>
+    <Example>SAMN02870692</Example>
+    <TemplateHeader></TemplateHeader>
+    <Attribute use="either_one_mandatory" group_name="Organism">
+      <Name>isolate</Name>
+      <HarmonizedName>isolate</HarmonizedName>
+      <Description>identification or description of the specific individual from which this sample was obtained</Description>
+      <Format>
+        <Description/>
+      </Format>
+    </Attribute>
+    <Attribute use="either_one_mandatory" group_name="Organism">
+      <Name>cultivar</Name>
+      <HarmonizedName>cultivar</HarmonizedName>
+      <Description>cultivar name - cultivated variety of plant</Description>
+      <Format>
+        <Description/>
+      </Format>
+    </Attribute>
+
+---------- Prototype instance conforming of biosample.xsd (see ExampleSubmission.xml)-----
+
+<BioSample schema_version="" submissionReleaseDate="" >
+  <SampleId>
+    typeBioSampleIdentifier(com:typePrimaryId(), SPUID {com:typeSPUID, ...})
+  </SampleId>
+
+  <Descriptor>
+    com:typeDescriptor (Title, Description:typeBlock, ExternalLink)
+  </Descriptor>
+
+  <Organism>
+    com:typeOrganism(OrganismName, Label, Strain, IsolateName, Breed, Cultivar)
+  </Organism>
+
+  <BioProject>
+    typeRefID (typeLocalId |  typeSPUID |  typePrimaryId)
+  </BioProject>
+
+  <Package>
+    xsd:string -- http://www.ncbi.nlm.nih.gov/biosample/docs/packages/
+  </Package>
+
+  <Attributes>
+
+    <Attribute attribute_name="">
+       value
+    </Attribute>
+
+  </Attributes>
+
+</BioSample>
+
+---------------------------------------- SP.common.xsd --------------------------
+<!--  Shared definitions for Submission Portal schema specifications -->
+
+http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/submit/public-docs/common/SP.common.xsd
+
+typeNumber
+typeArchive
+typeSPUID
+typePrimaryId
+typeIdentifier
+typeRefID (typeLocalId |  typeSPUID |  typePrimaryId)
+typeLink
+typeExternalLink
+typeAuthorSet
+typePublication
+typeDescriptor (Title, Description:typeBlock, ExternalLink)
+typeAddress
+typeName
+typeContaxtInfo
+typeOrganism
+typeBlock
+typeInline
+typeFlow
+typeA.content
+typeL - list
+typeA - anchor
+typeTable
+typeCaption
+typeTR
+typeTH
+typeTD
+

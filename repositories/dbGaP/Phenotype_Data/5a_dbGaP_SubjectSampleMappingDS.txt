@@ -1,0 +1,21 @@
+SUBJECT_ID	SAMPLE_ID	SAMPLE_SOURCE	SOURCE_SAMPLE_ID	SAMPLE_USE
+1	S1	Example University	ND1111	Seq_DNA_WholeExome
+2	S2	Example University	ND1234	Seq_DNA_WholeExome
+3	S3	Example University	ND1235	Seq_DNA_WholeExome; Seq_DNA_SNP
+4	S4	Example University	ND1236	Array_SNP
+5	S5	Example University	ND1237	Array_SNP
+6	S6	Example University	ND1238	Array_SNP
+6	S7	Example University	ND12380934	Seq_DNA_WholeExome
+7	S8	Example University	ND1239	Seq_DNA_WholeExome
+7	S9	Example University	ND1927AS	Seq_DNA_WholeExome; Seq_DNA_SNP
+7	S10	Example University	ND5867	Array_SNP
+8	S11	Example University	ND1240	Array_SNP
+8	S12	Example University	ND2398	Array_SNP
+9	S13	Example University	ND1241	Seq_DNA_WholeExome; Seq_DNA_SNP
+9	S14	Example University	ND01927-3847	Seq_DNA_WholeExome; Seq_DNA_SNP
+10	S15	dbGaP	124985	Seq_DNA_WholeExome; Seq_DNA_SNP
+11	S16	dbGaP	175982	Seq_DNA_WholeExome; Seq_DNA_SNP
+12	S17	dbGaP	123055	Seq_DNA_WholeExome; Seq_DNA_SNP
+13	S18	dbGaP	1023912	Seq_DNA_WholeExome; Seq_DNA_SNP
+A155	NA10112	Coriell	NA10112	Array_SNP
+A156	NA10456	Coriell	NA10456	Array_SNP

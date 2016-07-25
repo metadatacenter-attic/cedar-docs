@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BioSamplePackages>
+  <Package>
+    <Name>Plant.1.0</Name>
+    <DisplayName>Plant; version 1.0</DisplayName>
+    <ShortName>Plant</ShortName>
+    <EnvPackage/>
+    <EnvPackageDisplay/>
+    <Description>Use for any plant sample or cell line.</Description>
+    <Example>SAMN02870692</Example>
+    <TemplateHeader># This is a submission template for batch deposit of 'Plant; version 1.0' samples to the NCBI BioSample database (http://www.ncbi.nlm.nih.gov/biosample/).&#13;
+    # See SAMN02870692 for an example record of this type of BioSample (http://www.ncbi.nlm.nih.gov/biosample/SAMN02870692).&#13;
+    # Fields with an asterisk (*) are mandatory. Your submission will fail if any mandatory fields are not completed. If information is unavailable for any mandatory field, please enter 'not collected', 'not applicable' or 'missing' as appropriate.&#13;
+    # All other fields are optional. Leave optional fields empty if no information is available.&#13;
+    # You can add any number of custom fields to fully describe your BioSamples, simply include them in the table.&#13;
+    # CAUTION: Be aware that Excel may automatically apply formatting to your data. In particular, take care with dates, incrementing autofills and special characters like / or -. Doublecheck that your text file is accurate before uploading to BioSample.&#13;
+    # TO MAKE A SUBMISSION:&#13;
+    #     1. Complete the template table (typically in Excel, or another spreadsheet application)&#13;
+    #     2. Save the worksheet as a Text (Tab-delimited) file - use 'File, Save as, Save as type: Text (Tab-delimited)'&#13;
+    #     3. Upload the file on the 'Attributes' tab of the BioSample Submission Portal at https://submit.ncbi.nlm.nih.gov/subs/biosample/.&#13;
+    #     4. If you have any questions, please contact us at biosamplehelp@ncbi.nlm.nih.gov.</TemplateHeader>
+    <Attribute use="either_one_mandatory" group_name="Organism">
+      <Name>isolate</Name>
+      <HarmonizedName>isolate</HarmonizedName>
+      <Description>identification or description of the specific individual from which this sample was obtained</Description>
+      <Format>
+        <Description/>
+      </Format>
+    </Attribute>
+    <Attribute use="either_one_mandatory" group_name="Organism">
+      <Name>cultivar</Name>
+      <HarmonizedName>cultivar</HarmonizedName>
+      <Description>cultivar name - cultivated variety of plant</Description>
+      <Format>
+        <Description/>
+      </Format>
+    </Attribute>
+    <Attribute use="either_one_mandatory" group_name="Organism">
+      <Name>ecotype</Name>
+      <HarmonizedName>ecotype</HarmonizedName>
+      <Description>a population within a given species displaying genetically based, phenotypic traits that reflect adaptation to a local habitat, e.g., Columbia</Description>
+      <Format>
+        <Description/>
+      </Format>
+    </Attribute>
+    <Attribute use="either_one_mandatory" group_name="Age/stage">
+      <Name>age</Name>
+      <HarmonizedName>age</HarmonizedName>
+      <Description>age at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees</Description>
+      <Format>
+        <Description>{float} {unit}</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="either_one_mandatory" group_name="Age/stage">
+      <Name>development stage</Name>
+      <HarmonizedName>dev_stage</HarmonizedName>
+      <Description>Developmental stage at the time of sampling.</Description>
+      <Format>
+        <Description>None</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="mandatory">
+      <Name>geographic location</Name>
+      <HarmonizedName>geo_loc_name</HarmonizedName>
+      <Description>Geographical origin of the sample; use the appropriate name from this list http://www.insdc.org/documents/country-qualifier-vocabulary. Use a colon to separate the country or ocean from more detailed information about the location, eg "Canada: Vancouver" or "Germany: halfway down Zugspitze, Alps"</Description>
+      <Format>
+        <Description>{term}:{term}:{text}</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="mandatory">
+      <Name>tissue</Name>
+      <HarmonizedName>tissue</HarmonizedName>
+      <Description>Type of tissue the sample was taken from.</Description>
+      <Format>
+        <Description>None</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>biomaterial provider</Name>
+      <HarmonizedName>biomaterial_provider</HarmonizedName>
+      <Description>name and address of the lab or PI, or a culture collection identifier</Description>
+      <Format>
+        <Description/>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>cell line</Name>
+      <HarmonizedName>cell_line</HarmonizedName>
+      <Description>Name of the cell line.</Description>
+      <Format>
+        <Description>None</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>cell type</Name>
+      <HarmonizedName>cell_type</HarmonizedName>
+      <Description>Type of cell of the sample or from which the sample was obtained.</Description>
+      <Format>
+        <Description>None</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>collected by</Name>
+      <HarmonizedName>collected_by</HarmonizedName>
+      <Description>Name of persons or institute who collected the sample</Description>
+      <Format>
+        <Description>None</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>collection date</Name>
+      <HarmonizedName>collection_date</HarmonizedName>
+      <Description>Date of sampling, in "DD-Mmm-YYYY", "Mmm-YYYY" or "YYYY" format (eg., 30-Oct-1990, Oct-1990 or 1990) or ISO 8601 standard "YYYY-mm-dd", "YYYY-mm" or "YYYY-mm-ddThh:mm:ss" (eg., 1990-10-30, 1990-10 or 1990-10-30T14:41:36)</Description>
+      <Format>
+        <Description>{timestamp}</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>culture collection</Name>
+      <HarmonizedName>culture_collection</HarmonizedName>
+      <Description>Name of source institute and unique culture identifier. See the description for the proper format and list of allowed institutes, http://www.insdc.org/controlled-vocabulary-culturecollection-qualifier</Description>
+      <Format>
+        <Description>None</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>disease</Name>
+      <HarmonizedName>disease</HarmonizedName>
+      <Description>list of diseases diagnosed; can include multiple diagnoses. the value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology), free text for non-human. For DO terms, please see http://gemina.svn.sourceforge.net/viewvc/gemina/trunk/Gemina/ontologies/gemina_symptom.obo?view=log</Description>
+      <Format>
+        <Description>{term}</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>disease stage</Name>
+      <HarmonizedName>disease_stage</HarmonizedName>
+      <Description>stage of disease at the time of sampling.</Description>
+      <Format>
+        <Description>None</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>genotype</Name>
+      <HarmonizedName>genotype</HarmonizedName>
+      <Description>observed genotype</Description>
+      <Format>
+        <Description>{text}</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>growth protocol</Name>
+      <HarmonizedName>growth_protocol</HarmonizedName>
+      <Description/>
+      <Format>
+        <Description/>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>height or length</Name>
+      <HarmonizedName>height_or_length</HarmonizedName>
+      <Description>measurement of height or length</Description>
+      <Format>
+        <Description>{float} {unit}</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>isolation source</Name>
+      <HarmonizedName>isolation_source</HarmonizedName>
+      <Description>Describes the physical, environmental and/or local geographical source of the biological sample from which the sample was derived.</Description>
+      <Format>
+        <Description>None</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>latitude and longitude</Name>
+      <HarmonizedName>lat_lon</HarmonizedName>
+      <Description>The geographical coordinates of the location where the sample was collected. Specify as degrees latitude and longitude in format "d[d.dddd] N|S d[dd.dddd] W|E", eg, 38.98 N 77.11 W</Description>
+      <Format>
+        <Description>{float} {float}</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>phenotype</Name>
+      <HarmonizedName>phenotype</HarmonizedName>
+      <Description>Phenotype of sampled organism. For Phenotypic quality Ontology (PATO) (v1.269) terms, please see http://bioportal.bioontology.org/visualize/44601</Description>
+      <Format>
+        <Description>{term}</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>population</Name>
+      <HarmonizedName>population</HarmonizedName>
+      <Description>for human: ; for plants: filial generation, number of progeny, genetic structure</Description>
+      <Format>
+        <Description/>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>sample type</Name>
+      <HarmonizedName>sample_type</HarmonizedName>
+      <Description>Sample type, such as cell culture, mixed culture, tissue sample, whole organism, single cell, metagenomic assembly</Description>
+      <Format>
+        <Description>None</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>sex</Name>
+      <HarmonizedName>sex</HarmonizedName>
+      <Description>physical sex of sampled organism</Description>
+      <Format type="select">
+        <Description>male | female | pooled male and female | neuter | hermaphrodite | not determined | missing | not applicable | not collected</Description>
+        <Choice/>
+        <Choice>male</Choice>
+        <Choice>female</Choice>
+        <Choice>pooled male and female</Choice>
+        <Choice>neuter</Choice>
+        <Choice>hermaphrodite</Choice>
+        <Choice>not determined</Choice>
+        <Choice>missing</Choice>
+        <Choice>not applicable</Choice>
+        <Choice>not collected</Choice>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>specimen voucher</Name>
+      <HarmonizedName>specimen_voucher</HarmonizedName>
+      <Description>Identifier for the physical specimen. Use format: "[&lt;institution-code&gt;:[&lt;collection-code&gt;:]]&lt;specimen_id&gt;", eg, "UAM:Mamm:52179". Intended as a reference to the physical specimen that remains after it was analyzed. If the specimen was destroyed in the process of analysis, electronic images (e-vouchers) are an adequate substitute for a physical voucher specimen. Ideally the specimens will be deposited in a curated museum, herbarium, or frozen tissue collection, but often they will remain in a personal or laboratory collection for some time before they are deposited in a curated collection. There are three forms of specimen_voucher qualifiers. If the text of the qualifier includes one or more colons it is a 'structured voucher'. Structured vouchers include institution-codes (and optional collection-codes) taken from a controlled vocabulary maintained by the INSDC that denotes the museum or herbarium collection where the specimen resides, please visit: http://www.insdc.org/controlled-vocabulary-specimenvoucher-qualifier.</Description>
+      <Format>
+        <Description>None</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>temperature</Name>
+      <HarmonizedName>temp</HarmonizedName>
+      <Description>temperature of the sample at time of sampling</Description>
+      <Format>
+        <Description>{float} {unit}</Description>
+      </Format>
+    </Attribute>
+    <Attribute use="optional">
+      <Name>treatment</Name>
+      <HarmonizedName>treatment</HarmonizedName>
+      <Description/>
+      <Format>
+        <Description/>
+      </Format>
+    </Attribute>
+  </Package>
+</BioSamplePackages>

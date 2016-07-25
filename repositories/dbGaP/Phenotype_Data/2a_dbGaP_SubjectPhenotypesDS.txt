@@ -1,0 +1,14 @@
+SUBJECT_ID	age_onset	height	birthplace	sex	race	education	weight	kras	age
+1	25	67	USA	M	African American	4	180.2	yes	35
+2	54	67	USA	M	Asian	35	201.5	no	56
+3	45	60	USA	M	Caucasian	40	160.5	yes	47
+4	35	75	Mexico	F	Hispanic	20	99.5	no	37
+5	40	61	Mexico	F	Asian	10	315.2	no	46
+6	61	62	Holland	Oth	Caucasian	99	102.8	yes	67
+7	62	59	USA	Oth	Asian	4	189.7	yes	69
+8	56	65	USA	F	Caucasian	35	9999	no	59
+9	89	65	USA	F	Hispanic	40	320.1	no	92
+10	57	72	Argentina	M	Non-hispanic	20	350.8	yes	61
+11	57	72	Argentina	M	African American	10	181.3	no	61
+12	59	74	China	F	Asian	99	1000	no	82
+13	95	74	Mexico	F	Hispanic	4	201.4	yes	95

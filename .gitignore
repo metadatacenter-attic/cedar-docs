@@ -18,3 +18,7 @@ target/*
 
 *.pyc
 .DS_Store
+
+pom.xml.releaseBackup
+release.properties
+pom.xml.versionsBackup
