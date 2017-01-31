@@ -5,7 +5,7 @@
 
   <groupId>org.metadatacenter</groupId>
   <artifactId>cedar-docs</artifactId>
-  <version>0.9.2</version>
+  <version>0.9.3-SNAPSHOT</version>
   <name>CEDAR Documentation Files</name>
   <packaging>pom</packaging>
 
