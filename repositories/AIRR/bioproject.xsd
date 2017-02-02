@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:com="SP.common" version="2.0">
+    <xs:import schemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/submit/public-docs/common/SP.common.xsd?view=co" namespace="SP.common"/>
+    
+    <!-- BioProject object -->
+    <xs:element name="Project" type="typeProject"> </xs:element>
+
+    <!-- BioProject type -->
+    <xs:complexType name="typeProject">
+        <xs:sequence>
+            <xs:element name="ProjectID" minOccurs="1" maxOccurs="1" nillable="false"
+                type="com:typeIdentifier">
+                <xs:annotation>
+                    <xs:documentation> List of all project ids: submitter asigned, archive assigned,
+                        .... </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Descriptor" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Common description of a project : title, publication, etc...
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="com:typeDescriptor">
+                            <xs:sequence>
+                                <xs:element name="Name" type="xs:string" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation> Very short descriptive name of the
+                                            project for caption, labels, etc. For example: 1000
+                                            Genomes Project </xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                                <xs:element name="Grant" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:annotation>
+                                        <xs:documentation> Funding information for a project.
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="Title" type="xs:string" minOccurs="0"
+                                                maxOccurs="1"/>
+                                            <xs:element name="Agency">
+                                                <xs:complexType>
+                                                  <xs:simpleContent>
+                                                  <xs:extension base="xs:string">
+                                                  <xs:attribute name="abbr" type="xs:string"/>
+                                                  </xs:extension>
+                                                  </xs:simpleContent>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                        <xs:attribute name="GrantId" type="xs:string" use="required"
+                                        />
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Relevance" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>Major impact categories for the
+                                            project.</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="Agricultural" minOccurs="0"
+                                                type="xs:string"> </xs:element>
+                                            <xs:element name="Medical" minOccurs="0"
+                                                type="xs:string"> </xs:element>
+                                            <xs:element minOccurs="0" name="Industrial"
+                                                type="xs:string">
+                                                <xs:annotation>
+                                                  <xs:documentation>Could include bio-remediation,
+                                                  bio-fuels and other areas of research where there
+                                                  are areas of mass production</xs:documentation>
+                                                </xs:annotation>
+                                            </xs:element>
+                                            <xs:element minOccurs="0" name="Environmental"
+                                                type="xs:string"> </xs:element>
+                                            <xs:element name="Evolution" minOccurs="0"
+                                                type="xs:string"> </xs:element>
+                                            <xs:element name="ModelOrganism" minOccurs="0"
+                                                type="xs:string"> </xs:element>
+                                            <xs:element name="Other" minOccurs="0" type="xs:string">
+                                                <xs:annotation>
+                                                  <xs:documentation>Unspecified major impact
+                                                  categories to be defined here.</xs:documentation>
+                                                </xs:annotation>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element type="com:typePublication" name="Publication"
+                                    minOccurs="0" maxOccurs="unbounded"> </xs:element>
+                                <xs:element name="Keyword" type="xs:string" maxOccurs="unbounded"
+                                    minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>Intended to be used in support of
+                                            queries</xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                                <xs:element name="UserTerm" maxOccurs="unbounded" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation> Attribute represents a key ; element
+                                            text() represents a value </xs:documentation>
+                                    </xs:annotation>
+                                    <xs:complexType>
+                                        <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                                <xs:attribute name="term" type="xs:string"
+                                                  use="required">
+                                                  <xs:annotation>
+                                                  <xs:documentation> Attribute represents a term
+                                                  </xs:documentation>
+                                                  </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="category" type="xs:string"
+                                                  use="optional">
+                                                  <xs:annotation>
+                                                  <xs:documentation> Category to group the terms
+                                                  </xs:documentation>
+                                                  </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="units" type="xs:string"
+                                                  use="optional">
+                                                  <xs:annotation>
+                                                  <xs:documentation> Units - when value represent a
+                                                  measurement </xs:documentation>
+                                                  </xs:annotation>
+                                                </xs:attribute>
+                                            </xs:extension>
+                                        </xs:simpleContent>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ProjectType" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Project type specific fields. Created as "choice" - for
+                        future expansion. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:choice>
+                        
+                        <xs:element name="ProjectTypeTopAdmin">
+                            <xs:annotation>
+                                <xs:documentation> An administrative project with the following
+                                    attributes: a. Tax_id is optional; may be a species- or
+                                    higher-level tax_id (e.g., ‘primates’) b. Primarily created by
+                                    archive database collaborators (NCBI/EBI/DDBJ) c. Submitters can
+                                    request creation d. May reflect a large multi-disciplinary
+                                    project initiated by a funding agency e. Or, Arbitrary grouping;
+                                    e.g. all sequences (from a grant) submitted by different process
+                                    flows; any grouping that does not cleanly fit into the first two
+                                    classes. f. May have subtypes, e.g. a controlled vocabulary of
+                                    descriptors including: i. Comparative genomics ii. Disease iii.
+                                    Metagenome </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Organism" type="com:typeOrganism"
+                                        minOccurs="0" maxOccurs="1"/>
+                                    <xs:element name="DescriptionSubtypeOther" type="xs:string"
+                                        minOccurs="0" maxOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation> If subtype eOther is chosen, explain
+                                                details here </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                                <xs:attribute name="subtype" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:token">
+                                            <xs:enumeration value="eDisease"> </xs:enumeration>
+                                            <xs:enumeration value="eComparativeGenomics"> </xs:enumeration>
+                                            <xs:enumeration value="eMetagenome"> </xs:enumeration>
+                                            <xs:enumeration value="eSingleOrganismDiscovery"> </xs:enumeration>
+                                            <xs:enumeration value="eFundingInitiative"> </xs:enumeration>
+                                            <xs:enumeration value="eAuthorizedAccess"/>
+                                            <xs:enumeration value="eAccounting"/>
+                                            <xs:enumeration value="eOther">
+                                                <xs:annotation>
+                                                  <xs:documentation>Please, fill Description element
+                                                  when choose "eOther"</xs:documentation>
+                                                </xs:annotation>
+                                            </xs:enumeration>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ProjectTypeSubmission">
+                            <xs:annotation>
+                                <xs:documentation> A submitter level project based on actual
+                                    experiment whose intent is to produce and submit data to one or
+                                    more archives. </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element type="com:typeOrganism" name="Organism" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Organism is required for single and multiisolate projects. For multiisolate project it should be species level organism name.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="BioSampleSet" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Set of related BioSamples</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="BioSample" minOccurs="1" maxOccurs="unbounded">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            Locus tag prefixes will be assigned only for projects that specify sequencing or assembly as their intended data type.
+                                                            Locus tag prefix needs to be explicitly specified only for cases when submitter wants to reserv custom prefix. If 
+                                                            ommitted it will be assigned automatically. In case if prefix is already taken, submission will fail. 
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                    <xs:complexType>
+                                                        <xs:complexContent>
+                                                            <xs:extension base="com:typeRefId">
+                                                                <xs:attribute use="optional" name="LocusTagPrefix" type="xs:token"/>
+                                                            </xs:extension>
+                                                        </xs:complexContent>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>                                        
+                                    </xs:element>
+                                    <xs:element name="IntendedDataTypeSet" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Types of data intended to be submitted for the project.    
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element maxOccurs="unbounded" minOccurs="1" name="DataType">
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:token">
+                                                            <xs:enumeration value="genome sequencing"> </xs:enumeration>
+                                                            <xs:enumeration value="raw sequence reads"> </xs:enumeration>
+                                                            <xs:enumeration value="genome sequencing and assembly"> </xs:enumeration>
+                                                            <xs:enumeration value="metagenome"> </xs:enumeration>
+                                                            <xs:enumeration value="metagenomic assembly"> </xs:enumeration>
+                                                            <xs:enumeration value="assembly"> </xs:enumeration>
+                                                            <xs:enumeration value="transcriptome"> </xs:enumeration>
+                                                            <xs:enumeration value="proteomic"> </xs:enumeration>
+                                                            <xs:enumeration value="map"> </xs:enumeration>
+                                                            <xs:enumeration value="clone ends"> </xs:enumeration>
+                                                            <xs:enumeration value="targeted loci"> </xs:enumeration>
+                                                            <xs:enumeration value="targeted loci cultured"> </xs:enumeration>
+                                                            <xs:enumeration value="targeted loci environmental"> </xs:enumeration>
+                                                            <xs:enumeration value="random survey"> </xs:enumeration>
+                                                            <xs:enumeration value="exome"> </xs:enumeration>
+                                                            <xs:enumeration value="variation"> </xs:enumeration>
+                                                            <xs:enumeration value="epigenomics"> </xs:enumeration>
+                                                            <xs:enumeration value="phenotype or genotype"> </xs:enumeration>
+                                                            <xs:enumeration value="other"> </xs:enumeration>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                                
+                                <xs:attribute name="sample_scope" use="required">
+                                    <xs:annotation>
+                                        <xs:documentation> The scope and purity of the biological
+                                            sample used for the study </xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:token">
+                                            <xs:enumeration value="eMonoisolate">
+                                                <xs:annotation>
+                                                  <xs:documentation>Samples are traceable to one or
+                                                  more isolated
+                                                  organisms/subjects/individuals</xs:documentation>
+                                                </xs:annotation>
+                                            </xs:enumeration>
+                                            <xs:enumeration value="eMultiisolate">
+                                                <xs:annotation>
+                                                  <xs:documentation>Samples are taken from the same
+                                                  species but multiple individuals/organisms with
+                                                  the goal of accessing variability among
+                                                  individuals</xs:documentation>
+                                                </xs:annotation>
+                                            </xs:enumeration>
+                                            <xs:enumeration value="eMultispecies">
+                                                <xs:annotation>
+                                                  <xs:documentation>Sample is taken from multiple
+                                                  species</xs:documentation>
+                                                </xs:annotation>
+                                            </xs:enumeration>
+                                            <xs:enumeration value="eEnvironment">
+                                                <xs:annotation>
+                                                  <xs:documentation>Content of species in a sample
+                                                  is not known, i.e. microbiome,metagenome,
+                                                  etc..</xs:documentation>
+                                                </xs:annotation>
+                                            </xs:enumeration>
+                                            <xs:enumeration value="eSynthetic">
+                                                <xs:annotation>
+                                                  <xs:documentation>Synthetic
+                                                  material</xs:documentation>
+                                                </xs:annotation>
+                                            </xs:enumeration>
+                                            <xs:enumeration value="eSingleCell"/>
+                                            <xs:enumeration value="eOther">
+                                                <xs:annotation>
+                                                  <xs:documentation>Please, fill Description element
+                                                  when choose "eOther"</xs:documentation>
+                                                </xs:annotation>
+                                            </xs:enumeration>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="schema_version" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="typeRefSeqSource">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"> </xs:element>
+            <xs:element name="Url" type="xs:anyURI" minOccurs="0"> </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="typeRepresentation">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="eReference"/>
+            <xs:enumeration value="eAlternate"/>
+            <xs:enumeration value="eOther"> </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="typeLocusTagPrefixText">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="3"/>
+            <xs:maxLength value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="typeLocusTagPrefix">
+        <xs:simpleContent>
+            <xs:extension base="typeLocusTagPrefixText">
+                <xs:attribute name="biosample_id" type="xs:token"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>

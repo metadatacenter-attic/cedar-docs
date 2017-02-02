@@ -1,0 +1,152 @@
+<Submission >
+  <Description>
+    <Comment>BP(1.0)+BS(1.0)+SRA</Comment>
+    <Organization role="master" type="institute">
+      <Name>The Jedi Order</Name>
+      <Contact email="Luke.Skywalker@galaxy.org">
+        <Name>
+          <First>Luke</First>
+          <Last>Skywalker</Last>
+        </Name>
+      </Contact>
+    </Organization>
+    <Hold release_date="2016-01-31"></Hold>
+  </Description>
+  <Action>
+    <AddData target_db="BioSample">
+      <Data content_type="XML">
+        <XmlContent>
+          <BioSample schema_version="2.0">
+            <SampleId>
+              <SPUID spuid_namespace="JEDI-MIDI">MIDI_ISO_9154</SPUID>
+            </SampleId>
+            <Descriptor>
+              <Title>Midi-chlorian isolates collected from a Jedi</Title>
+            </Descriptor>
+            <Organism>
+              <OrganismName>Midi-chlorian</OrganismName>
+            </Organism>
+            <BioProject>
+              <PrimaryId db="BioProject">PRJNA999999</PrimaryId>
+            </BioProject>
+            <Package>Pathogen.env.1.0</Package>
+            <Attributes>
+              <Attribute attribute_name="strain">MIDI9154</Attribute>
+              <Attribute attribute_name="collected_by">A young jedi</Attribute>
+              <Attribute attribute_name="collection_date">2008-03-09</Attribute>
+              <Attribute attribute_name="isolation_source">Respiratory</Attribute>
+              <Attribute attribute_name="geo_loc_name">Tunisia:Matmata</Attribute>
+              <Attribute attribute_name="lat_lon">33.54253 N 9.967341 E</Attribute>
+              <Attribute attribute_name="isolate_name_alias">MIDI 915</Attribute>
+            </Attributes>
+          </BioSample>
+        </XmlContent>
+      </Data>
+      <Identifier>
+        <SPUID spuid_namespace="JEDI-MIDI">MIDI_ISO_9154</SPUID> 
+      </Identifier>
+    </AddData>
+  </Action>
+  
+  <Action>
+    <AddData target_db="BioSample">
+      <Data content_type="XML">
+        <XmlContent>
+          <BioSample schema_version="2.0">
+            <SampleId>
+              <SPUID spuid_namespace="JEDI-MIDI">MIDI_ISO_24274</SPUID>
+            </SampleId>
+            <Descriptor>
+              <Title>Midi-chlorian isolates collected from a Jedi</Title>
+            </Descriptor>
+            <Organism>
+              <OrganismName>Midi-chlorian</OrganismName>
+            </Organism>
+            <BioProject>
+              <PrimaryId db="BioProject">PRJNA999999</PrimaryId>
+            </BioProject>
+            <Package>Pathogen.env.1.0</Package>
+            <Attributes>
+              <Attribute attribute_name="strain">MIDI24274</Attribute>
+              <Attribute attribute_name="collected_by">A young jedi</Attribute>
+              <Attribute attribute_name="collection_date">2009-05-08</Attribute>
+              <Attribute attribute_name="isolation_source">Urine</Attribute>
+              <Attribute attribute_name="geo_loc_name">Tunisia:Matmata</Attribute>
+              <Attribute attribute_name="lat_lon">33.54253 N 9.967341 E</Attribute>
+              <Attribute attribute_name="isolate_name_alias">MIDI 2427</Attribute>
+            </Attributes>
+          </BioSample>
+        </XmlContent>
+      </Data>
+      <Identifier>
+        <SPUID spuid_namespace="JEDI-MIDI">MIDI_ISO_24274</SPUID> 
+      </Identifier>
+    </AddData>
+  </Action>
+  
+  <Action>
+    <AddData target_db="BioSample">
+      <Data content_type="XML">
+        <XmlContent>
+          <BioSample schema_version="2.0">
+            <SampleId>
+              <SPUID spuid_namespace="JEDI-MDCN">MDCN_ISO_24414</SPUID>
+            </SampleId>
+            <Descriptor>
+              <Title>Midi-chlorian isolate for calibration </Title>
+            </Descriptor>
+            <Organism>
+              <OrganismName>Midi-chlorian</OrganismName>
+            </Organism>
+            <BioProject>
+              <PrimaryId db="BioProject">PRJNA999999</PrimaryId>
+            </BioProject>
+            <Package>Pathogen.env.1.0</Package>
+            <Attributes>
+              <Attribute attribute_name="strain">MIDI24414</Attribute>
+              <Attribute attribute_name="collected_by">A young jedi</Attribute>
+              <Attribute attribute_name="collection_date">1977-05-25</Attribute>
+              <Attribute attribute_name="isolation_source">Surveillance</Attribute>
+              <Attribute attribute_name="geo_loc_name">Tunisia:Matmata</Attribute>
+              <Attribute attribute_name="lat_lon">33.54253 N 9.967341 E</Attribute>
+              <Attribute attribute_name="isolate_name_alias">MIDI 2441</Attribute>
+            </Attributes>
+          </BioSample>
+        </XmlContent>
+      </Data>
+      <Identifier>
+        <SPUID spuid_namespace="JEDI-MIDI">MIDI_ISO_24414</SPUID> 
+      </Identifier>
+    </AddData>
+  </Action>
+  <Action>
+    <AddFiles target_db="SRA">
+      <File file_path="MIDI2441_S9_L001_R1_001.fastq">
+        <DataType>generic-data</DataType>
+      </File>
+      <File file_path="MIDI2441_S9_L001_R2_001.fastq">
+        <DataType>generic-data</DataType>
+      </File>
+      <Attribute name="instrument_model">Illumina MiSeq</Attribute><!-- controlled vocabulary -->
+      <Attribute name="library_name">2441</Attribute>
+      <Attribute name="library_strategy">WGS</Attribute><!-- controlled vocabulary -->
+      <Attribute name="library_source">GENOMIC</Attribute><!-- controlled vocabulary -->
+      <Attribute name="library_selection">RANDOM</Attribute><!-- controlled vocabulary -->
+      <Attribute name="library_layout">PAIRED</Attribute> <!-- controlled vocabulary -->
+      <Attribute name="library_construction_protocol">TruSeq PCR free DNA preparation from a pure bacterial culture</Attribute>
+      <AttributeRefId name="BioProject">
+        <RefId>
+          <PrimaryId db="BioProject">PRJNA999999</PrimaryId>
+        </RefId>
+      </AttributeRefId>
+      <AttributeRefId name="BioSample">
+        <RefId>
+          <SPUID spuid_namespace="JEDI-MIDI">MIDI_ISO_2441</SPUID>
+        </RefId>
+      </AttributeRefId>
+      <Identifier>
+        <SPUID spuid_namespace="JEDI-MIDI">MIDI_SEQ_2441</SPUID>
+      </Identifier>
+    </AddFiles>
+  </Action>
+</Submission>
