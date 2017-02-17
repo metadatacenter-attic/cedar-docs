@@ -1,0 +1,82 @@
+<Submission >
+
+  <Description>
+    <Comment>Example BioSample submission using the Human.1.0 package</Comment>
+
+    <Organization role="master" type="institute">
+      <Name>CEDAR</Name>
+      <Contact email="metadatacenter@gmail.com">
+        <Name>
+          <First>Mr.</First>
+          <Last>CEDAR</Last>
+        </Name>
+      </Contact>
+    </Organization>
+
+    <Hold release_date="2016-01-31"></Hold>
+
+  </Description>
+
+  <Action>
+    <AddData target_db="BioSample">
+      <Data content_type="XML">
+        <XmlContent>
+          <BioSample schema_version="2.0">
+
+            <SampleId>
+              <SPUID spuid_namespace="CEDAR">CEDAR_BIOSAMPLE_123</SPUID>
+            </SampleId>
+
+            <Descriptor>
+              <Title>Example BioSample submission using Human.1.0 package</Title>
+            </Descriptor>
+
+            <Organism>
+              <OrganismName>Homo sapiens</OrganismName> <!-- This term is controlled -->
+            </Organism>
+
+            <BioProject>
+              <PrimaryId db="BioProject">PRJNA212117</PrimaryId> <!-- CEDAR's project ID for testing -->
+            </BioProject>
+
+            <!-- See https://www.ncbi.nlm.nih.gov/biosample/docs/packages/ for a list of current packages -->
+            <Package>Human.1.0</Package>
+
+            <Attributes>
+
+              <!-- Required attributes for Human.1.0 package -->
+              <Attribute attribute_name="isolate">IsolateID4</Attribute>
+              <Attribute attribute_name="age">34</Attribute>  <!-- This attribute value is not checked by validator -->
+              <Attribute attribute_name="sex">male</Attribute> <!-- This attribute value is controlled and checked by validator -->
+              <Attribute attribute_name="biomaterial provider">Roche</Attribute>
+              <Attribute attribute_name="tissue">liver</Attribute> <!-- This attribute value is not checked by validator -->
+
+              <!-- Optional attributes for Human.1.0 package -->
+              <Attribute attribute_name="disease">xxx</Attribute>
+              <Attribute attribute_name="treatment">xxx</Attribute>
+              <Attribute attribute_name="race">xxx</Attribute>
+              <Attribute attribute_name="sample title">xxx</Attribute>
+              <Attribute attribute_name="disease stage">xxx</Attribute>
+              <Attribute attribute_name="developmental stage">xxx</Attribute>
+              <Attribute attribute_name="cell line">xxx</Attribute>
+              <Attribute attribute_name="cell subtype">xxx</Attribute>
+              <Attribute attribute_name="ethnicity">xxx</Attribute>
+              <Attribute attribute_name="health state">xxx</Attribute>
+              <Attribute attribute_name="karyotype">xxx</Attribute>
+              <Attribute attribute_name="phenotype">xxx</Attribute>
+              <Attribute attribute_name="population">xxx</Attribute>
+              <Attribute attribute_name="sample type">xxx</Attribute>
+            </Attributes>
+
+          </BioSample>
+
+        </XmlContent>
+      </Data>
+
+      <Identifier>
+        <SPUID spuid_namespace="CEDAR">CEDAR_BIOSAMPLE_123</SPUID> 
+      </Identifier>
+    </AddData>
+  </Action>
+  
+</Submission>

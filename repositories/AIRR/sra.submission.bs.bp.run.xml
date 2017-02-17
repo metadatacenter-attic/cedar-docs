@@ -1,0 +1,165 @@
+<Submission>
+  <Description>
+    <Comment>BP(1.0)+BS(1.0)+SRA</Comment>
+    <Organization role="owner" type="institute">
+      <Name>Institute of Biology</Name>
+      <Contact email="jane.doe@domain.com">
+        <Name>
+          <First>jane</First>
+          <Last>doe</Last>
+        </Name>
+      </Contact>
+    </Organization>
+    <Hold release_date="2015-10-21"/>
+  </Description>
+  <Action>
+    <AddData target_db="BioProject">
+      <Data content_type="xml">
+        <XmlContent>
+          <Project schema_version="2.0">
+            <ProjectID>
+              <SPUID spuid_namespace="CFSAN">Project123</SPUID>
+            </ProjectID>
+            <Descriptor>
+              <Title>GenomeTrakr Project: Epidemiological Research Center at Sinaloa,
+                Mexico:sp_3-.2014-09-26_11-47</Title>
+              <Description>
+                <p>GenomeTrakr Project: Epidemiological Research Center at Sinaloa, Mexico</p>
+              </Description>
+              <ExternalLink label="Website: Epidemiological Research Center at Sinaloa, Mexico">
+                <URL>http://www.hgculiacan.com/cies/cies%20descripcion.htm</URL>
+              </ExternalLink>
+              <Relevance>
+                <Medical>Yes</Medical>
+              </Relevance>
+            </Descriptor>
+            <ProjectType>
+              <ProjectTypeSubmission sample_scope="eMultispecies">
+                <IntendedDataTypeSet>
+                  <DataType>genome sequencing</DataType>
+                </IntendedDataTypeSet>
+              </ProjectTypeSubmission>
+            </ProjectType>
+          </Project>
+        </XmlContent>
+      </Data>
+      <Identifier>
+        <SPUID spuid_namespace="CFSAN">Project123</SPUID>
+      </Identifier>
+    </AddData>
+  </Action>
+  <Action>
+    <AddData target_db="BioSample">
+      <Data content_type="XML">
+        <XmlContent>
+          <BioSample schema_version="2.0">
+            <SampleId>
+              <SPUID spuid_namespace="CFSAN">CIES-13-0265:sp_3-.2014-09-26_11-47</SPUID>
+            </SampleId>
+            <Descriptor>
+              <Title>Pathogen sample from Salmonella enterica</Title>
+            </Descriptor>
+            <Organism>
+              <OrganismName>Salmonella enterica subsp. enterica</OrganismName>
+            </Organism>
+            <BioProject>
+              <PrimaryId db="BioProject">PRJNA217342</PrimaryId>
+            </BioProject>
+            <Package>Pathogen.env.1.0</Package>
+            <Attributes>
+              <Attribute attribute_name="strain">CIES-13-0265</Attribute>
+              <Attribute attribute_name="collected_by">CIES</Attribute>
+              <Attribute attribute_name="collection_date">2013-05-13</Attribute>
+              <Attribute attribute_name="isolation_source">water</Attribute>
+              <Attribute attribute_name="geo_loc_name">Mexico:Sinaloa</Attribute>
+              <Attribute attribute_name="lat_lon">missing</Attribute>
+              <Attribute attribute_name="serovar">Newport</Attribute>
+              <Attribute attribute_name="isolate_name_alias">13-CIES-0265</Attribute>
+              <Attribute attribute_name="VirulenceMarker">InvA</Attribute>
+              <Attribute attribute_name="sub_species">enterica</Attribute>
+            </Attributes>
+          </BioSample>
+        </XmlContent>
+      </Data>
+      <Identifier>
+        <SPUID spuid_namespace="CFSAN">CIES-13-0265:sp_3-.2014-09-26_11-47</SPUID>
+      </Identifier>
+    </AddData>
+  </Action>
+  <Action>
+    <AddFiles target_db="SRA">
+      <File file_path="file_name.fastq">
+        <DataType>generic-data</DataType>
+      </File>
+      <File file_path="file_name_2.fastq">
+        <DataType>generic-data</DataType>
+      </File>
+      <Attribute name="instrument_model">Illumina HiSeq 2500</Attribute>
+      <!-- controlled vocabulary -->
+      <Attribute name="library_name">Salmonella enterica str. CFSAN006236_01 shotgun</Attribute>
+      <Attribute name="library_strategy">WGS</Attribute>
+      <!-- controlled vocabulary -->
+      <Attribute name="library_source">GENOMIC</Attribute>
+      <!-- controlled vocabulary -->
+      <Attribute name="library_selection">RANDOM</Attribute>
+      <!-- controlled vocabulary -->
+      <Attribute name="library_layout">PAIRED</Attribute>
+      <!-- controlled vocabulary -->
+      <Attribute name="library_construction_protocol">Illumina Nextera XT library created for
+        Salmonella enterica subsp. enterica serovar Newport str. CIES-13-0265.paired</Attribute>
+      <AttributeRefId name="BioProject">
+        <RefId>
+          <SPUID spuid_namespace="CFSAN">Project123</SPUID>
+        </RefId>
+      </AttributeRefId>
+      <AttributeRefId name="BioSample">
+        <RefId>
+          <SPUID spuid_namespace="CFSAN">CIES-13-0265:sp_3-.2014-09-26_11-47</SPUID>
+        </RefId>
+      </AttributeRefId>
+      <Identifier>
+        <SPUID spuid_namespace="CFSAN">CFSAN006236_01:3</SPUID>
+      </Identifier>
+    </AddFiles>
+  </Action>
+</Submission>
+<!--
+  
+Handling reads in the SRA:
+
+All biological reads will be deduced by the pipeline; no need to specify read lengths, or orders. Expected order of technical reads (if present) is
+
+Adapter - Barcode - Primer - Biological read 1 - Linker - BioLogical read 2
+
+    <Attribute name="Adapter">TCAG</Attribute>
+    <Attribute name="BarCode">AATGGTAC</Attribute>
+    <Attribute name="BarCode_max_mismatch">1</Attribute>
+    <Attribute name="Primer">CCGTCAATTCMTTTRAGT</Attribute>
+    <Attribute name="Primer_max_mismatch">2</Attribute>
+    
+Examples:
+
+    <Attribute name="Adapter">TCAG</Attribute>
+    <Attribute name="BarCode">AATGGTAC</Attribute>
+    
+    Interpretation: 5' - Adapter - BarCode - Biological read 1 [ - Biological read 2, if deduced by pipeline ]
+    
+    <Attribute name="BarCode">AATGGTAC</Attribute>
+    <Attribute name="Primer">CCGTCAATTCMTTTRAGT</Attribute>
+    
+    Interpretation: 5' - BarCode - Primer - Biological read 1 [ - Biological read 2, if deduced by pipeline ]
+    
+    { no technical reads described }
+    
+    Interpretation: 5' - Biological read 1 [ - Biological read 2, if deduced by pipeline ]
+    
+Key points:
+
+If the key/flow sequence is retained at the 5' end of the sequence, then it must be included as an "Adapter"
+Mismatches are represented by ${string}_max_mismatch, where ${string} is an exact match for a technical read (Adapter, BarCode, Primer, Linker)
+If there are multiple barcodes, etc. then the "max_mismatch" value is applied to all, and should be the largest value in the set. Submitted data SHOULD be demultiplexed, so this should not be an issue.
+You do not have to specify any type of "read order" - we will determine this in the pipeline.
+You also do not have to specify any of the biological reads ("forward", in the first example above) - we will also deduce this based on the types of technical reads present.
+If the length of a sequence is known, but the sequence is not, then that can be represented as a series of ".". A barcode of length 8, but unknown sequence would be:
+   <Attribute name="BarCode">........</Attribute>
+-->

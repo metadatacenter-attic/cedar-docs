@@ -1,0 +1,67 @@
+{
+    "@context": {
+        "pav": "http://purl.org/pav/",
+        "schema": "http://schema.org/",
+        "oslc": "http://open-services.net/ns/core#",
+        "sampleName": "https://schema.staging.metadatacenter.net/properties/sampleName",
+        "organism": "https://schema.staging.metadatacenter.net/properties/organism",
+        "isolate": "https://schema.staging.metadatacenter.net/properties/isolate",
+        "age": "https://schema.staging.metadatacenter.net/properties/age",
+        "biomaterialProvider": "https://schema.staging.metadatacenter.net/properties/biomaterialProvider",
+        "sex": "https://schema.staging.metadatacenter.net/properties/sex",
+        "tissue": "https://schema.staging.metadatacenter.net/properties/tissue",
+        "optionalAttribute": "https://schema.staging.metadatacenter.net/properties/optionalAttribute"
+    },
+    "sampleName": {
+        "@value": "Martin's Sample"
+    },
+    "organism": {
+        "@type": "http://data.bioontology.org/ontologies/NCBITAXON/classes/http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSTY%2FT001",
+        "@value": "http://purl.bioontology.org/ontology/STY/T016",
+        "_valueLabel": "Homo sapiens"
+    },
+    "isolate": {
+        "@value": "IS010"
+    },
+    "age": {
+        "@value": "777"
+    },
+    "biomaterialProvider": {
+        "@value": "Roche"
+    },
+    "tissue": {
+        "@type": "http://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C12801",
+        "@value": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C12472",
+        "_valueLabel": "Adipose Tissue"
+    },
+    "sex": {
+        "@type": "http://data.bioontology.org/ontologies/NCIT/classes/http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C28421",
+        "@value": "http://purl.obolibrary.org/obo/PATO_0000383",
+        "_valueLabel": "female"
+    },
+    "optionalAttribute": [
+        {
+            "@context": {
+                "pav": "http://purl.org/pav/",
+                "oslc": "http://open-services.net/ns/core#",
+                "name": "https://schema.staging.metadatacenter.net/properties/name",
+                "value": "https://schema.staging.metadatacenter.net/properties/value",
+                "name1": "https://schema.staging.metadatacenter.net/properties/ba4e2444-7b42-49e3-bb56-3ba9491b7c1e"
+            },
+            "value": {
+                "@value": "vali1"
+            },
+            "name": {
+                "@value": "Att1"
+            }
+        }
+    ],
+    "schema:isBasedOn": "https://repo.staging.metadatacenter.net/templates/28bf09e6-6cc8-431e-be05-4febd67804f6",
+    "schema:name": "BioSample_Human_With_Ontology metadata",
+    "schema:description": "BioSample Human metadata",
+    "pav:createdOn": "2016-11-04T10:16:42-0700",
+    "pav:createdBy": "https://repo.staging.metadatacenter.net/users/6e574d2d-8b29-48b2-b9f3-6ea463786c67",
+    "pav:lastUpdatedOn": "2016-11-04T10:16:42-0700",
+    "oslc:modifiedBy": "https://repo.staging.metadatacenter.net/users/6e574d2d-8b29-48b2-b9f3-6ea463786c67",
+    "@id": "https://repo.staging.metadatacenter.net/template-instances/3cfba303-093e-4c1e-880a-da520a60b24a"
+}
